@@ -1,0 +1,252 @@
+syntax = "proto3";
+
+import "aelf/core.proto";
+import "aelf/options.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Tank.Contracts.Financing";
+
+service FinancingContract {
+    option (aelf.csharp_state) = "FinancingContractState";
+
+    rpc Initialize (InitializeInput) returns (google.protobuf.Empty) { }
+    rpc ResetDelegator (ResetDelegatorInput) returns (google.protobuf.Empty) { }
+    rpc ChangeOwner (aelf.Address) returns (google.protobuf.Empty) { }
+    
+    // For enterprises.
+    rpc Certificate (EnterpriseBasicInfo) returns (google.protobuf.Empty) { }
+    rpc Complete (EnterpriseFurtherInfo) returns (google.protobuf.Empty) { }
+    rpc Apply (ApplyInput) returns (google.protobuf.Empty) { }
+    rpc Cancel (CancelInput) returns (google.protobuf.Empty) { }
+
+    // For financing organizations.
+    rpc AddFinancingProduct (AddFinancingProductInput) returns (google.protobuf.Empty) { }
+    rpc RemoveFinancingProduct (RemoveFinancingProductInput) returns (google.protobuf.Empty) { }
+    rpc SetAllowance (SetAllowanceInput) returns (google.protobuf.Empty) { }
+    rpc OnlineApprove (ApproveInput) returns (google.protobuf.Empty) { }
+    rpc OfflineApprove (ApproveInput) returns (google.protobuf.Empty) { }
+    rpc ApproveAllowance (ApproveAllowanceInput) returns (google.protobuf.Empty) { }
+
+    // For admins.
+    rpc ConfirmCertificate (ConfirmCertificateInput) returns (google.protobuf.Empty) { }
+    rpc RemoveEnterpriseInfo (google.protobuf.StringValue) returns (google.protobuf.Empty) { }
+
+    rpc GetAdminAddressList (google.protobuf.Empty) returns (AddressList) {
+        option (aelf.is_view) = true;
+    }
+    rpc GetEnterpriseAddressList (google.protobuf.Empty) returns (AddressList) {
+        option (aelf.is_view) = true;
+    }
+    rpc GetOrganizationAddressList (google.protobuf.Empty) returns (AddressList) {
+        option (aelf.is_view) = true;
+    }
+    rpc GetFinancingProductList (google.protobuf.Empty) returns (FinancingProductList) {
+        option (aelf.is_view) = true;
+    }
+    rpc GetEnterpriseInfo (google.protobuf.StringValue) returns (EnterpriseInfo) {
+        option (aelf.is_view) = true;
+    }
+    rpc GetApplyRecord (GetApplyRecordInput) returns (ApplyRecord) {
+        option (aelf.is_view) = true;
+    }
+    rpc GetApplyRecordList (GetApplyRecordListInput) returns (ApplyRecordList) {
+        option (aelf.is_view) = true;
+    }
+}
+
+message InitializeInput {
+    aelf.Address delegator_contract_address = 1;
+    repeated aelf.Address financing_organizations = 2;
+    repeated aelf.Address enterprises = 3;
+    repeated aelf.Address admins = 4;
+    aelf.Address owner = 5;
+}
+
+message ResetDelegatorInput {
+    aelf.Address delegator_contract_address = 1;
+    repeated aelf.Address financing_organizations = 2;
+    repeated aelf.Address enterprises = 3;
+    repeated aelf.Address admins = 4;
+}
+
+message AddFinancingProductInput {
+    string organization = 1;
+    string product_name = 2;
+    string url = 3;
+}
+
+message RemoveFinancingProductInput {
+    string organization = 1;
+    string product_name = 2;
+}
+
+message CompleteInput {
+    string name = 1;
+    string total_asserts = 2;
+    string income = 3;
+    int32 enterprise_type = 4;
+    int32 staff_number = 5;
+    int32 industry = 6;
+    string location = 7;
+    string registered_address = 8;
+    string business_address = 9;
+    string business_scope = 10;
+    string description = 11;
+}
+
+message ApplyInput {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+}
+
+message CancelInput {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+}
+
+message ConfirmCertificateInput {
+    string enterprise_name = 1;
+    bool is_confirm = 2;
+}
+
+message SetAllowanceInput {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+    string allowance = 4;
+    string apy = 5;
+    string period = 6;
+    string guarantee_method = 7;
+}
+
+message ApproveInput {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+}
+
+message GetApplyRecordInput {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+}
+
+message GetApplyRecordListInput {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+    ApplyStatus apply_status = 4;
+    google.protobuf.Timestamp start_time = 5;
+    google.protobuf.Timestamp end_time = 6;
+}
+
+message ApproveAllowanceInput {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+    string allowance = 4;
+    string apy = 5;
+    string period = 6;
+    string guarantee_method = 7;
+}
+
+message AddressList {
+    repeated aelf.Address value = 1;
+}
+
+message HashList {
+    repeated aelf.Hash value = 1;
+}
+
+message EnterpriseInfo {
+    EnterpriseBasicInfo basic_info = 1;
+    EnterpriseFurtherInfo further_info = 2;
+    CertificateStatus certificate_status = 3;
+    aelf.Address enterprise_virtual_address = 4;
+}
+
+message EnterpriseBasicInfo {
+    string name = 1;
+    string artificial_person = 2;
+    google.protobuf.Timestamp established_time = 3;
+    google.protobuf.Timestamp due_time = 4;
+    string credit_code = 5;
+    aelf.Hash artificial_person_id = 6;
+    string registered_capital = 7;
+    string phone_number = 8;
+    repeated aelf.Hash photo_hashes = 9;
+}
+
+message EnterpriseFurtherInfo {
+    string name = 1;
+    string total_asserts = 2;
+    string income = 3;
+    int32 enterprise_type = 4;
+    int32 staff_number = 5;
+    int32 industry = 6;
+    string location = 7;
+    string registered_address = 8;
+    string business_address = 9;
+    string business_scope = 10;
+    string description = 11;
+}
+
+message FinancingProduct {
+    string organization = 1;
+    string product_name = 2;
+    string url = 3;
+}
+
+message FinancingProductList {
+    repeated FinancingProduct value = 1;
+}
+
+message ApplyRecord {
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+    string allowance = 4;
+    string apy = 5;
+    string period = 6;
+    ApplyStatus apply_status = 7;
+    string guarantee_method = 8;
+    google.protobuf.Timestamp apply_time = 9;
+    google.protobuf.Timestamp passed_time = 10;
+}
+
+message ApplyRecordList {
+    repeated ApplyRecord value = 1;
+}
+
+enum CertificateStatus {
+    NOT_COMMITTED = 0;
+    WAITING = 1;
+    CONFIRMED = 2;
+    REJECTED = 3;
+}
+
+enum ApplyStatus {
+    NOT_APPLIED = 0;
+    PENDING = 1;
+    ONLINE_PASSED = 2;
+    OFFLINE_PASSED = 3;
+    PASSED = 4;
+}
+
+message ApplyPassed {
+    option (aelf.is_event) = true;
+    string enterprise_name = 1;
+    string organization = 2;
+    string product_name = 3;
+    string allowance = 4;
+    string apy = 5;
+    string period = 6;
+    ApplyStatus apply_status = 7;
+    string guarantee_method = 8;
+    google.protobuf.Timestamp apply_time = 9;
+    google.protobuf.Timestamp passed_time = 10;
+}

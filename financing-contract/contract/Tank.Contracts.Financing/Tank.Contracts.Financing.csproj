@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>Tank.Contracts.FinancingContract</RootNamespace>
+        <IsContract>true</IsContract>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    </PropertyGroup>
+    <ItemGroup>
+        <ContractReference Include="..\..\protobuf\delegator_contract.proto">
+            <Link>Protobuf\Proto\delegator_contract.proto</Link>
+        </ContractReference>
+        <ContractCode Include="..\..\protobuf\financing_contract.proto">
+            <Link>Protobuf\Proto\financing_contract.proto</Link>
+        </ContractCode>
+    </ItemGroup>
+</Project>

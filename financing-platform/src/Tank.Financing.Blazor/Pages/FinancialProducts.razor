@@ -1,0 +1,438 @@
+@page "/financial-products"
+@attribute [Authorize(FinancingPermissions.FinancialProducts.Default)]
+@using Tank.Financing.FinancialProducts
+@using Tank.Financing.Localization
+@using Tank.Financing.Shared
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Blazorise.Components
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Tank.Financing.Permissions
+@inherits FinancingComponentBase
+@inject IFinancialProductsAppService FinancialProductsAppService
+@inject IUiMessageService UiMessageService
+@using Tank.Financing
+
+@using Tank.Financing
+
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["FinancialProducts"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+
+</PageHeader>
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <Form id="FinancialProductSearchForm" class="mb-3">
+            <Addons>
+                <Addon AddonType="AddonType.Body">
+                    <TextEdit @bind-Text="@Filter.FilterText"
+                              Autofocus="true"
+                              Placeholder="@L["Search"]">
+                    </TextEdit>
+                </Addon>
+                <Addon AddonType="AddonType.End">
+                    <SubmitButton Form="FinancialProductSearchForm" Clicked="GetFinancialProductsAsync">
+                        <Icon Name="IconName.Search" Class="me-1"></Icon>@L["Search"]
+                    </SubmitButton>
+                </Addon>
+            </Addons>
+        </Form>
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<Card>
+    <CardBody>
+        <DataGrid TItem="FinancialProductWithNavigationPropertiesDto"
+                  Data="FinancialProductList"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  ShowPager="true"
+                  Responsive="true"
+                  PageSize="PageSize">
+            <DataGridColumns>
+                <DataGridEntityActionsColumn TItem="FinancialProductWithNavigationPropertiesDto" @ref="@EntityActionsColumn">
+                    <DisplayTemplate>
+                        <EntityActions TItem="FinancialProductWithNavigationPropertiesDto" EntityActionsColumn="@EntityActionsColumn">
+                            <EntityAction TItem="FinancialProductWithNavigationPropertiesDto"
+                                          Visible="@CanEditFinancialProduct"
+                                          Clicked="async () => await OpenEditFinancialProductModalAsync(context)"
+                                          Text="@L["Edit"]"></EntityAction>
+                            <EntityAction TItem="FinancialProductWithNavigationPropertiesDto"
+                                          Visible="@CanDeleteFinancialProduct"
+                                          Clicked="() => DeleteFinancialProductAsync(context)"
+                                          ConfirmationMessage="@(()=> L["DeleteConfirmationMessage"])"
+                                          Text="@L["Delete"]"></EntityAction>
+                        </EntityActions>
+                    </DisplayTemplate>
+                </DataGridEntityActionsColumn>
+               
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.AvailableDistricts"
+                      Caption="@L["AvailableDistricts"]">
+                    <DisplayTemplate>
+                        @L[$"Enum:TJDistrict:{Convert.ToInt32(context.FinancialProduct.AvailableDistricts)}"]
+                    </DisplayTemplate>
+              </DataGridColumn>
+
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.TimeLimit"
+                      Caption="@L["TimeLimit"]">
+              </DataGridColumn>
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.GuaranteeMethod"
+                      Caption="@L["GuaranteeMethod"]">
+                    <DisplayTemplate>
+                        @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(context.FinancialProduct.GuaranteeMethod)}"]
+                    </DisplayTemplate>
+              </DataGridColumn>
+
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.CreditCeiling"
+                      Caption="@L["CreditCeiling"]">
+              </DataGridColumn>
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.Organization"
+                      Caption="@L["Organization"]">
+              </DataGridColumn>
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.AppliedNumber"
+                      Caption="@L["AppliedNumber"]">
+              </DataGridColumn>
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.APR"
+                      Caption="@L["APR"]">
+              </DataGridColumn>
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.Rating"
+                      Caption="@L["Rating"]">
+              </DataGridColumn>
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct.Name"
+                      Caption="@L["Name"]">
+              </DataGridColumn>
+
+              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
+                      Field="FinancialProduct1.Name"
+                      Caption="@L["FinancialProduct"]">
+              </DataGridColumn>
+
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
+
+@* ************************* CREATE MODAL ************************* *@
+<Modal @ref="CreateFinancialProductModal">
+    <ModalContent Centered="true">
+        <Form id="CreateFinancialProductForm">
+            <ModalHeader>
+                <ModalTitle>@L["NewFinancialProduct"]</ModalTitle>
+                <CloseButton Clicked="CloseCreateFinancialProductModalAsync" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations @ref="@NewFinancialProductValidations"
+                            Mode="ValidationMode.Auto"
+                            Model="@NewFinancialProduct"
+                            ValidateOnLoad="false">
+                    
+                    <Field>
+                        <FieldLabel>@L["AvailableDistricts"]</FieldLabel>
+                        <Select TValue="TJDistrict" @bind-SelectedValue="@NewFinancialProduct.AvailableDistricts">
+                            @foreach (var itemValue in Enum.GetValues(typeof(TJDistrict)))
+                            {
+                                <SelectItem TValue="TJDistrict" Value="@((TJDistrict) itemValue)">
+                                    @L[$"Enum:TJDistrict:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["TimeLimit"] *</FieldLabel>
+                            <NumericEdit TValue="int" @bind-Value="@NewFinancialProduct.TimeLimit"  Min="FinancialProductConsts.TimeLimitMinLength" Max="FinancialProductConsts.TimeLimitMaxLength">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Field>
+                        <FieldLabel>@L["GuaranteeMethod"]</FieldLabel>
+                        <Select TValue="GuaranteeMethod" @bind-SelectedValue="@NewFinancialProduct.GuaranteeMethod">
+                            @foreach (var itemValue in Enum.GetValues(typeof(GuaranteeMethod)))
+                            {
+                                <SelectItem TValue="GuaranteeMethod" Value="@((GuaranteeMethod) itemValue)">
+                                    @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["CreditCeiling"] *</FieldLabel>
+                            <NumericEdit TValue="decimal" @bind-Value="@NewFinancialProduct.CreditCeiling" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Organization"] *</FieldLabel>
+                            <TextEdit @bind-Text="@NewFinancialProduct.Organization" MaxLength="FinancialProductConsts.OrganizationMaxLength">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["AppliedNumber"]</FieldLabel>
+                            <NumericEdit TValue="int?" @bind-Value="@NewFinancialProduct.AppliedNumber" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["APR"] *</FieldLabel>
+                            <NumericEdit TValue="decimal" @bind-Value="@NewFinancialProduct.APR" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Rating"]</FieldLabel>
+                            <NumericEdit TValue="int?" @bind-Value="@NewFinancialProduct.Rating" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Name"] *</FieldLabel>
+                            <TextEdit @bind-Text="@NewFinancialProduct.Name" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+
+                    <Field>
+                        <FieldLabel>@L["FinancialProduct"]</FieldLabel>
+                        <Select TValue="Guid?" @bind-SelectedValue="@NewFinancialProduct.FinancialProductId">
+                            <SelectItem TValue="Guid?" Value="null"></SelectItem>
+                            @foreach (var financialProduct in FinancialProductsNullable)
+                            {
+                                <SelectItem TValue="Guid?" Value="@financialProduct.Id">
+                                    @financialProduct.DisplayName
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
+
+
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseCreateFinancialProductModalAsync">
+                    @L["Cancel"]
+                </Button>
+                <SubmitButton Form="CreateFinancialProductForm" Clicked="CreateFinancialProductAsync" />
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+@* ************************* EDIT MODAL ************************* *@
+<Modal @ref="EditFinancialProductModal">
+    <ModalContent Centered="true">
+        <Form id="EditFinancialProductForm">
+            <ModalHeader>
+                <ModalTitle>@L["Update"]</ModalTitle>
+                <CloseButton Clicked="CloseEditFinancialProductModalAsync" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations @ref="@EditingFinancialProductValidations"
+                            Mode="ValidationMode.Auto"
+                            Model="@EditingFinancialProduct"
+                            ValidateOnLoad="false">
+                    
+                    <Field>
+                        <FieldLabel>@L["AvailableDistricts"]</FieldLabel>
+                        <Select TValue="TJDistrict" @bind-SelectedValue="@EditingFinancialProduct.AvailableDistricts">
+                            @foreach (var itemValue in Enum.GetValues(typeof(TJDistrict)))
+                            {
+                                <SelectItem TValue="TJDistrict" Value="@((TJDistrict) itemValue)">
+                                    @L[$"Enum:TJDistrict:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["TimeLimit"] *</FieldLabel>
+                            <NumericEdit TValue="int" @bind-Value="@EditingFinancialProduct.TimeLimit"  Min="FinancialProductConsts.TimeLimitMinLength" Max="FinancialProductConsts.TimeLimitMaxLength">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Field>
+                        <FieldLabel>@L["GuaranteeMethod"]</FieldLabel>
+                        <Select TValue="GuaranteeMethod" @bind-SelectedValue="@EditingFinancialProduct.GuaranteeMethod">
+                            @foreach (var itemValue in Enum.GetValues(typeof(GuaranteeMethod)))
+                            {
+                                <SelectItem TValue="GuaranteeMethod" Value="@((GuaranteeMethod) itemValue)">
+                                    @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["CreditCeiling"] *</FieldLabel>
+                            <NumericEdit TValue="decimal" @bind-Value="@EditingFinancialProduct.CreditCeiling" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Organization"] *</FieldLabel>
+                            <TextEdit @bind-Text="@EditingFinancialProduct.Organization" MaxLength="FinancialProductConsts.OrganizationMaxLength">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["AppliedNumber"]</FieldLabel>
+                            <NumericEdit TValue="int?" @bind-Value="@EditingFinancialProduct.AppliedNumber" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["APR"] *</FieldLabel>
+                            <NumericEdit TValue="decimal" @bind-Value="@EditingFinancialProduct.APR" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Rating"]</FieldLabel>
+                            <NumericEdit TValue="int?" @bind-Value="@EditingFinancialProduct.Rating" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                             </NumericEdit>
+                        </Field>
+                     </Validation>
+
+
+                    <Validation>
+                        <Field>
+                            <FieldLabel>@L["Name"] *</FieldLabel>
+                            <TextEdit @bind-Text="@EditingFinancialProduct.Name" >
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+
+                    <Field>
+                        <FieldLabel>@L["FinancialProduct"]</FieldLabel>
+                        <Select TValue="Guid?" @bind-SelectedValue="@EditingFinancialProduct.FinancialProductId">
+                            <SelectItem TValue="Guid?" Value="null"></SelectItem>
+                            @foreach (var financialProduct in FinancialProductsNullable)
+                            {
+                                <SelectItem TValue="Guid?" Value="@financialProduct.Id">
+                                    @financialProduct.DisplayName
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
+
+
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseEditFinancialProductModalAsync">
+                    @L["Cancel"]
+                </Button>
+                <SubmitButton Form="CreateFinancialProductForm" Clicked="UpdateFinancialProductAsync" />
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
