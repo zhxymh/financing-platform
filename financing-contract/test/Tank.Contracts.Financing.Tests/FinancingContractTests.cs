@@ -177,8 +177,7 @@ namespace Tank.Contracts.Financing
                     CreditCode = "91120103MA07DC9C29",
                     RegisteredCapital = "10000000",
                     PhoneNumber = "13111111111",
-                    EstablishedTime = new DateTime(2016, 1, 1).ToUniversalTime().ToTimestamp(),
-                    DueTime = new DateTime(2116, 1, 1).ToUniversalTime().ToTimestamp(),
+                    EstablishedTime = "2016-01-01",
                     PhotoHashes =
                     {
                         HashHelper.ComputeFrom("test1"),

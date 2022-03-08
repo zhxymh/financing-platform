@@ -1,4 +1,3 @@
-using Tank.Financing.Shared;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
@@ -8,13 +7,9 @@ namespace Tank.Financing.FinancialProducts
 {
     public interface IFinancialProductsAppService : IApplicationService
     {
-        Task<PagedResultDto<FinancialProductWithNavigationPropertiesDto>> GetListAsync(GetFinancialProductsInput input);
-
-        Task<FinancialProductWithNavigationPropertiesDto> GetWithNavigationPropertiesAsync(Guid id);
+        Task<PagedResultDto<FinancialProductDto>> GetListAsync(GetFinancialProductsInput input);
 
         Task<FinancialProductDto> GetAsync(Guid id);
-
-        Task<PagedResultDto<LookupDto<Guid?>>> GetFinancialProductLookupAsync(LookupRequestDto input);
 
         Task DeleteAsync(Guid id);
 

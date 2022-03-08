@@ -1,17 +1,15 @@
-using Tank.Financing.Shared;
-using Tank.Financing.FinancialProducts;
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq.Dynamic.Core;
+using AElf.Contracts.Delegator;
+using AElf.EventHandler;
+using AElf.Types;
+using Google.Protobuf;
 using Microsoft.AspNetCore.Authorization;
-using Volo.Abp;
+using Tank.Contracts.Financing;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
-using Volo.Abp.Domain.Repositories;
 using Tank.Financing.Permissions;
-using Tank.Financing.FinancialProducts;
 
 namespace Tank.Financing.FinancialProducts
 {
@@ -21,48 +19,36 @@ namespace Tank.Financing.FinancialProducts
     {
         private readonly IFinancialProductRepository _financialProductRepository;
 
+        private readonly NodeManager _nodeManager = new(FinancingConsts.DefaultNodeUrl,
+            FinancingConsts.DefaultSenderAddress,
+            FinancingConsts.DefaultSenderPassword);
+
         public FinancialProductsAppService(IFinancialProductRepository financialProductRepository)
         {
             _financialProductRepository = financialProductRepository;
         }
 
-        public virtual async Task<PagedResultDto<FinancialProductWithNavigationPropertiesDto>> GetListAsync(GetFinancialProductsInput input)
+        public virtual async Task<PagedResultDto<FinancialProductDto>> GetListAsync(GetFinancialProductsInput input)
         {
-            var totalCount = await _financialProductRepository.GetCountAsync(input.FilterText, input.AvailableDistricts, input.TimeLimitMin, input.TimeLimitMax, input.GuaranteeMethod, input.CreditCeilingMin, input.CreditCeilingMax, input.Organization, input.AppliedNumberMin, input.AppliedNumberMax, input.APRMin, input.APRMax, input.RatingMin, input.RatingMax, input.Name, input.FinancialProductId);
-            var items = await _financialProductRepository.GetListWithNavigationPropertiesAsync(input.FilterText, input.AvailableDistricts, input.TimeLimitMin, input.TimeLimitMax, input.GuaranteeMethod, input.CreditCeilingMin, input.CreditCeilingMax, input.Organization, input.AppliedNumberMin, input.AppliedNumberMax, input.APRMin, input.APRMax, input.RatingMin, input.RatingMax, input.Name, input.FinancialProductId, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _financialProductRepository.GetCountAsync(input.FilterText, input.TimeLimitMin,
+                input.TimeLimitMax, input.GuaranteeMethod, input.CreditCeiling, input.Organization,
+                input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.Name);
+            var items = await _financialProductRepository.GetListAsync(input.FilterText, input.TimeLimitMin,
+                input.TimeLimitMax, input.GuaranteeMethod, input.CreditCeiling, input.Organization,
+                input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.Name, input.Sorting,
+                input.MaxResultCount, input.SkipCount);
 
-            return new PagedResultDto<FinancialProductWithNavigationPropertiesDto>
+            return new PagedResultDto<FinancialProductDto>
             {
                 TotalCount = totalCount,
-                Items = ObjectMapper.Map<List<FinancialProductWithNavigationProperties>, List<FinancialProductWithNavigationPropertiesDto>>(items)
+                Items = ObjectMapper.Map<List<FinancialProduct>, List<FinancialProductDto>>(items)
             };
-        }
-
-        public virtual async Task<FinancialProductWithNavigationPropertiesDto> GetWithNavigationPropertiesAsync(Guid id)
-        {
-            return ObjectMapper.Map<FinancialProductWithNavigationProperties, FinancialProductWithNavigationPropertiesDto>
-                (await _financialProductRepository.GetWithNavigationPropertiesAsync(id));
         }
 
         public virtual async Task<FinancialProductDto> GetAsync(Guid id)
         {
-            return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(await _financialProductRepository.GetAsync(id));
-        }
-
-        public virtual async Task<PagedResultDto<LookupDto<Guid?>>> GetFinancialProductLookupAsync(LookupRequestDto input)
-        {
-            var query = (await _financialProductRepository.GetQueryableAsync())
-                .WhereIf(!string.IsNullOrWhiteSpace(input.Filter),
-                    x => x.Name != null &&
-                         x.Name.Contains(input.Filter));
-
-            var lookupData = await query.PageBy(input.SkipCount, input.MaxResultCount).ToDynamicListAsync<FinancialProduct>();
-            var totalCount = query.Count();
-            return new PagedResultDto<LookupDto<Guid?>>
-            {
-                TotalCount = totalCount,
-                Items = ObjectMapper.Map<List<FinancialProduct>, List<LookupDto<Guid?>>>(lookupData)
-            };
+            return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(
+                await _financialProductRepository.GetAsync(id));
         }
 
         [Authorize(FinancingPermissions.FinancialProducts.Delete)]
@@ -74,17 +60,68 @@ namespace Tank.Financing.FinancialProducts
         [Authorize(FinancingPermissions.FinancialProducts.Create)]
         public virtual async Task<FinancialProductDto> CreateAsync(FinancialProductCreateDto input)
         {
+            var owner = Address.FromBase58(FinancingConsts.DefaultSenderAddress);
+
+            //InitializeFinancingContract(owner);
+
+            ForwardContract(input.Organization, FinancingConsts.ScopeIdForAdmin,
+                "AddFinancingProduct",
+                new AddFinancingProductInput
+                {
+                    ProductName = input.Name,
+                    Organization = input.Organization,
+                    Url = "https://test.com"
+                });
 
             var financialProduct = ObjectMapper.Map<FinancialProductCreateDto, FinancialProduct>(input);
-
-            financialProduct = await _financialProductRepository.InsertAsync(financialProduct, autoSave: true);
+            financialProduct = await _financialProductRepository.InsertAsync(financialProduct, true);
             return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(financialProduct);
+        }
+
+        private void InitializeFinancingContract(Address owner)
+        {
+            var txId = _nodeManager.SendTransaction(FinancingConsts.DefaultSenderAddress,
+                FinancingConsts.DefaultFinancingContractAddress,
+                "Initialize",
+                new InitializeInput
+                {
+                    DelegatorContractAddress = Address.FromBase58(FinancingConsts.DefaultDelegatorContractAddress),
+                    Owner = owner,
+                    Admins = { owner },
+                    FinancingOrganizations = { owner },
+                    Enterprises = { owner },
+                });
+            var result = _nodeManager.CheckTransactionResult(txId);
+            if (result.Status != "MINED")
+            {
+                throw new TransactionFailedException($"Transaction execution failed: {result.Error}");
+            }
+        }
+
+        private void ForwardContract(string fromId, string scopeId, string methodName,
+            IMessage param)
+        {
+            var txId = _nodeManager.SendTransaction(FinancingConsts.DefaultSenderAddress,
+                FinancingConsts.DefaultDelegatorContractAddress,
+                "Forward",
+                new ForwardInput
+                {
+                    FromId = fromId,
+                    ToAddress = Address.FromBase58(FinancingConsts.DefaultFinancingContractAddress),
+                    MethodName = methodName,
+                    Parameter = param.ToByteString(),
+                    ScopeId = scopeId
+                });
+            var result = _nodeManager.CheckTransactionResult(txId);
+            if (result.Status != "MINED")
+            {
+                throw new TransactionFailedException($"Transaction execution failed: {result.Error}");
+            }
         }
 
         [Authorize(FinancingPermissions.FinancialProducts.Edit)]
         public virtual async Task<FinancialProductDto> UpdateAsync(Guid id, FinancialProductUpdateDto input)
         {
-
             var financialProduct = await _financialProductRepository.GetAsync(id);
             ObjectMapper.Map(input, financialProduct);
             financialProduct = await _financialProductRepository.UpdateAsync(financialProduct, autoSave: true);

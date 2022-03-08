@@ -16,8 +16,6 @@
 @inject IUiMessageService UiMessageService
 @using Tank.Financing
 
-@using Tank.Financing
-
 
 @* ************************* PAGE HEADER ************************* *@
 <PageHeader Title="@L["FinancialProducts"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
@@ -48,7 +46,7 @@
 @* ************************* DATA GRID ************************* *@
 <Card>
     <CardBody>
-        <DataGrid TItem="FinancialProductWithNavigationPropertiesDto"
+        <DataGrid TItem="FinancialProductDto"
                   Data="FinancialProductList"
                   ReadData="OnDataGridReadAsync"
                   TotalItems="TotalCount"
@@ -56,14 +54,14 @@
                   Responsive="true"
                   PageSize="PageSize">
             <DataGridColumns>
-                <DataGridEntityActionsColumn TItem="FinancialProductWithNavigationPropertiesDto" @ref="@EntityActionsColumn">
+                <DataGridEntityActionsColumn TItem="FinancialProductDto" @ref="@EntityActionsColumn">
                     <DisplayTemplate>
-                        <EntityActions TItem="FinancialProductWithNavigationPropertiesDto" EntityActionsColumn="@EntityActionsColumn">
-                            <EntityAction TItem="FinancialProductWithNavigationPropertiesDto"
+                        <EntityActions TItem="FinancialProductDto" EntityActionsColumn="@EntityActionsColumn">
+                            <EntityAction TItem="FinancialProductDto"
                                           Visible="@CanEditFinancialProduct"
                                           Clicked="async () => await OpenEditFinancialProductModalAsync(context)"
                                           Text="@L["Edit"]"></EntityAction>
-                            <EntityAction TItem="FinancialProductWithNavigationPropertiesDto"
+                            <EntityAction TItem="FinancialProductDto"
                                           Visible="@CanDeleteFinancialProduct"
                                           Clicked="() => DeleteFinancialProductAsync(context)"
                                           ConfirmationMessage="@(()=> L["DeleteConfirmationMessage"])"
@@ -72,62 +70,48 @@
                     </DisplayTemplate>
                 </DataGridEntityActionsColumn>
                
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.AvailableDistricts"
-                      Caption="@L["AvailableDistricts"]">
-                    <DisplayTemplate>
-                        @L[$"Enum:TJDistrict:{Convert.ToInt32(context.FinancialProduct.AvailableDistricts)}"]
-                    </DisplayTemplate>
-              </DataGridColumn>
-
-
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.TimeLimit"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="TimeLimit"
                       Caption="@L["TimeLimit"]">
               </DataGridColumn>
 
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.GuaranteeMethod"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="GuaranteeMethod"
                       Caption="@L["GuaranteeMethod"]">
                     <DisplayTemplate>
-                        @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(context.FinancialProduct.GuaranteeMethod)}"]
+                        @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(context.GuaranteeMethod)}"]
                     </DisplayTemplate>
               </DataGridColumn>
 
 
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.CreditCeiling"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="CreditCeiling"
                       Caption="@L["CreditCeiling"]">
               </DataGridColumn>
 
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.Organization"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="Organization"
                       Caption="@L["Organization"]">
               </DataGridColumn>
 
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.AppliedNumber"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="AppliedNumber"
                       Caption="@L["AppliedNumber"]">
               </DataGridColumn>
 
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.APR"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="APR"
                       Caption="@L["APR"]">
               </DataGridColumn>
 
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.Rating"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="Rating"
                       Caption="@L["Rating"]">
               </DataGridColumn>
 
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct.Name"
+              <DataGridColumn TItem="FinancialProductDto"
+                      Field="Name"
                       Caption="@L["Name"]">
-              </DataGridColumn>
-
-              <DataGridColumn TItem="FinancialProductWithNavigationPropertiesDto"
-                      Field="FinancialProduct1.Name"
-                      Caption="@L["FinancialProduct"]">
               </DataGridColumn>
 
             </DataGridColumns>
@@ -149,19 +133,6 @@
                             Model="@NewFinancialProduct"
                             ValidateOnLoad="false">
                     
-                    <Field>
-                        <FieldLabel>@L["AvailableDistricts"]</FieldLabel>
-                        <Select TValue="TJDistrict" @bind-SelectedValue="@NewFinancialProduct.AvailableDistricts">
-                            @foreach (var itemValue in Enum.GetValues(typeof(TJDistrict)))
-                            {
-                                <SelectItem TValue="TJDistrict" Value="@((TJDistrict) itemValue)">
-                                    @L[$"Enum:TJDistrict:{Convert.ToInt32(itemValue)}"]
-                                </SelectItem>
-                            }
-                        </Select>
-                    </Field>
-
-
                     <Validation>
                         <Field>
                             <FieldLabel>@L["TimeLimit"] *</FieldLabel>
@@ -190,13 +161,13 @@
                     <Validation>
                         <Field>
                             <FieldLabel>@L["CreditCeiling"] *</FieldLabel>
-                            <NumericEdit TValue="decimal" @bind-Value="@NewFinancialProduct.CreditCeiling" >
+                            <TextEdit @bind-Text="@NewFinancialProduct.CreditCeiling" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                             </NumericEdit>
+                            </TextEdit>
                         </Field>
-                     </Validation>
+                    </Validation>
 
 
                     <Validation>
@@ -226,25 +197,25 @@
                     <Validation>
                         <Field>
                             <FieldLabel>@L["APR"] *</FieldLabel>
-                            <NumericEdit TValue="decimal" @bind-Value="@NewFinancialProduct.APR" >
+                            <TextEdit @bind-Text="@NewFinancialProduct.APR" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                             </NumericEdit>
+                            </TextEdit>
                         </Field>
-                     </Validation>
+                    </Validation>
 
 
                     <Validation>
                         <Field>
                             <FieldLabel>@L["Rating"]</FieldLabel>
-                            <NumericEdit TValue="int?" @bind-Value="@NewFinancialProduct.Rating" >
+                            <TextEdit @bind-Text="@NewFinancialProduct.Rating" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                             </NumericEdit>
+                            </TextEdit>
                         </Field>
-                     </Validation>
+                    </Validation>
 
 
                     <Validation>
@@ -257,20 +228,6 @@
                             </TextEdit>
                         </Field>
                     </Validation>
-
-
-                    <Field>
-                        <FieldLabel>@L["FinancialProduct"]</FieldLabel>
-                        <Select TValue="Guid?" @bind-SelectedValue="@NewFinancialProduct.FinancialProductId">
-                            <SelectItem TValue="Guid?" Value="null"></SelectItem>
-                            @foreach (var financialProduct in FinancialProductsNullable)
-                            {
-                                <SelectItem TValue="Guid?" Value="@financialProduct.Id">
-                                    @financialProduct.DisplayName
-                                </SelectItem>
-                            }
-                        </Select>
-                    </Field>
 
 
                 </Validations>
@@ -300,19 +257,6 @@
                             Model="@EditingFinancialProduct"
                             ValidateOnLoad="false">
                     
-                    <Field>
-                        <FieldLabel>@L["AvailableDistricts"]</FieldLabel>
-                        <Select TValue="TJDistrict" @bind-SelectedValue="@EditingFinancialProduct.AvailableDistricts">
-                            @foreach (var itemValue in Enum.GetValues(typeof(TJDistrict)))
-                            {
-                                <SelectItem TValue="TJDistrict" Value="@((TJDistrict) itemValue)">
-                                    @L[$"Enum:TJDistrict:{Convert.ToInt32(itemValue)}"]
-                                </SelectItem>
-                            }
-                        </Select>
-                    </Field>
-
-
                     <Validation>
                         <Field>
                             <FieldLabel>@L["TimeLimit"] *</FieldLabel>
@@ -341,13 +285,13 @@
                     <Validation>
                         <Field>
                             <FieldLabel>@L["CreditCeiling"] *</FieldLabel>
-                            <NumericEdit TValue="decimal" @bind-Value="@EditingFinancialProduct.CreditCeiling" >
+                            <TextEdit @bind-Text="@EditingFinancialProduct.CreditCeiling" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                             </NumericEdit>
+                            </TextEdit>
                         </Field>
-                     </Validation>
+                    </Validation>
 
 
                     <Validation>
@@ -377,25 +321,25 @@
                     <Validation>
                         <Field>
                             <FieldLabel>@L["APR"] *</FieldLabel>
-                            <NumericEdit TValue="decimal" @bind-Value="@EditingFinancialProduct.APR" >
+                            <TextEdit @bind-Text="@EditingFinancialProduct.APR" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                             </NumericEdit>
+                            </TextEdit>
                         </Field>
-                     </Validation>
+                    </Validation>
 
 
                     <Validation>
                         <Field>
                             <FieldLabel>@L["Rating"]</FieldLabel>
-                            <NumericEdit TValue="int?" @bind-Value="@EditingFinancialProduct.Rating" >
+                            <TextEdit @bind-Text="@EditingFinancialProduct.Rating" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                             </NumericEdit>
+                            </TextEdit>
                         </Field>
-                     </Validation>
+                    </Validation>
 
 
                     <Validation>
@@ -408,20 +352,6 @@
                             </TextEdit>
                         </Field>
                     </Validation>
-
-
-                    <Field>
-                        <FieldLabel>@L["FinancialProduct"]</FieldLabel>
-                        <Select TValue="Guid?" @bind-SelectedValue="@EditingFinancialProduct.FinancialProductId">
-                            <SelectItem TValue="Guid?" Value="null"></SelectItem>
-                            @foreach (var financialProduct in FinancialProductsNullable)
-                            {
-                                <SelectItem TValue="Guid?" Value="@financialProduct.Id">
-                                    @financialProduct.DisplayName
-                                </SelectItem>
-                            }
-                        </Select>
-                    </Field>
 
 
                 </Validations>

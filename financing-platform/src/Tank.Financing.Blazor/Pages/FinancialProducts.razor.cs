@@ -18,7 +18,7 @@ namespace Tank.Financing.Blazor.Pages
     {
         protected List<Volo.Abp.BlazoriseUI.BreadcrumbItem> BreadcrumbItems = new List<Volo.Abp.BlazoriseUI.BreadcrumbItem>();
         protected PageToolbar Toolbar {get;} = new PageToolbar();
-        private IReadOnlyList<FinancialProductWithNavigationPropertiesDto> FinancialProductList { get; set; }
+        private IReadOnlyList<FinancialProductDto> FinancialProductList { get; set; }
         private int PageSize { get; } = LimitedResultRequestDto.DefaultMaxResultCount;
         private int CurrentPage { get; set; } = 1;
         private string CurrentSorting { get; set; }
@@ -34,9 +34,8 @@ namespace Tank.Financing.Blazor.Pages
         private Modal CreateFinancialProductModal { get; set; }
         private Modal EditFinancialProductModal { get; set; }
         private GetFinancialProductsInput Filter { get; set; }
-        private DataGridEntityActionsColumn<FinancialProductWithNavigationPropertiesDto> EntityActionsColumn { get; set; }
-        private IReadOnlyList<LookupDto<Guid?>> FinancialProductsNullable { get; set; } = new List<LookupDto<Guid?>>();
-
+        private DataGridEntityActionsColumn<FinancialProductDto> EntityActionsColumn { get; set; }
+        
         public FinancialProducts()
         {
             NewFinancialProduct = new FinancialProductCreateDto();
@@ -54,9 +53,6 @@ namespace Tank.Financing.Blazor.Pages
             await SetToolbarItemsAsync();
             await SetBreadcrumbItemsAsync();
             await SetPermissionsAsync();
-            await GetNullableFinancialProductLookupAsync();
-
-
         }
 
         protected virtual ValueTask SetBreadcrumbItemsAsync()
@@ -103,7 +99,7 @@ namespace Tank.Financing.Blazor.Pages
             await InvokeAsync(StateHasChanged);
         }
 
-        private async Task OnDataGridReadAsync(DataGridReadDataEventArgs<FinancialProductWithNavigationPropertiesDto> e)
+        private async Task OnDataGridReadAsync(DataGridReadDataEventArgs<FinancialProductDto> e)
         {
             CurrentSorting = e.Columns
                 .Where(c => c.Direction != SortDirection.None)
@@ -129,17 +125,17 @@ namespace Tank.Financing.Blazor.Pages
             await CreateFinancialProductModal.Hide();
         }
 
-        private async Task OpenEditFinancialProductModalAsync(FinancialProductWithNavigationPropertiesDto input)
+        private async Task OpenEditFinancialProductModalAsync(FinancialProductDto input)
         {
-            EditingFinancialProductId = input.FinancialProduct.Id;
-            EditingFinancialProduct = ObjectMapper.Map<FinancialProductDto, FinancialProductUpdateDto>(input.FinancialProduct);
+            EditingFinancialProductId = input.Id;
+            EditingFinancialProduct = ObjectMapper.Map<FinancialProductDto, FinancialProductUpdateDto>(input);
             await EditingFinancialProductValidations.ClearAll();
             await EditFinancialProductModal.Show();
         }
 
-        private async Task DeleteFinancialProductAsync(FinancialProductWithNavigationPropertiesDto input)
+        private async Task DeleteFinancialProductAsync(FinancialProductDto input)
         {
-            await FinancialProductsAppService.DeleteAsync(input.FinancialProduct.Id);
+            await FinancialProductsAppService.DeleteAsync(input.Id);
             await GetFinancialProductsAsync();
         }
 
@@ -185,12 +181,6 @@ namespace Tank.Financing.Blazor.Pages
                 await HandleErrorAsync(ex);
             }
         }
-
-        private async Task GetNullableFinancialProductLookupAsync(string newValue = null)
-        {
-            FinancialProductsNullable = (await FinancialProductsAppService.GetFinancialProductLookupAsync(new LookupRequestDto { Filter = newValue })).Items;
-        }
-
 
     }
 }

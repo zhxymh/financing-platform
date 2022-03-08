@@ -2,7 +2,7 @@ namespace Tank.Financing.FinancialProducts
 {
     public static class FinancialProductConsts
     {
-        private const string DefaultSorting = "{0}AvailableDistricts asc";
+        private const string DefaultSorting = "{0}Name asc,{0}Organization asc,{0}TimeLimit asc,{0}GuaranteeMethod asc,{0}CreditCeiling asc,{0}APR asc,{0}AppliedNumber asc,{0}Rating asc";
 
         public static string GetDefaultSorting(bool withEntityName)
         {

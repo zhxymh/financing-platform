@@ -30,7 +30,6 @@ namespace AElf.Boilerplate.FinancingContract.Launcher
         {
             if (preBlockHeight == 1)
             {
-                var code = ByteString.CopyFrom(GetContractCodes());
                 return new List<Transaction>
                 {
                     await _transactionGeneratingService.GenerateTransactionAsync(
@@ -38,18 +37,31 @@ namespace AElf.Boilerplate.FinancingContract.Launcher
                         new ContractDeploymentInput
                         {
                             Category = KernelConstants.DefaultRunnerCategory,
-                            Code = code
-                        }.ToByteString())
+                            Code = ByteString.CopyFrom(GetFinancingContractCodes())
+                        }.ToByteString()),
+                    await _transactionGeneratingService.GenerateTransactionAsync(
+                        ZeroSmartContractAddressNameProvider.Name, nameof(BasicContractZero.DeploySmartContract),
+                        new ContractDeploymentInput
+                        {
+                            Category = KernelConstants.DefaultRunnerCategory,
+                            Code = ByteString.CopyFrom(GetDelegatorContractCodes())
+                        }.ToByteString()),
                 };
             }
 
             return new List<Transaction>();
         }
 
-        private byte[] GetContractCodes()
+        private byte[] GetFinancingContractCodes()
         {
             return ContractsDeployer.GetContractCodes<DeployContractsSystemTransactionGenerator>(_contractOptions
-                .GenesisContractDir)["Tank.Contracts.FinancingContract"];
+                .GenesisContractDir)["Tank.Contracts.Financing"];
+        }
+        
+        private byte[] GetDelegatorContractCodes()
+        {
+            return ContractsDeployer.GetContractCodes<DeployContractsSystemTransactionGenerator>(_contractOptions
+                .GenesisContractDir)["AElf.Contracts.Delegator"];
         }
     }
 }

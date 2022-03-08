@@ -1,4 +1,7 @@
-﻿using Volo.Abp.Modularity;
+﻿using IdentityServer4.Models;
+using Shouldly;
+using Volo.Abp.Modularity;
+using Xunit;
 
 namespace Tank.Financing;
 
@@ -8,5 +11,10 @@ namespace Tank.Financing;
     )]
 public class FinancingApplicationTestModule : AbpModule
 {
-
+    [Fact]
+    public void Test()
+    {
+        var foo = "1q2w3e*".Sha256();
+        foo.ShouldBeEmpty();
+    }
 }

@@ -1,4 +1,6 @@
-﻿using Tank.Financing.Permissions;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
+using Tank.Financing.Permissions;
 using System.Threading.Tasks;
 using Tank.Financing.Localization;
 using Volo.Abp.AuditLogging.Blazor.Menus;
@@ -44,9 +46,12 @@ public class FinancingMenuContributor : IMenuContributor
                 FinancingMenus.FinancialProducts,
                 l["Menu:FinancialProducts"],
                 url: "/financial-products",
+                icon: "fas fa-bank",
                 order: 2,
                 requiredPermissionName: FinancingPermissions.FinancialProducts.Default)
         );
+
+        // fas fa-handshake-o
 
         context.Menu.SetSubItemOrder(SaasHostMenus.GroupName, 2);
         //CMS
@@ -74,6 +79,32 @@ public class FinancingMenuContributor : IMenuContributor
         //Administration->Settings
         administration.SetSubItemOrder(SettingManagementMenus.GroupName, 6);
 
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                FinancingMenus.Applies,
+                l["Menu:Applies"],
+                url: "/applies",
+                icon: "fa fa-file-alt",
+                requiredPermissionName: FinancingPermissions.Applies.Default)
+        );
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                FinancingMenus.Enterprises,
+                l["Menu:Enterprises"],
+                url: "/enterprises",
+                icon: "fa fa-file-alt",
+                requiredPermissionName: FinancingPermissions.Enterprises.Default)
+        );
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                FinancingMenus.EnterpriseDetails,
+                l["Menu:EnterpriseDetails"],
+                url: "/enterprise-details",
+                icon: "fa fa-file-alt",
+                requiredPermissionName: FinancingPermissions.EnterpriseDetails.Default)
+        );
         return Task.CompletedTask;
     }
 }

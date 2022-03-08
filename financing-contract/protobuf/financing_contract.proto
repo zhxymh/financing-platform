@@ -172,22 +172,22 @@ message EnterpriseInfo {
 message EnterpriseBasicInfo {
     string name = 1;
     string artificial_person = 2;
-    google.protobuf.Timestamp established_time = 3;
-    google.protobuf.Timestamp due_time = 4;
+    string established_time = 3;
+    string due_time = 4;
     string credit_code = 5;
     aelf.Hash artificial_person_id = 6;
     string registered_capital = 7;
-    string phone_number = 8;
+    aelf.Hash phone_number = 8;
     repeated aelf.Hash photo_hashes = 9;
 }
 
 message EnterpriseFurtherInfo {
     string name = 1;
-    string total_asserts = 2;
+    string total_assets = 2;
     string income = 3;
-    int32 enterprise_type = 4;
+    string enterprise_type = 4;
     int32 staff_number = 5;
-    int32 industry = 6;
+    string industry = 6;
     string location = 7;
     string registered_address = 8;
     string business_address = 9;

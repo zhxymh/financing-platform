@@ -21,22 +21,28 @@ namespace Tank.Financing.Migrations
                 .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Tank.Financing.FinancialProducts.FinancialProduct", b =>
+            modelBuilder.Entity("Tank.Financing.Applies.Apply", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("char(36)");
 
-                    b.Property<decimal>("APR")
-                        .HasColumnType("decimal(65,30)")
-                        .HasColumnName("APR");
+                    b.Property<string>("APY")
+                        .HasColumnType("longtext")
+                        .HasColumnName("APY");
 
-                    b.Property<int?>("AppliedNumber")
-                        .HasColumnType("int")
-                        .HasColumnName("AppliedNumber");
+                    b.Property<string>("Allowance")
+                        .HasColumnType("longtext")
+                        .HasColumnName("Allowance");
 
-                    b.Property<int>("AvailableDistricts")
-                        .HasColumnType("int")
-                        .HasColumnName("AvailableDistricts");
+                    b.Property<string>("ApplyStatus")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ApplyStatus");
+
+                    b.Property<string>("ApplyTime")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ApplyTime");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -44,20 +50,347 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("varchar(40)")
                         .HasColumnName("ConcurrencyStamp");
 
-                    b.Property<decimal>("CreditCeiling")
-                        .HasColumnType("decimal(65,30)")
-                        .HasColumnName("CreditCeiling");
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("EnterpriceName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EnterpriceName");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("longtext")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<Guid?>("FinancialProductId")
+                    b.Property<string>("GuaranteeMethod")
+                        .HasColumnType("longtext")
+                        .HasColumnName("GuaranteeMethod");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Organization")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Organization");
+
+                    b.Property<string>("PassedTime")
+                        .HasColumnType("longtext")
+                        .HasColumnName("PassedTime");
+
+                    b.Property<string>("Period")
+                        .HasColumnType("longtext")
+                        .HasColumnName("Period");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ProductName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppApplies", (string)null);
+                });
+
+            modelBuilder.Entity("Tank.Financing.EnterpriseDetails.EnterpriseDetail", b =>
+                {
+                    b.Property<Guid>("Id")
                         .HasColumnType("char(36)");
+
+                    b.Property<string>("BusinessAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("BusinessAddress");
+
+                    b.Property<string>("BusinessScope")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("BusinessScope");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Description");
+
+                    b.Property<string>("EnterpriseName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EnterpriseName");
+
+                    b.Property<string>("EnterpriseType")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EnterpriseType");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("Income")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Income");
+
+                    b.Property<string>("Industry")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Industry");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Location");
+
+                    b.Property<string>("RegisteredAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("RegisteredAddress");
+
+                    b.Property<int>("StaffNumber")
+                        .HasColumnType("int")
+                        .HasColumnName("StaffNumber");
+
+                    b.Property<string>("TotalAssets")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("TotalAssets");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppEnterpriseDetails", (string)null);
+                });
+
+            modelBuilder.Entity("Tank.Financing.Enterprises.Enterprise", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ArtificialPerson")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ArtificialPerson");
+
+                    b.Property<string>("ArtificialPersonId")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ArtificialPersonId");
+
+                    b.Property<string>("CertPhotoPath")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("CertPhotoPath");
+
+                    b.Property<string>("CertificateStatus")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("CertificateStatus");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("CreditCode")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("CreditCode");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("DueTime")
+                        .HasColumnType("longtext")
+                        .HasColumnName("DueTime");
+
+                    b.Property<string>("EnterpriseName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EnterpriseName");
+
+                    b.Property<string>("EstablishedTime")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EstablishedTime");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("IdPhotoPath1")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("IdPhotoPath1");
+
+                    b.Property<string>("IdPhotoPath2")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("IdPhotoPath2");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("PhoneNumber");
+
+                    b.Property<string>("RegisteredCapital")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("RegisteredCapital");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppEnterprises", (string)null);
+                });
+
+            modelBuilder.Entity("Tank.Financing.FinancialProducts.FinancialProduct", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("APR")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("APR");
+
+                    b.Property<int?>("AppliedNumber")
+                        .HasColumnType("int")
+                        .HasColumnName("AppliedNumber");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("CreditCeiling")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("CreditCeiling");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
 
                     b.Property<int>("GuaranteeMethod")
                         .HasColumnType("int")
                         .HasColumnName("GuaranteeMethod");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -70,8 +403,8 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("varchar(100)")
                         .HasColumnName("Organization");
 
-                    b.Property<int?>("Rating")
-                        .HasColumnType("int")
+                    b.Property<string>("Rating")
+                        .HasColumnType("longtext")
                         .HasColumnName("Rating");
 
                     b.Property<int>("TimeLimit")
@@ -80,8 +413,6 @@ namespace Tank.Financing.Migrations
                         .HasColumnName("TimeLimit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FinancialProductId");
 
                     b.ToTable("AppFinancialProducts", (string)null);
                 });
@@ -3376,13 +3707,6 @@ namespace Tank.Financing.Migrations
                     b.HasKey("TenantId", "Name");
 
                     b.ToTable("SaasTenantConnectionStrings", (string)null);
-                });
-
-            modelBuilder.Entity("Tank.Financing.FinancialProducts.FinancialProduct", b =>
-                {
-                    b.HasOne("Tank.Financing.FinancialProducts.FinancialProduct", null)
-                        .WithMany()
-                        .HasForeignKey("FinancialProductId");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>

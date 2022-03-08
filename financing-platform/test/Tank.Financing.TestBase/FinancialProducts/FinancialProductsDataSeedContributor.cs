@@ -19,30 +19,28 @@ namespace Tank.Financing.FinancialProducts
         {
             await _financialProductRepository.InsertAsync(new FinancialProduct
             (
-                id: Guid.Parse("72443cec-3247-4744-8aa2-99df9252b889"),
-                availableDistricts: default,
-                timeLimit: 1948,
+                id: Guid.Parse("d9266c7b-4663-4c1a-bbc4-f30fb15bc60a"),
+                timeLimit: 2865,
                 guaranteeMethod: default,
-                creditCeiling: 1779863748,
-                organization: "8a82c46b1eab41909eef660a0a26d8cf1da1e778e2c141d1ac4b533fc4f7544dabe43d884e5e488786daeeb17d0cb246bdff",
-                appliedNumber: 698471889,
-                aPR: 123444071,
-                rating: 845255812,
-                name: "1ab1bbd47b124b439726d035b357e23a23ea12c001ca4e66a015927791308d86"
+                creditCeiling: "509bab9ae30343959c95436d48cf16f5d1d",
+                organization: "1c82860d7a564998b0414a381c352208a3a0c6a0bfca46e8a65e29699f551c3281f5ed5044d94d788665c475b34b69300e21",
+                appliedNumber: 583373227,
+                aPR: "3e3e8a80badc45c4bd2a3b2ec9cd9ff29c2d3feffe6248a8bd0a468e553044a60412952a5f574992b50e762fb595",
+                rating: "de22345c858c4e2393fa7af009b5a52d037d7f33d46c41f88bd2e925ad2935c549299dff",
+                name: "3a04986c531b418997a12c892eb"
             ));
 
             await _financialProductRepository.InsertAsync(new FinancialProduct
             (
-                id: Guid.Parse("8d849af2-4a89-41f1-9f28-45677c193862"),
-                availableDistricts: default,
-                timeLimit: 2485,
+                id: Guid.Parse("5b5cef93-3657-46b2-8791-fa1502d032c0"),
+                timeLimit: 1777,
                 guaranteeMethod: default,
-                creditCeiling: 1090984761,
-                organization: "f7c14121d5884938af05e3a5eb5b24f9aad833c05d824a7e8148985fbbe2851ba71551c7d20e4ff6872cb7e3487ad9f776a6",
-                appliedNumber: 1675076591,
-                aPR: 110912364,
-                rating: 1967417906,
-                name: "edf9896b621e455ca6832b3f57471b8c67bd4aa930514678b311df79fc85906ddde12f4898c745"
+                creditCeiling: "b7a6784734ab456bbfadd7a905c51fb709d4a8418a0d4778af66453cc2b23b",
+                organization: "5ec71e97db1b4f7b8220888949d008567b2bf19f71b04f218dbc299c7fdf8db3442b6c6972144975a12ed51459d2231e8e47",
+                appliedNumber: 449753533,
+                aPR: "c8134975ec1f4298bf144f01506745b8ae9159ca874443379567b878e80a08eae5b5c4082fbe456bb1366520f676064",
+                rating: "cbed5f3f4fe6",
+                name: "8102b014f7844841b9e83dcdf6996554fc0a43ae"
             ));
         }
     }
