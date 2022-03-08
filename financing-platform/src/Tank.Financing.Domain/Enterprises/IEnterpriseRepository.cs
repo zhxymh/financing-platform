@@ -1,3 +1,4 @@
+using Tank.Financing;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -21,7 +22,7 @@ namespace Tank.Financing.Enterprises
             string certPhotoPath = null,
             string idPhotoPath1 = null,
             string idPhotoPath2 = null,
-            string certificateStatus = null,
+            CertificateStatus? certificateStatus = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -41,7 +42,7 @@ namespace Tank.Financing.Enterprises
             string certPhotoPath = null,
             string idPhotoPath1 = null,
             string idPhotoPath2 = null,
-            string certificateStatus = null,
+            CertificateStatus? certificateStatus = null,
             CancellationToken cancellationToken = default);
     }
 }

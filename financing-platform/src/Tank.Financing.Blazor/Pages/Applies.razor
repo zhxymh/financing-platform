@@ -14,6 +14,10 @@
 @inherits FinancingComponentBase
 @inject IAppliesAppService AppliesAppService
 @inject IUiMessageService UiMessageService
+@using Tank.Financing
+
+@using Tank.Financing
+
 
 @* ************************* PAGE HEADER ************************* *@
 <PageHeader Title="@L["Applies"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
@@ -101,12 +105,20 @@
               <DataGridColumn TItem="ApplyDto"
                       Field="ApplyStatus"
                       Caption="@L["ApplyStatus"]">
+                    <DisplayTemplate>
+                        @L[$"Enum:ApplyStatus:{Convert.ToInt32(context.ApplyStatus)}"]
+                    </DisplayTemplate>
               </DataGridColumn>
+
 
               <DataGridColumn TItem="ApplyDto"
                       Field="GuaranteeMethod"
                       Caption="@L["GuaranteeMethod"]">
+                    <DisplayTemplate>
+                        @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(context.GuaranteeMethod)}"]
+                    </DisplayTemplate>
               </DataGridColumn>
+
 
               <DataGridColumn TItem="ApplyDto"
                       Field="ApplyTime"
@@ -209,28 +221,30 @@
                     </Validation>
 
 
-                    <Validation>
-                        <Field>
-                            <FieldLabel>@L["ApplyStatus"] *</FieldLabel>
-                            <TextEdit @bind-Text="@NewApply.ApplyStatus" >
-                                <Feedback>
-                                    <ValidationError />
-                                </Feedback>
-                            </TextEdit>
-                        </Field>
-                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["ApplyStatus"]</FieldLabel>
+                        <Select TValue="ApplyStatus" @bind-SelectedValue="@NewApply.ApplyStatus">
+                            @foreach (var itemValue in Enum.GetValues(typeof(ApplyStatus)))
+                            {
+                                <SelectItem TValue="ApplyStatus" Value="@((ApplyStatus) itemValue)">
+                                    @L[$"Enum:ApplyStatus:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
 
 
-                    <Validation>
-                        <Field>
-                            <FieldLabel>@L["GuaranteeMethod"]</FieldLabel>
-                            <TextEdit @bind-Text="@NewApply.GuaranteeMethod" >
-                                <Feedback>
-                                    <ValidationError />
-                                </Feedback>
-                            </TextEdit>
-                        </Field>
-                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["GuaranteeMethod"]</FieldLabel>
+                        <Select TValue="GuaranteeMethod" @bind-SelectedValue="@NewApply.GuaranteeMethod">
+                            @foreach (var itemValue in Enum.GetValues(typeof(GuaranteeMethod)))
+                            {
+                                <SelectItem TValue="GuaranteeMethod" Value="@((GuaranteeMethod) itemValue)">
+                                    @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
 
 
                     <Validation>
@@ -356,28 +370,30 @@
                     </Validation>
 
 
-                    <Validation>
-                        <Field>
-                            <FieldLabel>@L["ApplyStatus"] *</FieldLabel>
-                            <TextEdit @bind-Text="@EditingApply.ApplyStatus" >
-                                <Feedback>
-                                    <ValidationError />
-                                </Feedback>
-                            </TextEdit>
-                        </Field>
-                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["ApplyStatus"]</FieldLabel>
+                        <Select TValue="ApplyStatus" @bind-SelectedValue="@EditingApply.ApplyStatus">
+                            @foreach (var itemValue in Enum.GetValues(typeof(ApplyStatus)))
+                            {
+                                <SelectItem TValue="ApplyStatus" Value="@((ApplyStatus) itemValue)">
+                                    @L[$"Enum:ApplyStatus:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
 
 
-                    <Validation>
-                        <Field>
-                            <FieldLabel>@L["GuaranteeMethod"]</FieldLabel>
-                            <TextEdit @bind-Text="@EditingApply.GuaranteeMethod" >
-                                <Feedback>
-                                    <ValidationError />
-                                </Feedback>
-                            </TextEdit>
-                        </Field>
-                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["GuaranteeMethod"]</FieldLabel>
+                        <Select TValue="GuaranteeMethod" @bind-SelectedValue="@EditingApply.GuaranteeMethod">
+                            @foreach (var itemValue in Enum.GetValues(typeof(GuaranteeMethod)))
+                            {
+                                <SelectItem TValue="GuaranteeMethod" Value="@((GuaranteeMethod) itemValue)">
+                                    @L[$"Enum:GuaranteeMethod:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
 
 
                     <Validation>

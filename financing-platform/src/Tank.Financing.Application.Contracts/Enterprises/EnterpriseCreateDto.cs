@@ -1,3 +1,4 @@
+using Tank.Financing;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -27,6 +28,6 @@ namespace Tank.Financing.Enterprises
         [Required]
         public string IdPhotoPath2 { get; set; }
         [Required]
-        public string CertificateStatus { get; set; }
+        public CertificateStatus CertificateStatus { get; set; } = ((CertificateStatus[])Enum.GetValues(typeof(CertificateStatus)))[0];
     }
 }

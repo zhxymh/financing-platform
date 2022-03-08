@@ -1,3 +1,4 @@
+using Tank.Financing;
 using System;
 using Volo.Abp.Application.Dtos;
 
@@ -16,6 +17,6 @@ namespace Tank.Financing.Enterprises
         public string CertPhotoPath { get; set; }
         public string IdPhotoPath1 { get; set; }
         public string IdPhotoPath2 { get; set; }
-        public string CertificateStatus { get; set; }
+        public CertificateStatus CertificateStatus { get; set; }
     }
 }

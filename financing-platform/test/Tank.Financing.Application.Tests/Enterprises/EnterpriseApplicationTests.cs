@@ -27,19 +27,19 @@ namespace Tank.Financing.Enterprises
             // Assert
             result.TotalCount.ShouldBe(2);
             result.Items.Count.ShouldBe(2);
-            result.Items.Any(x => x.Id == Guid.Parse("4c390729-1064-4b40-92b0-8058ffdff0e0")).ShouldBe(true);
-            result.Items.Any(x => x.Id == Guid.Parse("3edecb90-a45c-465b-937d-3cb7e96803e9")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("03df4b2d-ccd0-40b8-8b5a-6dbb93ba3705")).ShouldBe(true);
         }
 
         [Fact]
         public async Task GetAsync()
         {
             // Act
-            var result = await _enterprisesAppService.GetAsync(Guid.Parse("4c390729-1064-4b40-92b0-8058ffdff0e0"));
+            var result = await _enterprisesAppService.GetAsync(Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d"));
 
             // Assert
             result.ShouldNotBeNull();
-            result.Id.ShouldBe(Guid.Parse("4c390729-1064-4b40-92b0-8058ffdff0e0"));
+            result.Id.ShouldBe(Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d"));
         }
 
         [Fact]
@@ -48,18 +48,18 @@ namespace Tank.Financing.Enterprises
             // Arrange
             var input = new EnterpriseCreateDto
             {
-                EnterpriseName = "7ce854ae01bc4d9480b98781d3bfa1",
-                ArtificialPerson = "91e912c01c334fd29d617eff133d12a7d34a5",
-                EstablishedTime = "6b1ecf2417fd4dd294e581462c6e847392fc8de94132486b92dbc478198f0ee89f6615dc46bd40868c1e0fb9",
-                DueTime = "cd3bfa0fd91b483fadfea5f231c00778a388a175998946528d6d156fafe86d6a5c53cd61cfdf4c348043",
-                CreditCode = "2028e7c893934261a20c3036bd0e0a3371a85ea1892b4a8fa3e34bde9d2757156e1",
-                ArtificialPersonId = "2aa0c29b752c438b803ffa1edee77c360f87679a43f4413c80a43e65",
-                RegisteredCapital = "0df244cde8704173bbc001",
-                PhoneNumber = "cbeb9d92f2f3456287168ff58e71ea069e41aa471f0a4442878c98ac7",
-                CertPhotoPath = "5e2dfb5f53c84dd392",
-                IdPhotoPath1 = "49c3621b42f",
-                IdPhotoPath2 = "f3e44ef21b5842e69672035fe5eece4e9bf2aa0bf775434ebe97c9d3b3d8dfc7dcac7dc46c974b4d82495c319c",
-                CertificateStatus = "6260ea26b57e44"
+                EnterpriseName = "0880389ee4a9435091",
+                ArtificialPerson = "3673aa836f194d27b32",
+                EstablishedTime = "f4b960cbdfd444708186",
+                DueTime = "061b9a81f27d447899eb9e4f22ad96bd1f2a5fdb98cd4f40851a660cb82d0a94fb7d636676d644359cb527dddeb",
+                CreditCode = "a2c4202e9c0f43299f30b3bfd470b03589be95207a75437ab15d4809b789863a4c3cffbc48e647e1b2f6ac",
+                ArtificialPersonId = "7e49bef74ff24dfd9772c3",
+                RegisteredCapital = "1b8900b897",
+                PhoneNumber = "b8de9d61b9f94810af44",
+                CertPhotoPath = "1cbbe2f9c73a49bfb435adbd96c791412a0749fdf7f5454491ba9a672b534895020881ec6fbf458cae23ee05e675aceb016",
+                IdPhotoPath1 = "e4ef5c6311e840c4a25b3299046dc9a8db6b59b0bb884f5ca9ee233ca2b",
+                IdPhotoPath2 = "24f05ded3b4f421aa29f8e710ca55addad7652588d714d29bb48d067ff0d93d0d03bde8aab",
+                CertificateStatus = default
             };
 
             // Act
@@ -69,18 +69,18 @@ namespace Tank.Financing.Enterprises
             var result = await _enterpriseRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.EnterpriseName.ShouldBe("7ce854ae01bc4d9480b98781d3bfa1");
-            result.ArtificialPerson.ShouldBe("91e912c01c334fd29d617eff133d12a7d34a5");
-            result.EstablishedTime.ShouldBe("6b1ecf2417fd4dd294e581462c6e847392fc8de94132486b92dbc478198f0ee89f6615dc46bd40868c1e0fb9");
-            result.DueTime.ShouldBe("cd3bfa0fd91b483fadfea5f231c00778a388a175998946528d6d156fafe86d6a5c53cd61cfdf4c348043");
-            result.CreditCode.ShouldBe("2028e7c893934261a20c3036bd0e0a3371a85ea1892b4a8fa3e34bde9d2757156e1");
-            result.ArtificialPersonId.ShouldBe("2aa0c29b752c438b803ffa1edee77c360f87679a43f4413c80a43e65");
-            result.RegisteredCapital.ShouldBe("0df244cde8704173bbc001");
-            result.PhoneNumber.ShouldBe("cbeb9d92f2f3456287168ff58e71ea069e41aa471f0a4442878c98ac7");
-            result.CertPhotoPath.ShouldBe("5e2dfb5f53c84dd392");
-            result.IdPhotoPath1.ShouldBe("49c3621b42f");
-            result.IdPhotoPath2.ShouldBe("f3e44ef21b5842e69672035fe5eece4e9bf2aa0bf775434ebe97c9d3b3d8dfc7dcac7dc46c974b4d82495c319c");
-            result.CertificateStatus.ShouldBe("6260ea26b57e44");
+            result.EnterpriseName.ShouldBe("0880389ee4a9435091");
+            result.ArtificialPerson.ShouldBe("3673aa836f194d27b32");
+            result.EstablishedTime.ShouldBe("f4b960cbdfd444708186");
+            result.DueTime.ShouldBe("061b9a81f27d447899eb9e4f22ad96bd1f2a5fdb98cd4f40851a660cb82d0a94fb7d636676d644359cb527dddeb");
+            result.CreditCode.ShouldBe("a2c4202e9c0f43299f30b3bfd470b03589be95207a75437ab15d4809b789863a4c3cffbc48e647e1b2f6ac");
+            result.ArtificialPersonId.ShouldBe("7e49bef74ff24dfd9772c3");
+            result.RegisteredCapital.ShouldBe("1b8900b897");
+            result.PhoneNumber.ShouldBe("b8de9d61b9f94810af44");
+            result.CertPhotoPath.ShouldBe("1cbbe2f9c73a49bfb435adbd96c791412a0749fdf7f5454491ba9a672b534895020881ec6fbf458cae23ee05e675aceb016");
+            result.IdPhotoPath1.ShouldBe("e4ef5c6311e840c4a25b3299046dc9a8db6b59b0bb884f5ca9ee233ca2b");
+            result.IdPhotoPath2.ShouldBe("24f05ded3b4f421aa29f8e710ca55addad7652588d714d29bb48d067ff0d93d0d03bde8aab");
+            result.CertificateStatus.ShouldBe(default);
         }
 
         [Fact]
@@ -89,49 +89,49 @@ namespace Tank.Financing.Enterprises
             // Arrange
             var input = new EnterpriseUpdateDto()
             {
-                EnterpriseName = "7fcfe3e24402432d83f5c26c38973e6e55f66af1b9f441ed96e3686909c97",
-                ArtificialPerson = "9ac3a03ae352486cae3680241b5d36e678df39e9af2a41668bda2f07ea4067ef88808d",
-                EstablishedTime = "aef73a779a10446abf39",
-                DueTime = "e320306f80fc40559fde3b3fcb234a3140d7c0714aae49ca8fa43e6c61f6ce7d0dfd8e",
-                CreditCode = "21c603af1bac462c8f896967c1405f1218531a73602840c7a555d43ac9892b59703c091ca6d",
-                ArtificialPersonId = "cf5a860ff6a14bb7",
-                RegisteredCapital = "099a8899b8a84ea995a58efc566469f81e49c8dcab79468db8df06432",
-                PhoneNumber = "f82b452f6cd948599137572ec77837a88f97b92cadb6402090ed65df0feb84b8829569a90b5348b6a7f65130",
-                CertPhotoPath = "9f6fb676c14643299f652234fceb2a09fed47c185f0043708279898bf6349a45d710f1ef575646d",
-                IdPhotoPath1 = "5b401686722e4a26b2b0fea22bc1c35c23aeb9c7d9a54a93b7dd8a426e31ef4cc2624b48d2b14a729",
-                IdPhotoPath2 = "ffaf01b044a3414691149be3da2e282ffc1696953",
-                CertificateStatus = "52ae318f78eb4baa9bd62f900c1d740a81ce20e82a2140dcac2c014b1da742cc51f24f6f8f774"
+                EnterpriseName = "89fc4e1835e944cf9e18db55930838a5e8fba7f399204432952b647f60",
+                ArtificialPerson = "e4ef8b7b3e7742d38587d737ca96c6a534ec7b9e48744",
+                EstablishedTime = "b611922329334f21828a26e0",
+                DueTime = "abf334d7c",
+                CreditCode = "341419c6216a44bda450fd0dd80f6c0e5598fb916f5a4148a85ee31fc6ea7ffab8e9b5ff4",
+                ArtificialPersonId = "964195edde1548d4a66a132e20314b12cc47de6bf0cf4f15b4e592ba16a9b50cf02c8ecc5c8b4857b6a9100b05d7e0",
+                RegisteredCapital = "8fbcd55a7fe14ab1b4da37126268cb554998a09815",
+                PhoneNumber = "f5a81cbc170a418fb19853952b998b84a655473b2d074c459741f69b890a057edb12ffd4d25e427",
+                CertPhotoPath = "1e072bfcb73e43ebad9fa9133",
+                IdPhotoPath1 = "4c894f23601f46d4894de913e164fac1196bc326ae864a04afa0475fc664cc5728",
+                IdPhotoPath2 = "5591227422514cab80e8fc8eabacc34b05ee795ca0f346ccb98937ac",
+                CertificateStatus = default
             };
 
             // Act
-            var serviceResult = await _enterprisesAppService.UpdateAsync(Guid.Parse("4c390729-1064-4b40-92b0-8058ffdff0e0"), input);
+            var serviceResult = await _enterprisesAppService.UpdateAsync(Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d"), input);
 
             // Assert
             var result = await _enterpriseRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.EnterpriseName.ShouldBe("7fcfe3e24402432d83f5c26c38973e6e55f66af1b9f441ed96e3686909c97");
-            result.ArtificialPerson.ShouldBe("9ac3a03ae352486cae3680241b5d36e678df39e9af2a41668bda2f07ea4067ef88808d");
-            result.EstablishedTime.ShouldBe("aef73a779a10446abf39");
-            result.DueTime.ShouldBe("e320306f80fc40559fde3b3fcb234a3140d7c0714aae49ca8fa43e6c61f6ce7d0dfd8e");
-            result.CreditCode.ShouldBe("21c603af1bac462c8f896967c1405f1218531a73602840c7a555d43ac9892b59703c091ca6d");
-            result.ArtificialPersonId.ShouldBe("cf5a860ff6a14bb7");
-            result.RegisteredCapital.ShouldBe("099a8899b8a84ea995a58efc566469f81e49c8dcab79468db8df06432");
-            result.PhoneNumber.ShouldBe("f82b452f6cd948599137572ec77837a88f97b92cadb6402090ed65df0feb84b8829569a90b5348b6a7f65130");
-            result.CertPhotoPath.ShouldBe("9f6fb676c14643299f652234fceb2a09fed47c185f0043708279898bf6349a45d710f1ef575646d");
-            result.IdPhotoPath1.ShouldBe("5b401686722e4a26b2b0fea22bc1c35c23aeb9c7d9a54a93b7dd8a426e31ef4cc2624b48d2b14a729");
-            result.IdPhotoPath2.ShouldBe("ffaf01b044a3414691149be3da2e282ffc1696953");
-            result.CertificateStatus.ShouldBe("52ae318f78eb4baa9bd62f900c1d740a81ce20e82a2140dcac2c014b1da742cc51f24f6f8f774");
+            result.EnterpriseName.ShouldBe("89fc4e1835e944cf9e18db55930838a5e8fba7f399204432952b647f60");
+            result.ArtificialPerson.ShouldBe("e4ef8b7b3e7742d38587d737ca96c6a534ec7b9e48744");
+            result.EstablishedTime.ShouldBe("b611922329334f21828a26e0");
+            result.DueTime.ShouldBe("abf334d7c");
+            result.CreditCode.ShouldBe("341419c6216a44bda450fd0dd80f6c0e5598fb916f5a4148a85ee31fc6ea7ffab8e9b5ff4");
+            result.ArtificialPersonId.ShouldBe("964195edde1548d4a66a132e20314b12cc47de6bf0cf4f15b4e592ba16a9b50cf02c8ecc5c8b4857b6a9100b05d7e0");
+            result.RegisteredCapital.ShouldBe("8fbcd55a7fe14ab1b4da37126268cb554998a09815");
+            result.PhoneNumber.ShouldBe("f5a81cbc170a418fb19853952b998b84a655473b2d074c459741f69b890a057edb12ffd4d25e427");
+            result.CertPhotoPath.ShouldBe("1e072bfcb73e43ebad9fa9133");
+            result.IdPhotoPath1.ShouldBe("4c894f23601f46d4894de913e164fac1196bc326ae864a04afa0475fc664cc5728");
+            result.IdPhotoPath2.ShouldBe("5591227422514cab80e8fc8eabacc34b05ee795ca0f346ccb98937ac");
+            result.CertificateStatus.ShouldBe(default);
         }
 
         [Fact]
         public async Task DeleteAsync()
         {
             // Act
-            await _enterprisesAppService.DeleteAsync(Guid.Parse("4c390729-1064-4b40-92b0-8058ffdff0e0"));
+            await _enterprisesAppService.DeleteAsync(Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d"));
 
             // Assert
-            var result = await _enterpriseRepository.FindAsync(c => c.Id == Guid.Parse("4c390729-1064-4b40-92b0-8058ffdff0e0"));
+            var result = await _enterpriseRepository.FindAsync(c => c.Id == Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d"));
 
             result.ShouldBeNull();
         }

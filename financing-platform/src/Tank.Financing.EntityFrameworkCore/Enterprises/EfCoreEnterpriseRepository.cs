@@ -1,3 +1,4 @@
+using Tank.Financing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace Tank.Financing.Enterprises
             string certPhotoPath = null,
             string idPhotoPath1 = null,
             string idPhotoPath2 = null,
-            string certificateStatus = null,
+            CertificateStatus? certificateStatus = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -56,7 +57,7 @@ namespace Tank.Financing.Enterprises
             string certPhotoPath = null,
             string idPhotoPath1 = null,
             string idPhotoPath2 = null,
-            string certificateStatus = null,
+            CertificateStatus? certificateStatus = null,
             CancellationToken cancellationToken = default)
         {
             var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, artificialPerson, establishedTime, dueTime, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus);
@@ -77,10 +78,10 @@ namespace Tank.Financing.Enterprises
             string certPhotoPath = null,
             string idPhotoPath1 = null,
             string idPhotoPath2 = null,
-            string certificateStatus = null)
+            CertificateStatus? certificateStatus = null)
         {
             return query
-                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.ArtificialPerson.Contains(filterText) || e.EstablishedTime.Contains(filterText) || e.DueTime.Contains(filterText) || e.CreditCode.Contains(filterText) || e.ArtificialPersonId.Contains(filterText) || e.RegisteredCapital.Contains(filterText) || e.PhoneNumber.Contains(filterText) || e.CertPhotoPath.Contains(filterText) || e.IdPhotoPath1.Contains(filterText) || e.IdPhotoPath2.Contains(filterText) || e.CertificateStatus.Contains(filterText))
+                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.ArtificialPerson.Contains(filterText) || e.EstablishedTime.Contains(filterText) || e.DueTime.Contains(filterText) || e.CreditCode.Contains(filterText) || e.ArtificialPersonId.Contains(filterText) || e.RegisteredCapital.Contains(filterText) || e.PhoneNumber.Contains(filterText) || e.CertPhotoPath.Contains(filterText) || e.IdPhotoPath1.Contains(filterText) || e.IdPhotoPath2.Contains(filterText))
                     .WhereIf(!string.IsNullOrWhiteSpace(enterpriseName), e => e.EnterpriseName.Contains(enterpriseName))
                     .WhereIf(!string.IsNullOrWhiteSpace(artificialPerson), e => e.ArtificialPerson.Contains(artificialPerson))
                     .WhereIf(!string.IsNullOrWhiteSpace(establishedTime), e => e.EstablishedTime.Contains(establishedTime))
@@ -92,7 +93,7 @@ namespace Tank.Financing.Enterprises
                     .WhereIf(!string.IsNullOrWhiteSpace(certPhotoPath), e => e.CertPhotoPath.Contains(certPhotoPath))
                     .WhereIf(!string.IsNullOrWhiteSpace(idPhotoPath1), e => e.IdPhotoPath1.Contains(idPhotoPath1))
                     .WhereIf(!string.IsNullOrWhiteSpace(idPhotoPath2), e => e.IdPhotoPath2.Contains(idPhotoPath2))
-                    .WhereIf(!string.IsNullOrWhiteSpace(certificateStatus), e => e.CertificateStatus.Contains(certificateStatus));
+                    .WhereIf(certificateStatus.HasValue, e => e.CertificateStatus == certificateStatus);
         }
     }
 }

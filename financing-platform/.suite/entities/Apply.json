@@ -125,10 +125,10 @@
     {
       "Id": "80cb2027-a509-4cef-843b-a1b71cc7a10c",
       "Name": "ApplyStatus",
-      "Type": "string",
-      "EnumType": "",
-      "EnumNamespace": "",
-      "EnumAngularImport": "shared/enums",
+      "Type": "enum",
+      "EnumType": "ApplyStatus",
+      "EnumNamespace": "Tank.Financing",
+      "EnumAngularImport": "shared/enums/apply-status",
       "IsNullable": false,
       "IsRequired": true,
       "MinLength": null,
@@ -137,16 +137,21 @@
       "SortType": 0,
       "Regex": "",
       "EmailValidation": false,
-      "EnumValues": null,
+      "EnumValues": {
+        "待处理": null,
+        "线上初审通过": null,
+        "线下审核通过": null,
+        "完成": null
+      },
       "IsSelected": true
     },
     {
       "Id": "ae9a555a-021b-4c16-99d5-a2389b4fac75",
       "Name": "GuaranteeMethod",
-      "Type": "string",
-      "EnumType": "",
-      "EnumNamespace": "",
-      "EnumAngularImport": "shared/enums",
+      "Type": "enum",
+      "EnumType": "GuaranteeMethod",
+      "EnumNamespace": "Tank.Financing",
+      "EnumAngularImport": "shared/enums/guarantee-method",
       "IsNullable": false,
       "IsRequired": false,
       "MinLength": null,
@@ -155,7 +160,11 @@
       "SortType": 0,
       "Regex": "",
       "EmailValidation": false,
-      "EnumValues": null,
+      "EnumValues": {
+        "信用": null,
+        "抵押": null,
+        "政策性融资": null
+      },
       "IsSelected": true
     },
     {

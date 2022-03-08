@@ -150,20 +150,45 @@ public class FinancingDbContext :
         }
         if (builder.IsHostDatabase())
         {
-            builder.Entity<Apply>(b =>
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+            builder.Entity<EnterpriseDetail>(b =>
 {
-    b.ToTable(FinancingConsts.DbTablePrefix + "Applies", FinancingConsts.DbSchema);
+    b.ToTable(FinancingConsts.DbTablePrefix + "EnterpriseDetails", FinancingConsts.DbSchema);
     b.ConfigureByConvention();
-    b.Property(x => x.EnterpriceName).HasColumnName(nameof(Apply.EnterpriceName)).IsRequired();
-    b.Property(x => x.Organization).HasColumnName(nameof(Apply.Organization)).IsRequired();
-    b.Property(x => x.ProductName).HasColumnName(nameof(Apply.ProductName)).IsRequired();
-    b.Property(x => x.Allowance).HasColumnName(nameof(Apply.Allowance));
-    b.Property(x => x.APY).HasColumnName(nameof(Apply.APY));
-    b.Property(x => x.Period).HasColumnName(nameof(Apply.Period));
-    b.Property(x => x.ApplyStatus).HasColumnName(nameof(Apply.ApplyStatus)).IsRequired();
-    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(Apply.GuaranteeMethod));
-    b.Property(x => x.ApplyTime).HasColumnName(nameof(Apply.ApplyTime)).IsRequired();
-    b.Property(x => x.PassedTime).HasColumnName(nameof(Apply.PassedTime));
+    b.Property(x => x.EnterpriseName).HasColumnName(nameof(EnterpriseDetail.EnterpriseName)).IsRequired();
+    b.Property(x => x.TotalAssets).HasColumnName(nameof(EnterpriseDetail.TotalAssets)).IsRequired();
+    b.Property(x => x.Income).HasColumnName(nameof(EnterpriseDetail.Income)).IsRequired();
+    b.Property(x => x.EnterpriseType).HasColumnName(nameof(EnterpriseDetail.EnterpriseType)).IsRequired();
+    b.Property(x => x.StaffNumber).HasColumnName(nameof(EnterpriseDetail.StaffNumber)).IsRequired();
+    b.Property(x => x.Industry).HasColumnName(nameof(EnterpriseDetail.Industry)).IsRequired();
+    b.Property(x => x.Location).HasColumnName(nameof(EnterpriseDetail.Location)).IsRequired();
+    b.Property(x => x.RegisteredAddress).HasColumnName(nameof(EnterpriseDetail.RegisteredAddress)).IsRequired();
+    b.Property(x => x.BusinessAddress).HasColumnName(nameof(EnterpriseDetail.BusinessAddress)).IsRequired();
+    b.Property(x => x.BusinessScope).HasColumnName(nameof(EnterpriseDetail.BusinessScope)).IsRequired();
+    b.Property(x => x.Description).HasColumnName(nameof(EnterpriseDetail.Description)).IsRequired();
 });
 
         }
@@ -198,29 +223,20 @@ public class FinancingDbContext :
         }
         if (builder.IsHostDatabase())
         {
-
-        }
-        if (builder.IsHostDatabase())
-        {
-
-        }
-        if (builder.IsHostDatabase())
-        {
-            builder.Entity<EnterpriseDetail>(b =>
+            builder.Entity<Apply>(b =>
 {
-    b.ToTable(FinancingConsts.DbTablePrefix + "EnterpriseDetails", FinancingConsts.DbSchema);
+    b.ToTable(FinancingConsts.DbTablePrefix + "Applies", FinancingConsts.DbSchema);
     b.ConfigureByConvention();
-    b.Property(x => x.EnterpriseName).HasColumnName(nameof(EnterpriseDetail.EnterpriseName)).IsRequired();
-    b.Property(x => x.TotalAssets).HasColumnName(nameof(EnterpriseDetail.TotalAssets)).IsRequired();
-    b.Property(x => x.Income).HasColumnName(nameof(EnterpriseDetail.Income)).IsRequired();
-    b.Property(x => x.EnterpriseType).HasColumnName(nameof(EnterpriseDetail.EnterpriseType)).IsRequired();
-    b.Property(x => x.StaffNumber).HasColumnName(nameof(EnterpriseDetail.StaffNumber)).IsRequired();
-    b.Property(x => x.Industry).HasColumnName(nameof(EnterpriseDetail.Industry)).IsRequired();
-    b.Property(x => x.Location).HasColumnName(nameof(EnterpriseDetail.Location)).IsRequired();
-    b.Property(x => x.RegisteredAddress).HasColumnName(nameof(EnterpriseDetail.RegisteredAddress)).IsRequired();
-    b.Property(x => x.BusinessAddress).HasColumnName(nameof(EnterpriseDetail.BusinessAddress)).IsRequired();
-    b.Property(x => x.BusinessScope).HasColumnName(nameof(EnterpriseDetail.BusinessScope)).IsRequired();
-    b.Property(x => x.Description).HasColumnName(nameof(EnterpriseDetail.Description)).IsRequired();
+    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Apply.EnterpriseName)).IsRequired();
+    b.Property(x => x.Organization).HasColumnName(nameof(Apply.Organization)).IsRequired();
+    b.Property(x => x.ProductName).HasColumnName(nameof(Apply.ProductName)).IsRequired();
+    b.Property(x => x.Allowance).HasColumnName(nameof(Apply.Allowance));
+    b.Property(x => x.APY).HasColumnName(nameof(Apply.APY));
+    b.Property(x => x.Period).HasColumnName(nameof(Apply.Period));
+    b.Property(x => x.ApplyStatus).HasColumnName(nameof(Apply.ApplyStatus)).IsRequired();
+    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(Apply.GuaranteeMethod));
+    b.Property(x => x.ApplyTime).HasColumnName(nameof(Apply.ApplyTime)).IsRequired();
+    b.Property(x => x.PassedTime).HasColumnName(nameof(Apply.PassedTime));
 });
 
         }

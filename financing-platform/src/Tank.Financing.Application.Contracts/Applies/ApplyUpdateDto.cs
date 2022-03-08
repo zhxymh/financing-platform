@@ -1,3 +1,4 @@
+using Tank.Financing;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -15,8 +16,8 @@ namespace Tank.Financing.Applies
         public string APY { get; set; }
         public string Period { get; set; }
         [Required]
-        public string ApplyStatus { get; set; }
-        public string GuaranteeMethod { get; set; }
+        public ApplyStatus ApplyStatus { get; set; }
+        public GuaranteeMethod GuaranteeMethod { get; set; }
         [Required]
         public string ApplyTime { get; set; }
         public string PassedTime { get; set; }

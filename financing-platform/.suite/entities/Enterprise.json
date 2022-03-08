@@ -215,10 +215,10 @@
     {
       "Id": "8dc2e019-9193-4494-a8f0-5a9c0f82a3c6",
       "Name": "CertificateStatus",
-      "Type": "string",
-      "EnumType": "",
-      "EnumNamespace": "",
-      "EnumAngularImport": "shared/enums",
+      "Type": "enum",
+      "EnumType": "CertificateStatus",
+      "EnumNamespace": "Tank.Financing",
+      "EnumAngularImport": "shared/enums/certificate-status",
       "IsNullable": false,
       "IsRequired": true,
       "MinLength": null,
@@ -227,7 +227,11 @@
       "SortType": 0,
       "Regex": "",
       "EmailValidation": false,
-      "EnumValues": null,
+      "EnumValues": {
+        "待审核": null,
+        "通过": null,
+        "驳回": null
+      },
       "IsSelected": true
     }
   ],

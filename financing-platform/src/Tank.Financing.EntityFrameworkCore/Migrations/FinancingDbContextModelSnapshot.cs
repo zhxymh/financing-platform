@@ -34,9 +34,8 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("Allowance");
 
-                    b.Property<string>("ApplyStatus")
-                        .IsRequired()
-                        .HasColumnType("longtext")
+                    b.Property<int>("ApplyStatus")
+                        .HasColumnType("int")
                         .HasColumnName("ApplyStatus");
 
                     b.Property<string>("ApplyTime")
@@ -66,17 +65,17 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("DeletionTime");
 
-                    b.Property<string>("EnterpriceName")
+                    b.Property<string>("EnterpriseName")
                         .IsRequired()
                         .HasColumnType("longtext")
-                        .HasColumnName("EnterpriceName");
+                        .HasColumnName("EnterpriseName");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("longtext")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<string>("GuaranteeMethod")
-                        .HasColumnType("longtext")
+                    b.Property<int>("GuaranteeMethod")
+                        .HasColumnType("int")
                         .HasColumnName("GuaranteeMethod");
 
                     b.Property<bool>("IsDeleted")
@@ -240,9 +239,8 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("CertPhotoPath");
 
-                    b.Property<string>("CertificateStatus")
-                        .IsRequired()
-                        .HasColumnType("longtext")
+                    b.Property<int>("CertificateStatus")
+                        .HasColumnType("int")
                         .HasColumnName("CertificateStatus");
 
                     b.Property<string>("ConcurrencyStamp")

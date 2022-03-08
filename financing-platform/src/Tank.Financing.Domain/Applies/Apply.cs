@@ -1,3 +1,4 @@
+using Tank.Financing;
 using System;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Entities.Auditing;
@@ -10,7 +11,7 @@ namespace Tank.Financing.Applies
     public class Apply : FullAuditedAggregateRoot<Guid>
     {
         [NotNull]
-        public virtual string EnterpriceName { get; set; }
+        public virtual string EnterpriseName { get; set; }
 
         [NotNull]
         public virtual string Organization { get; set; }
@@ -27,11 +28,9 @@ namespace Tank.Financing.Applies
         [CanBeNull]
         public virtual string Period { get; set; }
 
-        [NotNull]
-        public virtual string ApplyStatus { get; set; }
+        public virtual ApplyStatus ApplyStatus { get; set; }
 
-        [CanBeNull]
-        public virtual string GuaranteeMethod { get; set; }
+        public virtual GuaranteeMethod GuaranteeMethod { get; set; }
 
         [NotNull]
         public virtual string ApplyTime { get; set; }
@@ -44,15 +43,14 @@ namespace Tank.Financing.Applies
 
         }
 
-        public Apply(Guid id, string enterpriceName, string organization, string productName, string allowance, string aPY, string period, string applyStatus, string guaranteeMethod, string applyTime, string passedTime)
+        public Apply(Guid id, string enterpriseName, string organization, string productName, string allowance, string aPY, string period, ApplyStatus applyStatus, GuaranteeMethod guaranteeMethod, string applyTime, string passedTime)
         {
             Id = id;
-            Check.NotNull(enterpriceName, nameof(enterpriceName));
+            Check.NotNull(enterpriseName, nameof(enterpriseName));
             Check.NotNull(organization, nameof(organization));
             Check.NotNull(productName, nameof(productName));
-            Check.NotNull(applyStatus, nameof(applyStatus));
             Check.NotNull(applyTime, nameof(applyTime));
-            EnterpriceName = enterpriceName;
+            EnterpriseName = enterpriseName;
             Organization = organization;
             ProductName = productName;
             Allowance = allowance;

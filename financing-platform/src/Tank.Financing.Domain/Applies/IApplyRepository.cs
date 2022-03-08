@@ -1,3 +1,4 @@
+using Tank.Financing;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -10,14 +11,14 @@ namespace Tank.Financing.Applies
     {
         Task<List<Apply>> GetListAsync(
             string filterText = null,
-            string enterpriceName = null,
+            string enterpriseName = null,
             string organization = null,
             string productName = null,
             string allowance = null,
             string aPY = null,
             string period = null,
-            string applyStatus = null,
-            string guaranteeMethod = null,
+            ApplyStatus? applyStatus = null,
+            GuaranteeMethod? guaranteeMethod = null,
             string applyTime = null,
             string passedTime = null,
             string sorting = null,
@@ -28,14 +29,14 @@ namespace Tank.Financing.Applies
 
         Task<long> GetCountAsync(
             string filterText = null,
-            string enterpriceName = null,
+            string enterpriseName = null,
             string organization = null,
             string productName = null,
             string allowance = null,
             string aPY = null,
             string period = null,
-            string applyStatus = null,
-            string guaranteeMethod = null,
+            ApplyStatus? applyStatus = null,
+            GuaranteeMethod? guaranteeMethod = null,
             string applyTime = null,
             string passedTime = null,
             CancellationToken cancellationToken = default);

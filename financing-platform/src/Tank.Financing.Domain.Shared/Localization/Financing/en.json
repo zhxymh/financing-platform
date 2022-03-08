@@ -42,9 +42,10 @@
     "Enum:TJDistrict:13": "静海区",
     "Enum:TJDistrict:14": "宁河区",
     "Enum:TJDistrict:15": "蓟州区",
-    "Enum:GuaranteeMethod:0": "信用",
-    "Enum:GuaranteeMethod:1": "抵押",
-    "Enum:GuaranteeMethod:2": "政策性融资",
+    "Enum:GuaranteeMethod:0": "其他",
+    "Enum:GuaranteeMethod:1": "信用",
+    "Enum:GuaranteeMethod:2": "抵押",
+    "Enum:GuaranteeMethod:3": "政策性融资",
     "Permission:FinancialProducts": "Financial Products",
     "Permission:Financing": "Financing",
     "Permission:Create": "Create",
@@ -124,6 +125,13 @@
     "Menu:EnterpriseDetails": "Enterprise Details",
     "CertificateStatus": "Certificate Status",
     "MinStaffNumber": "Min Staff Number",
-    "MaxStaffNumber": "Max Staff Number"
+    "MaxStaffNumber": "Max Staff Number",
+    "Enum:ApplyStatus:0": "待处理",
+    "Enum:ApplyStatus:1": "线上初审通过",
+    "Enum:ApplyStatus:2": "线下审核通过",
+    "Enum:ApplyStatus:3": "完成",
+    "Enum:CertificateStatus:0": "待审核",
+    "Enum:CertificateStatus:1": "通过",
+    "Enum:CertificateStatus:2": "驳回"
   }
 }

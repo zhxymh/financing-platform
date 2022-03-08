@@ -14,6 +14,8 @@
 @inherits FinancingComponentBase
 @inject IEnterprisesAppService EnterprisesAppService
 @inject IUiMessageService UiMessageService
+@using Tank.Financing
+
 
 @* ************************* PAGE HEADER ************************* *@
 <PageHeader Title="@L["Enterprises"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
@@ -126,7 +128,11 @@
               <DataGridColumn TItem="EnterpriseDto"
                       Field="CertificateStatus"
                       Caption="@L["CertificateStatus"]">
+                    <DisplayTemplate>
+                        @L[$"Enum:CertificateStatus:{Convert.ToInt32(context.CertificateStatus)}"]
+                    </DisplayTemplate>
               </DataGridColumn>
+
 
             </DataGridColumns>
         </DataGrid>
@@ -279,16 +285,17 @@
                     </Validation>
 
 
-                    <Validation>
-                        <Field>
-                            <FieldLabel>@L["CertificateStatus"] *</FieldLabel>
-                            <TextEdit @bind-Text="@NewEnterprise.CertificateStatus" >
-                                <Feedback>
-                                    <ValidationError />
-                                </Feedback>
-                            </TextEdit>
-                        </Field>
-                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["CertificateStatus"]</FieldLabel>
+                        <Select TValue="CertificateStatus" @bind-SelectedValue="@NewEnterprise.CertificateStatus">
+                            @foreach (var itemValue in Enum.GetValues(typeof(CertificateStatus)))
+                            {
+                                <SelectItem TValue="CertificateStatus" Value="@((CertificateStatus) itemValue)">
+                                    @L[$"Enum:CertificateStatus:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
 
 
                 </Validations>
@@ -450,16 +457,17 @@
                     </Validation>
 
 
-                    <Validation>
-                        <Field>
-                            <FieldLabel>@L["CertificateStatus"] *</FieldLabel>
-                            <TextEdit @bind-Text="@EditingEnterprise.CertificateStatus" >
-                                <Feedback>
-                                    <ValidationError />
-                                </Feedback>
-                            </TextEdit>
-                        </Field>
-                    </Validation>
+                    <Field>
+                        <FieldLabel>@L["CertificateStatus"]</FieldLabel>
+                        <Select TValue="CertificateStatus" @bind-SelectedValue="@EditingEnterprise.CertificateStatus">
+                            @foreach (var itemValue in Enum.GetValues(typeof(CertificateStatus)))
+                            {
+                                <SelectItem TValue="CertificateStatus" Value="@((CertificateStatus) itemValue)">
+                                    @L[$"Enum:CertificateStatus:{Convert.ToInt32(itemValue)}"]
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
 
 
                 </Validations>

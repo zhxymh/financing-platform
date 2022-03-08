@@ -35,12 +35,8 @@ namespace Tank.Financing.Applies
 
         public virtual async Task<PagedResultDto<ApplyDto>> GetListAsync(GetAppliesInput input)
         {
-            var totalCount = await _applyRepository.GetCountAsync(input.FilterText, input.EnterpriceName,
-                input.Organization, input.ProductName, input.Allowance, input.APY, input.Period, input.ApplyStatus,
-                input.GuaranteeMethod, input.ApplyTime, input.PassedTime);
-            var items = await _applyRepository.GetListAsync(input.FilterText, input.EnterpriceName, input.Organization,
-                input.ProductName, input.Allowance, input.APY, input.Period, input.ApplyStatus, input.GuaranteeMethod,
-                input.ApplyTime, input.PassedTime, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _applyRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APY, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTime, input.PassedTime);
+            var items = await _applyRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APY, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTime, input.PassedTime, input.Sorting, input.MaxResultCount, input.SkipCount);
 
             return new PagedResultDto<ApplyDto>
             {
@@ -95,7 +91,7 @@ namespace Tank.Financing.Applies
                     Organization = input.Organization,
                     Allowance = input.Allowance,
                     Apy = input.APY,
-                    GuaranteeMethod = input.GuaranteeMethod,
+                    GuaranteeMethod = input.GuaranteeMethod.ToString(),
                     Period = input.Period
                 });
         }
@@ -103,17 +99,17 @@ namespace Tank.Financing.Applies
         [Authorize(FinancingPermissions.Applies.Edit)]
         public virtual async Task<ApplyDto> UpdateAsync(Guid id, ApplyUpdateDto input)
         {
-            if (input.ApplyStatus == ApplyStatus.线上初审通过.ToString())
+            if (input.ApplyStatus == ApplyStatus.线上初审通过)
             {
                 OnlineApprove(input);
             }
 
-            if (input.ApplyStatus == ApplyStatus.线下审核通过.ToString())
+            if (input.ApplyStatus == ApplyStatus.线下审核通过)
             {
                 OfflineApprove(input);
             }
 
-            if (input.ApplyStatus == ApplyStatus.完成.ToString())
+            if (input.ApplyStatus == ApplyStatus.完成)
             {
                 ApproveAllowance(input);
             }
@@ -134,7 +130,7 @@ namespace Tank.Financing.Applies
                     Organization = input.Organization,
                     Allowance = input.Allowance,
                     Apy = input.APY,
-                    GuaranteeMethod = input.GuaranteeMethod,
+                    GuaranteeMethod = input.GuaranteeMethod.ToString(),
                     Period = input.Period
                 });
         }
@@ -171,7 +167,7 @@ namespace Tank.Financing.Applies
                     Organization = input.Organization,
                     Allowance = input.Allowance,
                     Apy = input.APY,
-                    GuaranteeMethod = input.GuaranteeMethod,
+                    GuaranteeMethod = input.GuaranteeMethod.ToString(),
                     Period = input.Period
                 });
         }

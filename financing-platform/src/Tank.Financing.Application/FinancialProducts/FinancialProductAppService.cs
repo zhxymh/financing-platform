@@ -57,12 +57,18 @@ namespace Tank.Financing.FinancialProducts
             await _financialProductRepository.DeleteAsync(id);
         }
 
+        private bool _initialized = false;
+
         [Authorize(FinancingPermissions.FinancialProducts.Create)]
         public virtual async Task<FinancialProductDto> CreateAsync(FinancialProductCreateDto input)
         {
             var owner = Address.FromBase58(FinancingConsts.DefaultSenderAddress);
 
-            //InitializeFinancingContract(owner);
+            if (!_initialized)
+            {
+                InitializeFinancingContract(owner);
+                _initialized = true;
+            }
 
             ForwardContract(input.Organization, FinancingConsts.ScopeIdForAdmin,
                 "AddFinancingProduct",

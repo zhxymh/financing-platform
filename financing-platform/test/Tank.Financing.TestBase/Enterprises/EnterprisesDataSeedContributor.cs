@@ -19,36 +19,36 @@ namespace Tank.Financing.Enterprises
         {
             await _enterpriseRepository.InsertAsync(new Enterprise
             (
-                id: Guid.Parse("4c390729-1064-4b40-92b0-8058ffdff0e0"),
-                enterpriseName: "5f05f9bd4a1245e7a85257ad6974f49d5c90587557a944248eb20676959bd5b08702a25fe4be40",
-                artificialPerson: "704b5b75d0c444b491e262846dc503033d619fce456b4b9c9425b7",
-                establishedTime: "ec2a05c6671348bc84b41585c3cc2c2bf9e83cd42bbe40be8d6cda41a0608b05fac4d712cac",
-                dueTime: "48994ca869624b09821850077f8782c881da442cb57c4ba4ba54a01996bebcc34ec0a53544",
-                creditCode: "72f3a928e2e24f69ac54e34cc0a9efaa4fc0709c4f8a449a87fd829619d611f97e237b901fef42d89faa1d",
-                artificialPersonId: "86c9b44cd45048af90b57de1b815bb9b5dc9705e84b744ada307b6b2d6aeaf94abf",
-                registeredCapital: "338710919180432c9439aa1d069a3237fdd81ea617f942e0aff0a693a9d7225211f0923fa7bf4d71a67c91a",
-                phoneNumber: "c32419c11e584257bdc58d9fd59e15f21f744ed",
-                certPhotoPath: "a2aabf04474548",
-                idPhotoPath1: "8d1981d14e0b4ed68d628aaaf695e549cdceab3843bf447a85b771c9277ea1c",
-                idPhotoPath2: "8b896fbad1a548988f3a43186e60a09bbb30ff315cfa46b0880098",
-                certificateStatus: "feda696bc11246eda3bf0b1320ea056e5"
+                id: Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d"),
+                enterpriseName: "23d5e1a00c5d4cbc9988810dafdca2d7fba39966e2d44987ad431fe48347833",
+                artificialPerson: "6356dc5fae63438bbcde0b430",
+                establishedTime: "da4621af757b4c569e36b82ac7",
+                dueTime: "f8029068e8dd4d95b2c12213756d350c0ba0309039af4a3094571b496a6",
+                creditCode: "470c6b8d35f54eb6b0a4b61453ec88751572dd1af66b418fb2aa45ee7aded1e7b61",
+                artificialPersonId: "d530e7fd64e64861a",
+                registeredCapital: "5a179e1e739f4eae8e6cfe65f949674208a44e325e6e4549a815f0e139becce1d96acecf173e413",
+                phoneNumber: "4f89fbc4e8c24632b027a75db99c6f38b4780c3669964b4081bb2aeb1e6932c633197c5813",
+                certPhotoPath: "6339042e3323475a9d7c5e7f80f5f9dc0778020bdc244abc9d6222a9cfb7df21a0780b5fe83c4385b3e46f7e034726a",
+                idPhotoPath1: "ae35256a5d144cd1b1a39ee064f94da9d381ea9b70a44a7a9ec3325f524ef79b8a94c1e2b1e44c53bf9bbcc15029a165",
+                idPhotoPath2: "e88f6439fc8c4f229be38cd05a5c70e",
+                certificateStatus: default
             ));
 
             await _enterpriseRepository.InsertAsync(new Enterprise
             (
-                id: Guid.Parse("3edecb90-a45c-465b-937d-3cb7e96803e9"),
-                enterpriseName: "0b5924eedff54322bd586b6979291d84889960d66d094518a9d90d7e07d517290193933551e144afb3c915874859a74d",
-                artificialPerson: "ea72d243d49f45afbe0646fde542f68d8a9c9cae3fb34758a4b064e9268549e8c45937fe500c492ab3998",
-                establishedTime: "02de7a78d",
-                dueTime: "e1da9f4eb6324",
-                creditCode: "05eac69dbe6644c1bae28e7976c9bdbb36eadc239f204c0a96d50f99a",
-                artificialPersonId: "c773037",
-                registeredCapital: "60bbd1554b824af48bf3187574fd3115b414476cd57e4d48b4ad0d622f7d732",
-                phoneNumber: "ff3e608edd8146e587c88a180d145eb4e25de71a2175484bb27",
-                certPhotoPath: "d5009c5fe37742eca998ff912e19ba5cb2d08c53899e40eb9bea566a87374099cf60d236a424",
-                idPhotoPath1: "f3c7ebf1b579489f9c6638356e00879d",
-                idPhotoPath2: "f4ccece0b11f4e67a41f964f16391958894893a2f4514f86bf604f8f6449b",
-                certificateStatus: "5ee0ca8424f440a0bda8b1e7e9e1bba8a27066a66"
+                id: Guid.Parse("03df4b2d-ccd0-40b8-8b5a-6dbb93ba3705"),
+                enterpriseName: "d32f0ab958c34e108e44370d9d7b5fa243ca3518e0fd4c08b7ae6f2c",
+                artificialPerson: "4dac2f9276844a5b96dea16394083a6c515881b06a094ef1a188b5bb61294fdcb171c4cd7c4e4f34b",
+                establishedTime: "b2def3f",
+                dueTime: "a1a5f466c03e4779a7835162a67e05973fee2b970fd942ee8ab0e88ad91fda4c6626",
+                creditCode: "0dcd1e2c69834b76ac6c8a7bcb536feb0ea343f93c95",
+                artificialPersonId: "eb14792a3162405eb256890670c0b89c5b39d108c47d44f59fef7ed22ee6ae",
+                registeredCapital: "5a3de0bf38644a21b667c98a382cae3418ecdde9be01454ab2901e1c1b09c5",
+                phoneNumber: "fc720a878f4d46c3ae3533a2cea17adee3f60a87ab024e5eb71cf64093d9a47c32ceb6bf49",
+                certPhotoPath: "acb412ffaa1c40a08590bc417b8cd6fd0def2f4c3bf64ef7b9e3d47e1ea0a8ecda77d98880e243fd9496",
+                idPhotoPath1: "bbb7722c559f4025a95a205ae555e566b8be5c0ef21e4bd48993399ed168774ff98f66e517914b09be",
+                idPhotoPath2: "a714ecf49dbf48ada666cb2465585f59c3c65263f9044b7aa628432f002e3fa64df091adc31048f58833",
+                certificateStatus: default
             ));
         }
     }
