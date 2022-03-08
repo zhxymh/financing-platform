@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tank.Financing.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,9 +12,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tank.Financing.Migrations
 {
     [DbContext(typeof(FinancingDbContext))]
-    partial class FinancingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220308053315_Updated_Enterprise_22030813325820")]
+    partial class Updated_Enterprise_22030813325820
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,9 +28,9 @@ namespace Tank.Financing.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("APR")
+                    b.Property<string>("APY")
                         .HasColumnType("longtext")
-                        .HasColumnName("APR");
+                        .HasColumnName("APY");
 
                     b.Property<string>("Allowance")
                         .HasColumnType("longtext")
@@ -38,8 +40,9 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ApplyStatus");
 
-                    b.Property<long>("ApplyTime")
-                        .HasColumnType("bigint")
+                    b.Property<string>("ApplyTime")
+                        .IsRequired()
+                        .HasColumnType("longtext")
                         .HasColumnName("ApplyTime");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -73,8 +76,8 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<int>("GuaranteeMethod")
-                        .HasColumnType("int")
+                    b.Property<string>("GuaranteeMethod")
+                        .HasColumnType("longtext")
                         .HasColumnName("GuaranteeMethod");
 
                     b.Property<bool>("IsDeleted")
@@ -96,8 +99,8 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("Organization");
 
-                    b.Property<long>("PassedTime")
-                        .HasColumnType("bigint")
+                    b.Property<string>("PassedTime")
+                        .HasColumnType("longtext")
                         .HasColumnName("PassedTime");
 
                     b.Property<string>("Period")
@@ -269,8 +272,8 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("DeletionTime");
 
-                    b.Property<long>("DueTime")
-                        .HasColumnType("bigint")
+                    b.Property<string>("DueTime")
+                        .HasColumnType("longtext")
                         .HasColumnName("DueTime");
 
                     b.Property<string>("EnterpriseName")
@@ -278,8 +281,9 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("EnterpriseName");
 
-                    b.Property<long>("EstablishedTime")
-                        .HasColumnType("bigint")
+                    b.Property<string>("EstablishedTime")
+                        .IsRequired()
+                        .HasColumnType("longtext")
                         .HasColumnName("EstablishedTime");
 
                     b.Property<string>("ExtraProperties")
@@ -399,14 +403,14 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("varchar(100)")
                         .HasColumnName("Organization");
 
-                    b.Property<int>("Period")
-                        .HasMaxLength(3600)
-                        .HasColumnType("int")
-                        .HasColumnName("Period");
-
                     b.Property<string>("Rating")
                         .HasColumnType("longtext")
                         .HasColumnName("Rating");
+
+                    b.Property<int>("TimeLimit")
+                        .HasMaxLength(3600)
+                        .HasColumnType("int")
+                        .HasColumnName("TimeLimit");
 
                     b.HasKey("Id");
 

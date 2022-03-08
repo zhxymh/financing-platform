@@ -13,7 +13,7 @@ namespace Tank.Contracts.Financing
                 out var virtualAddress);
             Assert(applyRecord.ApplyStatus != ApplyStatus.Passed, "");
             applyRecord.Allowance = input.Allowance;
-            applyRecord.Apy = input.Apy;
+            applyRecord.Apr = input.Apr;
             applyRecord.Period = input.Period;
             applyRecord.GuaranteeMethod = input.GuaranteeMethod;
 
@@ -76,9 +76,9 @@ namespace Tank.Contracts.Financing
                 applyRecord.Allowance = input.Allowance;
             }
 
-            if (!string.IsNullOrEmpty(input.Apy))
+            if (!string.IsNullOrEmpty(input.Apr))
             {
-                applyRecord.Apy = input.Apy;
+                applyRecord.Apr = input.Apr;
             }
 
             if (!string.IsNullOrEmpty(input.GuaranteeMethod))
@@ -102,7 +102,7 @@ namespace Tank.Contracts.Financing
                 Allowance = applyRecord.Allowance,
                 ApplyStatus = applyRecord.ApplyStatus,
                 ApplyTime = applyRecord.ApplyTime,
-                Apy = applyRecord.Apy,
+                Apr = applyRecord.Apr,
                 GuaranteeMethod = applyRecord.GuaranteeMethod,
                 PassedTime = applyRecord.PassedTime,
                 Period = applyRecord.Period

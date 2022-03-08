@@ -118,7 +118,7 @@ message SetAllowanceInput {
     string organization = 2;
     string product_name = 3;
     string allowance = 4;
-    string apy = 5;
+    string apr = 5;
     string period = 6;
     string guarantee_method = 7;
 }
@@ -149,7 +149,7 @@ message ApproveAllowanceInput {
     string organization = 2;
     string product_name = 3;
     string allowance = 4;
-    string apy = 5;
+    string apr = 5;
     string period = 6;
     string guarantee_method = 7;
 }
@@ -172,8 +172,8 @@ message EnterpriseInfo {
 message EnterpriseBasicInfo {
     string name = 1;
     string artificial_person = 2;
-    string established_time = 3;
-    string due_time = 4;
+    int64 established_time = 3;
+    int64 due_time = 4;
     string credit_code = 5;
     aelf.Hash artificial_person_id = 6;
     string registered_capital = 7;
@@ -210,7 +210,7 @@ message ApplyRecord {
     string organization = 2;
     string product_name = 3;
     string allowance = 4;
-    string apy = 5;
+    string apr = 5;
     string period = 6;
     ApplyStatus apply_status = 7;
     string guarantee_method = 8;
@@ -243,7 +243,7 @@ message ApplyPassed {
     string organization = 2;
     string product_name = 3;
     string allowance = 4;
-    string apy = 5;
+    string apr = 5;
     string period = 6;
     ApplyStatus apply_status = 7;
     string guarantee_method = 8;

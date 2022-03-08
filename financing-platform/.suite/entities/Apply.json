@@ -88,7 +88,7 @@
     },
     {
       "Id": "999ecf71-16ef-4676-92e6-d745f77cb50d",
-      "Name": "APY",
+      "Name": "APR",
       "Type": "string",
       "EnumType": "",
       "EnumNamespace": "",
@@ -170,7 +170,7 @@
     {
       "Id": "f75c9046-d280-45e5-bbdd-a51fc4d52a12",
       "Name": "ApplyTime",
-      "Type": "string",
+      "Type": "long",
       "EnumType": "",
       "EnumNamespace": "",
       "EnumAngularImport": "shared/enums",
@@ -188,7 +188,7 @@
     {
       "Id": "4c840dc7-af39-4fde-9df3-b17e50d9815e",
       "Name": "PassedTime",
-      "Type": "string",
+      "Type": "long",
       "EnumType": "",
       "EnumNamespace": "",
       "EnumAngularImport": "shared/enums",

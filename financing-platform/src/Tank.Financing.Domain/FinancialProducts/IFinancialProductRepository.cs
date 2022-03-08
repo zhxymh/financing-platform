@@ -11,8 +11,8 @@ namespace Tank.Financing.FinancialProducts
     {
         Task<List<FinancialProduct>> GetListAsync(
             string filterText = null,
-            int? timeLimitMin = null,
-            int? timeLimitMax = null,
+            int? periodMin = null,
+            int? periodMax = null,
             GuaranteeMethod? guaranteeMethod = null,
             string creditCeiling = null,
             string organization = null,
@@ -29,8 +29,8 @@ namespace Tank.Financing.FinancialProducts
 
         Task<long> GetCountAsync(
             string filterText = null,
-            int? timeLimitMin = null,
-            int? timeLimitMax = null,
+            int? periodMin = null,
+            int? periodMax = null,
             GuaranteeMethod? guaranteeMethod = null,
             string creditCeiling = null,
             string organization = null,

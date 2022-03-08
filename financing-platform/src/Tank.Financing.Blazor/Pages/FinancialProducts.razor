@@ -71,8 +71,8 @@
                 </DataGridEntityActionsColumn>
                
               <DataGridColumn TItem="FinancialProductDto"
-                      Field="TimeLimit"
-                      Caption="@L["TimeLimit"]">
+                      Field="Period"
+                      Caption="@L["Period"]">
               </DataGridColumn>
 
               <DataGridColumn TItem="FinancialProductDto"
@@ -135,8 +135,8 @@
                     
                     <Validation>
                         <Field>
-                            <FieldLabel>@L["TimeLimit"] *</FieldLabel>
-                            <NumericEdit TValue="int" @bind-Value="@NewFinancialProduct.TimeLimit"  Min="FinancialProductConsts.TimeLimitMinLength" Max="FinancialProductConsts.TimeLimitMaxLength">
+                            <FieldLabel>@L["Period"] *</FieldLabel>
+                            <NumericEdit TValue="int" @bind-Value="@NewFinancialProduct.Period"  Min="FinancialProductConsts.PeriodMinLength" Max="FinancialProductConsts.PeriodMaxLength">
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
@@ -259,8 +259,8 @@
                     
                     <Validation>
                         <Field>
-                            <FieldLabel>@L["TimeLimit"] *</FieldLabel>
-                            <NumericEdit TValue="int" @bind-Value="@EditingFinancialProduct.TimeLimit"  Min="FinancialProductConsts.TimeLimitMinLength" Max="FinancialProductConsts.TimeLimitMaxLength">
+                            <FieldLabel>@L["Period"] *</FieldLabel>
+                            <NumericEdit TValue="int" @bind-Value="@EditingFinancialProduct.Period"  Min="FinancialProductConsts.PeriodMinLength" Max="FinancialProductConsts.PeriodMaxLength">
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>

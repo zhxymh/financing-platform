@@ -176,8 +176,8 @@ namespace Tank.Contracts.Financing
                     ArtificialPersonId = HashHelper.ComputeFrom("12345"),
                     CreditCode = "91120103MA07DC9C29",
                     RegisteredCapital = "10000000",
-                    PhoneNumber = "13111111111",
-                    EstablishedTime = "2016-01-01",
+                    PhoneNumber = HashHelper.ComputeFrom("13111111111"),
+                    EstablishedTime = 1111111111,
                     PhotoHashes =
                     {
                         HashHelper.ComputeFrom("test1"),
@@ -251,7 +251,7 @@ namespace Tank.Contracts.Financing
                 Parameter = new SetAllowanceInput
                 {
                     Allowance = "10000000",
-                    Apy = "10%",
+                    Apr = "10%",
                     EnterpriseName = "天津引元信息科技有限公司",
                     GuaranteeMethod = "抵押",
                     Organization = "中国银行",

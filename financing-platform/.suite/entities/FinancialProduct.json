@@ -16,14 +16,14 @@
   "Properties": [
     {
       "Id": "f28319f8-04b0-4730-9b4c-8c46a5846a83",
-      "Name": "TimeLimit",
+      "Name": "Period",
       "Type": "int",
       "EnumType": "",
       "EnumNamespace": "",
       "EnumAngularImport": "shared/enums",
       "IsNullable": false,
       "IsRequired": true,
-      "MinLength": 3,
+      "MinLength": 1,
       "MaxLength": 3600,
       "SortOrder": 3,
       "SortType": 1,

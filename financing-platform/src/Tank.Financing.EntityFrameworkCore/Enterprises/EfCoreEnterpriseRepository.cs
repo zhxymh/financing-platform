@@ -24,8 +24,10 @@ namespace Tank.Financing.Enterprises
             string filterText = null,
             string enterpriseName = null,
             string artificialPerson = null,
-            string establishedTime = null,
-            string dueTime = null,
+            long? establishedTimeMin = null,
+            long? establishedTimeMax = null,
+            long? dueTimeMin = null,
+            long? dueTimeMax = null,
             string creditCode = null,
             string artificialPersonId = null,
             string registeredCapital = null,
@@ -39,7 +41,7 @@ namespace Tank.Financing.Enterprises
             int skipCount = 0,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, artificialPerson, establishedTime, dueTime, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus);
+            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, artificialPerson, establishedTimeMin, establishedTimeMax, dueTimeMin, dueTimeMax, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus);
             query = query.OrderBy(string.IsNullOrWhiteSpace(sorting) ? EnterpriseConsts.GetDefaultSorting(false) : sorting);
             return await query.PageBy(skipCount, maxResultCount).ToListAsync(cancellationToken);
         }
@@ -48,8 +50,10 @@ namespace Tank.Financing.Enterprises
             string filterText = null,
             string enterpriseName = null,
             string artificialPerson = null,
-            string establishedTime = null,
-            string dueTime = null,
+            long? establishedTimeMin = null,
+            long? establishedTimeMax = null,
+            long? dueTimeMin = null,
+            long? dueTimeMax = null,
             string creditCode = null,
             string artificialPersonId = null,
             string registeredCapital = null,
@@ -60,7 +64,7 @@ namespace Tank.Financing.Enterprises
             CertificateStatus? certificateStatus = null,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, artificialPerson, establishedTime, dueTime, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus);
+            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, artificialPerson, establishedTimeMin, establishedTimeMax, dueTimeMin, dueTimeMax, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus);
             return await query.LongCountAsync(GetCancellationToken(cancellationToken));
         }
 
@@ -69,8 +73,10 @@ namespace Tank.Financing.Enterprises
             string filterText,
             string enterpriseName = null,
             string artificialPerson = null,
-            string establishedTime = null,
-            string dueTime = null,
+            long? establishedTimeMin = null,
+            long? establishedTimeMax = null,
+            long? dueTimeMin = null,
+            long? dueTimeMax = null,
             string creditCode = null,
             string artificialPersonId = null,
             string registeredCapital = null,
@@ -81,11 +87,13 @@ namespace Tank.Financing.Enterprises
             CertificateStatus? certificateStatus = null)
         {
             return query
-                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.ArtificialPerson.Contains(filterText) || e.EstablishedTime.Contains(filterText) || e.DueTime.Contains(filterText) || e.CreditCode.Contains(filterText) || e.ArtificialPersonId.Contains(filterText) || e.RegisteredCapital.Contains(filterText) || e.PhoneNumber.Contains(filterText) || e.CertPhotoPath.Contains(filterText) || e.IdPhotoPath1.Contains(filterText) || e.IdPhotoPath2.Contains(filterText))
+                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.ArtificialPerson.Contains(filterText) || e.CreditCode.Contains(filterText) || e.ArtificialPersonId.Contains(filterText) || e.RegisteredCapital.Contains(filterText) || e.PhoneNumber.Contains(filterText) || e.CertPhotoPath.Contains(filterText) || e.IdPhotoPath1.Contains(filterText) || e.IdPhotoPath2.Contains(filterText))
                     .WhereIf(!string.IsNullOrWhiteSpace(enterpriseName), e => e.EnterpriseName.Contains(enterpriseName))
                     .WhereIf(!string.IsNullOrWhiteSpace(artificialPerson), e => e.ArtificialPerson.Contains(artificialPerson))
-                    .WhereIf(!string.IsNullOrWhiteSpace(establishedTime), e => e.EstablishedTime.Contains(establishedTime))
-                    .WhereIf(!string.IsNullOrWhiteSpace(dueTime), e => e.DueTime.Contains(dueTime))
+                    .WhereIf(establishedTimeMin.HasValue, e => e.EstablishedTime >= establishedTimeMin.Value)
+                    .WhereIf(establishedTimeMax.HasValue, e => e.EstablishedTime <= establishedTimeMax.Value)
+                    .WhereIf(dueTimeMin.HasValue, e => e.DueTime >= dueTimeMin.Value)
+                    .WhereIf(dueTimeMax.HasValue, e => e.DueTime <= dueTimeMax.Value)
                     .WhereIf(!string.IsNullOrWhiteSpace(creditCode), e => e.CreditCode.Contains(creditCode))
                     .WhereIf(!string.IsNullOrWhiteSpace(artificialPersonId), e => e.ArtificialPersonId.Contains(artificialPersonId))
                     .WhereIf(!string.IsNullOrWhiteSpace(registeredCapital), e => e.RegisteredCapital.Contains(registeredCapital))

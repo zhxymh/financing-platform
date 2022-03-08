@@ -53,7 +53,7 @@ namespace Tank.Contracts.Financing {
             "EhcKD2VudGVycHJpc2VfbmFtZRgBIAEoCRISCgppc19jb25maXJtGAIgASgI",
             "IqIBChFTZXRBbGxvd2FuY2VJbnB1dBIXCg9lbnRlcnByaXNlX25hbWUYASAB",
             "KAkSFAoMb3JnYW5pemF0aW9uGAIgASgJEhQKDHByb2R1Y3RfbmFtZRgDIAEo",
-            "CRIRCglhbGxvd2FuY2UYBCABKAkSCwoDYXB5GAUgASgJEg4KBnBlcmlvZBgG",
+            "CRIRCglhbGxvd2FuY2UYBCABKAkSCwoDYXByGAUgASgJEg4KBnBlcmlvZBgG",
             "IAEoCRIYChBndWFyYW50ZWVfbWV0aG9kGAcgASgJIlMKDEFwcHJvdmVJbnB1",
             "dBIXCg9lbnRlcnByaXNlX25hbWUYASABKAkSFAoMb3JnYW5pemF0aW9uGAIg",
             "ASgJEhQKDHByb2R1Y3RfbmFtZRgDIAEoCSJaChNHZXRBcHBseVJlY29yZElu",
@@ -66,7 +66,7 @@ namespace Tank.Contracts.Financing {
             "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAipgEKFUFwcHJvdmVBbGxv",
             "d2FuY2VJbnB1dBIXCg9lbnRlcnByaXNlX25hbWUYASABKAkSFAoMb3JnYW5p",
             "emF0aW9uGAIgASgJEhQKDHByb2R1Y3RfbmFtZRgDIAEoCRIRCglhbGxvd2Fu",
-            "Y2UYBCABKAkSCwoDYXB5GAUgASgJEg4KBnBlcmlvZBgGIAEoCRIYChBndWFy",
+            "Y2UYBCABKAkSCwoDYXByGAUgASgJEg4KBnBlcmlvZBgGIAEoCRIYChBndWFy",
             "YW50ZWVfbWV0aG9kGAcgASgJIisKC0FkZHJlc3NMaXN0EhwKBXZhbHVlGAEg",
             "AygLMg0uYWVsZi5BZGRyZXNzIiUKCEhhc2hMaXN0EhkKBXZhbHVlGAEgAygL",
             "MgouYWVsZi5IYXNoIssBCg5FbnRlcnByaXNlSW5mbxIoCgpiYXNpY19pbmZv",
@@ -75,8 +75,8 @@ namespace Tank.Contracts.Financing {
             "c3RhdHVzGAMgASgOMhIuQ2VydGlmaWNhdGVTdGF0dXMSMQoaZW50ZXJwcmlz",
             "ZV92aXJ0dWFsX2FkZHJlc3MYBCABKAsyDS5hZWxmLkFkZHJlc3MiiQIKE0Vu",
             "dGVycHJpc2VCYXNpY0luZm8SDAoEbmFtZRgBIAEoCRIZChFhcnRpZmljaWFs",
-            "X3BlcnNvbhgCIAEoCRIYChBlc3RhYmxpc2hlZF90aW1lGAMgASgJEhAKCGR1",
-            "ZV90aW1lGAQgASgJEhMKC2NyZWRpdF9jb2RlGAUgASgJEigKFGFydGlmaWNp",
+            "X3BlcnNvbhgCIAEoCRIYChBlc3RhYmxpc2hlZF90aW1lGAMgASgDEhAKCGR1",
+            "ZV90aW1lGAQgASgDEhMKC2NyZWRpdF9jb2RlGAUgASgJEigKFGFydGlmaWNp",
             "YWxfcGVyc29uX2lkGAYgASgLMgouYWVsZi5IYXNoEhoKEnJlZ2lzdGVyZWRf",
             "Y2FwaXRhbBgHIAEoCRIgCgxwaG9uZV9udW1iZXIYCCABKAsyCi5hZWxmLkhh",
             "c2gSIAoMcGhvdG9faGFzaGVzGAkgAygLMgouYWVsZi5IYXNoIoECChVFbnRl",
@@ -91,14 +91,14 @@ namespace Tank.Contracts.Financing {
             "ZRgBIAMoCzIRLkZpbmFuY2luZ1Byb2R1Y3QioQIKC0FwcGx5UmVjb3JkEhcK",
             "D2VudGVycHJpc2VfbmFtZRgBIAEoCRIUCgxvcmdhbml6YXRpb24YAiABKAkS",
             "FAoMcHJvZHVjdF9uYW1lGAMgASgJEhEKCWFsbG93YW5jZRgEIAEoCRILCgNh",
-            "cHkYBSABKAkSDgoGcGVyaW9kGAYgASgJEiIKDGFwcGx5X3N0YXR1cxgHIAEo",
+            "cHIYBSABKAkSDgoGcGVyaW9kGAYgASgJEiIKDGFwcGx5X3N0YXR1cxgHIAEo",
             "DjIMLkFwcGx5U3RhdHVzEhgKEGd1YXJhbnRlZV9tZXRob2QYCCABKAkSLgoK",
             "YXBwbHlfdGltZRgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAS",
             "LwoLcGFzc2VkX3RpbWUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
             "YW1wIi4KD0FwcGx5UmVjb3JkTGlzdBIbCgV2YWx1ZRgBIAMoCzIMLkFwcGx5",
             "UmVjb3JkIqcCCgtBcHBseVBhc3NlZBIXCg9lbnRlcnByaXNlX25hbWUYASAB",
             "KAkSFAoMb3JnYW5pemF0aW9uGAIgASgJEhQKDHByb2R1Y3RfbmFtZRgDIAEo",
-            "CRIRCglhbGxvd2FuY2UYBCABKAkSCwoDYXB5GAUgASgJEg4KBnBlcmlvZBgG",
+            "CRIRCglhbGxvd2FuY2UYBCABKAkSCwoDYXByGAUgASgJEg4KBnBlcmlvZBgG",
             "IAEoCRIiCgxhcHBseV9zdGF0dXMYByABKA4yDC5BcHBseVN0YXR1cxIYChBn",
             "dWFyYW50ZWVfbWV0aG9kGAggASgJEi4KCmFwcGx5X3RpbWUYCSABKAsyGi5n",
             "b29nbGUucHJvdG9idWYuVGltZXN0YW1wEi8KC3Bhc3NlZF90aW1lGAogASgL",
@@ -153,11 +153,11 @@ namespace Tank.Contracts.Financing {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApplyInput), global::Tank.Contracts.Financing.ApplyInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.CancelInput), global::Tank.Contracts.Financing.CancelInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ConfirmCertificateInput), global::Tank.Contracts.Financing.ConfirmCertificateInput.Parser, new[]{ "EnterpriseName", "IsConfirm" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.SetAllowanceInput), global::Tank.Contracts.Financing.SetAllowanceInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apy", "Period", "GuaranteeMethod" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.SetAllowanceInput), global::Tank.Contracts.Financing.SetAllowanceInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apr", "Period", "GuaranteeMethod" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApproveInput), global::Tank.Contracts.Financing.ApproveInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.GetApplyRecordInput), global::Tank.Contracts.Financing.GetApplyRecordInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.GetApplyRecordListInput), global::Tank.Contracts.Financing.GetApplyRecordListInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "ApplyStatus", "StartTime", "EndTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApproveAllowanceInput), global::Tank.Contracts.Financing.ApproveAllowanceInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apy", "Period", "GuaranteeMethod" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApproveAllowanceInput), global::Tank.Contracts.Financing.ApproveAllowanceInput.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apr", "Period", "GuaranteeMethod" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.AddressList), global::Tank.Contracts.Financing.AddressList.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.HashList), global::Tank.Contracts.Financing.HashList.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.EnterpriseInfo), global::Tank.Contracts.Financing.EnterpriseInfo.Parser, new[]{ "BasicInfo", "FurtherInfo", "CertificateStatus", "EnterpriseVirtualAddress" }, null, null, null, null),
@@ -165,9 +165,9 @@ namespace Tank.Contracts.Financing {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.EnterpriseFurtherInfo), global::Tank.Contracts.Financing.EnterpriseFurtherInfo.Parser, new[]{ "Name", "TotalAssets", "Income", "EnterpriseType", "StaffNumber", "Industry", "Location", "RegisteredAddress", "BusinessAddress", "BusinessScope", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.FinancingProduct), global::Tank.Contracts.Financing.FinancingProduct.Parser, new[]{ "Organization", "ProductName", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.FinancingProductList), global::Tank.Contracts.Financing.FinancingProductList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApplyRecord), global::Tank.Contracts.Financing.ApplyRecord.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apy", "Period", "ApplyStatus", "GuaranteeMethod", "ApplyTime", "PassedTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApplyRecord), global::Tank.Contracts.Financing.ApplyRecord.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apr", "Period", "ApplyStatus", "GuaranteeMethod", "ApplyTime", "PassedTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApplyRecordList), global::Tank.Contracts.Financing.ApplyRecordList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApplyPassed), global::Tank.Contracts.Financing.ApplyPassed.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apy", "Period", "ApplyStatus", "GuaranteeMethod", "ApplyTime", "PassedTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApplyPassed), global::Tank.Contracts.Financing.ApplyPassed.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apr", "Period", "ApplyStatus", "GuaranteeMethod", "ApplyTime", "PassedTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -2628,7 +2628,7 @@ namespace Tank.Contracts.Financing {
       organization_ = other.organization_;
       productName_ = other.productName_;
       allowance_ = other.allowance_;
-      apy_ = other.apy_;
+      apr_ = other.apr_;
       period_ = other.period_;
       guaranteeMethod_ = other.guaranteeMethod_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -2688,15 +2688,15 @@ namespace Tank.Contracts.Financing {
       }
     }
 
-    /// <summary>Field number for the "apy" field.</summary>
-    public const int ApyFieldNumber = 5;
-    private string apy_ = "";
+    /// <summary>Field number for the "apr" field.</summary>
+    public const int AprFieldNumber = 5;
+    private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Apy {
-      get { return apy_; }
+    public string Apr {
+      get { return apr_; }
       set {
-        apy_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        apr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2743,7 +2743,7 @@ namespace Tank.Contracts.Financing {
       if (Organization != other.Organization) return false;
       if (ProductName != other.ProductName) return false;
       if (Allowance != other.Allowance) return false;
-      if (Apy != other.Apy) return false;
+      if (Apr != other.Apr) return false;
       if (Period != other.Period) return false;
       if (GuaranteeMethod != other.GuaranteeMethod) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -2757,7 +2757,7 @@ namespace Tank.Contracts.Financing {
       if (Organization.Length != 0) hash ^= Organization.GetHashCode();
       if (ProductName.Length != 0) hash ^= ProductName.GetHashCode();
       if (Allowance.Length != 0) hash ^= Allowance.GetHashCode();
-      if (Apy.Length != 0) hash ^= Apy.GetHashCode();
+      if (Apr.Length != 0) hash ^= Apr.GetHashCode();
       if (Period.Length != 0) hash ^= Period.GetHashCode();
       if (GuaranteeMethod.Length != 0) hash ^= GuaranteeMethod.GetHashCode();
       if (_unknownFields != null) {
@@ -2794,9 +2794,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -2832,9 +2832,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -2866,8 +2866,8 @@ namespace Tank.Contracts.Financing {
       if (Allowance.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Allowance);
       }
-      if (Apy.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apy);
+      if (Apr.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apr);
       }
       if (Period.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Period);
@@ -2899,8 +2899,8 @@ namespace Tank.Contracts.Financing {
       if (other.Allowance.Length != 0) {
         Allowance = other.Allowance;
       }
-      if (other.Apy.Length != 0) {
-        Apy = other.Apy;
+      if (other.Apr.Length != 0) {
+        Apr = other.Apr;
       }
       if (other.Period.Length != 0) {
         Period = other.Period;
@@ -2940,7 +2940,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {
@@ -2983,7 +2983,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {
@@ -3957,7 +3957,7 @@ namespace Tank.Contracts.Financing {
       organization_ = other.organization_;
       productName_ = other.productName_;
       allowance_ = other.allowance_;
-      apy_ = other.apy_;
+      apr_ = other.apr_;
       period_ = other.period_;
       guaranteeMethod_ = other.guaranteeMethod_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -4017,15 +4017,15 @@ namespace Tank.Contracts.Financing {
       }
     }
 
-    /// <summary>Field number for the "apy" field.</summary>
-    public const int ApyFieldNumber = 5;
-    private string apy_ = "";
+    /// <summary>Field number for the "apr" field.</summary>
+    public const int AprFieldNumber = 5;
+    private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Apy {
-      get { return apy_; }
+    public string Apr {
+      get { return apr_; }
       set {
-        apy_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        apr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -4072,7 +4072,7 @@ namespace Tank.Contracts.Financing {
       if (Organization != other.Organization) return false;
       if (ProductName != other.ProductName) return false;
       if (Allowance != other.Allowance) return false;
-      if (Apy != other.Apy) return false;
+      if (Apr != other.Apr) return false;
       if (Period != other.Period) return false;
       if (GuaranteeMethod != other.GuaranteeMethod) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -4086,7 +4086,7 @@ namespace Tank.Contracts.Financing {
       if (Organization.Length != 0) hash ^= Organization.GetHashCode();
       if (ProductName.Length != 0) hash ^= ProductName.GetHashCode();
       if (Allowance.Length != 0) hash ^= Allowance.GetHashCode();
-      if (Apy.Length != 0) hash ^= Apy.GetHashCode();
+      if (Apr.Length != 0) hash ^= Apr.GetHashCode();
       if (Period.Length != 0) hash ^= Period.GetHashCode();
       if (GuaranteeMethod.Length != 0) hash ^= GuaranteeMethod.GetHashCode();
       if (_unknownFields != null) {
@@ -4123,9 +4123,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -4161,9 +4161,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -4195,8 +4195,8 @@ namespace Tank.Contracts.Financing {
       if (Allowance.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Allowance);
       }
-      if (Apy.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apy);
+      if (Apr.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apr);
       }
       if (Period.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Period);
@@ -4228,8 +4228,8 @@ namespace Tank.Contracts.Financing {
       if (other.Allowance.Length != 0) {
         Allowance = other.Allowance;
       }
-      if (other.Apy.Length != 0) {
-        Apy = other.Apy;
+      if (other.Apr.Length != 0) {
+        Apr = other.Apr;
       }
       if (other.Period.Length != 0) {
         Period = other.Period;
@@ -4269,7 +4269,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {
@@ -4312,7 +4312,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {
@@ -5091,25 +5091,25 @@ namespace Tank.Contracts.Financing {
 
     /// <summary>Field number for the "established_time" field.</summary>
     public const int EstablishedTimeFieldNumber = 3;
-    private string establishedTime_ = "";
+    private long establishedTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string EstablishedTime {
+    public long EstablishedTime {
       get { return establishedTime_; }
       set {
-        establishedTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        establishedTime_ = value;
       }
     }
 
     /// <summary>Field number for the "due_time" field.</summary>
     public const int DueTimeFieldNumber = 4;
-    private string dueTime_ = "";
+    private long dueTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DueTime {
+    public long DueTime {
       get { return dueTime_; }
       set {
-        dueTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        dueTime_ = value;
       }
     }
 
@@ -5205,8 +5205,8 @@ namespace Tank.Contracts.Financing {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (ArtificialPerson.Length != 0) hash ^= ArtificialPerson.GetHashCode();
-      if (EstablishedTime.Length != 0) hash ^= EstablishedTime.GetHashCode();
-      if (DueTime.Length != 0) hash ^= DueTime.GetHashCode();
+      if (EstablishedTime != 0L) hash ^= EstablishedTime.GetHashCode();
+      if (DueTime != 0L) hash ^= DueTime.GetHashCode();
       if (CreditCode.Length != 0) hash ^= CreditCode.GetHashCode();
       if (artificialPersonId_ != null) hash ^= ArtificialPersonId.GetHashCode();
       if (RegisteredCapital.Length != 0) hash ^= RegisteredCapital.GetHashCode();
@@ -5238,13 +5238,13 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(18);
         output.WriteString(ArtificialPerson);
       }
-      if (EstablishedTime.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(EstablishedTime);
+      if (EstablishedTime != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(EstablishedTime);
       }
-      if (DueTime.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(DueTime);
+      if (DueTime != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(DueTime);
       }
       if (CreditCode.Length != 0) {
         output.WriteRawTag(42);
@@ -5281,13 +5281,13 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(18);
         output.WriteString(ArtificialPerson);
       }
-      if (EstablishedTime.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(EstablishedTime);
+      if (EstablishedTime != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(EstablishedTime);
       }
-      if (DueTime.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(DueTime);
+      if (DueTime != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(DueTime);
       }
       if (CreditCode.Length != 0) {
         output.WriteRawTag(42);
@@ -5322,11 +5322,11 @@ namespace Tank.Contracts.Financing {
       if (ArtificialPerson.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ArtificialPerson);
       }
-      if (EstablishedTime.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EstablishedTime);
+      if (EstablishedTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(EstablishedTime);
       }
-      if (DueTime.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DueTime);
+      if (DueTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(DueTime);
       }
       if (CreditCode.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CreditCode);
@@ -5359,10 +5359,10 @@ namespace Tank.Contracts.Financing {
       if (other.ArtificialPerson.Length != 0) {
         ArtificialPerson = other.ArtificialPerson;
       }
-      if (other.EstablishedTime.Length != 0) {
+      if (other.EstablishedTime != 0L) {
         EstablishedTime = other.EstablishedTime;
       }
-      if (other.DueTime.Length != 0) {
+      if (other.DueTime != 0L) {
         DueTime = other.DueTime;
       }
       if (other.CreditCode.Length != 0) {
@@ -5407,12 +5407,12 @@ namespace Tank.Contracts.Financing {
             ArtificialPerson = input.ReadString();
             break;
           }
-          case 26: {
-            EstablishedTime = input.ReadString();
+          case 24: {
+            EstablishedTime = input.ReadInt64();
             break;
           }
-          case 34: {
-            DueTime = input.ReadString();
+          case 32: {
+            DueTime = input.ReadInt64();
             break;
           }
           case 42: {
@@ -5464,12 +5464,12 @@ namespace Tank.Contracts.Financing {
             ArtificialPerson = input.ReadString();
             break;
           }
-          case 26: {
-            EstablishedTime = input.ReadString();
+          case 24: {
+            EstablishedTime = input.ReadInt64();
             break;
           }
-          case 34: {
-            DueTime = input.ReadString();
+          case 32: {
+            DueTime = input.ReadInt64();
             break;
           }
           case 42: {
@@ -6543,7 +6543,7 @@ namespace Tank.Contracts.Financing {
       organization_ = other.organization_;
       productName_ = other.productName_;
       allowance_ = other.allowance_;
-      apy_ = other.apy_;
+      apr_ = other.apr_;
       period_ = other.period_;
       applyStatus_ = other.applyStatus_;
       guaranteeMethod_ = other.guaranteeMethod_;
@@ -6606,15 +6606,15 @@ namespace Tank.Contracts.Financing {
       }
     }
 
-    /// <summary>Field number for the "apy" field.</summary>
-    public const int ApyFieldNumber = 5;
-    private string apy_ = "";
+    /// <summary>Field number for the "apr" field.</summary>
+    public const int AprFieldNumber = 5;
+    private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Apy {
-      get { return apy_; }
+    public string Apr {
+      get { return apr_; }
       set {
-        apy_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        apr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -6697,7 +6697,7 @@ namespace Tank.Contracts.Financing {
       if (Organization != other.Organization) return false;
       if (ProductName != other.ProductName) return false;
       if (Allowance != other.Allowance) return false;
-      if (Apy != other.Apy) return false;
+      if (Apr != other.Apr) return false;
       if (Period != other.Period) return false;
       if (ApplyStatus != other.ApplyStatus) return false;
       if (GuaranteeMethod != other.GuaranteeMethod) return false;
@@ -6714,7 +6714,7 @@ namespace Tank.Contracts.Financing {
       if (Organization.Length != 0) hash ^= Organization.GetHashCode();
       if (ProductName.Length != 0) hash ^= ProductName.GetHashCode();
       if (Allowance.Length != 0) hash ^= Allowance.GetHashCode();
-      if (Apy.Length != 0) hash ^= Apy.GetHashCode();
+      if (Apr.Length != 0) hash ^= Apr.GetHashCode();
       if (Period.Length != 0) hash ^= Period.GetHashCode();
       if (ApplyStatus != global::Tank.Contracts.Financing.ApplyStatus.NotApplied) hash ^= ApplyStatus.GetHashCode();
       if (GuaranteeMethod.Length != 0) hash ^= GuaranteeMethod.GetHashCode();
@@ -6754,9 +6754,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -6804,9 +6804,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -6850,8 +6850,8 @@ namespace Tank.Contracts.Financing {
       if (Allowance.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Allowance);
       }
-      if (Apy.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apy);
+      if (Apr.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apr);
       }
       if (Period.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Period);
@@ -6892,8 +6892,8 @@ namespace Tank.Contracts.Financing {
       if (other.Allowance.Length != 0) {
         Allowance = other.Allowance;
       }
-      if (other.Apy.Length != 0) {
-        Apy = other.Apy;
+      if (other.Apr.Length != 0) {
+        Apr = other.Apr;
       }
       if (other.Period.Length != 0) {
         Period = other.Period;
@@ -6948,7 +6948,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {
@@ -7009,7 +7009,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {
@@ -7261,7 +7261,7 @@ namespace Tank.Contracts.Financing {
       organization_ = other.organization_;
       productName_ = other.productName_;
       allowance_ = other.allowance_;
-      apy_ = other.apy_;
+      apr_ = other.apr_;
       period_ = other.period_;
       applyStatus_ = other.applyStatus_;
       guaranteeMethod_ = other.guaranteeMethod_;
@@ -7324,15 +7324,15 @@ namespace Tank.Contracts.Financing {
       }
     }
 
-    /// <summary>Field number for the "apy" field.</summary>
-    public const int ApyFieldNumber = 5;
-    private string apy_ = "";
+    /// <summary>Field number for the "apr" field.</summary>
+    public const int AprFieldNumber = 5;
+    private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Apy {
-      get { return apy_; }
+    public string Apr {
+      get { return apr_; }
       set {
-        apy_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        apr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -7415,7 +7415,7 @@ namespace Tank.Contracts.Financing {
       if (Organization != other.Organization) return false;
       if (ProductName != other.ProductName) return false;
       if (Allowance != other.Allowance) return false;
-      if (Apy != other.Apy) return false;
+      if (Apr != other.Apr) return false;
       if (Period != other.Period) return false;
       if (ApplyStatus != other.ApplyStatus) return false;
       if (GuaranteeMethod != other.GuaranteeMethod) return false;
@@ -7432,7 +7432,7 @@ namespace Tank.Contracts.Financing {
       if (Organization.Length != 0) hash ^= Organization.GetHashCode();
       if (ProductName.Length != 0) hash ^= ProductName.GetHashCode();
       if (Allowance.Length != 0) hash ^= Allowance.GetHashCode();
-      if (Apy.Length != 0) hash ^= Apy.GetHashCode();
+      if (Apr.Length != 0) hash ^= Apr.GetHashCode();
       if (Period.Length != 0) hash ^= Period.GetHashCode();
       if (ApplyStatus != global::Tank.Contracts.Financing.ApplyStatus.NotApplied) hash ^= ApplyStatus.GetHashCode();
       if (GuaranteeMethod.Length != 0) hash ^= GuaranteeMethod.GetHashCode();
@@ -7472,9 +7472,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -7522,9 +7522,9 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(34);
         output.WriteString(Allowance);
       }
-      if (Apy.Length != 0) {
+      if (Apr.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Apy);
+        output.WriteString(Apr);
       }
       if (Period.Length != 0) {
         output.WriteRawTag(50);
@@ -7568,8 +7568,8 @@ namespace Tank.Contracts.Financing {
       if (Allowance.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Allowance);
       }
-      if (Apy.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apy);
+      if (Apr.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Apr);
       }
       if (Period.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Period);
@@ -7610,8 +7610,8 @@ namespace Tank.Contracts.Financing {
       if (other.Allowance.Length != 0) {
         Allowance = other.Allowance;
       }
-      if (other.Apy.Length != 0) {
-        Apy = other.Apy;
+      if (other.Apr.Length != 0) {
+        Apr = other.Apr;
       }
       if (other.Period.Length != 0) {
         Period = other.Period;
@@ -7666,7 +7666,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {
@@ -7727,7 +7727,7 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 42: {
-            Apy = input.ReadString();
+            Apr = input.ReadString();
             break;
           }
           case 50: {

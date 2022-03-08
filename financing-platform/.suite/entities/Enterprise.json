@@ -53,7 +53,7 @@
     {
       "Id": "070561ac-9299-4f96-8351-f03b9dd01cf6",
       "Name": "EstablishedTime",
-      "Type": "string",
+      "Type": "long",
       "EnumType": "",
       "EnumNamespace": "",
       "EnumAngularImport": "shared/enums",
@@ -71,7 +71,7 @@
     {
       "Id": "a8c31f66-538c-46e6-9b04-a8a9397ff399",
       "Name": "DueTime",
-      "Type": "string",
+      "Type": "long",
       "EnumType": "",
       "EnumNamespace": "",
       "EnumAngularImport": "shared/enums",

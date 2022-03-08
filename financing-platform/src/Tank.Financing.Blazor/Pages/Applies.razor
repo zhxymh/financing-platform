@@ -93,8 +93,8 @@
               </DataGridColumn>
 
               <DataGridColumn TItem="ApplyDto"
-                      Field="APY"
-                      Caption="@L["APY"]">
+                      Field="APR"
+                      Caption="@L["APR"]">
               </DataGridColumn>
 
               <DataGridColumn TItem="ApplyDto"
@@ -199,8 +199,8 @@
 
                     <Validation>
                         <Field>
-                            <FieldLabel>@L["APY"]</FieldLabel>
-                            <TextEdit @bind-Text="@NewApply.APY" >
+                            <FieldLabel>@L["APR"]</FieldLabel>
+                            <TextEdit @bind-Text="@NewApply.APR" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
@@ -250,25 +250,25 @@
                     <Validation>
                         <Field>
                             <FieldLabel>@L["ApplyTime"] *</FieldLabel>
-                            <TextEdit @bind-Text="@NewApply.ApplyTime" >
+                            <NumericEdit TValue="long" @bind-Value="@NewApply.ApplyTime" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                            </TextEdit>
+                             </NumericEdit>
                         </Field>
-                    </Validation>
+                     </Validation>
 
 
                     <Validation>
                         <Field>
                             <FieldLabel>@L["PassedTime"]</FieldLabel>
-                            <TextEdit @bind-Text="@NewApply.PassedTime" >
+                            <NumericEdit TValue="long" @bind-Value="@NewApply.PassedTime" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                            </TextEdit>
+                             </NumericEdit>
                         </Field>
-                    </Validation>
+                     </Validation>
 
 
                 </Validations>
@@ -348,8 +348,8 @@
 
                     <Validation>
                         <Field>
-                            <FieldLabel>@L["APY"]</FieldLabel>
-                            <TextEdit @bind-Text="@EditingApply.APY" >
+                            <FieldLabel>@L["APR"]</FieldLabel>
+                            <TextEdit @bind-Text="@EditingApply.APR" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
@@ -399,25 +399,25 @@
                     <Validation>
                         <Field>
                             <FieldLabel>@L["ApplyTime"] *</FieldLabel>
-                            <TextEdit @bind-Text="@EditingApply.ApplyTime" >
+                            <NumericEdit TValue="long" @bind-Value="@EditingApply.ApplyTime" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                            </TextEdit>
+                             </NumericEdit>
                         </Field>
-                    </Validation>
+                     </Validation>
 
 
                     <Validation>
                         <Field>
                             <FieldLabel>@L["PassedTime"]</FieldLabel>
-                            <TextEdit @bind-Text="@EditingApply.PassedTime" >
+                            <NumericEdit TValue="long" @bind-Value="@EditingApply.PassedTime" >
                                 <Feedback>
                                     <ValidationError />
                                 </Feedback>
-                            </TextEdit>
+                             </NumericEdit>
                         </Field>
-                    </Validation>
+                     </Validation>
 
 
                 </Validations>

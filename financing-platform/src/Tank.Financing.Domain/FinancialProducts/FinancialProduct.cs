@@ -10,7 +10,7 @@ namespace Tank.Financing.FinancialProducts
 {
     public class FinancialProduct : FullAuditedAggregateRoot<Guid>
     {
-        public virtual int TimeLimit { get; set; }
+        public virtual int Period { get; set; }
 
         public virtual GuaranteeMethod GuaranteeMethod { get; set; }
 
@@ -36,17 +36,17 @@ namespace Tank.Financing.FinancialProducts
 
         }
 
-        public FinancialProduct(Guid id, int timeLimit, GuaranteeMethod guaranteeMethod, string creditCeiling, string organization, string aPR, string name, int? appliedNumber = null, string rating = null)
+        public FinancialProduct(Guid id, int period, GuaranteeMethod guaranteeMethod, string creditCeiling, string organization, string aPR, string name, int? appliedNumber = null, string rating = null)
         {
             Id = id;
-            if (timeLimit < FinancialProductConsts.TimeLimitMinLength)
+            if (period < FinancialProductConsts.PeriodMinLength)
             {
-                throw new ArgumentOutOfRangeException(nameof(timeLimit), timeLimit, "The value of 'timeLimit' cannot be lower than " + FinancialProductConsts.TimeLimitMinLength);
+                throw new ArgumentOutOfRangeException(nameof(period), period, "The value of 'period' cannot be lower than " + FinancialProductConsts.PeriodMinLength);
             }
 
-            if (timeLimit > FinancialProductConsts.TimeLimitMaxLength)
+            if (period > FinancialProductConsts.PeriodMaxLength)
             {
-                throw new ArgumentOutOfRangeException(nameof(timeLimit), timeLimit, "The value of 'timeLimit' cannot be greater than " + FinancialProductConsts.TimeLimitMaxLength);
+                throw new ArgumentOutOfRangeException(nameof(period), period, "The value of 'period' cannot be greater than " + FinancialProductConsts.PeriodMaxLength);
             }
 
             Check.NotNull(creditCeiling, nameof(creditCeiling));
@@ -54,7 +54,7 @@ namespace Tank.Financing.FinancialProducts
             Check.Length(organization, nameof(organization), FinancialProductConsts.OrganizationMaxLength, FinancialProductConsts.OrganizationMinLength);
             Check.NotNull(aPR, nameof(aPR));
             Check.NotNull(name, nameof(name));
-            TimeLimit = timeLimit;
+            Period = period;
             GuaranteeMethod = guaranteeMethod;
             CreditCeiling = creditCeiling;
             Organization = organization;

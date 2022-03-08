@@ -35,8 +35,8 @@ namespace Tank.Financing.Applies
 
         public virtual async Task<PagedResultDto<ApplyDto>> GetListAsync(GetAppliesInput input)
         {
-            var totalCount = await _applyRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APY, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTime, input.PassedTime);
-            var items = await _applyRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APY, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTime, input.PassedTime, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _applyRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APR, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTimeMin, input.ApplyTimeMax, input.PassedTimeMin, input.PassedTimeMax);
+            var items = await _applyRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APR, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTimeMin, input.ApplyTimeMax, input.PassedTimeMin, input.PassedTimeMax, input.Sorting, input.MaxResultCount, input.SkipCount);
 
             return new PagedResultDto<ApplyDto>
             {
@@ -90,7 +90,7 @@ namespace Tank.Financing.Applies
                     ProductName = input.ProductName,
                     Organization = input.Organization,
                     Allowance = input.Allowance,
-                    Apy = input.APY,
+                    Apr = input.APR,
                     GuaranteeMethod = input.GuaranteeMethod.ToString(),
                     Period = input.Period
                 });
@@ -129,7 +129,7 @@ namespace Tank.Financing.Applies
                     ProductName = input.ProductName,
                     Organization = input.Organization,
                     Allowance = input.Allowance,
-                    Apy = input.APY,
+                    Apr = input.APR,
                     GuaranteeMethod = input.GuaranteeMethod.ToString(),
                     Period = input.Period
                 });
@@ -166,7 +166,7 @@ namespace Tank.Financing.Applies
                     ProductName = input.ProductName,
                     Organization = input.Organization,
                     Allowance = input.Allowance,
-                    Apy = input.APY,
+                    Apr = input.APR,
                     GuaranteeMethod = input.GuaranteeMethod.ToString(),
                     Period = input.Period
                 });

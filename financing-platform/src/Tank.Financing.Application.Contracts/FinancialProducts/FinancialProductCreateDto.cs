@@ -7,8 +7,8 @@ namespace Tank.Financing.FinancialProducts
     public class FinancialProductCreateDto
     {
         [Required]
-        [Range(FinancialProductConsts.TimeLimitMinLength, FinancialProductConsts.TimeLimitMaxLength)]
-        public int TimeLimit { get; set; }
+        [Range(FinancialProductConsts.PeriodMinLength, FinancialProductConsts.PeriodMaxLength)]
+        public int Period { get; set; }
         [Required]
         public GuaranteeMethod GuaranteeMethod { get; set; } = ((GuaranteeMethod[])Enum.GetValues(typeof(GuaranteeMethod)))[0];
         [Required]

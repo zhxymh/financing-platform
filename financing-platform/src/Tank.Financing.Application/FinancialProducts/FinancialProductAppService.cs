@@ -9,7 +9,9 @@ using Microsoft.AspNetCore.Authorization;
 using Tank.Contracts.Financing;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
+using Volo.Abp.Domain.Repositories;
 using Tank.Financing.Permissions;
+using Tank.Financing.FinancialProducts;
 
 namespace Tank.Financing.FinancialProducts
 {
@@ -30,13 +32,8 @@ namespace Tank.Financing.FinancialProducts
 
         public virtual async Task<PagedResultDto<FinancialProductDto>> GetListAsync(GetFinancialProductsInput input)
         {
-            var totalCount = await _financialProductRepository.GetCountAsync(input.FilterText, input.TimeLimitMin,
-                input.TimeLimitMax, input.GuaranteeMethod, input.CreditCeiling, input.Organization,
-                input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.Name);
-            var items = await _financialProductRepository.GetListAsync(input.FilterText, input.TimeLimitMin,
-                input.TimeLimitMax, input.GuaranteeMethod, input.CreditCeiling, input.Organization,
-                input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.Name, input.Sorting,
-                input.MaxResultCount, input.SkipCount);
+            var totalCount = await _financialProductRepository.GetCountAsync(input.FilterText, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.CreditCeiling, input.Organization, input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.Name);
+            var items = await _financialProductRepository.GetListAsync(input.FilterText, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.CreditCeiling, input.Organization, input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.Name, input.Sorting, input.MaxResultCount, input.SkipCount);
 
             return new PagedResultDto<FinancialProductDto>
             {
@@ -47,8 +44,7 @@ namespace Tank.Financing.FinancialProducts
 
         public virtual async Task<FinancialProductDto> GetAsync(Guid id)
         {
-            return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(
-                await _financialProductRepository.GetAsync(id));
+            return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(await _financialProductRepository.GetAsync(id));
         }
 
         [Authorize(FinancingPermissions.FinancialProducts.Delete)]

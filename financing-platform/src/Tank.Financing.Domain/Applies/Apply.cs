@@ -23,7 +23,7 @@ namespace Tank.Financing.Applies
         public virtual string Allowance { get; set; }
 
         [CanBeNull]
-        public virtual string APY { get; set; }
+        public virtual string APR { get; set; }
 
         [CanBeNull]
         public virtual string Period { get; set; }
@@ -32,29 +32,26 @@ namespace Tank.Financing.Applies
 
         public virtual GuaranteeMethod GuaranteeMethod { get; set; }
 
-        [NotNull]
-        public virtual string ApplyTime { get; set; }
+        public virtual long ApplyTime { get; set; }
 
-        [CanBeNull]
-        public virtual string PassedTime { get; set; }
+        public virtual long PassedTime { get; set; }
 
         public Apply()
         {
 
         }
 
-        public Apply(Guid id, string enterpriseName, string organization, string productName, string allowance, string aPY, string period, ApplyStatus applyStatus, GuaranteeMethod guaranteeMethod, string applyTime, string passedTime)
+        public Apply(Guid id, string enterpriseName, string organization, string productName, string allowance, string aPR, string period, ApplyStatus applyStatus, GuaranteeMethod guaranteeMethod, long applyTime, long passedTime)
         {
             Id = id;
             Check.NotNull(enterpriseName, nameof(enterpriseName));
             Check.NotNull(organization, nameof(organization));
             Check.NotNull(productName, nameof(productName));
-            Check.NotNull(applyTime, nameof(applyTime));
             EnterpriseName = enterpriseName;
             Organization = organization;
             ProductName = productName;
             Allowance = allowance;
-            APY = aPY;
+            APR = aPR;
             Period = period;
             ApplyStatus = applyStatus;
             GuaranteeMethod = guaranteeMethod;

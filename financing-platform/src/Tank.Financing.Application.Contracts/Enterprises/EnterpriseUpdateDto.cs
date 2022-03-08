@@ -11,8 +11,8 @@ namespace Tank.Financing.Enterprises
         [Required]
         public string ArtificialPerson { get; set; }
         [Required]
-        public string EstablishedTime { get; set; }
-        public string DueTime { get; set; }
+        public long EstablishedTime { get; set; }
+        public long DueTime { get; set; }
         [Required]
         public string CreditCode { get; set; }
         [Required]

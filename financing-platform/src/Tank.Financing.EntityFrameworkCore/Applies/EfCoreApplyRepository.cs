@@ -26,18 +26,20 @@ namespace Tank.Financing.Applies
             string organization = null,
             string productName = null,
             string allowance = null,
-            string aPY = null,
+            string aPR = null,
             string period = null,
             ApplyStatus? applyStatus = null,
             GuaranteeMethod? guaranteeMethod = null,
-            string applyTime = null,
-            string passedTime = null,
+            long? applyTimeMin = null,
+            long? applyTimeMax = null,
+            long? passedTimeMin = null,
+            long? passedTimeMax = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, organization, productName, allowance, aPY, period, applyStatus, guaranteeMethod, applyTime, passedTime);
+            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, organization, productName, allowance, aPR, period, applyStatus, guaranteeMethod, applyTimeMin, applyTimeMax, passedTimeMin, passedTimeMax);
             query = query.OrderBy(string.IsNullOrWhiteSpace(sorting) ? ApplyConsts.GetDefaultSorting(false) : sorting);
             return await query.PageBy(skipCount, maxResultCount).ToListAsync(cancellationToken);
         }
@@ -48,15 +50,17 @@ namespace Tank.Financing.Applies
             string organization = null,
             string productName = null,
             string allowance = null,
-            string aPY = null,
+            string aPR = null,
             string period = null,
             ApplyStatus? applyStatus = null,
             GuaranteeMethod? guaranteeMethod = null,
-            string applyTime = null,
-            string passedTime = null,
+            long? applyTimeMin = null,
+            long? applyTimeMax = null,
+            long? passedTimeMin = null,
+            long? passedTimeMax = null,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, organization, productName, allowance, aPY, period, applyStatus, guaranteeMethod, applyTime, passedTime);
+            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, organization, productName, allowance, aPR, period, applyStatus, guaranteeMethod, applyTimeMin, applyTimeMax, passedTimeMin, passedTimeMax);
             return await query.LongCountAsync(GetCancellationToken(cancellationToken));
         }
 
@@ -67,25 +71,29 @@ namespace Tank.Financing.Applies
             string organization = null,
             string productName = null,
             string allowance = null,
-            string aPY = null,
+            string aPR = null,
             string period = null,
             ApplyStatus? applyStatus = null,
             GuaranteeMethod? guaranteeMethod = null,
-            string applyTime = null,
-            string passedTime = null)
+            long? applyTimeMin = null,
+            long? applyTimeMax = null,
+            long? passedTimeMin = null,
+            long? passedTimeMax = null)
         {
             return query
-                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.Organization.Contains(filterText) || e.ProductName.Contains(filterText) || e.Allowance.Contains(filterText) || e.APY.Contains(filterText) || e.Period.Contains(filterText) || e.ApplyTime.Contains(filterText) || e.PassedTime.Contains(filterText))
+                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.Organization.Contains(filterText) || e.ProductName.Contains(filterText) || e.Allowance.Contains(filterText) || e.APR.Contains(filterText) || e.Period.Contains(filterText))
                     .WhereIf(!string.IsNullOrWhiteSpace(enterpriseName), e => e.EnterpriseName.Contains(enterpriseName))
                     .WhereIf(!string.IsNullOrWhiteSpace(organization), e => e.Organization.Contains(organization))
                     .WhereIf(!string.IsNullOrWhiteSpace(productName), e => e.ProductName.Contains(productName))
                     .WhereIf(!string.IsNullOrWhiteSpace(allowance), e => e.Allowance.Contains(allowance))
-                    .WhereIf(!string.IsNullOrWhiteSpace(aPY), e => e.APY.Contains(aPY))
+                    .WhereIf(!string.IsNullOrWhiteSpace(aPR), e => e.APR.Contains(aPR))
                     .WhereIf(!string.IsNullOrWhiteSpace(period), e => e.Period.Contains(period))
                     .WhereIf(applyStatus.HasValue, e => e.ApplyStatus == applyStatus)
                     .WhereIf(guaranteeMethod.HasValue, e => e.GuaranteeMethod == guaranteeMethod)
-                    .WhereIf(!string.IsNullOrWhiteSpace(applyTime), e => e.ApplyTime.Contains(applyTime))
-                    .WhereIf(!string.IsNullOrWhiteSpace(passedTime), e => e.PassedTime.Contains(passedTime));
+                    .WhereIf(applyTimeMin.HasValue, e => e.ApplyTime >= applyTimeMin.Value)
+                    .WhereIf(applyTimeMax.HasValue, e => e.ApplyTime <= applyTimeMax.Value)
+                    .WhereIf(passedTimeMin.HasValue, e => e.PassedTime >= passedTimeMin.Value)
+                    .WhereIf(passedTimeMax.HasValue, e => e.PassedTime <= passedTimeMax.Value);
         }
     }
 }

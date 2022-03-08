@@ -6,7 +6,7 @@ namespace Tank.Financing.FinancialProducts
 {
     public class FinancialProductDto : FullAuditedEntityDto<Guid>
     {
-        public int TimeLimit { get; set; }
+        public int Period { get; set; }
         public GuaranteeMethod GuaranteeMethod { get; set; }
         public string CreditCeiling { get; set; }
         public string Organization { get; set; }

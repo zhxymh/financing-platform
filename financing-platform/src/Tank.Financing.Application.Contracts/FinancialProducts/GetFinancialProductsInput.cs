@@ -8,8 +8,8 @@ namespace Tank.Financing.FinancialProducts
     {
         public string FilterText { get; set; }
 
-        public int? TimeLimitMin { get; set; }
-        public int? TimeLimitMax { get; set; }
+        public int? PeriodMin { get; set; }
+        public int? PeriodMax { get; set; }
         public GuaranteeMethod? GuaranteeMethod { get; set; }
         public string CreditCeiling { get; set; }
         public string Organization { get; set; }

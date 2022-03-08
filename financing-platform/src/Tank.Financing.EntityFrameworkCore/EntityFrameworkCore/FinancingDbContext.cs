@@ -133,19 +133,6 @@ public class FinancingDbContext :
         }
         if (builder.IsHostDatabase())
         {
-            builder.Entity<FinancialProduct>(b =>
-{
-    b.ToTable(FinancingConsts.DbTablePrefix + "FinancialProducts", FinancingConsts.DbSchema);
-    b.ConfigureByConvention();
-    b.Property(x => x.TimeLimit).HasColumnName(nameof(FinancialProduct.TimeLimit)).IsRequired().HasMaxLength(FinancialProductConsts.TimeLimitMaxLength);
-    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(FinancialProduct.GuaranteeMethod)).IsRequired();
-    b.Property(x => x.CreditCeiling).HasColumnName(nameof(FinancialProduct.CreditCeiling)).IsRequired();
-    b.Property(x => x.Organization).HasColumnName(nameof(FinancialProduct.Organization)).IsRequired().HasMaxLength(FinancialProductConsts.OrganizationMaxLength);
-    b.Property(x => x.AppliedNumber).HasColumnName(nameof(FinancialProduct.AppliedNumber));
-    b.Property(x => x.APR).HasColumnName(nameof(FinancialProduct.APR)).IsRequired();
-    b.Property(x => x.Rating).HasColumnName(nameof(FinancialProduct.Rating));
-    b.Property(x => x.Name).HasColumnName(nameof(FinancialProduct.Name)).IsRequired();
-});
 
         }
         if (builder.IsHostDatabase())
@@ -202,6 +189,31 @@ public class FinancingDbContext :
         }
         if (builder.IsHostDatabase())
         {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+            builder.Entity<FinancialProduct>(b =>
+{
+    b.ToTable(FinancingConsts.DbTablePrefix + "FinancialProducts", FinancingConsts.DbSchema);
+    b.ConfigureByConvention();
+    b.Property(x => x.Period).HasColumnName(nameof(FinancialProduct.Period)).IsRequired().HasMaxLength(FinancialProductConsts.PeriodMaxLength);
+    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(FinancialProduct.GuaranteeMethod)).IsRequired();
+    b.Property(x => x.CreditCeiling).HasColumnName(nameof(FinancialProduct.CreditCeiling)).IsRequired();
+    b.Property(x => x.Organization).HasColumnName(nameof(FinancialProduct.Organization)).IsRequired().HasMaxLength(FinancialProductConsts.OrganizationMaxLength);
+    b.Property(x => x.AppliedNumber).HasColumnName(nameof(FinancialProduct.AppliedNumber));
+    b.Property(x => x.APR).HasColumnName(nameof(FinancialProduct.APR)).IsRequired();
+    b.Property(x => x.Rating).HasColumnName(nameof(FinancialProduct.Rating));
+    b.Property(x => x.Name).HasColumnName(nameof(FinancialProduct.Name)).IsRequired();
+});
+
+        }
+        if (builder.IsHostDatabase())
+        {
             builder.Entity<Enterprise>(b =>
 {
     b.ToTable(FinancingConsts.DbTablePrefix + "Enterprises", FinancingConsts.DbSchema);
@@ -231,7 +243,7 @@ public class FinancingDbContext :
     b.Property(x => x.Organization).HasColumnName(nameof(Apply.Organization)).IsRequired();
     b.Property(x => x.ProductName).HasColumnName(nameof(Apply.ProductName)).IsRequired();
     b.Property(x => x.Allowance).HasColumnName(nameof(Apply.Allowance));
-    b.Property(x => x.APY).HasColumnName(nameof(Apply.APY));
+    b.Property(x => x.APR).HasColumnName(nameof(Apply.APR));
     b.Property(x => x.Period).HasColumnName(nameof(Apply.Period));
     b.Property(x => x.ApplyStatus).HasColumnName(nameof(Apply.ApplyStatus)).IsRequired();
     b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(Apply.GuaranteeMethod));

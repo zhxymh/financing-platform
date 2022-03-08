@@ -22,8 +22,8 @@ namespace Tank.Financing.FinancialProducts
 
         public async Task<List<FinancialProduct>> GetListAsync(
             string filterText = null,
-            int? timeLimitMin = null,
-            int? timeLimitMax = null,
+            int? periodMin = null,
+            int? periodMax = null,
             GuaranteeMethod? guaranteeMethod = null,
             string creditCeiling = null,
             string organization = null,
@@ -37,15 +37,15 @@ namespace Tank.Financing.FinancialProducts
             int skipCount = 0,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetQueryableAsync()), filterText, timeLimitMin, timeLimitMax, guaranteeMethod, creditCeiling, organization, appliedNumberMin, appliedNumberMax, aPR, rating, name);
+            var query = ApplyFilter((await GetQueryableAsync()), filterText, periodMin, periodMax, guaranteeMethod, creditCeiling, organization, appliedNumberMin, appliedNumberMax, aPR, rating, name);
             query = query.OrderBy(string.IsNullOrWhiteSpace(sorting) ? FinancialProductConsts.GetDefaultSorting(false) : sorting);
             return await query.PageBy(skipCount, maxResultCount).ToListAsync(cancellationToken);
         }
 
         public async Task<long> GetCountAsync(
             string filterText = null,
-            int? timeLimitMin = null,
-            int? timeLimitMax = null,
+            int? periodMin = null,
+            int? periodMax = null,
             GuaranteeMethod? guaranteeMethod = null,
             string creditCeiling = null,
             string organization = null,
@@ -56,15 +56,15 @@ namespace Tank.Financing.FinancialProducts
             string name = null,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetDbSetAsync()), filterText, timeLimitMin, timeLimitMax, guaranteeMethod, creditCeiling, organization, appliedNumberMin, appliedNumberMax, aPR, rating, name);
+            var query = ApplyFilter((await GetDbSetAsync()), filterText, periodMin, periodMax, guaranteeMethod, creditCeiling, organization, appliedNumberMin, appliedNumberMax, aPR, rating, name);
             return await query.LongCountAsync(GetCancellationToken(cancellationToken));
         }
 
         protected virtual IQueryable<FinancialProduct> ApplyFilter(
             IQueryable<FinancialProduct> query,
             string filterText,
-            int? timeLimitMin = null,
-            int? timeLimitMax = null,
+            int? periodMin = null,
+            int? periodMax = null,
             GuaranteeMethod? guaranteeMethod = null,
             string creditCeiling = null,
             string organization = null,
@@ -76,8 +76,8 @@ namespace Tank.Financing.FinancialProducts
         {
             return query
                     .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.CreditCeiling.Contains(filterText) || e.Organization.Contains(filterText) || e.APR.Contains(filterText) || e.Rating.Contains(filterText) || e.Name.Contains(filterText))
-                    .WhereIf(timeLimitMin.HasValue, e => e.TimeLimit >= timeLimitMin.Value)
-                    .WhereIf(timeLimitMax.HasValue, e => e.TimeLimit <= timeLimitMax.Value)
+                    .WhereIf(periodMin.HasValue, e => e.Period >= periodMin.Value)
+                    .WhereIf(periodMax.HasValue, e => e.Period <= periodMax.Value)
                     .WhereIf(guaranteeMethod.HasValue, e => e.GuaranteeMethod == guaranteeMethod)
                     .WhereIf(!string.IsNullOrWhiteSpace(creditCeiling), e => e.CreditCeiling.Contains(creditCeiling))
                     .WhereIf(!string.IsNullOrWhiteSpace(organization), e => e.Organization.Contains(organization))

@@ -132,6 +132,16 @@
     "Enum:ApplyStatus:3": "完成",
     "Enum:CertificateStatus:0": "待审核",
     "Enum:CertificateStatus:1": "通过",
-    "Enum:CertificateStatus:2": "驳回"
+    "Enum:CertificateStatus:2": "驳回",
+    "MinPeriod": "Min Period",
+    "MaxPeriod": "Max Period",
+    "MinEstablishedTime": "Min Established Time",
+    "MinDueTime": "Min Due Time",
+    "MaxEstablishedTime": "Max Established Time",
+    "MaxDueTime": "Max Due Time",
+    "MinApplyTime": "Min Apply Time",
+    "MinPassedTime": "Min Passed Time",
+    "MaxApplyTime": "Max Apply Time",
+    "MaxPassedTime": "Max Passed Time"
   }
 }

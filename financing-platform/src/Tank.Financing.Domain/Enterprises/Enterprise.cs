@@ -16,11 +16,9 @@ namespace Tank.Financing.Enterprises
         [NotNull]
         public virtual string ArtificialPerson { get; set; }
 
-        [NotNull]
-        public virtual string EstablishedTime { get; set; }
+        public virtual long EstablishedTime { get; set; }
 
-        [CanBeNull]
-        public virtual string DueTime { get; set; }
+        public virtual long DueTime { get; set; }
 
         [NotNull]
         public virtual string CreditCode { get; set; }
@@ -50,12 +48,11 @@ namespace Tank.Financing.Enterprises
 
         }
 
-        public Enterprise(Guid id, string enterpriseName, string artificialPerson, string establishedTime, string dueTime, string creditCode, string artificialPersonId, string registeredCapital, string phoneNumber, string certPhotoPath, string idPhotoPath1, string idPhotoPath2, CertificateStatus certificateStatus)
+        public Enterprise(Guid id, string enterpriseName, string artificialPerson, long establishedTime, long dueTime, string creditCode, string artificialPersonId, string registeredCapital, string phoneNumber, string certPhotoPath, string idPhotoPath1, string idPhotoPath2, CertificateStatus certificateStatus)
         {
             Id = id;
             Check.NotNull(enterpriseName, nameof(enterpriseName));
             Check.NotNull(artificialPerson, nameof(artificialPerson));
-            Check.NotNull(establishedTime, nameof(establishedTime));
             Check.NotNull(creditCode, nameof(creditCode));
             Check.NotNull(artificialPersonId, nameof(artificialPersonId));
             Check.NotNull(registeredCapital, nameof(registeredCapital));

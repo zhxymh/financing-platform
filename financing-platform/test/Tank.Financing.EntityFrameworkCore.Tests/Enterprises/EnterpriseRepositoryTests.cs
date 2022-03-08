@@ -25,24 +25,22 @@ namespace Tank.Financing.Enterprises
             {
                 // Act
                 var result = await _enterpriseRepository.GetListAsync(
-                    enterpriseName: "23d5e1a00c5d4cbc9988810dafdca2d7fba39966e2d44987ad431fe48347833",
-                    artificialPerson: "6356dc5fae63438bbcde0b430",
-                    establishedTime: "da4621af757b4c569e36b82ac7",
-                    dueTime: "f8029068e8dd4d95b2c12213756d350c0ba0309039af4a3094571b496a6",
-                    creditCode: "470c6b8d35f54eb6b0a4b61453ec88751572dd1af66b418fb2aa45ee7aded1e7b61",
-                    artificialPersonId: "d530e7fd64e64861a",
-                    registeredCapital: "5a179e1e739f4eae8e6cfe65f949674208a44e325e6e4549a815f0e139becce1d96acecf173e413",
-                    phoneNumber: "4f89fbc4e8c24632b027a75db99c6f38b4780c3669964b4081bb2aeb1e6932c633197c5813",
-                    certPhotoPath: "6339042e3323475a9d7c5e7f80f5f9dc0778020bdc244abc9d6222a9cfb7df21a0780b5fe83c4385b3e46f7e034726a",
-                    idPhotoPath1: "ae35256a5d144cd1b1a39ee064f94da9d381ea9b70a44a7a9ec3325f524ef79b8a94c1e2b1e44c53bf9bbcc15029a165",
-                    idPhotoPath2: "e88f6439fc8c4f229be38cd05a5c70e",
+                    enterpriseName: "0e9d816e010740968edbae3c6fad3d56e4398d2ddad645e291f2e97b77607779447282ecc63740008d",
+                    artificialPerson: "a95ded070c844cb0b1cf9436ac9da421e18214025d6a4",
+                    creditCode: "4273a432a3634f6d9817bccc2f8fb2714d1ceb83da1a4c0694b3fcb7a3065043b746cc46f5da4fb0bc43562d287a23c0cd5",
+                    artificialPersonId: "c0ddc000824e4f0ab7c9b3f3ed833401db3d6870631",
+                    registeredCapital: "5bc4c984310142168acc0192811186f21adf3d5ae4",
+                    phoneNumber: "d861a28a3b0b4ff59929e0b0c46d0ebb56e4bc2c935e48ec8dfda1914",
+                    certPhotoPath: "40032c1d1558434bb42f24721637e7ad929b51e8c2d24844b260b8712ed00e",
+                    idPhotoPath1: "0911757a86fc4f9498046dd6497232cb403",
+                    idPhotoPath2: "f4510a801c774674bd7fa37aed8f05be459915cacc7d4d8994193ce4b3d49ce2e67bb364eaf34a3",
                     certificateStatus: default
                 );
 
                 // Assert
                 result.Count.ShouldBe(1);
                 result.FirstOrDefault().ShouldNotBe(null);
-                result.First().Id.ShouldBe(Guid.Parse("0705d2a1-c20a-4269-9786-dff792c49d3d"));
+                result.First().Id.ShouldBe(Guid.Parse("182f027c-7825-4bf5-ad49-f4a8d78f5969"));
             });
         }
 
@@ -54,17 +52,15 @@ namespace Tank.Financing.Enterprises
             {
                 // Act
                 var result = await _enterpriseRepository.GetCountAsync(
-                    enterpriseName: "d32f0ab958c34e108e44370d9d7b5fa243ca3518e0fd4c08b7ae6f2c",
-                    artificialPerson: "4dac2f9276844a5b96dea16394083a6c515881b06a094ef1a188b5bb61294fdcb171c4cd7c4e4f34b",
-                    establishedTime: "b2def3f",
-                    dueTime: "a1a5f466c03e4779a7835162a67e05973fee2b970fd942ee8ab0e88ad91fda4c6626",
-                    creditCode: "0dcd1e2c69834b76ac6c8a7bcb536feb0ea343f93c95",
-                    artificialPersonId: "eb14792a3162405eb256890670c0b89c5b39d108c47d44f59fef7ed22ee6ae",
-                    registeredCapital: "5a3de0bf38644a21b667c98a382cae3418ecdde9be01454ab2901e1c1b09c5",
-                    phoneNumber: "fc720a878f4d46c3ae3533a2cea17adee3f60a87ab024e5eb71cf64093d9a47c32ceb6bf49",
-                    certPhotoPath: "acb412ffaa1c40a08590bc417b8cd6fd0def2f4c3bf64ef7b9e3d47e1ea0a8ecda77d98880e243fd9496",
-                    idPhotoPath1: "bbb7722c559f4025a95a205ae555e566b8be5c0ef21e4bd48993399ed168774ff98f66e517914b09be",
-                    idPhotoPath2: "a714ecf49dbf48ada666cb2465585f59c3c65263f9044b7aa628432f002e3fa64df091adc31048f58833",
+                    enterpriseName: "3e8acff4dc1f4670a2f5a08c89d3ccae603e87dd0e144595912e322a5541e1",
+                    artificialPerson: "017ea7c93c574f9ead282a29e088d9f55384678ce5694cc9a8a5d15f09d66df71e6ba58381824afa8",
+                    creditCode: "0e9065d0db7d4e47ae08b1338ae8ece70788d5ee8e3a4cdb9d64f2869edf462c51a93bedb61e40219277a43a",
+                    artificialPersonId: "7363453112b1408bbbb7f2ab117f9b723d3d1f6b8e3b4f37a6fd0cebb73e850dcde68cda3fa64ba283ac",
+                    registeredCapital: "bf4f7b80dc8f45848c55cf61ead4302650813968089d43bc9d1105985be9ed8dfa74058dffb146a4827e0dc",
+                    phoneNumber: "5e14f1803e8849e2b6f44f9c9154b258ef6f97cfb6674ef2921e7707790d6201af10e26c41c640f98cc8e2f5b",
+                    certPhotoPath: "a99f03598ee84d919f955e0b",
+                    idPhotoPath1: "45ca4e3bece248eeb2fdb4e32e7ce89dd5bb2cbbe89b41e",
+                    idPhotoPath2: "3dc55c75d5514da8b4bb0c3af05",
                     certificateStatus: default
                 );
 
