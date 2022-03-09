@@ -1,6 +1,7 @@
 using Tank.Financing;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Tank.Financing.Applies
 {

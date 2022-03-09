@@ -143,11 +143,12 @@
                 <ModalTitle>@L["NewApply"]</ModalTitle>
                 <CloseButton Clicked="CloseCreateApplyModalAsync" />
             </ModalHeader>
-            <ModalBody>
+            <ModalBody>%%tab-header-create%%
                 <Validations @ref="@NewApplyValidations"
                             Mode="ValidationMode.Auto"
                             Model="@NewApply"
                             ValidateOnLoad="false">
+                     %%main-create-tab-opener%%
                     
                     <Validation>
                         <Field>
@@ -271,7 +272,9 @@
                      </Validation>
 
 
-                </Validations>
+                    %%main-tab-closer%%
+                    %%razor-modal-navigation-connection-fields-new%%
+                </Validations>%%tab-closer%%
             </ModalBody>
             <ModalFooter>
                 <Button Color="Color.Secondary"
@@ -292,11 +295,12 @@
                 <ModalTitle>@L["Update"]</ModalTitle>
                 <CloseButton Clicked="CloseEditApplyModalAsync" />
             </ModalHeader>
-            <ModalBody>
+            <ModalBody>%%tab-header-edit%%
                 <Validations @ref="@EditingApplyValidations"
                             Mode="ValidationMode.Auto"
                             Model="@EditingApply"
                             ValidateOnLoad="false">
+                     %%main-edit-tab-opener%%
                     
                     <Validation>
                         <Field>
@@ -420,7 +424,9 @@
                      </Validation>
 
 
-                </Validations>
+                    %%main-tab-closer%%
+                    %%razor-modal-navigation-connection-fields-editing%%
+                </Validations>%%tab-closer%%
             </ModalBody>
             <ModalFooter>
                 <Button Color="Color.Secondary"

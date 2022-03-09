@@ -27,19 +27,19 @@ namespace Tank.Financing.Applies
             // Assert
             result.TotalCount.ShouldBe(2);
             result.Items.Count.ShouldBe(2);
-            result.Items.Any(x => x.Id == Guid.Parse("11720ca5-8951-4cb1-9e95-487613da6d9f")).ShouldBe(true);
-            result.Items.Any(x => x.Id == Guid.Parse("d4399153-f0fe-4d99-88d4-2cfd6b8d35ae")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("4ded5ed9-024e-4820-b29c-46bea9ffabc9")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("7d8618a8-4c0b-4c3a-8717-76fe78b6e8b8")).ShouldBe(true);
         }
 
         [Fact]
         public async Task GetAsync()
         {
             // Act
-            var result = await _appliesAppService.GetAsync(Guid.Parse("11720ca5-8951-4cb1-9e95-487613da6d9f"));
+            var result = await _appliesAppService.GetAsync(Guid.Parse("4ded5ed9-024e-4820-b29c-46bea9ffabc9"));
 
             // Assert
             result.ShouldNotBeNull();
-            result.Id.ShouldBe(Guid.Parse("11720ca5-8951-4cb1-9e95-487613da6d9f"));
+            result.Id.ShouldBe(Guid.Parse("4ded5ed9-024e-4820-b29c-46bea9ffabc9"));
         }
 
         [Fact]
@@ -48,16 +48,16 @@ namespace Tank.Financing.Applies
             // Arrange
             var input = new ApplyCreateDto
             {
-                EnterpriseName = "1f04dea64d8140a7b0b02b610b739312dfb0cd9f89ff42d78ec28be2d6c0bdedf1140f6d43b34f8d839ac0b8f31d",
-                Organization = "4cb0380b43d54c06a15fb0bff8b3ce8bfff8ffb5662e43c8af",
-                ProductName = "3ad64d01ceab4badb71162ab49d2c72214a61b48148640759d57e2a2cdbfe77",
-                Allowance = "3f5a881080014f799797ebe64b3e87359e584ea8e7ad407d9b3d0d8458d4ab",
-                APR = "82ca10512666440c8fbc2aa2a366a3febe07e",
-                Period = "bfc3988216024cb",
+                EnterpriseName = "fff32832ec984d1b9c76fe09e18086ef25b48ae607e745a28b49498f8565a0c049bc6dc01ba74a75a145d25f55153553ba9",
+                Organization = "49eb099840354f439464c1e340f6a93d798bdd235e0246d5ad090716ed8847b3",
+                ProductName = "f81e35ba08ce4235b0cd1401f1bc7f2b1e55de6688974",
+                Allowance = "1fd0b8a5ccc246baad78d64b950d4c256ea291b260c34c568256bf568b688d427851fed01c3e4e2ebe156d6a0396c82f",
+                APR = "d9c34622888444b084d4648247174174ca0",
+                Period = "dc635effff054934b68d4524374152dd61e3f9eb05184279bdb8e15226ef9de3f829b27c9d294d988",
                 ApplyStatus = default,
                 GuaranteeMethod = default,
-                ApplyTime = 1451878474,
-                PassedTime = 660834753
+                ApplyTime = 576359549,
+                PassedTime = 1474407520
             };
 
             // Act
@@ -67,16 +67,16 @@ namespace Tank.Financing.Applies
             var result = await _applyRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.EnterpriseName.ShouldBe("1f04dea64d8140a7b0b02b610b739312dfb0cd9f89ff42d78ec28be2d6c0bdedf1140f6d43b34f8d839ac0b8f31d");
-            result.Organization.ShouldBe("4cb0380b43d54c06a15fb0bff8b3ce8bfff8ffb5662e43c8af");
-            result.ProductName.ShouldBe("3ad64d01ceab4badb71162ab49d2c72214a61b48148640759d57e2a2cdbfe77");
-            result.Allowance.ShouldBe("3f5a881080014f799797ebe64b3e87359e584ea8e7ad407d9b3d0d8458d4ab");
-            result.APR.ShouldBe("82ca10512666440c8fbc2aa2a366a3febe07e");
-            result.Period.ShouldBe("bfc3988216024cb");
+            result.EnterpriseName.ShouldBe("fff32832ec984d1b9c76fe09e18086ef25b48ae607e745a28b49498f8565a0c049bc6dc01ba74a75a145d25f55153553ba9");
+            result.Organization.ShouldBe("49eb099840354f439464c1e340f6a93d798bdd235e0246d5ad090716ed8847b3");
+            result.ProductName.ShouldBe("f81e35ba08ce4235b0cd1401f1bc7f2b1e55de6688974");
+            result.Allowance.ShouldBe("1fd0b8a5ccc246baad78d64b950d4c256ea291b260c34c568256bf568b688d427851fed01c3e4e2ebe156d6a0396c82f");
+            result.APR.ShouldBe("d9c34622888444b084d4648247174174ca0");
+            result.Period.ShouldBe("dc635effff054934b68d4524374152dd61e3f9eb05184279bdb8e15226ef9de3f829b27c9d294d988");
             result.ApplyStatus.ShouldBe(default);
             result.GuaranteeMethod.ShouldBe(default);
-            result.ApplyTime.ShouldBe(1451878474);
-            result.PassedTime.ShouldBe(660834753);
+            result.ApplyTime.ShouldBe(576359549);
+            result.PassedTime.ShouldBe(1474407520);
         }
 
         [Fact]
@@ -85,45 +85,45 @@ namespace Tank.Financing.Applies
             // Arrange
             var input = new ApplyUpdateDto()
             {
-                EnterpriseName = "b51d55d7a0484",
-                Organization = "d2ceefc1f1ab4f3bb697e70d71b82ffec02bff3bf7004b65a00575feaf214d2124b1ed2a8533",
-                ProductName = "2de9ee8bb20d4c1e867323a718b227aef070f7cc41e44b5299352daf42f68bef066f959639aa420daf6ce20f",
-                Allowance = "3e857f9d503f493884a69af681e733e5e395f8b0ae67",
-                APR = "2022762e744e4b8b82b40554906a9db9b8df5306ce834c64ba26",
-                Period = "8e95931d6dab4e93a8b31cd376b50e80db0fc14304f04dffb299d51e8a5b",
+                EnterpriseName = "d1ef7222cbfb49db9eff8cc217d06d00f22cdba06666477c88eb9bd6ec5f",
+                Organization = "ebd14bf9089f4ec98b88dac5d3be890fcfd6e2f16f",
+                ProductName = "10cfeab07205",
+                Allowance = "72e4612c26c349e6999a3ece5a5720f17d",
+                APR = "524dcd30aae4498292772f2880cc904e09ef5cbfcdb640568bd372fd2",
+                Period = "5a1fa5f404ea476d84d1ebd30a2e0abf1e24d6d88b2a442fb3b8d36ee93b6f747d36c",
                 ApplyStatus = default,
                 GuaranteeMethod = default,
-                ApplyTime = 1782813875,
-                PassedTime = 400404220
+                ApplyTime = 1323429093,
+                PassedTime = 770711757
             };
 
             // Act
-            var serviceResult = await _appliesAppService.UpdateAsync(Guid.Parse("11720ca5-8951-4cb1-9e95-487613da6d9f"), input);
+            var serviceResult = await _appliesAppService.UpdateAsync(Guid.Parse("4ded5ed9-024e-4820-b29c-46bea9ffabc9"), input);
 
             // Assert
             var result = await _applyRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.EnterpriseName.ShouldBe("b51d55d7a0484");
-            result.Organization.ShouldBe("d2ceefc1f1ab4f3bb697e70d71b82ffec02bff3bf7004b65a00575feaf214d2124b1ed2a8533");
-            result.ProductName.ShouldBe("2de9ee8bb20d4c1e867323a718b227aef070f7cc41e44b5299352daf42f68bef066f959639aa420daf6ce20f");
-            result.Allowance.ShouldBe("3e857f9d503f493884a69af681e733e5e395f8b0ae67");
-            result.APR.ShouldBe("2022762e744e4b8b82b40554906a9db9b8df5306ce834c64ba26");
-            result.Period.ShouldBe("8e95931d6dab4e93a8b31cd376b50e80db0fc14304f04dffb299d51e8a5b");
+            result.EnterpriseName.ShouldBe("d1ef7222cbfb49db9eff8cc217d06d00f22cdba06666477c88eb9bd6ec5f");
+            result.Organization.ShouldBe("ebd14bf9089f4ec98b88dac5d3be890fcfd6e2f16f");
+            result.ProductName.ShouldBe("10cfeab07205");
+            result.Allowance.ShouldBe("72e4612c26c349e6999a3ece5a5720f17d");
+            result.APR.ShouldBe("524dcd30aae4498292772f2880cc904e09ef5cbfcdb640568bd372fd2");
+            result.Period.ShouldBe("5a1fa5f404ea476d84d1ebd30a2e0abf1e24d6d88b2a442fb3b8d36ee93b6f747d36c");
             result.ApplyStatus.ShouldBe(default);
             result.GuaranteeMethod.ShouldBe(default);
-            result.ApplyTime.ShouldBe(1782813875);
-            result.PassedTime.ShouldBe(400404220);
+            result.ApplyTime.ShouldBe(1323429093);
+            result.PassedTime.ShouldBe(770711757);
         }
 
         [Fact]
         public async Task DeleteAsync()
         {
             // Act
-            await _appliesAppService.DeleteAsync(Guid.Parse("11720ca5-8951-4cb1-9e95-487613da6d9f"));
+            await _appliesAppService.DeleteAsync(Guid.Parse("4ded5ed9-024e-4820-b29c-46bea9ffabc9"));
 
             // Assert
-            var result = await _applyRepository.FindAsync(c => c.Id == Guid.Parse("11720ca5-8951-4cb1-9e95-487613da6d9f"));
+            var result = await _applyRepository.FindAsync(c => c.Id == Guid.Parse("4ded5ed9-024e-4820-b29c-46bea9ffabc9"));
 
             result.ShouldBeNull();
         }

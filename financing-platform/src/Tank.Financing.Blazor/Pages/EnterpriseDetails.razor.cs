@@ -102,8 +102,8 @@ namespace Tank.Financing.Blazor.Pages
         private async Task OnDataGridReadAsync(DataGridReadDataEventArgs<EnterpriseDetailDto> e)
         {
             CurrentSorting = e.Columns
-                .Where(c => c.Direction != SortDirection.None)
-                .Select(c => c.Field + (c.Direction == SortDirection.Descending ? " DESC" : ""))
+                .Where(c => c.SortDirection != SortDirection.Default)
+                .Select(c => c.Field + (c.SortDirection == SortDirection.Descending ? " DESC" : ""))
                 .JoinAsString(",");
             CurrentPage = e.Page;
             await GetEnterpriseDetailsAsync();

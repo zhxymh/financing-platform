@@ -27,27 +27,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="5.1.3" />
+    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="5.2.0-rc.1" />
     <ProjectReference Include="..\Tank.Financing.Application\Tank.Financing.Application.csproj" />
     <ProjectReference Include="..\Tank.Financing.HttpApi\Tank.Financing.HttpApi.csproj" />
     <ProjectReference Include="..\Tank.Financing.EntityFrameworkCore\Tank.Financing.EntityFrameworkCore.csproj" />
-    <PackageReference Include="Volo.Abp.Autofac" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.Swashbuckle" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Components.Server.LeptonTheme" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web.IdentityServer" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.Account.Pro.Public.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.Account.Pro.Admin.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web.Impersonation" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.AuditLogging.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.Identity.Pro.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.IdentityServer.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.LanguageManagement.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Saas.Host.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.Abp.TextTemplateManagement.Blazor.Server" Version="5.1.3" />
-    <PackageReference Include="Volo.CmsKit.Pro.Admin.Web" Version="5.1.3" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.Server.LeptonTheme" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web.IdentityServer" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Admin.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web.Impersonation" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.LanguageManagement.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Saas.Host.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.Blazor.Server" Version="5.2.0-rc.1" />
+    <PackageReference Include="Volo.CmsKit.Pro.Admin.Web" Version="5.2.0-rc.1" />
   </ItemGroup>
 
   <ItemGroup>

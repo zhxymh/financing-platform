@@ -235,6 +235,14 @@ public class FinancingDbContext :
         }
         if (builder.IsHostDatabase())
         {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
             builder.Entity<Apply>(b =>
 {
     b.ToTable(FinancingConsts.DbTablePrefix + "Applies", FinancingConsts.DbSchema);
