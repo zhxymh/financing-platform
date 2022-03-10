@@ -32,15 +32,15 @@ namespace Tank.Financing;
     typeof(LanguageManagementApplicationModule),
     typeof(LeptonThemeManagementApplicationModule),
     typeof(TextTemplateManagementApplicationModule)
-    )]
+)]
 [DependsOn(typeof(AbpAccountSharedApplicationModule))]
-    public class FinancingApplicationModule : AbpModule
+public class FinancingApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        Configure<AbpAutoMapperOptions>(options =>
-        {
-            options.AddMaps<FinancingApplicationModule>();
-        });
+        Configure<AbpAutoMapperOptions>(options => { options.AddMaps<FinancingApplicationModule>(); });
+
+        Configure<SmsOptions>(context.Services.GetConfiguration().GetSection("Sms"));
+        Configure<BlockchainOptions>(context.Services.GetConfiguration().GetSection("Blockchain"));
     }
 }
