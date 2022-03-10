@@ -20,6 +20,7 @@ using Volo.Abp.TextTemplateManagement;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.Commercial.SuiteTemplates;
+using Volo.FileManagement;
 
 namespace Tank.Financing;
 
@@ -41,7 +42,8 @@ namespace Tank.Financing;
     typeof(AbpEmailingModule),
     typeof(BlobStoringDatabaseDomainModule)
     )]
-public class FinancingDomainModule : AbpModule
+[DependsOn(typeof(FileManagementDomainModule))]
+    public class FinancingDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

@@ -17,6 +17,7 @@ using Volo.Abp.VirtualFileSystem;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.GlobalFeatures;
+using Volo.FileManagement;
 
 namespace Tank.Financing;
 
@@ -35,7 +36,8 @@ namespace Tank.Financing;
     typeof(AbpGlobalFeaturesModule),
     typeof(BlobStoringDatabaseDomainSharedModule)
     )]
-public class FinancingDomainSharedModule : AbpModule
+[DependsOn(typeof(FileManagementDomainSharedModule))]
+    public class FinancingDomainSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

@@ -145,7 +145,7 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
 
     public void AdvanceSetAllowance(ApplyCreateDto input)
     {
-        ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, nameof(SetAllowance),
+        ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(SetAllowance),
             new SetAllowanceInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -225,6 +225,7 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
                 ScopeId = scopeId
             });
         var result = _nodeManager.CheckTransactionResult(txId);
+        Logger.LogInformation($"[Forward]{methodName}: {result.TransactionId}");
         if (result.Status != "MINED")
         {
             throw new TransactionFailedException($"Transaction execution failed: {result.Error}");

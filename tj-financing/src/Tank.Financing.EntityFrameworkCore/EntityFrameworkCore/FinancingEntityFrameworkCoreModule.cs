@@ -17,6 +17,7 @@ using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
 using Volo.Saas.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.MySQL;
+using Volo.FileManagement.EntityFrameworkCore;
 
 namespace Tank.Financing.EntityFrameworkCore;
 
@@ -35,7 +36,8 @@ namespace Tank.Financing.EntityFrameworkCore;
     typeof(TextTemplateManagementEntityFrameworkCoreModule),
     typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
     )]
-public class FinancingEntityFrameworkCoreModule : AbpModule
+[DependsOn(typeof(FileManagementEntityFrameworkCoreModule))]
+    public class FinancingEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

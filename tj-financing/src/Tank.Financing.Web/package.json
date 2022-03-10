@@ -4,9 +4,10 @@
   "private": true,
   "dependencies": {
     "@volo/abp.aspnetcore.mvc.ui.theme.lepton": "^5.1.3",
-    "@volo/saas": "^5.1.3",
+    "@volo/account": "^5.1.3",
     "@volo/audit-logging": "^5.1.3",
+    "@volo/file-management": "^5.1.3",
     "@volo/identity": "^5.1.3",
-    "@volo/account": "^5.1.3"
+    "@volo/saas": "^5.1.3"
   }
 }

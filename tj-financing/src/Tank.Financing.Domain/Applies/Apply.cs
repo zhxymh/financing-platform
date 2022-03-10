@@ -19,10 +19,10 @@ namespace Tank.Financing.Applies
         [NotNull]
         public virtual string ProductName { get; set; }
 
-        [NotNull]
+        [CanBeNull]
         public virtual string Allowance { get; set; }
 
-        [NotNull]
+        [CanBeNull]
         public virtual string APR { get; set; }
 
         [NotNull]
@@ -47,8 +47,6 @@ namespace Tank.Financing.Applies
             Check.NotNull(enterpriseName, nameof(enterpriseName));
             Check.NotNull(organization, nameof(organization));
             Check.NotNull(productName, nameof(productName));
-            Check.NotNull(allowance, nameof(allowance));
-            Check.NotNull(aPR, nameof(aPR));
             Check.NotNull(period, nameof(period));
             EnterpriseName = enterpriseName;
             Organization = organization;

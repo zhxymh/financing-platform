@@ -22,6 +22,7 @@ using Volo.Saas.EntityFrameworkCore;
 using Volo.Saas.Editions;
 using Volo.Saas.Tenants;
 using Volo.Payment.EntityFrameworkCore;
+using Volo.FileManagement.EntityFrameworkCore;
 
 namespace Tank.Financing.EntityFrameworkCore;
 
@@ -144,21 +145,6 @@ public class FinancingDbContext :
         }
         if (builder.IsHostDatabase())
         {
-            builder.Entity<Apply>(b =>
-{
-    b.ToTable(FinancingConsts.DbTablePrefix + "Applies", FinancingConsts.DbSchema);
-    b.ConfigureByConvention();
-    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Apply.EnterpriseName)).IsRequired();
-    b.Property(x => x.Organization).HasColumnName(nameof(Apply.Organization)).IsRequired();
-    b.Property(x => x.ProductName).HasColumnName(nameof(Apply.ProductName)).IsRequired();
-    b.Property(x => x.Allowance).HasColumnName(nameof(Apply.Allowance)).IsRequired();
-    b.Property(x => x.APR).HasColumnName(nameof(Apply.APR)).IsRequired();
-    b.Property(x => x.Period).HasColumnName(nameof(Apply.Period)).IsRequired();
-    b.Property(x => x.ApplyStatus).HasColumnName(nameof(Apply.ApplyStatus)).IsRequired();
-    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(Apply.GuaranteeMethod));
-    b.Property(x => x.ApplyTime).HasColumnName(nameof(Apply.ApplyTime)).IsRequired();
-    b.Property(x => x.PassedTime).HasColumnName(nameof(Apply.PassedTime));
-});
 
         }
         if (builder.IsHostDatabase())
@@ -178,6 +164,26 @@ public class FinancingDbContext :
     b.Property(x => x.BusinessAddress).HasColumnName(nameof(EnterpriseDetail.BusinessAddress)).IsRequired();
     b.Property(x => x.BusinessScope).HasColumnName(nameof(EnterpriseDetail.BusinessScope)).IsRequired();
     b.Property(x => x.Description).HasColumnName(nameof(EnterpriseDetail.Description)).IsRequired();
+});
+
+        }
+        builder.ConfigureFileManagement();
+        if (builder.IsHostDatabase())
+        {
+            builder.Entity<Apply>(b =>
+{
+    b.ToTable(FinancingConsts.DbTablePrefix + "Applies", FinancingConsts.DbSchema);
+    b.ConfigureByConvention();
+    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Apply.EnterpriseName)).IsRequired();
+    b.Property(x => x.Organization).HasColumnName(nameof(Apply.Organization)).IsRequired();
+    b.Property(x => x.ProductName).HasColumnName(nameof(Apply.ProductName)).IsRequired();
+    b.Property(x => x.Allowance).HasColumnName(nameof(Apply.Allowance));
+    b.Property(x => x.APR).HasColumnName(nameof(Apply.APR));
+    b.Property(x => x.Period).HasColumnName(nameof(Apply.Period)).IsRequired();
+    b.Property(x => x.ApplyStatus).HasColumnName(nameof(Apply.ApplyStatus)).IsRequired();
+    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(Apply.GuaranteeMethod));
+    b.Property(x => x.ApplyTime).HasColumnName(nameof(Apply.ApplyTime)).IsRequired();
+    b.Property(x => x.PassedTime).HasColumnName(nameof(Apply.PassedTime));
 });
 
         }

@@ -12,9 +12,7 @@ namespace Tank.Financing.Applies
         public string Organization { get; set; }
         [Required]
         public string ProductName { get; set; }
-        [Required]
         public string Allowance { get; set; }
-        [Required]
         public string APR { get; set; }
         [Required]
         public string Period { get; set; }

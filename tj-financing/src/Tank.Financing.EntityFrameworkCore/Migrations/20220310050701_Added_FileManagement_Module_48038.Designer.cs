@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tank.Financing.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,9 +12,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tank.Financing.Migrations
 {
     [DbContext(typeof(FinancingDbContext))]
-    partial class FinancingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220310050701_Added_FileManagement_Module_48038")]
+    partial class Added_FileManagement_Module_48038
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,10 +29,12 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<string>("APR")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("APR");
 
                     b.Property<string>("Allowance")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("Allowance");
 

@@ -49,6 +49,7 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Toolbars;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Identity;
 using Volo.Abp.Swashbuckle;
+using Volo.FileManagement.Web;
 
 namespace Tank.Financing.Web;
 
@@ -71,7 +72,8 @@ namespace Tank.Financing.Web;
     typeof(AbpAspNetCoreSerilogModule)
     )]
 [DependsOn(typeof(AbpAccountPublicWebModule))]
-public class FinancingWebModule : AbpModule
+[DependsOn(typeof(FileManagementWebModule))]
+    public class FinancingWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

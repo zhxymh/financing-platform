@@ -10,6 +10,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
+using Volo.FileManagement;
 
 namespace Tank.Financing;
 
@@ -29,6 +30,7 @@ namespace Tank.Financing;
     typeof(TextTemplateManagementApplicationContractsModule)
 )]
 [DependsOn(typeof(AbpAccountSharedApplicationContractsModule))]
+    [DependsOn(typeof(FileManagementApplicationContractsModule))]
     public class FinancingApplicationContractsModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

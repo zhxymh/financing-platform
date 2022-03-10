@@ -39,6 +39,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="6.0.0" />
+    <PackageReference Include="Volo.FileManagement.Web" Version="5.1.3" />
     <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.Web\Volo.Abp.Account.Pro.Public.Web.csproj" />
   </ItemGroup>
 

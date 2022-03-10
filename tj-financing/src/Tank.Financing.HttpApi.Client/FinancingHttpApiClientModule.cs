@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.FeatureManagement;
@@ -12,6 +12,7 @@ using Volo.Abp.TextTemplateManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Saas.Host;
 using Volo.Abp.VirtualFileSystem;
+using Volo.FileManagement;
 
 namespace Tank.Financing;
 
@@ -30,7 +31,8 @@ namespace Tank.Financing;
     typeof(LeptonThemeManagementHttpApiClientModule),
     typeof(TextTemplateManagementHttpApiClientModule)
 )]
-public class FinancingHttpApiClientModule : AbpModule
+[DependsOn(typeof(FileManagementHttpApiClientModule))]
+    public class FinancingHttpApiClientModule : AbpModule
 {
     public const string RemoteServiceName = "Default";
 

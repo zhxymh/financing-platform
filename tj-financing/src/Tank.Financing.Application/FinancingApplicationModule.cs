@@ -14,6 +14,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
+using Volo.FileManagement;
 
 namespace Tank.Financing;
 
@@ -34,7 +35,8 @@ namespace Tank.Financing;
     typeof(TextTemplateManagementApplicationModule)
 )]
 [DependsOn(typeof(AbpAccountSharedApplicationModule))]
-public class FinancingApplicationModule : AbpModule
+[DependsOn(typeof(FileManagementApplicationModule))]
+    public class FinancingApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

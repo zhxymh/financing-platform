@@ -24,7 +24,9 @@ public class SmsSender : ISmsSender, ITransientDependency
             PhoneNumbers = smsMessage.PhoneNumber,
             SignName = Options.SignName,
             TemplateCode = Options.TemplateCode,
-            TemplateParam = "{\"code\":\"1234\"}"
+            TemplateParam = "{\"code\":\"" +
+                            smsMessage.Text +
+                            "\"}"
         });
     }
 

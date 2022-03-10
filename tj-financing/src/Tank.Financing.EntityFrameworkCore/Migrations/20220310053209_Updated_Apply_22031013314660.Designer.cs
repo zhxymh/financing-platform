@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tank.Financing.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,9 +12,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tank.Financing.Migrations
 {
     [DbContext(typeof(FinancingDbContext))]
-    partial class FinancingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220310053209_Updated_Apply_22031013314660")]
+    partial class Updated_Apply_22031013314660
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
