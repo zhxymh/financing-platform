@@ -1,3 +1,6 @@
+using Tank.Financing.EnterpriseDetails;
+using Tank.Financing.Applies;
+using Tank.Financing.FinancialProducts;
 using Tank.Financing.Enterprises;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
@@ -47,6 +50,12 @@ public class FinancingEntityFrameworkCoreModule : AbpModule
              * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
             options.AddRepository<Enterprise, Enterprises.EfCoreEnterpriseRepository>();
+
+            options.AddRepository<FinancialProduct, FinancialProducts.EfCoreFinancialProductRepository>();
+
+            options.AddRepository<Apply, Applies.EfCoreApplyRepository>();
+
+            options.AddRepository<EnterpriseDetail, EnterpriseDetails.EfCoreEnterpriseDetailRepository>();
 
         });
 

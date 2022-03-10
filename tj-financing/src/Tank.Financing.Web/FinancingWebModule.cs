@@ -133,6 +133,9 @@ public class FinancingWebModule : AbpModule
             options.Conventions.AuthorizePage("/HostDashboard", FinancingPermissions.Dashboard.Host);
             options.Conventions.AuthorizePage("/TenantDashboard", FinancingPermissions.Dashboard.Tenant);
             options.Conventions.AuthorizePage("/Enterprises/Index", FinancingPermissions.Enterprises.Default);
+            options.Conventions.AuthorizePage("/FinancialProducts/Index", FinancingPermissions.FinancialProducts.Default);
+            options.Conventions.AuthorizePage("/Applies/Index", FinancingPermissions.Applies.Default);
+            options.Conventions.AuthorizePage("/EnterpriseDetails/Index", FinancingPermissions.EnterpriseDetails.Default);
         });
     }
 

@@ -21,4 +21,28 @@ public static class FinancingPermissions
         public const string Create = Default + ".Create";
         public const string Delete = Default + ".Delete";
     }
+
+    public class FinancialProducts
+    {
+        public const string Default = GroupName + ".FinancialProducts";
+        public const string Edit = Default + ".Edit";
+        public const string Create = Default + ".Create";
+        public const string Delete = Default + ".Delete";
+    }
+
+    public class Applies
+    {
+        public const string Default = GroupName + ".Applies";
+        public const string Edit = Default + ".Edit";
+        public const string Create = Default + ".Create";
+        public const string Delete = Default + ".Delete";
+    }
+
+    public class EnterpriseDetails
+    {
+        public const string Default = GroupName + ".EnterpriseDetails";
+        public const string Edit = Default + ".Edit";
+        public const string Create = Default + ".Create";
+        public const string Delete = Default + ".Delete";
+    }
 }

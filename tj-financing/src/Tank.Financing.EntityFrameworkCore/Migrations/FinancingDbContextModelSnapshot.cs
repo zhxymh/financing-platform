@@ -21,6 +21,206 @@ namespace Tank.Financing.Migrations
                 .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("Tank.Financing.Applies.Apply", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("APR")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("APR");
+
+                    b.Property<string>("Allowance")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Allowance");
+
+                    b.Property<int>("ApplyStatus")
+                        .HasColumnType("int")
+                        .HasColumnName("ApplyStatus");
+
+                    b.Property<long>("ApplyTime")
+                        .HasColumnType("bigint")
+                        .HasColumnName("ApplyTime");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("EnterpriseName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EnterpriseName");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<int>("GuaranteeMethod")
+                        .HasColumnType("int")
+                        .HasColumnName("GuaranteeMethod");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Organization")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Organization");
+
+                    b.Property<long>("PassedTime")
+                        .HasColumnType("bigint")
+                        .HasColumnName("PassedTime");
+
+                    b.Property<string>("Period")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Period");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ProductName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppApplies", (string)null);
+                });
+
+            modelBuilder.Entity("Tank.Financing.EnterpriseDetails.EnterpriseDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("BusinessAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("BusinessAddress");
+
+                    b.Property<string>("BusinessScope")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("BusinessScope");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Description");
+
+                    b.Property<string>("EnterpriseName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EnterpriseName");
+
+                    b.Property<string>("EnterpriseType")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("EnterpriseType");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("Income")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Income");
+
+                    b.Property<string>("Industry")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Industry");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Location");
+
+                    b.Property<string>("RegisteredAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("RegisteredAddress");
+
+                    b.Property<int>("StaffNumber")
+                        .HasColumnType("int")
+                        .HasColumnName("StaffNumber");
+
+                    b.Property<string>("TotalAssets")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("TotalAssets");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppEnterpriseDetails", (string)null);
+                });
+
             modelBuilder.Entity("Tank.Financing.Enterprises.Enterprise", b =>
                 {
                     b.Property<Guid>("Id")
@@ -126,6 +326,90 @@ namespace Tank.Financing.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppEnterprises", (string)null);
+                });
+
+            modelBuilder.Entity("Tank.Financing.FinancialProducts.FinancialProduct", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("APR")
+                        .HasColumnType("longtext")
+                        .HasColumnName("APR");
+
+                    b.Property<int>("AppliedNumber")
+                        .HasColumnType("int")
+                        .HasColumnName("AppliedNumber");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<long>("CreditCeiling")
+                        .HasColumnType("bigint")
+                        .HasColumnName("CreditCeiling");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<int>("GuaranteeMethod")
+                        .HasColumnType("int")
+                        .HasColumnName("GuaranteeMethod");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Organization")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Organization");
+
+                    b.Property<int?>("Period")
+                        .HasColumnType("int")
+                        .HasColumnName("Period");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ProductName");
+
+                    b.Property<string>("Rating")
+                        .HasColumnType("longtext")
+                        .HasColumnName("Rating");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppFinancialProducts", (string)null);
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>

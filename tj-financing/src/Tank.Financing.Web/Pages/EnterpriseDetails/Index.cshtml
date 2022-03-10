@@ -1,0 +1,105 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Tank.Financing.Permissions
+@using Tank.Financing.Web.Pages.EnterpriseDetails
+@using Tank.Financing.Web.Menus
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Tank.Financing.Localization
+@inject IHtmlLocalizer<FinancingResource> L
+@inject IAuthorizationService Authorization
+@model IndexModel
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["EnterpriseDetails"].Value;
+    PageLayout.Content.MenuItemName = FinancingMenus.EnterpriseDetails;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/EnterpriseDetails/index.js" />
+}
+
+@section content_toolbar {
+    @if (await Authorization.IsGrantedAsync(FinancingPermissions.EnterpriseDetails.Create))
+    {
+        <abp-button id="NewEnterpriseDetailButton" text="@L["NewEnterpriseDetail"].Value" icon="plus" button-type="Primary" />
+    }
+}
+
+<abp-card>
+    <abp-card-body>
+		<abp-row class="mb-3">
+            <abp-column size-md="_12">
+                <form id="SearchForm" autocomplete="off">
+                    <div class="input-group">
+                        <input class="form-control page-search-filter-text" id="FilterText" placeholder="@L["Search"]"/>
+                        <abp-button button-type="Primary" type="submit" icon="search"/>
+                    </div>
+                </form>
+            </abp-column>
+            <abp-column size-md="_12" class="mt-3">
+                <a href="javascript:;" id="AdvancedFilterSectionToggler" class="text-decoration-none">@L["SeeAdvancedFilters"]</a>
+            </abp-column>
+        </abp-row>
+
+        <abp-row id="AdvancedFilterSection" style="display: none;">
+            <abp-column size="_3">
+                <abp-input asp-for="EnterpriseNameFilter" label="@L["EnterpriseName"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="TotalAssetsFilter" label="@L["TotalAssets"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="IncomeFilter" label="@L["Income"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="EnterpriseTypeFilter" label="@L["EnterpriseType"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="StaffNumberFilterMin" label="@L["MinStaffNumber"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="StaffNumberFilterMax" label="@L["MaxStaffNumber"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="IndustryFilter" label="@L["Industry"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="LocationFilter" label="@L["Location"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="RegisteredAddressFilter" label="@L["RegisteredAddress"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="BusinessAddressFilter" label="@L["BusinessAddress"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="BusinessScopeFilter" label="@L["BusinessScope"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="DescriptionFilter" label="@L["Description"].Value" />
+            </abp-column>
+        </abp-row>
+
+        <abp-table striped-rows="true" id="EnterpriseDetailsTable">
+            <thead>
+				<tr>
+					<th>@L["Actions"]</th>
+					<th>@L["EnterpriseName"]</th>
+					<th>@L["TotalAssets"]</th>
+					<th>@L["Income"]</th>
+					<th>@L["EnterpriseType"]</th>
+					<th>@L["StaffNumber"]</th>
+					<th>@L["Industry"]</th>
+					<th>@L["Location"]</th>
+					<th>@L["RegisteredAddress"]</th>
+					<th>@L["BusinessAddress"]</th>
+					<th>@L["BusinessScope"]</th>
+					<th>@L["Description"]</th>
+
+				</tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>

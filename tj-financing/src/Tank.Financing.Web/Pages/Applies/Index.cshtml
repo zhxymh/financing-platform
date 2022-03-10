@@ -1,0 +1,104 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Tank.Financing.Permissions
+@using Tank.Financing.Web.Pages.Applies
+@using Tank.Financing.Web.Menus
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Tank.Financing.Localization
+@inject IHtmlLocalizer<FinancingResource> L
+@inject IAuthorizationService Authorization
+@model IndexModel
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Applies"].Value;
+    PageLayout.Content.MenuItemName = FinancingMenus.Applies;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/Applies/index.js" />
+}
+
+@section content_toolbar {
+    @if (await Authorization.IsGrantedAsync(FinancingPermissions.Applies.Create))
+    {
+        <abp-button id="NewApplyButton" text="@L["NewApply"].Value" icon="plus" button-type="Primary" />
+    }
+}
+
+<abp-card>
+    <abp-card-body>
+		<abp-row class="mb-3">
+            <abp-column size-md="_12">
+                <form id="SearchForm" autocomplete="off">
+                    <div class="input-group">
+                        <input class="form-control page-search-filter-text" id="FilterText" placeholder="@L["Search"]"/>
+                        <abp-button button-type="Primary" type="submit" icon="search"/>
+                    </div>
+                </form>
+            </abp-column>
+            <abp-column size-md="_12" class="mt-3">
+                <a href="javascript:;" id="AdvancedFilterSectionToggler" class="text-decoration-none">@L["SeeAdvancedFilters"]</a>
+            </abp-column>
+        </abp-row>
+
+        <abp-row id="AdvancedFilterSection" style="display: none;">
+            <abp-column size="_3">
+                <abp-input asp-for="EnterpriseNameFilter" label="@L["EnterpriseName"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="OrganizationFilter" label="@L["Organization"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ProductNameFilter" label="@L["ProductName"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="AllowanceFilter" label="@L["Allowance"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="APRFilter" label="@L["APR"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="PeriodFilter" label="@L["Period"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-select asp-for="ApplyStatusFilter" label="@L["ApplyStatus"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-select asp-for="GuaranteeMethodFilter" label="@L["GuaranteeMethod"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ApplyTimeFilterMin" label="@L["MinApplyTime"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ApplyTimeFilterMax" label="@L["MaxApplyTime"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="PassedTimeFilterMin" label="@L["MinPassedTime"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="PassedTimeFilterMax" label="@L["MaxPassedTime"].Value" />
+            </abp-column>
+        </abp-row>
+
+        <abp-table striped-rows="true" id="AppliesTable">
+            <thead>
+				<tr>
+					<th>@L["Actions"]</th>
+					<th>@L["EnterpriseName"]</th>
+					<th>@L["Organization"]</th>
+					<th>@L["ProductName"]</th>
+					<th>@L["Allowance"]</th>
+					<th>@L["APR"]</th>
+					<th>@L["Period"]</th>
+					<th>@L["ApplyStatus"]</th>
+					<th>@L["GuaranteeMethod"]</th>
+					<th>@L["ApplyTime"]</th>
+					<th>@L["PassedTime"]</th>
+
+				</tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>

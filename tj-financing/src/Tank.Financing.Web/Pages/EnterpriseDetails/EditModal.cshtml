@@ -1,0 +1,48 @@
+@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Tank.Financing.Localization
+@using Tank.Financing.Web.Pages.EnterpriseDetails
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Tank.Financing.EnterpriseDetails;
+@using System.Globalization
+@inject IHtmlLocalizer<FinancingResource> L
+@model EditModalModel
+@{
+    Layout = null;
+}
+
+<form data-ajaxForm="true" asp-page="/EnterpriseDetails/EditModal" autocomplete="off">
+    <abp-modal>
+        <abp-modal-header title="@L["Update"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            <abp-input asp-for="Id" />
+            
+            <abp-input asp-for="EnterpriseDetail.EnterpriseName"/>
+
+            <abp-input asp-for="EnterpriseDetail.TotalAssets"/>
+
+            <abp-input asp-for="EnterpriseDetail.Income"/>
+
+            <abp-input asp-for="EnterpriseDetail.EnterpriseType"/>
+
+            <abp-input asp-for="EnterpriseDetail.StaffNumber"/>
+
+            <abp-input asp-for="EnterpriseDetail.Industry"/>
+
+            <abp-input asp-for="EnterpriseDetail.Location"/>
+
+            <abp-input asp-for="EnterpriseDetail.RegisteredAddress"/>
+
+            <abp-input asp-for="EnterpriseDetail.BusinessAddress"/>
+
+            <abp-input asp-for="EnterpriseDetail.BusinessScope"/>
+
+            <abp-input asp-for="EnterpriseDetail.Description"/>
+
+            
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

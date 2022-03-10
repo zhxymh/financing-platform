@@ -1,5 +1,5 @@
 {
-  "Id": "67e35477-94d9-47b8-85d6-4baef6070caa",
+  "Id": "51d6c8c4-f7cc-4534-84fc-bd80f5f1b616",
   "Name": "Enterprise",
   "OriginalName": "Enterprise",
   "NamePlural": "Enterprises",
@@ -15,7 +15,7 @@
   "CreateTests": true,
   "Properties": [
     {
-      "Id": "c62bc4bf-698a-45f7-8561-9c77f887643e",
+      "Id": "1b0b7012-46c4-4f07-9add-840b1802baca",
       "Name": "EnterpriseName",
       "Type": "string",
       "EnumType": "",
@@ -33,7 +33,7 @@
       "IsSelected": true
     },
     {
-      "Id": "ccdeebf2-b3ae-45ec-9c10-4ac83b41366e",
+      "Id": "11fbfd36-6b81-40ca-b559-25320475b208",
       "Name": "ArtificialPerson",
       "Type": "string",
       "EnumType": "",
@@ -51,7 +51,7 @@
       "IsSelected": true
     },
     {
-      "Id": "fcac0e5d-5baa-4e3b-97b1-b54ad56cc94b",
+      "Id": "0106c23e-4c75-494a-ae71-f05ead23f9fd",
       "Name": "EstablishedTime",
       "Type": "long",
       "EnumType": "",
@@ -69,7 +69,7 @@
       "IsSelected": true
     },
     {
-      "Id": "a5c9269d-2780-4118-ad9d-e9bb390a01d8",
+      "Id": "0656ba77-aaba-4f14-8d10-635a42b80901",
       "Name": "DueTime",
       "Type": "long",
       "EnumType": "",
@@ -87,7 +87,7 @@
       "IsSelected": true
     },
     {
-      "Id": "8edc727c-a8f1-4a4d-9e3e-b6f0b9ea78a7",
+      "Id": "b62d8118-e6bd-433c-8824-bba8c4ddc71c",
       "Name": "CreditCode",
       "Type": "string",
       "EnumType": "",
@@ -105,7 +105,7 @@
       "IsSelected": true
     },
     {
-      "Id": "9955e3fb-75c0-4fc2-ad08-2f9546826425",
+      "Id": "9056d9e3-c41d-4b7e-9217-7e52460139f2",
       "Name": "ArtificialPersonId",
       "Type": "string",
       "EnumType": "",
@@ -123,7 +123,7 @@
       "IsSelected": true
     },
     {
-      "Id": "dc48d69a-7a2c-4c4e-95de-c22b7efa2bd9",
+      "Id": "40d1eb5c-175f-4222-96ac-f44eb36a2b4a",
       "Name": "RegisteredCapital",
       "Type": "string",
       "EnumType": "",
@@ -141,7 +141,7 @@
       "IsSelected": true
     },
     {
-      "Id": "67f199a1-0670-4284-87ef-6524f71707c0",
+      "Id": "e4b18265-9c4a-402a-bfa6-8b187dbcfef5",
       "Name": "PhoneNumber",
       "Type": "string",
       "EnumType": "",
@@ -159,7 +159,7 @@
       "IsSelected": true
     },
     {
-      "Id": "2a1741e6-3dff-4a31-ae7e-c3546f7fac95",
+      "Id": "d061bd97-4996-4f94-98b9-e581f2bd84e2",
       "Name": "CertPhotoPath",
       "Type": "string",
       "EnumType": "",
@@ -177,7 +177,7 @@
       "IsSelected": true
     },
     {
-      "Id": "dba0e641-99a6-4262-b09b-a0a69ade823a",
+      "Id": "43468134-4889-40d9-8531-02b8211bbc3d",
       "Name": "IdPhotoPath1",
       "Type": "string",
       "EnumType": "",
@@ -195,7 +195,7 @@
       "IsSelected": true
     },
     {
-      "Id": "8e99043b-7dbd-4deb-bab3-9578db6fe943",
+      "Id": "3b989f06-11ae-4399-ae25-cde3b1a11ebf",
       "Name": "IdPhotoPath2",
       "Type": "string",
       "EnumType": "",
@@ -213,7 +213,7 @@
       "IsSelected": true
     },
     {
-      "Id": "e4aca2cf-ef33-4bb6-bc50-5ca58975c1e9",
+      "Id": "38fc0675-f85a-4719-887f-938ce555eca7",
       "Name": "CertificateStatus",
       "Type": "enum",
       "EnumType": "CertificateStatus",

@@ -1,0 +1,41 @@
+@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Tank.Financing.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Tank.Financing.Web.Pages.FinancialProducts
+@using Tank.Financing.FinancialProducts;
+@using System.Globalization
+@inject IHtmlLocalizer<FinancingResource> L
+@model CreateModalModel
+@{
+    Layout = null;
+}
+
+<form data-ajaxForm="true" asp-page="/FinancialProducts/CreateModal" autocomplete="off">
+    <abp-modal>
+        <abp-modal-header title="@L["NewFinancialProduct"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            
+            <abp-input asp-for="FinancialProduct.ProductName"/>
+
+            <abp-input asp-for="FinancialProduct.Organization"/>
+
+            <abp-input asp-for="FinancialProduct.Period"/>
+
+            <abp-select asp-for="FinancialProduct.GuaranteeMethod"/>
+
+            <abp-input asp-for="FinancialProduct.AppliedNumber"/>
+
+            <abp-input asp-for="FinancialProduct.APR"/>
+
+            <abp-input asp-for="FinancialProduct.Rating"/>
+
+            <abp-input asp-for="FinancialProduct.CreditCeiling"/>
+
+            
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

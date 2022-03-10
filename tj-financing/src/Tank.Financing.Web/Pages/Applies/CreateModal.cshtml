@@ -1,0 +1,45 @@
+@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Tank.Financing.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Tank.Financing.Web.Pages.Applies
+@using Tank.Financing.Applies;
+@using System.Globalization
+@inject IHtmlLocalizer<FinancingResource> L
+@model CreateModalModel
+@{
+    Layout = null;
+}
+
+<form data-ajaxForm="true" asp-page="/Applies/CreateModal" autocomplete="off">
+    <abp-modal>
+        <abp-modal-header title="@L["NewApply"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            
+            <abp-input asp-for="Apply.EnterpriseName"/>
+
+            <abp-input asp-for="Apply.Organization"/>
+
+            <abp-input asp-for="Apply.ProductName"/>
+
+            <abp-input asp-for="Apply.Allowance"/>
+
+            <abp-input asp-for="Apply.APR"/>
+
+            <abp-input asp-for="Apply.Period"/>
+
+            <abp-select asp-for="Apply.ApplyStatus"/>
+
+            <abp-select asp-for="Apply.GuaranteeMethod"/>
+
+            <abp-input asp-for="Apply.ApplyTime"/>
+
+            <abp-input asp-for="Apply.PassedTime"/>
+
+            
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

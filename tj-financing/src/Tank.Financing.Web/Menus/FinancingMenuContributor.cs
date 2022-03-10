@@ -94,6 +94,33 @@ public class FinancingMenuContributor : IMenuContributor
                 icon: "fa fa-file-alt",
                 requiredPermissionName: FinancingPermissions.Enterprises.Default)
         );
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                FinancingMenus.FinancialProducts,
+                l["Menu:FinancialProducts"],
+                url: "/FinancialProducts",
+                icon: "fa fa-file-alt",
+                requiredPermissionName: FinancingPermissions.FinancialProducts.Default)
+        );
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                FinancingMenus.Applies,
+                l["Menu:Applies"],
+                url: "/Applies",
+                icon: "fa fa-file-alt",
+                requiredPermissionName: FinancingPermissions.Applies.Default)
+        );
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                FinancingMenus.EnterpriseDetails,
+                l["Menu:EnterpriseDetails"],
+                url: "/EnterpriseDetails",
+                icon: "fa fa-file-alt",
+                requiredPermissionName: FinancingPermissions.EnterpriseDetails.Default)
+        );
         return Task.CompletedTask;
     }
 }

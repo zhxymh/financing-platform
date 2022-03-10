@@ -11,4 +11,10 @@ public class FinancingMenus
     public const string TenantDashboard = Prefix + ".TenantDashboard";
     public const string Enterprises = Prefix + ".Enterprises";
 
+    public const string FinancialProducts = Prefix + ".FinancialProducts";
+
+    public const string Applies = Prefix + ".Applies";
+
+    public const string EnterpriseDetails = Prefix + ".EnterpriseDetails";
+
 }
