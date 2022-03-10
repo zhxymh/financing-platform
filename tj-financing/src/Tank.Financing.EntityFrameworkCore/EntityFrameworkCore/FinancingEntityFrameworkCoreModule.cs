@@ -1,3 +1,4 @@
+using Tank.Financing.Enterprises;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -42,15 +43,17 @@ public class FinancingEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<FinancingDbContext>(options =>
         {
-                /* Remove "includeAllEntities: true" to create
-                 * default repositories only for aggregate roots */
+            /* Remove "includeAllEntities: true" to create
+             * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
+            options.AddRepository<Enterprise, Enterprises.EfCoreEnterpriseRepository>();
+
         });
 
         Configure<AbpDbContextOptions>(options =>
         {
-                /* The main point to change your DBMS.
-                 * See also FinancingDbContextFactory for EF Core tooling. */
+            /* The main point to change your DBMS.
+             * See also FinancingDbContextFactory for EF Core tooling. */
             options.UseMySQL();
         });
     }

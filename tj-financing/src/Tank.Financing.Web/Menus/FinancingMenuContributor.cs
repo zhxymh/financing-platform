@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 using Tank.Financing.Localization;
 using Tank.Financing.Permissions;
@@ -84,6 +86,14 @@ public class FinancingMenuContributor : IMenuContributor
         //Administration->Settings
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 6);
 
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                FinancingMenus.Enterprises,
+                l["Menu:Enterprises"],
+                url: "/Enterprises",
+                icon: "fa fa-file-alt",
+                requiredPermissionName: FinancingPermissions.Enterprises.Default)
+        );
         return Task.CompletedTask;
     }
 }

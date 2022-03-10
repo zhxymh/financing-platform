@@ -1,0 +1,112 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Tank.Financing.Permissions
+@using Tank.Financing.Web.Pages.Enterprises
+@using Tank.Financing.Web.Menus
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Tank.Financing.Localization
+@inject IHtmlLocalizer<FinancingResource> L
+@inject IAuthorizationService Authorization
+@model IndexModel
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Enterprises"].Value;
+    PageLayout.Content.MenuItemName = FinancingMenus.Enterprises;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/Enterprises/index.js" />
+}
+
+@section content_toolbar {
+    @if (await Authorization.IsGrantedAsync(FinancingPermissions.Enterprises.Create))
+    {
+        <abp-button id="NewEnterpriseButton" text="@L["NewEnterprise"].Value" icon="plus" button-type="Primary" />
+    }
+}
+
+<abp-card>
+    <abp-card-body>
+		<abp-row class="mb-3">
+            <abp-column size-md="_12">
+                <form id="SearchForm" autocomplete="off">
+                    <div class="input-group">
+                        <input class="form-control page-search-filter-text" id="FilterText" placeholder="@L["Search"]"/>
+                        <abp-button button-type="Primary" type="submit" icon="search"/>
+                    </div>
+                </form>
+            </abp-column>
+            <abp-column size-md="_12" class="mt-3">
+                <a href="javascript:;" id="AdvancedFilterSectionToggler" class="text-decoration-none">@L["SeeAdvancedFilters"]</a>
+            </abp-column>
+        </abp-row>
+
+        <abp-row id="AdvancedFilterSection" style="display: none;">
+            <abp-column size="_3">
+                <abp-input asp-for="EnterpriseNameFilter" label="@L["EnterpriseName"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ArtificialPersonFilter" label="@L["ArtificialPerson"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="EstablishedTimeFilterMin" label="@L["MinEstablishedTime"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="EstablishedTimeFilterMax" label="@L["MaxEstablishedTime"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="DueTimeFilterMin" label="@L["MinDueTime"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="DueTimeFilterMax" label="@L["MaxDueTime"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="CreditCodeFilter" label="@L["CreditCode"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ArtificialPersonIdFilter" label="@L["ArtificialPersonId"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="RegisteredCapitalFilter" label="@L["RegisteredCapital"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="PhoneNumberFilter" label="@L["PhoneNumber"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="CertPhotoPathFilter" label="@L["CertPhotoPath"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="IdPhotoPath1Filter" label="@L["IdPhotoPath1"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="IdPhotoPath2Filter" label="@L["IdPhotoPath2"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-select asp-for="CertificateStatusFilter" label="@L["CertificateStatus"].Value" />
+            </abp-column>
+        </abp-row>
+
+        <abp-table striped-rows="true" id="EnterprisesTable">
+            <thead>
+				<tr>
+					<th>@L["Actions"]</th>
+					<th>@L["EnterpriseName"]</th>
+					<th>@L["ArtificialPerson"]</th>
+					<th>@L["EstablishedTime"]</th>
+					<th>@L["DueTime"]</th>
+					<th>@L["CreditCode"]</th>
+					<th>@L["ArtificialPersonId"]</th>
+					<th>@L["RegisteredCapital"]</th>
+					<th>@L["PhoneNumber"]</th>
+					<th>@L["CertPhotoPath"]</th>
+					<th>@L["IdPhotoPath1"]</th>
+					<th>@L["IdPhotoPath2"]</th>
+					<th>@L["CertificateStatus"]</th>
+
+				</tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>

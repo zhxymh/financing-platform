@@ -1,4 +1,4 @@
-﻿namespace Tank.Financing.Web.Menus;
+namespace Tank.Financing.Web.Menus;
 
 public class FinancingMenus
 {
@@ -9,4 +9,6 @@ public class FinancingMenus
     public const string HostDashboard = Prefix + ".HostDashboard";
 
     public const string TenantDashboard = Prefix + ".TenantDashboard";
+    public const string Enterprises = Prefix + ".Enterprises";
+
 }

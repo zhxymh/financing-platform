@@ -1,0 +1,50 @@
+@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Tank.Financing.Localization
+@using Tank.Financing.Web.Pages.Enterprises
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Tank.Financing.Enterprises;
+@using System.Globalization
+@inject IHtmlLocalizer<FinancingResource> L
+@model EditModalModel
+@{
+    Layout = null;
+}
+
+<form data-ajaxForm="true" asp-page="/Enterprises/EditModal" autocomplete="off">
+    <abp-modal>
+        <abp-modal-header title="@L["Update"].Value"></abp-modal-header>
+
+        <abp-modal-body>
+            <abp-input asp-for="Id" />
+            
+            <abp-input asp-for="Enterprise.EnterpriseName"/>
+
+            <abp-input asp-for="Enterprise.ArtificialPerson"/>
+
+            <abp-input asp-for="Enterprise.EstablishedTime"/>
+
+            <abp-input asp-for="Enterprise.DueTime"/>
+
+            <abp-input asp-for="Enterprise.CreditCode"/>
+
+            <abp-input asp-for="Enterprise.ArtificialPersonId"/>
+
+            <abp-input asp-for="Enterprise.RegisteredCapital"/>
+
+            <abp-input asp-for="Enterprise.PhoneNumber"/>
+
+            <abp-input asp-for="Enterprise.CertPhotoPath"/>
+
+            <abp-input asp-for="Enterprise.IdPhotoPath1"/>
+
+            <abp-input asp-for="Enterprise.IdPhotoPath2"/>
+
+            <abp-select asp-for="Enterprise.CertificateStatus"/>
+
+            
+        </abp-modal-body>
+
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

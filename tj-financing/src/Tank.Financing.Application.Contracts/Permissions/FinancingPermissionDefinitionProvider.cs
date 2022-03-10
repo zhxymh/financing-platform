@@ -16,6 +16,11 @@ public class FinancingPermissionDefinitionProvider : PermissionDefinitionProvide
 
         //Define your own permissions here. Example:
         //myGroup.AddPermission(FinancingPermissions.MyPermission1, L("Permission:MyPermission1"));
+
+        var enterprisePermission = myGroup.AddPermission(FinancingPermissions.Enterprises.Default, L("Permission:Enterprises"));
+        enterprisePermission.AddChild(FinancingPermissions.Enterprises.Create, L("Permission:Create"));
+        enterprisePermission.AddChild(FinancingPermissions.Enterprises.Edit, L("Permission:Edit"));
+        enterprisePermission.AddChild(FinancingPermissions.Enterprises.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)

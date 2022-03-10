@@ -71,7 +71,7 @@ namespace Tank.Financing.Web;
     typeof(AbpAspNetCoreSerilogModule)
     )]
 [DependsOn(typeof(AbpAccountPublicWebModule))]
-    public class FinancingWebModule : AbpModule
+public class FinancingWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
@@ -132,6 +132,7 @@ namespace Tank.Financing.Web;
         {
             options.Conventions.AuthorizePage("/HostDashboard", FinancingPermissions.Dashboard.Host);
             options.Conventions.AuthorizePage("/TenantDashboard", FinancingPermissions.Dashboard.Tenant);
+            options.Conventions.AuthorizePage("/Enterprises/Index", FinancingPermissions.Enterprises.Default);
         });
     }
 
@@ -188,7 +189,7 @@ namespace Tank.Financing.Web;
 
             if (hostingEnvironment.IsDevelopment())
             {
-                    options.FileSets.ReplaceEmbeddedByPhysical<FinancingDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}Tank.Financing.Domain.Shared", Path.DirectorySeparatorChar)));
+                options.FileSets.ReplaceEmbeddedByPhysical<FinancingDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}Tank.Financing.Domain.Shared", Path.DirectorySeparatorChar)));
                 options.FileSets.ReplaceEmbeddedByPhysical<FinancingDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}Tank.Financing.Domain", Path.DirectorySeparatorChar)));
                 options.FileSets.ReplaceEmbeddedByPhysical<FinancingApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}Tank.Financing.Application.Contracts", Path.DirectorySeparatorChar)));
                 options.FileSets.ReplaceEmbeddedByPhysical<FinancingApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}Tank.Financing.Application", Path.DirectorySeparatorChar)));
@@ -245,8 +246,8 @@ namespace Tank.Financing.Web;
             )
             .AddMicrosoftAccount(MicrosoftAccountDefaults.AuthenticationScheme, options =>
             {
-                    //Personal Microsoft accounts as an example.
-                    options.AuthorizationEndpoint = "https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize";
+                //Personal Microsoft accounts as an example.
+                options.AuthorizationEndpoint = "https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize";
                 options.TokenEndpoint = "https://login.microsoftonline.com/consumers/oauth2/v2.0/token";
             })
             .WithDynamicOptions<MicrosoftAccountOptions, MicrosoftAccountHandler>(
@@ -267,7 +268,6 @@ namespace Tank.Financing.Web;
                 }
             );
     }
-
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
     {
