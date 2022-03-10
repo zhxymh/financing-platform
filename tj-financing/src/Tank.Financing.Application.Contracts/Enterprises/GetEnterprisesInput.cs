@@ -22,6 +22,8 @@ namespace Tank.Financing.Enterprises
         public string IdPhotoPath1 { get; set; }
         public string IdPhotoPath2 { get; set; }
         public CertificateStatus? CertificateStatus { get; set; }
+        public string CertificateTxId { get; set; }
+        public string ConfirmCertificateTxId { get; set; }
 
         public GetEnterprisesInput()
         {

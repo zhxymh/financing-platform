@@ -86,6 +86,12 @@
             <abp-column size="_3">
                 <abp-select asp-for="CertificateStatusFilter" label="@L["CertificateStatus"].Value" />
             </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="CertificateTxIdFilter" label="@L["CertificateTxId"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ConfirmCertificateTxIdFilter" label="@L["ConfirmCertificateTxId"].Value" />
+            </abp-column>
         </abp-row>
 
         <abp-table striped-rows="true" id="EnterprisesTable">
@@ -104,6 +110,8 @@
 					<th>@L["IdPhotoPath1"]</th>
 					<th>@L["IdPhotoPath2"]</th>
 					<th>@L["CertificateStatus"]</th>
+					<th>@L["CertificateTxId"]</th>
+					<th>@L["ConfirmCertificateTxId"]</th>
 
 				</tr>
             </thead>

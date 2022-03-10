@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tank.Financing.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,9 +12,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tank.Financing.Migrations
 {
     [DbContext(typeof(FinancingDbContext))]
-    partial class FinancingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220310055418_Updated_EnterpriseDetail_22031013535802")]
+    partial class Updated_EnterpriseDetail_22031013535802
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -369,11 +371,6 @@ namespace Tank.Financing.Migrations
                     b.Property<string>("APR")
                         .HasColumnType("longtext")
                         .HasColumnName("APR");
-
-                    b.Property<string>("AddFinancingProductTxId")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("AddFinancingProductTxId");
 
                     b.Property<int>("AppliedNumber")
                         .HasColumnType("int")

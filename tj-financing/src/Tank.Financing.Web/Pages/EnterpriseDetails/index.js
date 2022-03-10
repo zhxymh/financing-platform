@@ -30,7 +30,8 @@ $(function () {
 			registeredAddress: $("#RegisteredAddressFilter").val(),
 			businessAddress: $("#BusinessAddressFilter").val(),
 			businessScope: $("#BusinessScopeFilter").val(),
-			description: $("#DescriptionFilter").val()
+			description: $("#DescriptionFilter").val(),
+			completeTxId: $("#CompleteTxIdFilter").val()
         };
     };
 
@@ -85,7 +86,8 @@ $(function () {
 			{ data: "registeredAddress" },
 			{ data: "businessAddress" },
 			{ data: "businessScope" },
-			{ data: "description" }
+			{ data: "description" },
+			{ data: "completeTxId" }
         ]
     }));
 

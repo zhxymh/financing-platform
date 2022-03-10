@@ -18,16 +18,16 @@ namespace Tank.Financing;
 
 public interface IBlockchainAppService
 {
-    void AddFinancingProduct(FinancialProductCreateDto input);
-    void Certificate(EnterpriseCreateDto input);
-    void ConfirmCertificate(EnterpriseUpdateDto input);
-    void Complete(EnterpriseDetailCreateDto input);
-    void Apply(ApplyCreateDto input);
-    void AdvanceSetAllowance(ApplyCreateDto input);
-    void SetAllowance(ApplyUpdateDto input);
-    void OnlineApprove(ApplyUpdateDto input);
-    void OfflineApprove(ApplyUpdateDto input);
-    void ApproveAllowance(ApplyUpdateDto input);
+    string AddFinancingProduct(FinancialProductCreateDto input);
+    string Certificate(EnterpriseCreateDto input);
+    string ConfirmCertificate(EnterpriseUpdateDto input);
+    string Complete(EnterpriseDetailCreateDto input);
+    string Apply(ApplyCreateDto input);
+    string AdvanceSetAllowance(ApplyCreateDto input);
+    string SetAllowance(ApplyUpdateDto input);
+    string OnlineApprove(ApplyUpdateDto input);
+    string OfflineApprove(ApplyUpdateDto input);
+    string ApproveAllowance(ApplyUpdateDto input);
 }
 
 public class BlockchainAppService : IBlockchainAppService, ITransientDependency
@@ -76,9 +76,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
         }
     }
 
-    public void AddFinancingProduct(FinancialProductCreateDto input)
+    public string AddFinancingProduct(FinancialProductCreateDto input)
     {
-        ForwardContract(input.Organization, FinancingConsts.ScopeIdForAdmin,
+        return ForwardContract(input.Organization, FinancingConsts.ScopeIdForAdmin,
             nameof(AddFinancingProduct),
             new AddFinancingProductInput
             {
@@ -88,9 +88,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void ConfirmCertificate(EnterpriseUpdateDto input)
+    public string ConfirmCertificate(EnterpriseUpdateDto input)
     {
-        ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForAdmin, nameof(ConfirmCertificate),
+        return ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForAdmin, nameof(ConfirmCertificate),
             new ConfirmCertificateInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -98,9 +98,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void Certificate(EnterpriseCreateDto input)
+    public string Certificate(EnterpriseCreateDto input)
     {
-        ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, nameof(Certificate),
+        return ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, nameof(Certificate),
             new EnterpriseBasicInfo
             {
                 Name = input.EnterpriseName,
@@ -114,9 +114,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void Complete(EnterpriseDetailCreateDto input)
+    public string Complete(EnterpriseDetailCreateDto input)
     {
-        ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, "Complete",
+        return ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, "Complete",
             new EnterpriseFurtherInfo
             {
                 Name = input.EnterpriseName,
@@ -132,9 +132,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void Apply(ApplyCreateDto input)
+    public string Apply(ApplyCreateDto input)
     {
-        ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, nameof(Apply),
+        return ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, nameof(Apply),
             new ApplyInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -143,9 +143,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void AdvanceSetAllowance(ApplyCreateDto input)
+    public string AdvanceSetAllowance(ApplyCreateDto input)
     {
-        ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(SetAllowance),
+        return ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(SetAllowance),
             new SetAllowanceInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -158,9 +158,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void SetAllowance(ApplyUpdateDto input)
+    public string SetAllowance(ApplyUpdateDto input)
     {
-        ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(SetAllowance),
+        return ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(SetAllowance),
             new SetAllowanceInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -173,9 +173,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void OnlineApprove(ApplyUpdateDto input)
+    public string OnlineApprove(ApplyUpdateDto input)
     {
-        ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(OnlineApprove),
+        return ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(OnlineApprove),
             new ApproveInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -184,9 +184,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void OfflineApprove(ApplyUpdateDto input)
+    public string OfflineApprove(ApplyUpdateDto input)
     {
-        ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(OfflineApprove),
+        return ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(OfflineApprove),
             new ApproveInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -195,9 +195,9 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public void ApproveAllowance(ApplyUpdateDto input)
+    public string ApproveAllowance(ApplyUpdateDto input)
     {
-        ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(ApproveAllowance),
+        return ForwardContract(input.Organization, FinancingConsts.ScopeIdForFinancingOrganization, nameof(ApproveAllowance),
             new ApproveAllowanceInput
             {
                 EnterpriseName = input.EnterpriseName,
@@ -210,7 +210,7 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    private void ForwardContract(string fromId, string scopeId, string methodName,
+    private string ForwardContract(string fromId, string scopeId, string methodName,
         IMessage param)
     {
         var txId = _nodeManager.SendTransaction(Options.OwnerAddress,
@@ -225,10 +225,12 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
                 ScopeId = scopeId
             });
         var result = _nodeManager.CheckTransactionResult(txId);
-        Logger.LogInformation($"[Forward]{methodName}: {result.TransactionId}");
+        Logger.LogInformation($"[Forward]{methodName}: {txId}");
         if (result.Status != "MINED")
         {
             throw new TransactionFailedException($"Transaction execution failed: {result.Error}");
         }
+
+        return result.TransactionId;
     }
 }

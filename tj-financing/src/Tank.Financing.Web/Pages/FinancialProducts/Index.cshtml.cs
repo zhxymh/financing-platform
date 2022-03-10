@@ -29,6 +29,7 @@ namespace Tank.Financing.Web.Pages.FinancialProducts
         public long? CreditCeilingFilterMin { get; set; }
 
         public long? CreditCeilingFilterMax { get; set; }
+        public string AddFinancingProductTxIdFilter { get; set; }
 
         private readonly IFinancialProductsAppService _financialProductsAppService;
 

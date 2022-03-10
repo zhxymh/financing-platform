@@ -20,7 +20,8 @@ namespace Tank.Financing.FinancialProducts
         private readonly IFinancialProductRepository _financialProductRepository;
         private readonly IBlockchainAppService _blockchainAppService;
 
-        public FinancialProductsAppService(IFinancialProductRepository financialProductRepository, IBlockchainAppService blockchainAppService)
+        public FinancialProductsAppService(IFinancialProductRepository financialProductRepository,
+            IBlockchainAppService blockchainAppService)
         {
             _financialProductRepository = financialProductRepository;
             _blockchainAppService = blockchainAppService;
@@ -28,8 +29,14 @@ namespace Tank.Financing.FinancialProducts
 
         public virtual async Task<PagedResultDto<FinancialProductDto>> GetListAsync(GetFinancialProductsInput input)
         {
-            var totalCount = await _financialProductRepository.GetCountAsync(input.FilterText, input.ProductName, input.Organization, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.CreditCeilingMin, input.CreditCeilingMax);
-            var items = await _financialProductRepository.GetListAsync(input.FilterText, input.ProductName, input.Organization, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.AppliedNumberMin, input.AppliedNumberMax, input.APR, input.Rating, input.CreditCeilingMin, input.CreditCeilingMax, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _financialProductRepository.GetCountAsync(input.FilterText, input.ProductName,
+                input.Organization, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.AppliedNumberMin,
+                input.AppliedNumberMax, input.APR, input.Rating, input.CreditCeilingMin, input.CreditCeilingMax,
+                input.AddFinancingProductTxId);
+            var items = await _financialProductRepository.GetListAsync(input.FilterText, input.ProductName,
+                input.Organization, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.AppliedNumberMin,
+                input.AppliedNumberMax, input.APR, input.Rating, input.CreditCeilingMin, input.CreditCeilingMax,
+                input.AddFinancingProductTxId, input.Sorting, input.MaxResultCount, input.SkipCount);
 
             return new PagedResultDto<FinancialProductDto>
             {
@@ -40,7 +47,8 @@ namespace Tank.Financing.FinancialProducts
 
         public virtual async Task<FinancialProductDto> GetAsync(Guid id)
         {
-            return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(await _financialProductRepository.GetAsync(id));
+            return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(
+                await _financialProductRepository.GetAsync(id));
         }
 
         [Authorize(FinancingPermissions.FinancialProducts.Delete)]
@@ -52,7 +60,7 @@ namespace Tank.Financing.FinancialProducts
         [Authorize(FinancingPermissions.FinancialProducts.Create)]
         public virtual async Task<FinancialProductDto> CreateAsync(FinancialProductCreateDto input)
         {
-            _blockchainAppService.AddFinancingProduct(input);
+            input.AddFinancingProductTxId = _blockchainAppService.AddFinancingProduct(input);
             var financialProduct = ObjectMapper.Map<FinancialProductCreateDto, FinancialProduct>(input);
             financialProduct = await _financialProductRepository.InsertAsync(financialProduct, autoSave: true);
             return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(financialProduct);

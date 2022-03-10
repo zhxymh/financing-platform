@@ -25,22 +25,24 @@ namespace Tank.Financing.Enterprises
             {
                 // Act
                 var result = await _enterpriseRepository.GetListAsync(
-                    enterpriseName: "a35492ae8cd341f287a1eaf281a492ecec87735131ad48fd8c6792f95a4b0006c8eb43d856184cf4ae5b",
-                    artificialPerson: "fefdef5fee604609a3660d32f766431edfa39a6ead074efcbbf39a1bfcc3dfe",
-                    creditCode: "97c05d9aa9a84dd49ea2831da28c57c9d30ba99e197546619527b5cd3dfe5f8",
-                    artificialPersonId: "f821430646374477a7b5f8f89f04bb5147e78badc04f42b292513823138f69",
-                    registeredCapital: "9c7b377e8ea643438d15de777dd782810",
-                    phoneNumber: "905891ccae334a7590f8152afb5b5df0b98a0b9497784fe8b931fbc9ada",
-                    certPhotoPath: "a6fa97431e8c45bcb088f05e010abc33e75cc465ef3b45",
-                    idPhotoPath1: "0cd6b829aa44498aac48b8149488a3d7689681e6e1394f41a88b59ea52c013fd9c0bec9c0109427990f4",
-                    idPhotoPath2: "4a9f700fc58e4f31b421f2a5191b7674aaf1b21f6b344e76a3c8f23e7f8dc7f2212b8fbb8d7f4899bf",
-                    certificateStatus: default
+                    enterpriseName: "dd16a023fede4603ac81fe8403ffb431cedf21cd5f80461b81391eeceaa94f8095c02eb0eb0b4ac2994d0558854c67254",
+                    artificialPerson: "05f5e68a75384f2790716941b2764048265f62e18ba44565bf7b21f352ec0b",
+                    creditCode: "382169d190274ff5bd2b5d007c69d42a7127365865a044c2ace",
+                    artificialPersonId: "460dad04f40a4b948100a5abb5e69a6fdec64f2bae9d486f9",
+                    registeredCapital: "b9724cd61abc4e08a378cb2e12235a4ae571affe0b10463caea11d099ba5f1223518fd4b42c74778bef8eed295",
+                    phoneNumber: "64949d27a0ef4207ba4504dca19bfc5b90548bbd69ab441c9a7a3208ef75f9203d22417750fb4561bb0cd5d375a071f4c",
+                    certPhotoPath: "3254d19a84f943c3932c2287536f172",
+                    idPhotoPath1: "f29190b99c1f4506963f2374f82ba2a1c5eb561e2f6d496189950a8f55719c39c1c",
+                    idPhotoPath2: "c344a508c05d46cb839a8676c9e0101b",
+                    certificateStatus: default,
+                    certificateTxId: "e9524043cc944435956d94ab4ee0b0b5266f8547e29e4e9dae5",
+                    confirmCertificateTxId: "8c181d5b3ccc4674b2a"
                 );
 
                 // Assert
                 result.Count.ShouldBe(1);
                 result.FirstOrDefault().ShouldNotBe(null);
-                result.First().Id.ShouldBe(Guid.Parse("4b826053-560b-4e05-8560-2e6614ec7d71"));
+                result.First().Id.ShouldBe(Guid.Parse("5ec03ba0-82da-4fc7-85c6-67d5955baa61"));
             });
         }
 
@@ -52,16 +54,18 @@ namespace Tank.Financing.Enterprises
             {
                 // Act
                 var result = await _enterpriseRepository.GetCountAsync(
-                    enterpriseName: "1c08ee6fd5924d9a83b9e74b2bce2c0c1dc6b2967f604ca6a231d1203b5c4180797428a9e4cd49de85bdd39b59e28352",
-                    artificialPerson: "6e92170990e",
-                    creditCode: "55422166bb8143febe8cf2de63c9d6df8f7ee26bda024b97a1b56aa772f81d35dc39a603cb1240a393240d",
-                    artificialPersonId: "62f887190f5442c184bd7bd76e0ad37066e94074e8c648b6b5e51cff2b58b284548d527ad623424b8579782",
-                    registeredCapital: "8509ad7a09e54c98a422f3d86f795c019343188e331741fe90f7d546c",
-                    phoneNumber: "91011ae1271c411fabd69cc48f34e132832e1cfec7ae41",
-                    certPhotoPath: "4ec113c8f59f4ae58950343baa",
-                    idPhotoPath1: "8448308b88e7458b9c82c530aa69d2",
-                    idPhotoPath2: "9e72a2e74a224c27870db48904372d4a6ff11e6949e547a3b1",
-                    certificateStatus: default
+                    enterpriseName: "1ba59f68db364e3b991",
+                    artificialPerson: "78ab55ee33894e54aae0580d207d3d2e097c0b00c876446cb1d0ee9f0208bdafbb2",
+                    creditCode: "696d53b7c5ff489598f2dc798",
+                    artificialPersonId: "1481074f8995429bb0851bd2f002",
+                    registeredCapital: "0599ace38d814faaa66a9ab06257b6328358bcbd3ed0",
+                    phoneNumber: "cd80b86a69a54a9bb451320671c1146c0e2f4653c",
+                    certPhotoPath: "4df8549922544afc9d0a772a966ba1d5a1f5f09fa9cc4762bbf1a7950b242f9cc8b1b133f1c544a1908b",
+                    idPhotoPath1: "1724fa406fac4b0aa705c8c6dd846a0d993b8e6a2421411282b7e81e77a9876b238932877f6f4364a7ce1b",
+                    idPhotoPath2: "f6dcad4f27a84355bceec8fb63f021b",
+                    certificateStatus: default,
+                    certificateTxId: "50ed0fb2cefd47e497ad3bd6461af8ccb14ab1ea1016404eb628",
+                    confirmCertificateTxId: "8a046dddc"
                 );
 
                 // Assert

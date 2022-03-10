@@ -25,22 +25,23 @@ namespace Tank.Financing.EnterpriseDetails
             {
                 // Act
                 var result = await _enterpriseDetailRepository.GetListAsync(
-                    enterpriseName: "bc54bd640e5d4f69891f520d03976604aca3d7938d2b4409b33f8fb56da71dad88f27da",
-                    totalAssets: "e821ba69d7fa49e582d1f85b015b690b6c46ba835e28410a9ed51898664f2b8057b966db7cc94e41a1e21f51c257cb",
-                    income: "afa1d213317d45a3aadcec6b3209ca55c998761bbc0544bb8",
-                    enterpriseType: "9a8e39deb5604e52adfd5df31d7ec240775a5fb282134bf0ac9d168c1b48cf5cf1e",
-                    industry: "9061a4bf4f8e480c98641936da811924e6b2e8f39e0f47c9b26e884057b07c3c53d696e5b2",
-                    location: "a6a0bd6677284bfe842fb06f",
-                    registeredAddress: "51959d027d274363bcc1a5943f9bddc842c2d04bd2444cd2a63b612c1c5fdcecf2a1ed6e1e574b5abbdcb23ba1c638ac",
-                    businessAddress: "5ed771d8cee14b428d28a73b7ffb3fe6d51686800c1b42e2b0f553d1abed4ec23f63631",
-                    businessScope: "f8dcd79bb8d44bab9961f4abc89fb366205eb300557142edbf0392bc89939e76496b99ddad5f",
-                    description: "02e11b2106e5431ab261d7c88d57e7a"
+                    enterpriseName: "a7055909f2a24964b9f11208a8919702b3260e800f24446298e1739",
+                    totalAssets: "8b2959f90a174a73b5672e",
+                    income: "eeb66bad0b8747f59f034734",
+                    enterpriseType: "154f3538bbfd4652b30658a8329f7db74340729f4dab4d1eb39980f5c7b",
+                    industry: "48da34ac520844e5b9250677962cb081184da77f12ea42cd8989c4f3f4f46904a77c9de551cd4410912973",
+                    location: "a2f74d1ac2db429c8cc309d834",
+                    registeredAddress: "98857246e",
+                    businessAddress: "dc74f0578afe47df8a6e78a57",
+                    businessScope: "ce194e5e89fe423abdd5f7d48b3a74ec497d9014caf84a9e",
+                    description: "a9f5f371cfef4d2cb2381dbfacf28ea",
+                    completeTxId: "e5fa190f8bb54447af72f2dd4fa1"
                 );
 
                 // Assert
                 result.Count.ShouldBe(1);
                 result.FirstOrDefault().ShouldNotBe(null);
-                result.First().Id.ShouldBe(Guid.Parse("eb01b4d9-7856-46bf-8a4d-48db4dd41dac"));
+                result.First().Id.ShouldBe(Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5"));
             });
         }
 
@@ -52,16 +53,17 @@ namespace Tank.Financing.EnterpriseDetails
             {
                 // Act
                 var result = await _enterpriseDetailRepository.GetCountAsync(
-                    enterpriseName: "dadafc84538c471a9dc9d3ed935d652f2de2b43806924469b5669c76f85685dd5b7448ff8b434",
-                    totalAssets: "a425cb023da64b6085aeda2858181f25e416838fafbd4a62846fea407dd21a2b80c484f6c54b4f4d867",
-                    income: "82177390ffc446218e70e17a7c65cc43ecefaecfbd204b03905",
-                    enterpriseType: "5408e2a7ea9e4542a99dc55f3f3ddb76b077ac6af6a3405eb4c80f655899a08c1e70add4",
-                    industry: "25ebcbefd9",
-                    location: "4dfc4164bd694e58b0dbdb5a372563242fd667e203d1450",
-                    registeredAddress: "f1f74bc2e3734aa49ce8cc7abf65c673a023e6",
-                    businessAddress: "7522f93538334e29a47fca979c820d9fe8c69097d5564f2eb01b974c84d17d1f9475fe493b9c4ca8b966eec823192c577",
-                    businessScope: "7dc71bf36ebe4efb8c2fea70ea388",
-                    description: "fec8fb213dbd47438ee1668f210f081738439d0ff6704a14b52fc113f12"
+                    enterpriseName: "dd77714f6dd345438ed6d7438e959f277f2",
+                    totalAssets: "c6562a5100eb44a79b548cd0f11f931ee1de63d9bf3a40e0a718e6711ef2a34b60eb5b7dafee4339baf",
+                    income: "484e5aac07a74e9f8416b49818b5fae3b15742869eb345ebaf76824a8673ccd14d9dda78e8524232b6",
+                    enterpriseType: "7cf229551",
+                    industry: "f3467be0d99b466890c2fd256d98f9f990cf25a9afc04230a22addbf9c1b2b947237e60331004b8d95",
+                    location: "19b8fefa594e4150914e18b564d0f9a76ee8bf165e834fd1a129d2733de2a69e0f56f72f8",
+                    registeredAddress: "22eb4e1b918649fcbb5e79f250b627165308d944bb2d4967bb1f1ba49d4122a2290e2777694249db9",
+                    businessAddress: "e4de7b65513e494dbf16680166948",
+                    businessScope: "f9829aca3f9047389ace85fce10c9109ef24058f4a26429ca19b03e97c899eba4f1ec51920e74c1fa7d3670587ef",
+                    description: "955b5edf1ddb4f749dd6a78ce65db5721a17e288ba8f49338917f8a3be40f6ac4e2d63837eea497c8dfb73504",
+                    completeTxId: "ea5f8c896b0d4973854d58044f100c"
                 );
 
                 // Assert

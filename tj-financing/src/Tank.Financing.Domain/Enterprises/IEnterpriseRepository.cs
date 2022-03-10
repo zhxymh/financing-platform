@@ -25,6 +25,8 @@ namespace Tank.Financing.Enterprises
             string idPhotoPath1 = null,
             string idPhotoPath2 = null,
             CertificateStatus? certificateStatus = null,
+            string certificateTxId = null,
+            string confirmCertificateTxId = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -47,6 +49,8 @@ namespace Tank.Financing.Enterprises
             string idPhotoPath1 = null,
             string idPhotoPath2 = null,
             CertificateStatus? certificateStatus = null,
+            string certificateTxId = null,
+            string confirmCertificateTxId = null,
             CancellationToken cancellationToken = default);
     }
 }

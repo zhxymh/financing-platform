@@ -29,6 +29,11 @@ namespace Tank.Financing.Web.Pages.Applies
         public long? PassedTimeFilterMin { get; set; }
 
         public long? PassedTimeFilterMax { get; set; }
+        public string ApplyTxIdFilter { get; set; }
+        public string OnlineApproveTxIdFilter { get; set; }
+        public string OfflineApproveTxIdFilter { get; set; }
+        public string ApproveAllowanceTxIdFilter { get; set; }
+        public string SetAllowanceTxIdFilter { get; set; }
 
         private readonly IAppliesAppService _appliesAppService;
 

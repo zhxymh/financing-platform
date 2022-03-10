@@ -80,6 +80,21 @@
             <abp-column size="_3">
                 <abp-input asp-for="PassedTimeFilterMax" label="@L["MaxPassedTime"].Value" />
             </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ApplyTxIdFilter" label="@L["ApplyTxId"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="OnlineApproveTxIdFilter" label="@L["OnlineApproveTxId"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="OfflineApproveTxIdFilter" label="@L["OfflineApproveTxId"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="ApproveAllowanceTxIdFilter" label="@L["ApproveAllowanceTxId"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="SetAllowanceTxIdFilter" label="@L["SetAllowanceTxId"].Value" />
+            </abp-column>
         </abp-row>
 
         <abp-table striped-rows="true" id="AppliesTable">
@@ -96,6 +111,11 @@
 					<th>@L["GuaranteeMethod"]</th>
 					<th>@L["ApplyTime"]</th>
 					<th>@L["PassedTime"]</th>
+					<th>@L["ApplyTxId"]</th>
+					<th>@L["OnlineApproveTxId"]</th>
+					<th>@L["OfflineApproveTxId"]</th>
+					<th>@L["ApproveAllowanceTxId"]</th>
+					<th>@L["SetAllowanceTxId"]</th>
 
 				</tr>
             </thead>

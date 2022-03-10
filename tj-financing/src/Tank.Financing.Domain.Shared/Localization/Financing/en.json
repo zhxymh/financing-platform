@@ -113,6 +113,15 @@
     "Description": "Description",
     "MinStaffNumber": "Min Staff Number",
     "MaxStaffNumber": "Max Staff Number",
-    "Menu:EnterpriseDetails": "Enterprise Details"
+    "Menu:EnterpriseDetails": "Enterprise Details",
+    "CertificateTxId": "Certificate Tx Id",
+    "ConfirmCertificateTxId": "Confirm Certificate Tx Id",
+    "ApplyTxId": "Apply Tx Id",
+    "OnlineApproveTxId": "Online Approve Tx Id",
+    "OfflineApproveTxId": "Offline Approve Tx Id",
+    "ApproveAllowanceTxId": "Approve Allowance Tx Id",
+    "SetAllowanceTxId": "Set Allowance Tx Id",
+    "CompleteTxId": "Complete Tx Id",
+    "AddFinancingProductTxId": "Add Financing Product Tx Id"
   }
 }

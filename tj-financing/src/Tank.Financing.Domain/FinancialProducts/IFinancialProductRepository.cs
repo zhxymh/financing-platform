@@ -22,6 +22,7 @@ namespace Tank.Financing.FinancialProducts
             string rating = null,
             long? creditCeilingMin = null,
             long? creditCeilingMax = null,
+            string addFinancingProductTxId = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -41,6 +42,7 @@ namespace Tank.Financing.FinancialProducts
             string rating = null,
             long? creditCeilingMin = null,
             long? creditCeilingMax = null,
+            string addFinancingProductTxId = null,
             CancellationToken cancellationToken = default);
     }
 }

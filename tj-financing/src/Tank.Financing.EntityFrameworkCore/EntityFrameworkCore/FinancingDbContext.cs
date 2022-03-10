@@ -103,48 +103,74 @@ public class FinancingDbContext :
         //});
         if (builder.IsHostDatabase())
         {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        builder.ConfigureFileManagement();
+        if (builder.IsHostDatabase())
+        {
+
+        }
+        if (builder.IsHostDatabase())
+        {
             builder.Entity<Enterprise>(b =>
-            {
-                b.ToTable(FinancingConsts.DbTablePrefix + "Enterprises", FinancingConsts.DbSchema);
-                b.ConfigureByConvention();
-                b.Property(x => x.EnterpriseName).HasColumnName(nameof(Enterprise.EnterpriseName)).IsRequired();
-                b.Property(x => x.ArtificialPerson).HasColumnName(nameof(Enterprise.ArtificialPerson)).IsRequired();
-                b.Property(x => x.EstablishedTime).HasColumnName(nameof(Enterprise.EstablishedTime));
-                b.Property(x => x.DueTime).HasColumnName(nameof(Enterprise.DueTime));
-                b.Property(x => x.CreditCode).HasColumnName(nameof(Enterprise.CreditCode)).IsRequired();
-                b.Property(x => x.ArtificialPersonId).HasColumnName(nameof(Enterprise.ArtificialPersonId)).IsRequired();
-                b.Property(x => x.RegisteredCapital).HasColumnName(nameof(Enterprise.RegisteredCapital)).IsRequired();
-                b.Property(x => x.PhoneNumber).HasColumnName(nameof(Enterprise.PhoneNumber)).IsRequired();
-                b.Property(x => x.CertPhotoPath).HasColumnName(nameof(Enterprise.CertPhotoPath)).IsRequired();
-                b.Property(x => x.IdPhotoPath1).HasColumnName(nameof(Enterprise.IdPhotoPath1)).IsRequired();
-                b.Property(x => x.IdPhotoPath2).HasColumnName(nameof(Enterprise.IdPhotoPath2)).IsRequired();
-                b.Property(x => x.CertificateStatus).HasColumnName(nameof(Enterprise.CertificateStatus)).IsRequired();
-            });
-
-        }
-        if (builder.IsHostDatabase())
-        {
-
-        }
-        if (builder.IsHostDatabase())
-        {
-            builder.Entity<FinancialProduct>(b =>
 {
-    b.ToTable(FinancingConsts.DbTablePrefix + "FinancialProducts", FinancingConsts.DbSchema);
+    b.ToTable(FinancingConsts.DbTablePrefix + "Enterprises", FinancingConsts.DbSchema);
     b.ConfigureByConvention();
-    b.Property(x => x.ProductName).HasColumnName(nameof(FinancialProduct.ProductName)).IsRequired();
-    b.Property(x => x.Organization).HasColumnName(nameof(FinancialProduct.Organization)).IsRequired();
-    b.Property(x => x.Period).HasColumnName(nameof(FinancialProduct.Period));
-    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(FinancialProduct.GuaranteeMethod));
-    b.Property(x => x.AppliedNumber).HasColumnName(nameof(FinancialProduct.AppliedNumber));
-    b.Property(x => x.APR).HasColumnName(nameof(FinancialProduct.APR));
-    b.Property(x => x.Rating).HasColumnName(nameof(FinancialProduct.Rating));
-    b.Property(x => x.CreditCeiling).HasColumnName(nameof(FinancialProduct.CreditCeiling));
+    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Enterprise.EnterpriseName)).IsRequired();
+    b.Property(x => x.ArtificialPerson).HasColumnName(nameof(Enterprise.ArtificialPerson)).IsRequired();
+    b.Property(x => x.EstablishedTime).HasColumnName(nameof(Enterprise.EstablishedTime));
+    b.Property(x => x.DueTime).HasColumnName(nameof(Enterprise.DueTime));
+    b.Property(x => x.CreditCode).HasColumnName(nameof(Enterprise.CreditCode)).IsRequired();
+    b.Property(x => x.ArtificialPersonId).HasColumnName(nameof(Enterprise.ArtificialPersonId)).IsRequired();
+    b.Property(x => x.RegisteredCapital).HasColumnName(nameof(Enterprise.RegisteredCapital)).IsRequired();
+    b.Property(x => x.PhoneNumber).HasColumnName(nameof(Enterprise.PhoneNumber)).IsRequired();
+    b.Property(x => x.CertPhotoPath).HasColumnName(nameof(Enterprise.CertPhotoPath)).IsRequired();
+    b.Property(x => x.IdPhotoPath1).HasColumnName(nameof(Enterprise.IdPhotoPath1)).IsRequired();
+    b.Property(x => x.IdPhotoPath2).HasColumnName(nameof(Enterprise.IdPhotoPath2)).IsRequired();
+    b.Property(x => x.CertificateStatus).HasColumnName(nameof(Enterprise.CertificateStatus)).IsRequired();
+    b.Property(x => x.CertificateTxId).HasColumnName(nameof(Enterprise.CertificateTxId)).IsRequired();
+    b.Property(x => x.ConfirmCertificateTxId).HasColumnName(nameof(Enterprise.ConfirmCertificateTxId));
 });
 
         }
         if (builder.IsHostDatabase())
         {
+            builder.Entity<Apply>(b =>
+{
+    b.ToTable(FinancingConsts.DbTablePrefix + "Applies", FinancingConsts.DbSchema);
+    b.ConfigureByConvention();
+    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Apply.EnterpriseName)).IsRequired();
+    b.Property(x => x.Organization).HasColumnName(nameof(Apply.Organization)).IsRequired();
+    b.Property(x => x.ProductName).HasColumnName(nameof(Apply.ProductName)).IsRequired();
+    b.Property(x => x.Allowance).HasColumnName(nameof(Apply.Allowance));
+    b.Property(x => x.APR).HasColumnName(nameof(Apply.APR));
+    b.Property(x => x.Period).HasColumnName(nameof(Apply.Period)).IsRequired();
+    b.Property(x => x.ApplyStatus).HasColumnName(nameof(Apply.ApplyStatus)).IsRequired();
+    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(Apply.GuaranteeMethod));
+    b.Property(x => x.ApplyTime).HasColumnName(nameof(Apply.ApplyTime)).IsRequired();
+    b.Property(x => x.PassedTime).HasColumnName(nameof(Apply.PassedTime));
+    b.Property(x => x.ApplyTxId).HasColumnName(nameof(Apply.ApplyTxId)).IsRequired();
+    b.Property(x => x.OnlineApproveTxId).HasColumnName(nameof(Apply.OnlineApproveTxId));
+    b.Property(x => x.OfflineApproveTxId).HasColumnName(nameof(Apply.OfflineApproveTxId));
+    b.Property(x => x.ApproveAllowanceTxId).HasColumnName(nameof(Apply.ApproveAllowanceTxId));
+    b.Property(x => x.SetAllowanceTxId).HasColumnName(nameof(Apply.SetAllowanceTxId));
+});
 
         }
         if (builder.IsHostDatabase())
@@ -164,26 +190,25 @@ public class FinancingDbContext :
     b.Property(x => x.BusinessAddress).HasColumnName(nameof(EnterpriseDetail.BusinessAddress)).IsRequired();
     b.Property(x => x.BusinessScope).HasColumnName(nameof(EnterpriseDetail.BusinessScope)).IsRequired();
     b.Property(x => x.Description).HasColumnName(nameof(EnterpriseDetail.Description)).IsRequired();
+    b.Property(x => x.CompleteTxId).HasColumnName(nameof(EnterpriseDetail.CompleteTxId)).IsRequired();
 });
 
         }
-        builder.ConfigureFileManagement();
         if (builder.IsHostDatabase())
         {
-            builder.Entity<Apply>(b =>
+            builder.Entity<FinancialProduct>(b =>
 {
-    b.ToTable(FinancingConsts.DbTablePrefix + "Applies", FinancingConsts.DbSchema);
+    b.ToTable(FinancingConsts.DbTablePrefix + "FinancialProducts", FinancingConsts.DbSchema);
     b.ConfigureByConvention();
-    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Apply.EnterpriseName)).IsRequired();
-    b.Property(x => x.Organization).HasColumnName(nameof(Apply.Organization)).IsRequired();
-    b.Property(x => x.ProductName).HasColumnName(nameof(Apply.ProductName)).IsRequired();
-    b.Property(x => x.Allowance).HasColumnName(nameof(Apply.Allowance));
-    b.Property(x => x.APR).HasColumnName(nameof(Apply.APR));
-    b.Property(x => x.Period).HasColumnName(nameof(Apply.Period)).IsRequired();
-    b.Property(x => x.ApplyStatus).HasColumnName(nameof(Apply.ApplyStatus)).IsRequired();
-    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(Apply.GuaranteeMethod));
-    b.Property(x => x.ApplyTime).HasColumnName(nameof(Apply.ApplyTime)).IsRequired();
-    b.Property(x => x.PassedTime).HasColumnName(nameof(Apply.PassedTime));
+    b.Property(x => x.ProductName).HasColumnName(nameof(FinancialProduct.ProductName)).IsRequired();
+    b.Property(x => x.Organization).HasColumnName(nameof(FinancialProduct.Organization)).IsRequired();
+    b.Property(x => x.Period).HasColumnName(nameof(FinancialProduct.Period));
+    b.Property(x => x.GuaranteeMethod).HasColumnName(nameof(FinancialProduct.GuaranteeMethod));
+    b.Property(x => x.AppliedNumber).HasColumnName(nameof(FinancialProduct.AppliedNumber));
+    b.Property(x => x.APR).HasColumnName(nameof(FinancialProduct.APR));
+    b.Property(x => x.Rating).HasColumnName(nameof(FinancialProduct.Rating));
+    b.Property(x => x.CreditCeiling).HasColumnName(nameof(FinancialProduct.CreditCeiling));
+    b.Property(x => x.AddFinancingProductTxId).HasColumnName(nameof(FinancialProduct.AddFinancingProductTxId)).IsRequired();
 });
 
         }

@@ -29,7 +29,8 @@ $(function () {
 			aPR: $("#APRFilter").val(),
 			rating: $("#RatingFilter").val(),
 			creditCeilingMin: $("#CreditCeilingFilterMin").val(),
-			creditCeilingMax: $("#CreditCeilingFilterMax").val()
+			creditCeilingMax: $("#CreditCeilingFilterMax").val(),
+			addFinancingProductTxId: $("#AddFinancingProductTxIdFilter").val()
         };
     };
 
@@ -99,7 +100,8 @@ $(function () {
 			{ data: "appliedNumber" },
 			{ data: "apr" },
 			{ data: "rating" },
-			{ data: "creditCeiling" }
+			{ data: "creditCeiling" },
+			{ data: "addFinancingProductTxId" }
         ]
     }));
 

@@ -26,5 +26,6 @@ namespace Tank.Financing.EnterpriseDetails
         public string BusinessScope { get; set; }
         [Required]
         public string Description { get; set; }
+        public string CompleteTxId { get; set; }
     }
 }

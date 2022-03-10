@@ -80,6 +80,9 @@
             <abp-column size="_3">
                 <abp-input asp-for="DescriptionFilter" label="@L["Description"].Value" />
             </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="CompleteTxIdFilter" label="@L["CompleteTxId"].Value" />
+            </abp-column>
         </abp-row>
 
         <abp-table striped-rows="true" id="EnterpriseDetailsTable">
@@ -97,6 +100,7 @@
 					<th>@L["BusinessAddress"]</th>
 					<th>@L["BusinessScope"]</th>
 					<th>@L["Description"]</th>
+					<th>@L["CompleteTxId"]</th>
 
 				</tr>
             </thead>

@@ -31,6 +31,8 @@ namespace Tank.Financing.Web.Pages.Enterprises
         public string IdPhotoPath1Filter { get; set; }
         public string IdPhotoPath2Filter { get; set; }
         public CertificateStatus? CertificateStatusFilter { get; set; }
+        public string CertificateTxIdFilter { get; set; }
+        public string ConfirmCertificateTxIdFilter { get; set; }
 
         private readonly IEnterprisesAppService _enterprisesAppService;
 

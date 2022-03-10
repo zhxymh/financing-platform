@@ -30,12 +30,15 @@ namespace Tank.Financing.FinancialProducts
 
         public virtual long CreditCeiling { get; set; }
 
+        [CanBeNull]
+        public virtual string AddFinancingProductTxId { get; set; }
+
         public FinancialProduct()
         {
 
         }
 
-        public FinancialProduct(Guid id, string productName, string organization, GuaranteeMethod guaranteeMethod, int appliedNumber, string aPR, string rating, long creditCeiling, int? period = null)
+        public FinancialProduct(Guid id, string productName, string organization, GuaranteeMethod guaranteeMethod, int appliedNumber, string aPR, string rating, long creditCeiling, string addFinancingProductTxId, int? period = null)
         {
             Id = id;
             Check.NotNull(productName, nameof(productName));
@@ -47,6 +50,7 @@ namespace Tank.Financing.FinancialProducts
             APR = aPR;
             Rating = rating;
             CreditCeiling = creditCeiling;
+            AddFinancingProductTxId = addFinancingProductTxId;
             Period = period;
         }
     }

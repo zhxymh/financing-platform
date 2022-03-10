@@ -211,6 +211,24 @@
       "EmailValidation": false,
       "EnumValues": null,
       "IsSelected": true
+    },
+    {
+      "Id": "d8805d89-aac5-449c-b25e-c4dace76e953",
+      "Name": "CompleteTxId",
+      "Type": "string",
+      "EnumType": "",
+      "EnumNamespace": "",
+      "EnumAngularImport": "shared/enums",
+      "IsNullable": false,
+      "IsRequired": true,
+      "MinLength": null,
+      "MaxLength": null,
+      "SortOrder": 0,
+      "SortType": 0,
+      "Regex": "",
+      "EmailValidation": false,
+      "EnumValues": null,
+      "IsSelected": true
     }
   ],
   "NavigationProperties": [],

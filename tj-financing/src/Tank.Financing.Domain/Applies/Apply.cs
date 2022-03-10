@@ -36,12 +36,27 @@ namespace Tank.Financing.Applies
 
         public virtual long PassedTime { get; set; }
 
+        [CanBeNull]
+        public virtual string ApplyTxId { get; set; }
+
+        [CanBeNull]
+        public virtual string OnlineApproveTxId { get; set; }
+
+        [CanBeNull]
+        public virtual string OfflineApproveTxId { get; set; }
+
+        [CanBeNull]
+        public virtual string ApproveAllowanceTxId { get; set; }
+
+        [CanBeNull]
+        public virtual string SetAllowanceTxId { get; set; }
+
         public Apply()
         {
 
         }
 
-        public Apply(Guid id, string enterpriseName, string organization, string productName, string allowance, string aPR, string period, ApplyStatus applyStatus, GuaranteeMethod guaranteeMethod, long applyTime, long passedTime)
+        public Apply(Guid id, string enterpriseName, string organization, string productName, string allowance, string aPR, string period, ApplyStatus applyStatus, GuaranteeMethod guaranteeMethod, long applyTime, long passedTime, string applyTxId, string onlineApproveTxId, string offlineApproveTxId, string approveAllowanceTxId, string setAllowanceTxId)
         {
             Id = id;
             Check.NotNull(enterpriseName, nameof(enterpriseName));
@@ -58,6 +73,11 @@ namespace Tank.Financing.Applies
             GuaranteeMethod = guaranteeMethod;
             ApplyTime = applyTime;
             PassedTime = passedTime;
+            ApplyTxId = applyTxId;
+            OnlineApproveTxId = onlineApproveTxId;
+            OfflineApproveTxId = offlineApproveTxId;
+            ApproveAllowanceTxId = approveAllowanceTxId;
+            SetAllowanceTxId = setAllowanceTxId;
         }
     }
 }

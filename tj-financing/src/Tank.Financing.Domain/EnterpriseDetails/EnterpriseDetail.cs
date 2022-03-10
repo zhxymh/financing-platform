@@ -41,12 +41,15 @@ namespace Tank.Financing.EnterpriseDetails
         [NotNull]
         public virtual string Description { get; set; }
 
+        [CanBeNull]
+        public virtual string CompleteTxId { get; set; }
+
         public EnterpriseDetail()
         {
 
         }
 
-        public EnterpriseDetail(Guid id, string enterpriseName, string totalAssets, string income, string enterpriseType, int staffNumber, string industry, string location, string registeredAddress, string businessAddress, string businessScope, string description)
+        public EnterpriseDetail(Guid id, string enterpriseName, string totalAssets, string income, string enterpriseType, int staffNumber, string industry, string location, string registeredAddress, string businessAddress, string businessScope, string description, string completeTxId)
         {
             Id = id;
             Check.NotNull(enterpriseName, nameof(enterpriseName));
@@ -70,6 +73,7 @@ namespace Tank.Financing.EnterpriseDetails
             BusinessAddress = businessAddress;
             BusinessScope = businessScope;
             Description = description;
+            CompleteTxId = completeTxId;
         }
     }
 }

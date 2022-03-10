@@ -27,19 +27,19 @@ namespace Tank.Financing.FinancialProducts
             // Assert
             result.TotalCount.ShouldBe(2);
             result.Items.Count.ShouldBe(2);
-            result.Items.Any(x => x.Id == Guid.Parse("bb9bef20-7da9-429a-9883-1d66bcc565b6")).ShouldBe(true);
-            result.Items.Any(x => x.Id == Guid.Parse("2f9f0d4a-44d9-4a04-8206-90dea1ae7d94")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("5a8b8948-245f-48e3-8360-9ce4b767aa93")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("732e3eb9-65fe-4585-b8d0-39b286409087")).ShouldBe(true);
         }
 
         [Fact]
         public async Task GetAsync()
         {
             // Act
-            var result = await _financialProductsAppService.GetAsync(Guid.Parse("bb9bef20-7da9-429a-9883-1d66bcc565b6"));
+            var result = await _financialProductsAppService.GetAsync(Guid.Parse("5a8b8948-245f-48e3-8360-9ce4b767aa93"));
 
             // Assert
             result.ShouldNotBeNull();
-            result.Id.ShouldBe(Guid.Parse("bb9bef20-7da9-429a-9883-1d66bcc565b6"));
+            result.Id.ShouldBe(Guid.Parse("5a8b8948-245f-48e3-8360-9ce4b767aa93"));
         }
 
         [Fact]
@@ -48,14 +48,15 @@ namespace Tank.Financing.FinancialProducts
             // Arrange
             var input = new FinancialProductCreateDto
             {
-                ProductName = "c03092ed7de342ef8a9b6f67166f701538113db819a74454966ca1a",
-                Organization = "881cdbfdff444302863ab6961724e35",
-                Period = 1961385692,
+                ProductName = "c4fdfdf186234d67b90bb48f4373b833c793832e8a3549e3ac948a6ec91e888c8869a5",
+                Organization = "e17798d6bd984bbf849ba35f3f7917f18640cc6f13504426832072",
+                Period = 681907494,
                 GuaranteeMethod = default,
-                AppliedNumber = 1424664985,
-                APR = "2a8adcedc1064174979e651f2dd9a6171ba401fe7",
-                Rating = "aaa1aa2f7ae4432786cc8eb27d0cbc5ab5d6052fde0a4190a70ab2b4a1811e2df7c5fe742c4b40d2b32b86c0c",
-                CreditCeiling = 948422413
+                AppliedNumber = 1677023596,
+                APR = "ad090be",
+                Rating = "c969e071bfa946b7857199dd79a2244b1d73fa4955de441db1805c",
+                CreditCeiling = 1878213306,
+                AddFinancingProductTxId = "aecc8a8972e24633958787d44381bf6e92c93c"
             };
 
             // Act
@@ -65,14 +66,15 @@ namespace Tank.Financing.FinancialProducts
             var result = await _financialProductRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.ProductName.ShouldBe("c03092ed7de342ef8a9b6f67166f701538113db819a74454966ca1a");
-            result.Organization.ShouldBe("881cdbfdff444302863ab6961724e35");
-            result.Period.ShouldBe(1961385692);
+            result.ProductName.ShouldBe("c4fdfdf186234d67b90bb48f4373b833c793832e8a3549e3ac948a6ec91e888c8869a5");
+            result.Organization.ShouldBe("e17798d6bd984bbf849ba35f3f7917f18640cc6f13504426832072");
+            result.Period.ShouldBe(681907494);
             result.GuaranteeMethod.ShouldBe(default);
-            result.AppliedNumber.ShouldBe(1424664985);
-            result.APR.ShouldBe("2a8adcedc1064174979e651f2dd9a6171ba401fe7");
-            result.Rating.ShouldBe("aaa1aa2f7ae4432786cc8eb27d0cbc5ab5d6052fde0a4190a70ab2b4a1811e2df7c5fe742c4b40d2b32b86c0c");
-            result.CreditCeiling.ShouldBe(948422413);
+            result.AppliedNumber.ShouldBe(1677023596);
+            result.APR.ShouldBe("ad090be");
+            result.Rating.ShouldBe("c969e071bfa946b7857199dd79a2244b1d73fa4955de441db1805c");
+            result.CreditCeiling.ShouldBe(1878213306);
+            result.AddFinancingProductTxId.ShouldBe("aecc8a8972e24633958787d44381bf6e92c93c");
         }
 
         [Fact]
@@ -81,41 +83,43 @@ namespace Tank.Financing.FinancialProducts
             // Arrange
             var input = new FinancialProductUpdateDto()
             {
-                ProductName = "1df66d5fa3bb479ea6c6dfc00de913d3d4f03995610f433e9bf1707",
-                Organization = "86f101c5bec249f388373",
-                Period = 1874570939,
+                ProductName = "9f04c20c952b45009b5fd15f045ad0a1ee8b09",
+                Organization = "9752bca771b24bceb2678c7035ee3be84762b77890b141bbbb08a0358a7524879696d35de9f246acac8",
+                Period = 2016754191,
                 GuaranteeMethod = default,
-                AppliedNumber = 1152798988,
-                APR = "8d4c297fa28b438daff69b5f94991ba73",
-                Rating = "92f2dd16b522487d997ae4f3e50b72fee3172e26efdf45278e80334139eae1c476f22963f7fd488da33b56bcf10",
-                CreditCeiling = 1122480582
+                AppliedNumber = 134316730,
+                APR = "1c25db832ee54ff7a91606c153c91e34136d86cd9f524ad3b461bae38d1ad4448089faf381de4917b44c4",
+                Rating = "ed05bdfaeef348e19fc6323709e35a97f1",
+                CreditCeiling = 658472400,
+                AddFinancingProductTxId = "cd2d7714feef498f9f003b6ccb46e0a07c082d271cae4c0884b9e4f9545af00d9a1fb28686e644f"
             };
 
             // Act
-            var serviceResult = await _financialProductsAppService.UpdateAsync(Guid.Parse("bb9bef20-7da9-429a-9883-1d66bcc565b6"), input);
+            var serviceResult = await _financialProductsAppService.UpdateAsync(Guid.Parse("5a8b8948-245f-48e3-8360-9ce4b767aa93"), input);
 
             // Assert
             var result = await _financialProductRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.ProductName.ShouldBe("1df66d5fa3bb479ea6c6dfc00de913d3d4f03995610f433e9bf1707");
-            result.Organization.ShouldBe("86f101c5bec249f388373");
-            result.Period.ShouldBe(1874570939);
+            result.ProductName.ShouldBe("9f04c20c952b45009b5fd15f045ad0a1ee8b09");
+            result.Organization.ShouldBe("9752bca771b24bceb2678c7035ee3be84762b77890b141bbbb08a0358a7524879696d35de9f246acac8");
+            result.Period.ShouldBe(2016754191);
             result.GuaranteeMethod.ShouldBe(default);
-            result.AppliedNumber.ShouldBe(1152798988);
-            result.APR.ShouldBe("8d4c297fa28b438daff69b5f94991ba73");
-            result.Rating.ShouldBe("92f2dd16b522487d997ae4f3e50b72fee3172e26efdf45278e80334139eae1c476f22963f7fd488da33b56bcf10");
-            result.CreditCeiling.ShouldBe(1122480582);
+            result.AppliedNumber.ShouldBe(134316730);
+            result.APR.ShouldBe("1c25db832ee54ff7a91606c153c91e34136d86cd9f524ad3b461bae38d1ad4448089faf381de4917b44c4");
+            result.Rating.ShouldBe("ed05bdfaeef348e19fc6323709e35a97f1");
+            result.CreditCeiling.ShouldBe(658472400);
+            result.AddFinancingProductTxId.ShouldBe("cd2d7714feef498f9f003b6ccb46e0a07c082d271cae4c0884b9e4f9545af00d9a1fb28686e644f");
         }
 
         [Fact]
         public async Task DeleteAsync()
         {
             // Act
-            await _financialProductsAppService.DeleteAsync(Guid.Parse("bb9bef20-7da9-429a-9883-1d66bcc565b6"));
+            await _financialProductsAppService.DeleteAsync(Guid.Parse("5a8b8948-245f-48e3-8360-9ce4b767aa93"));
 
             // Assert
-            var result = await _financialProductRepository.FindAsync(c => c.Id == Guid.Parse("bb9bef20-7da9-429a-9883-1d66bcc565b6"));
+            var result = await _financialProductRepository.FindAsync(c => c.Id == Guid.Parse("5a8b8948-245f-48e3-8360-9ce4b767aa93"));
 
             result.ShouldBeNull();
         }

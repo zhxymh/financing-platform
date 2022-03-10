@@ -27,6 +27,7 @@ namespace Tank.Financing.Web.Pages.EnterpriseDetails
         public string BusinessAddressFilter { get; set; }
         public string BusinessScopeFilter { get; set; }
         public string DescriptionFilter { get; set; }
+        public string CompleteTxIdFilter { get; set; }
 
         private readonly IEnterpriseDetailsAppService _enterpriseDetailsAppService;
 

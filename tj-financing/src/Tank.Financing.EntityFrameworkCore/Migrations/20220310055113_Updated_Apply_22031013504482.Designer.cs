@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tank.Financing.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,9 +12,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tank.Financing.Migrations
 {
     [DbContext(typeof(FinancingDbContext))]
-    partial class FinancingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220310055113_Updated_Apply_22031013504482")]
+    partial class Updated_Apply_22031013504482
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,11 +152,6 @@ namespace Tank.Financing.Migrations
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("BusinessScope");
-
-                    b.Property<string>("CompleteTxId")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("CompleteTxId");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -369,11 +366,6 @@ namespace Tank.Financing.Migrations
                     b.Property<string>("APR")
                         .HasColumnType("longtext")
                         .HasColumnName("APR");
-
-                    b.Property<string>("AddFinancingProductTxId")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("AddFinancingProductTxId");
 
                     b.Property<int>("AppliedNumber")
                         .HasColumnType("int")

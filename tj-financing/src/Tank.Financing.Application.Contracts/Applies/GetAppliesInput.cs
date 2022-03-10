@@ -20,6 +20,11 @@ namespace Tank.Financing.Applies
         public long? ApplyTimeMax { get; set; }
         public long? PassedTimeMin { get; set; }
         public long? PassedTimeMax { get; set; }
+        public string ApplyTxId { get; set; }
+        public string OnlineApproveTxId { get; set; }
+        public string OfflineApproveTxId { get; set; }
+        public string ApproveAllowanceTxId { get; set; }
+        public string SetAllowanceTxId { get; set; }
 
         public GetAppliesInput()
         {

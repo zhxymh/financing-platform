@@ -1,15 +1,10 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq.Dynamic.Core;
 using Microsoft.AspNetCore.Authorization;
-using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
-using Volo.Abp.Domain.Repositories;
 using Tank.Financing.Permissions;
-using Tank.Financing.Applies;
 
 namespace Tank.Financing.Applies
 {
@@ -28,8 +23,16 @@ namespace Tank.Financing.Applies
 
         public virtual async Task<PagedResultDto<ApplyDto>> GetListAsync(GetAppliesInput input)
         {
-            var totalCount = await _applyRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APR, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTimeMin, input.ApplyTimeMax, input.PassedTimeMin, input.PassedTimeMax);
-            var items = await _applyRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.Organization, input.ProductName, input.Allowance, input.APR, input.Period, input.ApplyStatus, input.GuaranteeMethod, input.ApplyTimeMin, input.ApplyTimeMax, input.PassedTimeMin, input.PassedTimeMax, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _applyRepository.GetCountAsync(input.FilterText, input.EnterpriseName,
+                input.Organization, input.ProductName, input.Allowance, input.APR, input.Period, input.ApplyStatus,
+                input.GuaranteeMethod, input.ApplyTimeMin, input.ApplyTimeMax, input.PassedTimeMin, input.PassedTimeMax,
+                input.ApplyTxId, input.OnlineApproveTxId, input.OfflineApproveTxId, input.ApproveAllowanceTxId,
+                input.SetAllowanceTxId);
+            var items = await _applyRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.Organization,
+                input.ProductName, input.Allowance, input.APR, input.Period, input.ApplyStatus, input.GuaranteeMethod,
+                input.ApplyTimeMin, input.ApplyTimeMax, input.PassedTimeMin, input.PassedTimeMax, input.ApplyTxId,
+                input.OnlineApproveTxId, input.OfflineApproveTxId, input.ApproveAllowanceTxId, input.SetAllowanceTxId,
+                input.Sorting, input.MaxResultCount, input.SkipCount);
 
             return new PagedResultDto<ApplyDto>
             {
@@ -52,13 +55,13 @@ namespace Tank.Financing.Applies
         [Authorize(FinancingPermissions.Applies.Create)]
         public virtual async Task<ApplyDto> CreateAsync(ApplyCreateDto input)
         {
-            _blockchainAppService.Apply(input);
+            input.ApplyTxId = _blockchainAppService.Apply(input);
             if (!string.IsNullOrEmpty(input.Allowance))
             {
-                _blockchainAppService.AdvanceSetAllowance(input);
+                input.SetAllowanceTxId = _blockchainAppService.AdvanceSetAllowance(input);
             }
-            var apply = ObjectMapper.Map<ApplyCreateDto, Apply>(input);
 
+            var apply = ObjectMapper.Map<ApplyCreateDto, Apply>(input);
             apply = await _applyRepository.InsertAsync(apply, autoSave: true);
             return ObjectMapper.Map<Apply, ApplyDto>(apply);
         }
@@ -68,17 +71,17 @@ namespace Tank.Financing.Applies
         {
             if (input.ApplyStatus == ApplyStatus.线上初审通过)
             {
-                _blockchainAppService.OnlineApprove(input);
+                input.OnlineApproveTxId = _blockchainAppService.OnlineApprove(input);
             }
 
             if (input.ApplyStatus == ApplyStatus.线下审核通过)
             {
-                _blockchainAppService.OfflineApprove(input);
+                input.OfflineApproveTxId = _blockchainAppService.OfflineApprove(input);
             }
 
             if (input.ApplyStatus == ApplyStatus.完成)
             {
-                _blockchainAppService.ApproveAllowance(input);
+                input.ApproveAllowanceTxId = _blockchainAppService.ApproveAllowance(input);
             }
 
             var apply = await _applyRepository.GetAsync(id);

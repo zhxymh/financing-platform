@@ -20,7 +20,8 @@ namespace Tank.Financing.Enterprises
         private readonly IEnterpriseRepository _enterpriseRepository;
         private readonly IBlockchainAppService _blockchainAppService;
 
-        public EnterprisesAppService(IEnterpriseRepository enterpriseRepository, IBlockchainAppService blockchainAppService)
+        public EnterprisesAppService(IEnterpriseRepository enterpriseRepository,
+            IBlockchainAppService blockchainAppService)
         {
             _enterpriseRepository = enterpriseRepository;
             _blockchainAppService = blockchainAppService;
@@ -28,8 +29,17 @@ namespace Tank.Financing.Enterprises
 
         public virtual async Task<PagedResultDto<EnterpriseDto>> GetListAsync(GetEnterprisesInput input)
         {
-            var totalCount = await _enterpriseRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin, input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital, input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus);
-            var items = await _enterpriseRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin, input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital, input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _enterpriseRepository.GetCountAsync(input.FilterText, input.EnterpriseName,
+                input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin,
+                input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital,
+                input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus,
+                input.CertificateTxId, input.ConfirmCertificateTxId);
+            var items = await _enterpriseRepository.GetListAsync(input.FilterText, input.EnterpriseName,
+                input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin,
+                input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital,
+                input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus,
+                input.CertificateTxId, input.ConfirmCertificateTxId, input.Sorting, input.MaxResultCount,
+                input.SkipCount);
 
             return new PagedResultDto<EnterpriseDto>
             {
@@ -52,7 +62,8 @@ namespace Tank.Financing.Enterprises
         [Authorize(FinancingPermissions.Enterprises.Create)]
         public virtual async Task<EnterpriseDto> CreateAsync(EnterpriseCreateDto input)
         {
-            _blockchainAppService.Certificate(input);
+            var txId = _blockchainAppService.Certificate(input);
+            input.CertificateTxId = txId;
             var enterprise = ObjectMapper.Map<EnterpriseCreateDto, Enterprise>(input);
             enterprise = await _enterpriseRepository.InsertAsync(enterprise, autoSave: true);
             return ObjectMapper.Map<Enterprise, EnterpriseDto>(enterprise);
@@ -63,8 +74,10 @@ namespace Tank.Financing.Enterprises
         {
             if (input.CertificateStatus == CertificateStatus.通过)
             {
-                _blockchainAppService.ConfirmCertificate(input);
+                var txId = _blockchainAppService.ConfirmCertificate(input);
+                input.ConfirmCertificateTxId = txId;
             }
+
             var enterprise = await _enterpriseRepository.GetAsync(id);
             ObjectMapper.Map(input, enterprise);
             enterprise = await _enterpriseRepository.UpdateAsync(enterprise, autoSave: true);

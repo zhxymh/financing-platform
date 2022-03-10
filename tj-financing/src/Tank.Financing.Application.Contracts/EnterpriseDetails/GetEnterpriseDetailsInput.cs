@@ -19,6 +19,7 @@ namespace Tank.Financing.EnterpriseDetails
         public string BusinessAddress { get; set; }
         public string BusinessScope { get; set; }
         public string Description { get; set; }
+        public string CompleteTxId { get; set; }
 
         public GetEnterpriseDetailsInput()
         {

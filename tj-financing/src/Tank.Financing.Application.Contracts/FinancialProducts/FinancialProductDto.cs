@@ -14,5 +14,6 @@ namespace Tank.Financing.FinancialProducts
         public string APR { get; set; }
         public string Rating { get; set; }
         public long CreditCeiling { get; set; }
+        public string AddFinancingProductTxId { get; set; }
     }
 }

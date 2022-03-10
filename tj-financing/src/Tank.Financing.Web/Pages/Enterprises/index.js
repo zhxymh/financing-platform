@@ -32,7 +32,9 @@ $(function () {
 			certPhotoPath: $("#CertPhotoPathFilter").val(),
 			idPhotoPath1: $("#IdPhotoPath1Filter").val(),
 			idPhotoPath2: $("#IdPhotoPath2Filter").val(),
-			certificateStatus: $("#CertificateStatusFilter").val()
+			certificateStatus: $("#CertificateStatusFilter").val(),
+			certificateTxId: $("#CertificateTxIdFilter").val(),
+			confirmCertificateTxId: $("#ConfirmCertificateTxIdFilter").val()
         };
     };
 
@@ -106,7 +108,9 @@ $(function () {
 
                     return localized;
                 }
-            }
+            },
+			{ data: "certificateTxId" },
+			{ data: "confirmCertificateTxId" }
         ]
     }));
 

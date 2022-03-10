@@ -43,12 +43,18 @@ namespace Tank.Financing.Enterprises
 
         public virtual CertificateStatus CertificateStatus { get; set; }
 
+        [CanBeNull]
+        public virtual string CertificateTxId { get; set; }
+
+        [CanBeNull]
+        public virtual string ConfirmCertificateTxId { get; set; }
+
         public Enterprise()
         {
 
         }
 
-        public Enterprise(Guid id, string enterpriseName, string artificialPerson, long dueTime, string creditCode, string artificialPersonId, string registeredCapital, string phoneNumber, string certPhotoPath, string idPhotoPath1, string idPhotoPath2, CertificateStatus certificateStatus, long? establishedTime = null)
+        public Enterprise(Guid id, string enterpriseName, string artificialPerson, long dueTime, string creditCode, string artificialPersonId, string registeredCapital, string phoneNumber, string certPhotoPath, string idPhotoPath1, string idPhotoPath2, CertificateStatus certificateStatus, string certificateTxId, string confirmCertificateTxId, long? establishedTime = null)
         {
             Id = id;
             Check.NotNull(enterpriseName, nameof(enterpriseName));
@@ -71,6 +77,8 @@ namespace Tank.Financing.Enterprises
             IdPhotoPath1 = idPhotoPath1;
             IdPhotoPath2 = idPhotoPath2;
             CertificateStatus = certificateStatus;
+            CertificateTxId = certificateTxId;
+            ConfirmCertificateTxId = confirmCertificateTxId;
             EstablishedTime = establishedTime;
         }
     }

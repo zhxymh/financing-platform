@@ -23,6 +23,11 @@ namespace Tank.Financing.Applies
             long? applyTimeMax = null,
             long? passedTimeMin = null,
             long? passedTimeMax = null,
+            string applyTxId = null,
+            string onlineApproveTxId = null,
+            string offlineApproveTxId = null,
+            string approveAllowanceTxId = null,
+            string setAllowanceTxId = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -43,6 +48,11 @@ namespace Tank.Financing.Applies
             long? applyTimeMax = null,
             long? passedTimeMin = null,
             long? passedTimeMax = null,
+            string applyTxId = null,
+            string onlineApproveTxId = null,
+            string offlineApproveTxId = null,
+            string approveAllowanceTxId = null,
+            string setAllowanceTxId = null,
             CancellationToken cancellationToken = default);
     }
 }

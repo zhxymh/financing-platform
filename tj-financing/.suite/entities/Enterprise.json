@@ -233,6 +233,42 @@
         "驳回": null
       },
       "IsSelected": true
+    },
+    {
+      "Id": "772bb284-41ca-4b03-bfc6-7ce51ab1729f",
+      "Name": "CertificateTxId",
+      "Type": "string",
+      "EnumType": "",
+      "EnumNamespace": "",
+      "EnumAngularImport": "shared/enums",
+      "IsNullable": false,
+      "IsRequired": true,
+      "MinLength": null,
+      "MaxLength": null,
+      "SortOrder": 0,
+      "SortType": 0,
+      "Regex": "",
+      "EmailValidation": false,
+      "EnumValues": null,
+      "IsSelected": true
+    },
+    {
+      "Id": "4f3b087d-5155-4a51-b811-fe98b1f89299",
+      "Name": "ConfirmCertificateTxId",
+      "Type": "string",
+      "EnumType": "",
+      "EnumNamespace": "",
+      "EnumAngularImport": "shared/enums",
+      "IsNullable": false,
+      "IsRequired": false,
+      "MinLength": null,
+      "MaxLength": null,
+      "SortOrder": 0,
+      "SortType": 0,
+      "Regex": "",
+      "EmailValidation": false,
+      "EnumValues": null,
+      "IsSelected": true
     }
   ],
   "NavigationProperties": [],

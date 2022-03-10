@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tank.Financing.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,9 +12,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tank.Financing.Migrations
 {
     [DbContext(typeof(FinancingDbContext))]
-    partial class FinancingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220310054613_Added_Enterprise")]
+    partial class Added_Enterprise
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,15 +43,6 @@ namespace Tank.Financing.Migrations
                     b.Property<long>("ApplyTime")
                         .HasColumnType("bigint")
                         .HasColumnName("ApplyTime");
-
-                    b.Property<string>("ApplyTxId")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("ApplyTxId");
-
-                    b.Property<string>("ApproveAllowanceTxId")
-                        .HasColumnType("longtext")
-                        .HasColumnName("ApproveAllowanceTxId");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -100,14 +93,6 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<string>("OfflineApproveTxId")
-                        .HasColumnType("longtext")
-                        .HasColumnName("OfflineApproveTxId");
-
-                    b.Property<string>("OnlineApproveTxId")
-                        .HasColumnType("longtext")
-                        .HasColumnName("OnlineApproveTxId");
-
                     b.Property<string>("Organization")
                         .IsRequired()
                         .HasColumnType("longtext")
@@ -126,10 +111,6 @@ namespace Tank.Financing.Migrations
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("ProductName");
-
-                    b.Property<string>("SetAllowanceTxId")
-                        .HasColumnType("longtext")
-                        .HasColumnName("SetAllowanceTxId");
 
                     b.HasKey("Id");
 
@@ -150,11 +131,6 @@ namespace Tank.Financing.Migrations
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("BusinessScope");
-
-                    b.Property<string>("CompleteTxId")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("CompleteTxId");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -369,11 +345,6 @@ namespace Tank.Financing.Migrations
                     b.Property<string>("APR")
                         .HasColumnType("longtext")
                         .HasColumnName("APR");
-
-                    b.Property<string>("AddFinancingProductTxId")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("AddFinancingProductTxId");
 
                     b.Property<int>("AppliedNumber")
                         .HasColumnType("int")

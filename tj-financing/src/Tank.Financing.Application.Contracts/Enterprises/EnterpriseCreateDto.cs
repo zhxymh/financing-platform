@@ -28,5 +28,7 @@ namespace Tank.Financing.Enterprises
         public string IdPhotoPath2 { get; set; }
         [Required]
         public CertificateStatus CertificateStatus { get; set; } = ((CertificateStatus[])Enum.GetValues(typeof(CertificateStatus)))[0];
+        public string CertificateTxId { get; set; }
+        public string ConfirmCertificateTxId { get; set; }
     }
 }

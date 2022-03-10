@@ -33,12 +33,13 @@ namespace Tank.Financing.FinancialProducts
             string rating = null,
             long? creditCeilingMin = null,
             long? creditCeilingMax = null,
+            string addFinancingProductTxId = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetQueryableAsync()), filterText, productName, organization, periodMin, periodMax, guaranteeMethod, appliedNumberMin, appliedNumberMax, aPR, rating, creditCeilingMin, creditCeilingMax);
+            var query = ApplyFilter((await GetQueryableAsync()), filterText, productName, organization, periodMin, periodMax, guaranteeMethod, appliedNumberMin, appliedNumberMax, aPR, rating, creditCeilingMin, creditCeilingMax, addFinancingProductTxId);
             query = query.OrderBy(string.IsNullOrWhiteSpace(sorting) ? FinancialProductConsts.GetDefaultSorting(false) : sorting);
             return await query.PageBy(skipCount, maxResultCount).ToListAsync(cancellationToken);
         }
@@ -56,9 +57,10 @@ namespace Tank.Financing.FinancialProducts
             string rating = null,
             long? creditCeilingMin = null,
             long? creditCeilingMax = null,
+            string addFinancingProductTxId = null,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetDbSetAsync()), filterText, productName, organization, periodMin, periodMax, guaranteeMethod, appliedNumberMin, appliedNumberMax, aPR, rating, creditCeilingMin, creditCeilingMax);
+            var query = ApplyFilter((await GetDbSetAsync()), filterText, productName, organization, periodMin, periodMax, guaranteeMethod, appliedNumberMin, appliedNumberMax, aPR, rating, creditCeilingMin, creditCeilingMax, addFinancingProductTxId);
             return await query.LongCountAsync(GetCancellationToken(cancellationToken));
         }
 
@@ -75,10 +77,11 @@ namespace Tank.Financing.FinancialProducts
             string aPR = null,
             string rating = null,
             long? creditCeilingMin = null,
-            long? creditCeilingMax = null)
+            long? creditCeilingMax = null,
+            string addFinancingProductTxId = null)
         {
             return query
-                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.ProductName.Contains(filterText) || e.Organization.Contains(filterText) || e.APR.Contains(filterText) || e.Rating.Contains(filterText))
+                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.ProductName.Contains(filterText) || e.Organization.Contains(filterText) || e.APR.Contains(filterText) || e.Rating.Contains(filterText) || e.AddFinancingProductTxId.Contains(filterText))
                     .WhereIf(!string.IsNullOrWhiteSpace(productName), e => e.ProductName.Contains(productName))
                     .WhereIf(!string.IsNullOrWhiteSpace(organization), e => e.Organization.Contains(organization))
                     .WhereIf(periodMin.HasValue, e => e.Period >= periodMin.Value)
@@ -89,7 +92,8 @@ namespace Tank.Financing.FinancialProducts
                     .WhereIf(!string.IsNullOrWhiteSpace(aPR), e => e.APR.Contains(aPR))
                     .WhereIf(!string.IsNullOrWhiteSpace(rating), e => e.Rating.Contains(rating))
                     .WhereIf(creditCeilingMin.HasValue, e => e.CreditCeiling >= creditCeilingMin.Value)
-                    .WhereIf(creditCeilingMax.HasValue, e => e.CreditCeiling <= creditCeilingMax.Value);
+                    .WhereIf(creditCeilingMax.HasValue, e => e.CreditCeiling <= creditCeilingMax.Value)
+                    .WhereIf(!string.IsNullOrWhiteSpace(addFinancingProductTxId), e => e.AddFinancingProductTxId.Contains(addFinancingProductTxId));
         }
     }
 }

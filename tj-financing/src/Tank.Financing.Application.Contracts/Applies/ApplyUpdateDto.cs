@@ -22,5 +22,10 @@ namespace Tank.Financing.Applies
         [Required]
         public long ApplyTime { get; set; }
         public long PassedTime { get; set; }
+        public string ApplyTxId { get; set; }
+        public string OnlineApproveTxId { get; set; }
+        public string OfflineApproveTxId { get; set; }
+        public string ApproveAllowanceTxId { get; set; }
+        public string SetAllowanceTxId { get; set; }
     }
 }

@@ -30,7 +30,12 @@ $(function () {
 			applyTimeMin: $("#ApplyTimeFilterMin").val(),
 			applyTimeMax: $("#ApplyTimeFilterMax").val(),
 			passedTimeMin: $("#PassedTimeFilterMin").val(),
-			passedTimeMax: $("#PassedTimeFilterMax").val()
+			passedTimeMax: $("#PassedTimeFilterMax").val(),
+			applyTxId: $("#ApplyTxIdFilter").val(),
+			onlineApproveTxId: $("#OnlineApproveTxIdFilter").val(),
+			offlineApproveTxId: $("#OfflineApproveTxIdFilter").val(),
+			approveAllowanceTxId: $("#ApproveAllowanceTxIdFilter").val(),
+			setAllowanceTxId: $("#SetAllowanceTxIdFilter").val()
         };
     };
 
@@ -120,7 +125,12 @@ $(function () {
                 }
             },
 			{ data: "applyTime" },
-			{ data: "passedTime" }
+			{ data: "passedTime" },
+			{ data: "applyTxId" },
+			{ data: "onlineApproveTxId" },
+			{ data: "offlineApproveTxId" },
+			{ data: "approveAllowanceTxId" },
+			{ data: "setAllowanceTxId" }
         ]
     }));
 

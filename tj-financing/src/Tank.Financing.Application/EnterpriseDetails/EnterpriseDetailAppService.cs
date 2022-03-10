@@ -28,8 +28,8 @@ namespace Tank.Financing.EnterpriseDetails
 
         public virtual async Task<PagedResultDto<EnterpriseDetailDto>> GetListAsync(GetEnterpriseDetailsInput input)
         {
-            var totalCount = await _enterpriseDetailRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax, input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope, input.Description);
-            var items = await _enterpriseDetailRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax, input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope, input.Description, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _enterpriseDetailRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax, input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope, input.Description, input.CompleteTxId);
+            var items = await _enterpriseDetailRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax, input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope, input.Description, input.CompleteTxId, input.Sorting, input.MaxResultCount, input.SkipCount);
 
             return new PagedResultDto<EnterpriseDetailDto>
             {
@@ -52,7 +52,7 @@ namespace Tank.Financing.EnterpriseDetails
         [Authorize(FinancingPermissions.EnterpriseDetails.Create)]
         public virtual async Task<EnterpriseDetailDto> CreateAsync(EnterpriseDetailCreateDto input)
         {
-            _blockchainAppService.Complete(input);
+            input.CompleteTxId = _blockchainAppService.Complete(input);
             var enterpriseDetail = ObjectMapper.Map<EnterpriseDetailCreateDto, EnterpriseDetail>(input);
             enterpriseDetail = await _enterpriseDetailRepository.InsertAsync(enterpriseDetail, autoSave: true);
             return ObjectMapper.Map<EnterpriseDetail, EnterpriseDetailDto>(enterpriseDetail);

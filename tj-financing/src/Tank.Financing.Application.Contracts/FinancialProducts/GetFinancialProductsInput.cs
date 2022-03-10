@@ -19,6 +19,7 @@ namespace Tank.Financing.FinancialProducts
         public string Rating { get; set; }
         public long? CreditCeilingMin { get; set; }
         public long? CreditCeilingMax { get; set; }
+        public string AddFinancingProductTxId { get; set; }
 
         public GetFinancialProductsInput()
         {

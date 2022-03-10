@@ -162,6 +162,24 @@
       "EmailValidation": false,
       "EnumValues": null,
       "IsSelected": true
+    },
+    {
+      "Id": "a44b320d-610f-4fb3-a88c-d1caf17407c5",
+      "Name": "AddFinancingProductTxId",
+      "Type": "string",
+      "EnumType": "",
+      "EnumNamespace": "",
+      "EnumAngularImport": "shared/enums",
+      "IsNullable": false,
+      "IsRequired": true,
+      "MinLength": null,
+      "MaxLength": null,
+      "SortOrder": 0,
+      "SortType": 0,
+      "Regex": "",
+      "EmailValidation": false,
+      "EnumValues": null,
+      "IsSelected": true
     }
   ],
   "NavigationProperties": [],
