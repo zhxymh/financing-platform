@@ -2,7 +2,7 @@ name: dotnet package
 on:
   push:
     branches:
-      - for/ci  nnbvcx
+      - master
 
 jobs:
   build:
