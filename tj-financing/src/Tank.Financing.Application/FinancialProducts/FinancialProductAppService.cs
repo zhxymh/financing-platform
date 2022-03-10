@@ -18,10 +18,12 @@ namespace Tank.Financing.FinancialProducts
     public class FinancialProductsAppService : ApplicationService, IFinancialProductsAppService
     {
         private readonly IFinancialProductRepository _financialProductRepository;
+        private readonly IBlockchainAppService _blockchainAppService;
 
-        public FinancialProductsAppService(IFinancialProductRepository financialProductRepository)
+        public FinancialProductsAppService(IFinancialProductRepository financialProductRepository, IBlockchainAppService blockchainAppService)
         {
             _financialProductRepository = financialProductRepository;
+            _blockchainAppService = blockchainAppService;
         }
 
         public virtual async Task<PagedResultDto<FinancialProductDto>> GetListAsync(GetFinancialProductsInput input)
@@ -50,9 +52,8 @@ namespace Tank.Financing.FinancialProducts
         [Authorize(FinancingPermissions.FinancialProducts.Create)]
         public virtual async Task<FinancialProductDto> CreateAsync(FinancialProductCreateDto input)
         {
-
+            _blockchainAppService.AddFinancingProduct(input);
             var financialProduct = ObjectMapper.Map<FinancialProductCreateDto, FinancialProduct>(input);
-
             financialProduct = await _financialProductRepository.InsertAsync(financialProduct, autoSave: true);
             return ObjectMapper.Map<FinancialProduct, FinancialProductDto>(financialProduct);
         }
@@ -60,7 +61,6 @@ namespace Tank.Financing.FinancialProducts
         [Authorize(FinancingPermissions.FinancialProducts.Edit)]
         public virtual async Task<FinancialProductDto> UpdateAsync(Guid id, FinancialProductUpdateDto input)
         {
-
             var financialProduct = await _financialProductRepository.GetAsync(id);
             ObjectMapper.Map(input, financialProduct);
             financialProduct = await _financialProductRepository.UpdateAsync(financialProduct, autoSave: true);

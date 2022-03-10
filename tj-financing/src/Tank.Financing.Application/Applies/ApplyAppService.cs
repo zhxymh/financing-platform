@@ -18,10 +18,12 @@ namespace Tank.Financing.Applies
     public class AppliesAppService : ApplicationService, IAppliesAppService
     {
         private readonly IApplyRepository _applyRepository;
+        private readonly IBlockchainAppService _blockchainAppService;
 
-        public AppliesAppService(IApplyRepository applyRepository)
+        public AppliesAppService(IApplyRepository applyRepository, IBlockchainAppService blockchainAppService)
         {
             _applyRepository = applyRepository;
+            _blockchainAppService = blockchainAppService;
         }
 
         public virtual async Task<PagedResultDto<ApplyDto>> GetListAsync(GetAppliesInput input)
@@ -50,7 +52,11 @@ namespace Tank.Financing.Applies
         [Authorize(FinancingPermissions.Applies.Create)]
         public virtual async Task<ApplyDto> CreateAsync(ApplyCreateDto input)
         {
-
+            _blockchainAppService.Apply(input);
+            if (!string.IsNullOrEmpty(input.Allowance))
+            {
+                _blockchainAppService.AdvanceSetAllowance(input);
+            }
             var apply = ObjectMapper.Map<ApplyCreateDto, Apply>(input);
 
             apply = await _applyRepository.InsertAsync(apply, autoSave: true);
@@ -60,6 +66,20 @@ namespace Tank.Financing.Applies
         [Authorize(FinancingPermissions.Applies.Edit)]
         public virtual async Task<ApplyDto> UpdateAsync(Guid id, ApplyUpdateDto input)
         {
+            if (input.ApplyStatus == ApplyStatus.线上初审通过)
+            {
+                _blockchainAppService.OnlineApprove(input);
+            }
+
+            if (input.ApplyStatus == ApplyStatus.线下审核通过)
+            {
+                _blockchainAppService.OfflineApprove(input);
+            }
+
+            if (input.ApplyStatus == ApplyStatus.完成)
+            {
+                _blockchainAppService.ApproveAllowance(input);
+            }
 
             var apply = await _applyRepository.GetAsync(id);
             ObjectMapper.Map(input, apply);

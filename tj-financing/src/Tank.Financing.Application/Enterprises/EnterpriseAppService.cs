@@ -18,10 +18,12 @@ namespace Tank.Financing.Enterprises
     public class EnterprisesAppService : ApplicationService, IEnterprisesAppService
     {
         private readonly IEnterpriseRepository _enterpriseRepository;
+        private readonly IBlockchainAppService _blockchainAppService;
 
-        public EnterprisesAppService(IEnterpriseRepository enterpriseRepository)
+        public EnterprisesAppService(IEnterpriseRepository enterpriseRepository, IBlockchainAppService blockchainAppService)
         {
             _enterpriseRepository = enterpriseRepository;
+            _blockchainAppService = blockchainAppService;
         }
 
         public virtual async Task<PagedResultDto<EnterpriseDto>> GetListAsync(GetEnterprisesInput input)
@@ -50,9 +52,8 @@ namespace Tank.Financing.Enterprises
         [Authorize(FinancingPermissions.Enterprises.Create)]
         public virtual async Task<EnterpriseDto> CreateAsync(EnterpriseCreateDto input)
         {
-
+            _blockchainAppService.Certificate(input);
             var enterprise = ObjectMapper.Map<EnterpriseCreateDto, Enterprise>(input);
-
             enterprise = await _enterpriseRepository.InsertAsync(enterprise, autoSave: true);
             return ObjectMapper.Map<Enterprise, EnterpriseDto>(enterprise);
         }
@@ -60,7 +61,10 @@ namespace Tank.Financing.Enterprises
         [Authorize(FinancingPermissions.Enterprises.Edit)]
         public virtual async Task<EnterpriseDto> UpdateAsync(Guid id, EnterpriseUpdateDto input)
         {
-
+            if (input.CertificateStatus == CertificateStatus.通过)
+            {
+                _blockchainAppService.ConfirmCertificate(input);
+            }
             var enterprise = await _enterpriseRepository.GetAsync(id);
             ObjectMapper.Map(input, enterprise);
             enterprise = await _enterpriseRepository.UpdateAsync(enterprise, autoSave: true);

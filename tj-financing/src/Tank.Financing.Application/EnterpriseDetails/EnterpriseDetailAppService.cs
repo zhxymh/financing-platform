@@ -18,10 +18,12 @@ namespace Tank.Financing.EnterpriseDetails
     public class EnterpriseDetailsAppService : ApplicationService, IEnterpriseDetailsAppService
     {
         private readonly IEnterpriseDetailRepository _enterpriseDetailRepository;
+        private readonly IBlockchainAppService _blockchainAppService;
 
-        public EnterpriseDetailsAppService(IEnterpriseDetailRepository enterpriseDetailRepository)
+        public EnterpriseDetailsAppService(IEnterpriseDetailRepository enterpriseDetailRepository, IBlockchainAppService blockchainAppService)
         {
             _enterpriseDetailRepository = enterpriseDetailRepository;
+            _blockchainAppService = blockchainAppService;
         }
 
         public virtual async Task<PagedResultDto<EnterpriseDetailDto>> GetListAsync(GetEnterpriseDetailsInput input)
@@ -50,9 +52,8 @@ namespace Tank.Financing.EnterpriseDetails
         [Authorize(FinancingPermissions.EnterpriseDetails.Create)]
         public virtual async Task<EnterpriseDetailDto> CreateAsync(EnterpriseDetailCreateDto input)
         {
-
+            _blockchainAppService.Complete(input);
             var enterpriseDetail = ObjectMapper.Map<EnterpriseDetailCreateDto, EnterpriseDetail>(input);
-
             enterpriseDetail = await _enterpriseDetailRepository.InsertAsync(enterpriseDetail, autoSave: true);
             return ObjectMapper.Map<EnterpriseDetail, EnterpriseDetailDto>(enterpriseDetail);
         }
@@ -60,7 +61,6 @@ namespace Tank.Financing.EnterpriseDetails
         [Authorize(FinancingPermissions.EnterpriseDetails.Edit)]
         public virtual async Task<EnterpriseDetailDto> UpdateAsync(Guid id, EnterpriseDetailUpdateDto input)
         {
-
             var enterpriseDetail = await _enterpriseDetailRepository.GetAsync(id);
             ObjectMapper.Map(input, enterpriseDetail);
             enterpriseDetail = await _enterpriseDetailRepository.UpdateAsync(enterpriseDetail, autoSave: true);
