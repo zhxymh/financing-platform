@@ -70,7 +70,8 @@ namespace Tank.Financing.Web;
     typeof(AbpSwashbuckleModule),
     typeof(AbpAspNetCoreSerilogModule)
     )]
-public class FinancingWebModule : AbpModule
+[DependsOn(typeof(AbpAccountPublicWebModule))]
+    public class FinancingWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

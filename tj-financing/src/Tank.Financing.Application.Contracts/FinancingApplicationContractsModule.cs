@@ -1,4 +1,4 @@
-﻿using Volo.Abp.Account;
+using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -28,7 +28,8 @@ namespace Tank.Financing;
     typeof(LeptonThemeManagementApplicationContractsModule),
     typeof(TextTemplateManagementApplicationContractsModule)
 )]
-public class FinancingApplicationContractsModule : AbpModule
+[DependsOn(typeof(AbpAccountSharedApplicationContractsModule))]
+    public class FinancingApplicationContractsModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
