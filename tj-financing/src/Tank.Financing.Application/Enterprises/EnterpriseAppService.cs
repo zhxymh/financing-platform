@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq.Dynamic.Core;
+using AElf;
 using Microsoft.AspNetCore.Authorization;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
@@ -63,6 +64,7 @@ namespace Tank.Financing.Enterprises
         public virtual async Task<EnterpriseDto> CreateAsync(EnterpriseCreateDto input)
         {
             var txId = _blockchainAppService.Certificate(input);
+            input.ArtificialPersonId = HashHelper.ComputeFrom(input.ArtificialPersonId).ToHex();
             input.CertificateTxId = txId;
             var enterprise = ObjectMapper.Map<EnterpriseCreateDto, Enterprise>(input);
             enterprise = await _enterpriseRepository.InsertAsync(enterprise, autoSave: true);
