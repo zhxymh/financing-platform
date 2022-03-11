@@ -1,0 +1,44 @@
+name: dotnet package
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+#    services:
+#      mysql:
+#        image: mysql:5.7
+#        env:
+#          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+#          MYSQL_DATABASE: laravel
+#        ports:
+#          - 3306:3306
+#        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+      
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+      - run: dotnet --version
+      - run: |
+          ls -al
+          pwd
+          dotnet publish tj-financing/src/Tank.Financing.Web/Tank.Financing.Web.csproj -o Tank.Financing.Web.Build
+          ls -al Tank.Financing.Web.Build
+          tar -zcf Tank.Financing.Web.Build.tar.gz Tank.Financing.Web.Build
+          
+      - run: |
+          ls -al
+          pwd
+          dotnet publish tj-financing/src/Tank.Financing.DbMigrator/Tank.Financing.DbMigrator.csproj -o Tank.Financing.DbMigrator.Build
+          ls -al Tank.Financing.DbMigrator.Build
+          tar -zcf Tank.Financing.DbMigrator.Build.tar.gz Tank.Financing.DbMigrator.Build
+          
+      - run: ls -al
+
+
