@@ -24,12 +24,13 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
+      - run: dotnet --version
+      - run: dotnet publish tj-financing/src/Tank.Financing.Web/Tank.Financing.Web.csproj -o Tank.Financing.Web.Build
+      - run: dotnet publish tj-financing/src/Tank.Financing.DbMigrator/Tank.Financing.DbMigrator.csproj -o Tank.Financing.DbMigrator.Build
       - run: ls -al
-      - run: cd tj-financing/src/Tank.Financing.Web/
-      - run: pwd
+      - run: ls -al Tank.Financing.Web.Build
+      - run: ls -al Tank.Financing.DbMigrator.Build
+      - run: tar -zcf Tank.Financing.DbMigrator.Build.tar.gz Tank.Financing.DbMigrator.Build
+      - run: tar -zcf Tank.Financing.Web.Build.tar.gz Tank.Financing.Web.Build
       - run: ls -al
-      #- run: mkdir -p financing-platform/abc
-      #- run: cd financing-platform && dotnet publish -o abc
-      #- run: cd financing-platform && ls -al .
-      #- run: ls financing-platform/abc
 
