@@ -8,11 +8,10 @@ WORKDIR /app
 
 COPY ./build/Web /app/Web
 COPY ./build/DbMigrator /app/DbMigrator
+COPY ./.github/workflows/start.sh /app
 
 #RUN set -x; dotnet /app/DbMigrator/Tank.Financing.DbMigrator.dll \
 #    && dotnet /app/Web/Tank.Financing.Web.dll
 
-ENTRYPOINT ["dotnet", "/app/DbMigrator/Tank.Financing.DbMigrator.dll"]
-
-ENTRYPOINT ["dotnet", "/app/Web/Tank.Financing.Web.dll"]
+ENTRYPOINT ["/bin/bash", "/app/start.sh"]
 
