@@ -14,5 +14,5 @@ COPY ./build/DbMigrator /app/DbMigrator
 
 ENTRYPOINT ["dotnet", "/app/DbMigrator/Tank.Financing.DbMigrator.dll"]
 
-ENTRYPOINT ["dotnet", "/app/Web/Tank.Financing.Web.dl"]
+#ENTRYPOINT ["dotnet", "/app/Web/Tank.Financing.Web.dl"]
 
