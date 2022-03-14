@@ -13,5 +13,5 @@ COPY ./.github/workflows/start.sh /app
 #RUN set -x; dotnet /app/DbMigrator/Tank.Financing.DbMigrator.dll \
 #    && dotnet /app/Web/Tank.Financing.Web.dll
 
-ENTRYPOINT ["/bin/bash", "/app/start.sh"]
+#ENTRYPOINT ["/bin/bash", "/app/start.sh"]
 
