@@ -1,8 +1,10 @@
 #!/bin/bash
 
-dotnet /app/DbMigrator/Tank.Financing.DbMigrator.dll
+cd /app/DbMigrator
+dotnet Tank.Financing.DbMigrator.dll
 
 sleep 2
 
-dotnet /app/Web/Tank.Financing.Web.dll
+cd /app/Web
+dotnet Tank.Financing.Web.dll
 
