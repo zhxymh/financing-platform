@@ -30,6 +30,6 @@ jobs:
       - run: docker build -t tank_financing_test:v1 -f .github/workflows/Dockerfile .
       - run: docker tag tank_financing_test:v1 hoopoxtest/tank_financing_test:1.0.0
       - run: docker login -u ${{ secrets.DOCKER_TEST_USER }} -p ${{ secrets.DOCKER_TEST_PASSWORD }}
-      - run: docker push hoopoxtest/tank_financing_test:1.0.0 
+      - run: docker push hoopoxtest/tank_financing_test:v1.0.1 
 
 
