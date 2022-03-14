@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-alpine AS base
+#FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-alpine AS base
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 
 WORKDIR /app
 
