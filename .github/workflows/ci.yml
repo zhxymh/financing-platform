@@ -27,9 +27,9 @@ jobs:
       - run: dotnet --version
       - run: dotnet publish tj-financing/src/Tank.Financing.Web/Tank.Financing.Web.csproj -o build/Web
       - run: dotnet publish tj-financing/src/Tank.Financing.DbMigrator/Tank.Financing.DbMigrator.csproj -o build/DbMigrator
-      - run: docker build -t TankFinancing:v1 -f .github/workflows .
-      - run: docker tag TankFinancing:v1 hoopoxtest/TankFinancing:1.0.0
+      - run: docker build -t tank_financing_test:v1 -f .github/workflows .
+      - run: docker tag tank_financing_test:v1 hoopoxtest/tank_financing_test:1.0.0
       - run: docker login -u ${{ secrets.DOCKER_TEST_USER }} -p ${{ secrets.DOCKER_TEST_PASSWORD }}
-      - run: docker push hoopoxtest/TankFinancing:1.0.0 
+      - run: docker push hoopoxtest/tank_financing_test:1.0.0 
 
 
