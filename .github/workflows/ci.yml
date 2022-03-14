@@ -25,19 +25,11 @@ jobs:
         with:
           dotnet-version: '6.0.x'
       - run: dotnet --version
-      - run: |
-          ls -al
-          pwd
-          dotnet publish tj-financing/src/Tank.Financing.Web/Tank.Financing.Web.csproj -o Tank.Financing.Web.Build
-          ls -al Tank.Financing.Web.Build
-          tar -zcf Tank.Financing.Web.Build.tar.gz Tank.Financing.Web.Build
-          
-      - run: |
-          ls -al
-          pwd
-          dotnet publish tj-financing/src/Tank.Financing.DbMigrator/Tank.Financing.DbMigrator.csproj -o Tank.Financing.DbMigrator.Build
-          ls -al Tank.Financing.DbMigrator.Build
-          tar -zcf Tank.Financing.DbMigrator.Build.tar.gz Tank.Financing.DbMigrator.Build
-          
-      - run: ls -al
+      - run: dotnet publish tj-financing/src/Tank.Financing.Web/Tank.Financing.Web.csproj -o build/Web
+      - run: dotnet publish tj-financing/src/Tank.Financing.DbMigrator/Tank.Financing.DbMigrator.csproj -o build/DbMigrator
+      - run: docker build -t TankFinancing:v1 -f .github/workflows .
+      - run: docker tag TankFinancing:v1 hoopoxtest/TankFinancing:1.0.0
+      - run: docker login -u ${{ secrets.DOCKER_TEST_USER }} -p ${{ secrets.DOCKER_TEST_PASSWORD }}
+      - run: docker push hoopoxtest/TankFinancing:1.0.0 
+
 
