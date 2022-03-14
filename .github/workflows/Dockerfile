@@ -7,6 +7,6 @@ WORKDIR /app
 COPY ./build/Web /app/Web
 COPY ./build/DbMigrator /app/DbMigrator
 
-#RUN set -x; dotnet /app/DbMigrator/Tank.Financing.DbMigrator.dll \
-#    && dotnet /app/Web/Tank.Financing.Web.dll
+RUN set -x; dotnet /app/DbMigrator/Tank.Financing.DbMigrator.dll \
+    && dotnet /app/Web/Tank.Financing.Web.dll
 
