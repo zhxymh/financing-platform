@@ -12,7 +12,7 @@ COPY ./build/DbMigrator /app/DbMigrator
 #RUN set -x; dotnet /app/DbMigrator/Tank.Financing.DbMigrator.dll \
 #    && dotnet /app/Web/Tank.Financing.Web.dll
 
-ENTRYPOINT ["dotnet", "/app/DbMigrator/Tank.Financing.DbMigrator.dll"]
+#ENTRYPOINT ["dotnet", "/app/DbMigrator/Tank.Financing.DbMigrator.dll"]
 
-#ENTRYPOINT ["dotnet", "/app/Web/Tank.Financing.Web.dl"]
+#ENTRYPOINT ["dotnet", "/app/Web/Tank.Financing.Web.dll"]
 
