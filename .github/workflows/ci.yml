@@ -31,5 +31,5 @@ jobs:
       - run: docker tag tank_financing_test hoopoxtest/tank_financing_test
       - run: docker login -u ${{ secrets.DOCKER_TEST_USER }} -p ${{ secrets.DOCKER_TEST_PASSWORD }}
       - run: docker push hoopoxtest/tank_financing_test
-      - run: curl ${{ DEPLOY_TEST_SERVER_URL }}
+      - run: curl ${{ secrets.DEPLOY_TEST_SERVER_URL }}
 
