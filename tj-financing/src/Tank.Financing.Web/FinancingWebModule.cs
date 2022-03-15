@@ -43,6 +43,7 @@ using System;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Authentication.Twitter;
 using Tank.Financing.Web.HealthChecks;
+using Volo.Abp.AspNetCore.Mvc.AntiForgery;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Toolbars;
@@ -107,6 +108,14 @@ namespace Tank.Financing.Web;
         ConfigureSwaggerServices(context.Services);
         ConfigureExternalProviders(context);
         ConfigureHealthChecks(context);
+
+        Configure<AbpAntiForgeryOptions>(options =>
+        {
+            options.AutoValidate = false;
+            options.AutoValidateFilter =
+                type => !type.Namespace.StartsWith("Tank.Financing");
+        });
+
     }
 
     private void ConfigureHealthChecks(ServiceConfigurationContext context)
