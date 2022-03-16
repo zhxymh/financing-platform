@@ -42,6 +42,7 @@ using Volo.Saas.Host;
 using System;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Authentication.Twitter;
+using Microsoft.AspNetCore.Http;
 using Tank.Financing.Web.HealthChecks;
 using Volo.Abp.AspNetCore.Mvc.AntiForgery;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
@@ -109,14 +110,10 @@ namespace Tank.Financing.Web;
         ConfigureExternalProviders(context);
         //ConfigureHealthChecks(context);
 
-        Configure<AbpAntiForgeryOptions>(options =>
+        Configure<CookiePolicyOptions>(options =>
         {
-            options.AutoValidate = false;
-            options.AutoValidateIgnoredHttpMethods.Add("POST");
-            options.AutoValidateFilter =
-                type => !type.Namespace.StartsWith("Tank.Financing");
+            options.MinimumSameSitePolicy = SameSiteMode.None;
         });
-
     }
 
     private void ConfigureHealthChecks(ServiceConfigurationContext context)
