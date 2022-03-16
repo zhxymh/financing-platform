@@ -120,8 +120,23 @@ namespace Tank.Financing.Web;
 
         Configure<CookiePolicyOptions>(options =>
         {
-            options.MinimumSameSitePolicy = SameSiteMode.Lax;
+            options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
+            options.OnAppendCookie = cookieContext =>
+                SetSameSite(cookieContext.Context, cookieContext.CookieOptions);
+            options.OnDeleteCookie = cookieContext =>
+                SetSameSite(cookieContext.Context, cookieContext.CookieOptions);
         });
+    }
+
+    private static void SetSameSite(HttpContext httpContext, CookieOptions options)
+    {
+        if (options.SameSite == SameSiteMode.None)
+        {
+            if (!httpContext.Request.IsHttps)
+            {
+                options.SameSite = SameSiteMode.Unspecified;
+            }
+        }
     }
 
     private void ConfigureHealthChecks(ServiceConfigurationContext context)
@@ -330,5 +345,6 @@ namespace Tank.Financing.Web;
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();
+        app.UseCookiePolicy();
     }
 }
