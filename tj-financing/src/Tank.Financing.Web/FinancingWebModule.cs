@@ -110,6 +110,12 @@ namespace Tank.Financing.Web;
         ConfigureExternalProviders(context);
         //ConfigureHealthChecks(context);
 
+        Configure<AbpAntiForgeryOptions>(options =>
+            {
+                options.AutoValidate = false;
+            }
+        );
+
         context.Services.AddSameSiteCookiePolicy(); // cookie policy to deal with temporary browser incompatibilities
     }
 
