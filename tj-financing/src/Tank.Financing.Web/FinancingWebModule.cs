@@ -107,7 +107,7 @@ namespace Tank.Financing.Web;
         ConfigureAutoApiControllers();
         ConfigureSwaggerServices(context.Services);
         ConfigureExternalProviders(context);
-        ConfigureHealthChecks(context);
+        //ConfigureHealthChecks(context);
 
         Configure<AbpAntiForgeryOptions>(options =>
         {
