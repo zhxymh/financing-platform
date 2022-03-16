@@ -110,22 +110,7 @@ namespace Tank.Financing.Web;
         ConfigureExternalProviders(context);
         //ConfigureHealthChecks(context);
 
-        // Configure<AbpAntiForgeryOptions>(options =>
-        // {
-        //     options.AutoValidate = false;
-        //     options.AutoValidateIgnoredHttpMethods.Add("POST");
-        //     options.AutoValidateFilter =
-        //         type => !type.Namespace.StartsWith("Tank.Financing");
-        // });
-
-        Configure<CookiePolicyOptions>(options =>
-        {
-            options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
-            options.OnAppendCookie = cookieContext =>
-                SetSameSite(cookieContext.Context, cookieContext.CookieOptions);
-            options.OnDeleteCookie = cookieContext =>
-                SetSameSite(cookieContext.Context, cookieContext.CookieOptions);
-        });
+        context.Services.AddSameSiteCookiePolicy(); // cookie policy to deal with temporary browser incompatibilities
     }
 
     private static void SetSameSite(HttpContext httpContext, CookieOptions options)
