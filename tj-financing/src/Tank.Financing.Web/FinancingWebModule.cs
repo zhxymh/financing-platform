@@ -42,6 +42,7 @@ using Volo.Saas.Host;
 using System;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Authentication.Twitter;
+using Microsoft.AspNetCore.Http;
 using Tank.Financing.Web.HealthChecks;
 using Volo.Abp.AspNetCore.Mvc.AntiForgery;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
@@ -109,14 +110,33 @@ namespace Tank.Financing.Web;
         ConfigureExternalProviders(context);
         //ConfigureHealthChecks(context);
 
-        Configure<AbpAntiForgeryOptions>(options =>
-        {
-            options.AutoValidate = false;
-            options.AutoValidateIgnoredHttpMethods.Add("POST");
-            options.AutoValidateFilter =
-                type => !type.Namespace.StartsWith("Tank.Financing");
-        });
+        // Configure<AbpAntiForgeryOptions>(options =>
+        // {
+        //     options.AutoValidate = false;
+        //     options.AutoValidateIgnoredHttpMethods.Add("POST");
+        //     options.AutoValidateFilter =
+        //         type => !type.Namespace.StartsWith("Tank.Financing");
+        // });
 
+        Configure<CookiePolicyOptions>(options =>
+        {
+            options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
+            options.OnAppendCookie = cookieContext =>
+                SetSameSite(cookieContext.Context, cookieContext.CookieOptions);
+            options.OnDeleteCookie = cookieContext =>
+                SetSameSite(cookieContext.Context, cookieContext.CookieOptions);
+        });
+    }
+
+    private static void SetSameSite(HttpContext httpContext, CookieOptions options)
+    {
+        if (options.SameSite == SameSiteMode.None)
+        {
+            if (!httpContext.Request.IsHttps)
+            {
+                options.SameSite = SameSiteMode.Unspecified;
+            }
+        }
     }
 
     private void ConfigureHealthChecks(ServiceConfigurationContext context)
@@ -325,5 +345,6 @@ namespace Tank.Financing.Web;
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();
+        app.UseCookiePolicy();
     }
 }
