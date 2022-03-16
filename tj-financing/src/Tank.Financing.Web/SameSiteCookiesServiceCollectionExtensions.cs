@@ -10,7 +10,7 @@ public static class SameSiteCookiesServiceCollectionExtensions
     {
         services.Configure<CookiePolicyOptions>(options =>
         {
-            options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
+            options.MinimumSameSitePolicy = SameSiteMode.Lax;
             options.OnAppendCookie = cookieContext =>
                 CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);
             options.OnDeleteCookie = cookieContext =>
@@ -24,10 +24,12 @@ public static class SameSiteCookiesServiceCollectionExtensions
     {
         if (options.SameSite == SameSiteMode.None)
         {
+            options.SameSite = SameSiteMode.Lax;
+
             var userAgent = httpContext.Request.Headers["User-Agent"].ToString();
             if (!httpContext.Request.IsHttps || DisallowsSameSiteNone(userAgent))
             {
-                options.SameSite = SameSiteMode.Unspecified;
+                options.SameSite = SameSiteMode.Lax;
             }
         }
     }

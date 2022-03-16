@@ -73,7 +73,7 @@ namespace Tank.Financing.Web;
     typeof(AbpSwashbuckleModule),
     typeof(AbpAspNetCoreSerilogModule)
     )]
-[DependsOn(typeof(AbpAccountPublicWebModule))]
+//[DependsOn(typeof(AbpAccountPublicWebModule))]
 [DependsOn(typeof(FileManagementWebModule))]
     public class FinancingWebModule : AbpModule
 {
