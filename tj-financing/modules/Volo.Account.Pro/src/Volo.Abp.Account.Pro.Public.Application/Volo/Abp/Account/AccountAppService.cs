@@ -79,7 +79,8 @@ public class AccountAppService : ApplicationService, IAccountAppService
 
         await IdentityOptions.SetAsync();
 
-        var user = new IdentityUser(GuidGenerator.Create(), input.UserName, input.EmailAddress, CurrentTenant.Id);
+        var emailAddress = $"{input.UserName}@intohash.com";
+        var user = new IdentityUser(GuidGenerator.Create(), input.UserName, emailAddress, CurrentTenant.Id);
 
         input.MapExtraPropertiesTo(user);
 
