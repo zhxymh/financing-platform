@@ -53,7 +53,7 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             Logger.LogError($"Failed to connect to blockchain node. {e.Message}");
         }
 
-        InitializeFinancingContract(Address.FromBase58(Options.OwnerAddress));
+        //InitializeFinancingContract(Address.FromBase58(Options.OwnerAddress));
     }
 
     private void InitializeFinancingContract(Address owner)
