@@ -26,10 +26,13 @@ public static class SameSiteCookiesServiceCollectionExtensions
     {
         if (options.SameSite == SameSiteMode.None)
         {
+            options.SameSite = Unspecified;
+
             var userAgent = httpContext.Request.Headers["User-Agent"].ToString();
             if (DisallowsSameSiteNone(userAgent))
             {
                 options.SameSite = Unspecified;
+                options.Secure = true;
             }
         }
     }
