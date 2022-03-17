@@ -6,11 +6,13 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class SameSiteCookiesServiceCollectionExtensions
 {
-    public static IServiceCollection AddSameSiteCookiePolicy(this IServiceCollection services)
+    private const SameSiteMode Unspecified = (SameSiteMode) (-1);
+
+    public static IServiceCollection ConfigureNonBreakingSameSiteCookies(this IServiceCollection services)
     {
         services.Configure<CookiePolicyOptions>(options =>
         {
-            options.MinimumSameSitePolicy = SameSiteMode.Lax;
+            options.MinimumSameSitePolicy = Unspecified;
             options.OnAppendCookie = cookieContext =>
                 CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);
             options.OnDeleteCookie = cookieContext =>
@@ -24,12 +26,10 @@ public static class SameSiteCookiesServiceCollectionExtensions
     {
         if (options.SameSite == SameSiteMode.None)
         {
-            options.SameSite = SameSiteMode.Lax;
-
             var userAgent = httpContext.Request.Headers["User-Agent"].ToString();
-            if (!httpContext.Request.IsHttps || DisallowsSameSiteNone(userAgent))
+            if (DisallowsSameSiteNone(userAgent))
             {
-                options.SameSite = SameSiteMode.Lax;
+                options.SameSite = Unspecified;
             }
         }
     }

@@ -103,6 +103,8 @@ public class AbpAccountPublicWebModule : AbpModule
             {
                 OnValidatePrincipal = SecurityStampValidator.ValidatePrincipalAsync
             };
+            options.Cookie.SameSite = SameSiteMode.None;
+            options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         });
 
         Configure<AbpAspNetCoreMvcOptions>(options =>

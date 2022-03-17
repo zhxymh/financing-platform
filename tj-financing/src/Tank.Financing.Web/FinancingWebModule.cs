@@ -116,7 +116,7 @@ namespace Tank.Financing.Web;
             }
         );
 
-        context.Services.AddSameSiteCookiePolicy(); // cookie policy to deal with temporary browser incompatibilities
+        context.Services.ConfigureNonBreakingSameSiteCookies();
     }
 
     private static void SetSameSite(HttpContext httpContext, CookieOptions options)
@@ -317,6 +317,7 @@ namespace Tank.Financing.Web;
         app.UseCorrelationId();
         app.UseStaticFiles();
         app.UseRouting();
+        app.UseCookiePolicy();
         app.UseAuthentication();
         app.UseJwtTokenMiddleware();
 
@@ -336,6 +337,5 @@ namespace Tank.Financing.Web;
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();
-        app.UseCookiePolicy();
     }
 }

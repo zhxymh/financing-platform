@@ -154,7 +154,6 @@ public class IdentityServerSupportedLoginModel : LoginModel
     [UnitOfWork] //TODO: Will be removed when we implement action filter
     public override async Task<IActionResult> OnPostAsync(string action)
     {
-        Logger.LogInformation($"[Login]{action}");
         ExternalProviders = await GetExternalProviders();
         EnableLocalLogin = await SettingProvider.IsTrueAsync(AccountSettingNames.EnableLocalLogin);
         IsSelfRegistrationEnabled = await SettingProvider.IsTrueAsync(AccountSettingNames.IsSelfRegistrationEnabled);
@@ -201,7 +200,6 @@ public class IdentityServerSupportedLoginModel : LoginModel
         await ReplaceEmailToUsernameOfInputIfNeeds();
 
         IsLinkLogin = await VerifyLinkTokenAsync();
-        Logger.LogInformation($"[Login]{IsLinkLogin}");
 
         var result = await SignInManager.PasswordSignInAsync(
             LoginInput.UserNameOrEmailAddress,
@@ -209,8 +207,6 @@ public class IdentityServerSupportedLoginModel : LoginModel
             LoginInput.RememberMe,
             true
         );
-
-        Logger.LogInformation($"[Login]{result}");
 
         await IdentitySecurityLogManager.SaveAsync(new IdentitySecurityLogContext
         {
@@ -264,8 +260,6 @@ public class IdentityServerSupportedLoginModel : LoginModel
 
         var user = await GetIdentityUser(LoginInput.UserNameOrEmailAddress);
 
-        Logger.LogInformation($"[Login]{user.Name}");
-
         await IdentityServerEvents.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName)); //TODO: Use user's name once implemented
 
         if (IsLinkLogin)
@@ -295,7 +289,6 @@ public class IdentityServerSupportedLoginModel : LoginModel
                 using (CurrentTenant.Change(LinkTenantId))
                 {
                     var targetUser = await UserManager.GetByIdAsync(LinkUserId.Value);
-                    Logger.LogInformation($"[Login]{targetUser}");
                     using (CurrentPrincipalAccessor.Change(await SignInManager.CreateUserPrincipalAsync(targetUser)))
                     {
                         await IdentitySecurityLogManager.SaveAsync(new IdentitySecurityLogContext
@@ -321,8 +314,6 @@ public class IdentityServerSupportedLoginModel : LoginModel
                 });
             }
         }
-
-        Logger.LogInformation($"[Login]RedirectSafely");
 
         return RedirectSafely(ReturnUrl, ReturnUrlHash);
     }
