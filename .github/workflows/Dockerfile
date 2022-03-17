@@ -1,14 +1,10 @@
-FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-alpine AS base
-
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build-env
-
-#FROM mcr.microsoft.com/dotnet/aspnet:6.0
-
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-COPY ./build/Web /app/Web
-COPY ./build/DbMigrator /app/DbMigrator
+COPY ./tj-financing /app
 COPY ./.github/workflows/start.sh /app
 
-ENTRYPOINT ["/bin/sh", "/app/start.sh"]
+RUN dotnet publish tj-financing/src/Tank.Financing.DbMigrator/Tank.Financing.DbMigrator.csproj --configuration Release -o build/DbMigrator \
+    && dotnet publish tj-financing/src/Tank.Financing.Web/Tank.Financing.Web.csproj --configuration Release -o build/Web \
 
+ENTRYPOINT ["/bin/sh", "/app/start.sh"]
