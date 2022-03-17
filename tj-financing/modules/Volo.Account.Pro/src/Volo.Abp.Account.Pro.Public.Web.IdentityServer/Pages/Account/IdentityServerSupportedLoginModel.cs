@@ -12,8 +12,11 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Owl.reCAPTCHA;
 using Volo.Abp.Account.ExternalProviders;
 using Volo.Abp.Account.Public.Web;
@@ -38,6 +41,8 @@ public class IdentityServerSupportedLoginModel : LoginModel
     protected IClientStore ClientStore { get; }
     protected IEventService IdentityServerEvents { get; }
 
+    public ILogger<IdentityServerSupportedLoginModel> Logger { get; set; }
+
     public IdentityServerSupportedLoginModel(
         IAuthenticationSchemeProvider schemeProvider,
         IOptions<AbpAccountOptions> accountOptions,
@@ -61,6 +66,7 @@ public class IdentityServerSupportedLoginModel : LoginModel
         Interaction = interaction;
         ClientStore = clientStore;
         IdentityServerEvents = identityServerEvents;
+        Logger = NullLogger<IdentityServerSupportedLoginModel>.Instance;
     }
 
     public override async Task<IActionResult> OnGetAsync()
@@ -80,7 +86,11 @@ public class IdentityServerSupportedLoginModel : LoginModel
             if (!string.IsNullOrEmpty(tenant))
             {
                 CurrentTenant.Change(Guid.Parse(tenant));
-                Response.Cookies.Append(TenantResolverConsts.DefaultTenantKey, tenant);
+                Response.Cookies.Append(TenantResolverConsts.DefaultTenantKey, tenant, new CookieOptions
+                {
+                    SameSite = SameSiteMode.None,
+                    Secure = true
+                });
             }
         }
 
@@ -144,6 +154,7 @@ public class IdentityServerSupportedLoginModel : LoginModel
     [UnitOfWork] //TODO: Will be removed when we implement action filter
     public override async Task<IActionResult> OnPostAsync(string action)
     {
+        Logger.LogInformation($"[Login]{action}");
         ExternalProviders = await GetExternalProviders();
         EnableLocalLogin = await SettingProvider.IsTrueAsync(AccountSettingNames.EnableLocalLogin);
         IsSelfRegistrationEnabled = await SettingProvider.IsTrueAsync(AccountSettingNames.IsSelfRegistrationEnabled);
@@ -190,6 +201,7 @@ public class IdentityServerSupportedLoginModel : LoginModel
         await ReplaceEmailToUsernameOfInputIfNeeds();
 
         IsLinkLogin = await VerifyLinkTokenAsync();
+        Logger.LogInformation($"[Login]{IsLinkLogin}");
 
         var result = await SignInManager.PasswordSignInAsync(
             LoginInput.UserNameOrEmailAddress,
@@ -197,6 +209,8 @@ public class IdentityServerSupportedLoginModel : LoginModel
             LoginInput.RememberMe,
             true
         );
+
+        Logger.LogInformation($"[Login]{result}");
 
         await IdentitySecurityLogManager.SaveAsync(new IdentitySecurityLogContext
         {
@@ -250,6 +264,8 @@ public class IdentityServerSupportedLoginModel : LoginModel
 
         var user = await GetIdentityUser(LoginInput.UserNameOrEmailAddress);
 
+        Logger.LogInformation($"[Login]{user.Name}");
+
         await IdentityServerEvents.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName)); //TODO: Use user's name once implemented
 
         if (IsLinkLogin)
@@ -279,6 +295,7 @@ public class IdentityServerSupportedLoginModel : LoginModel
                 using (CurrentTenant.Change(LinkTenantId))
                 {
                     var targetUser = await UserManager.GetByIdAsync(LinkUserId.Value);
+                    Logger.LogInformation($"[Login]{targetUser}");
                     using (CurrentPrincipalAccessor.Change(await SignInManager.CreateUserPrincipalAsync(targetUser)))
                     {
                         await IdentitySecurityLogManager.SaveAsync(new IdentitySecurityLogContext
@@ -304,6 +321,8 @@ public class IdentityServerSupportedLoginModel : LoginModel
                 });
             }
         }
+
+        Logger.LogInformation($"[Login]RedirectSafely");
 
         return RedirectSafely(ReturnUrl, ReturnUrlHash);
     }
