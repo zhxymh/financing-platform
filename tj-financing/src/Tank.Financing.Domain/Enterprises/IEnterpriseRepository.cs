@@ -27,6 +27,7 @@ namespace Tank.Financing.Enterprises
             CertificateStatus? certificateStatus = null,
             string certificateTxId = null,
             string confirmCertificateTxId = null,
+            string commitUserName = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -51,6 +52,7 @@ namespace Tank.Financing.Enterprises
             CertificateStatus? certificateStatus = null,
             string certificateTxId = null,
             string confirmCertificateTxId = null,
+            string commitUserName = null,
             CancellationToken cancellationToken = default);
     }
 }

@@ -43,18 +43,21 @@ namespace Tank.Financing.Enterprises
 
         public virtual CertificateStatus CertificateStatus { get; set; }
 
-        [CanBeNull]
+        [NotNull]
         public virtual string CertificateTxId { get; set; }
 
         [CanBeNull]
         public virtual string ConfirmCertificateTxId { get; set; }
+
+        [NotNull]
+        public virtual string CommitUserName { get; set; }
 
         public Enterprise()
         {
 
         }
 
-        public Enterprise(Guid id, string enterpriseName, string artificialPerson, long dueTime, string creditCode, string artificialPersonId, string registeredCapital, string phoneNumber, string certPhotoPath, string idPhotoPath1, string idPhotoPath2, CertificateStatus certificateStatus, string certificateTxId, string confirmCertificateTxId, long? establishedTime = null)
+        public Enterprise(Guid id, string enterpriseName, string artificialPerson, long dueTime, string creditCode, string artificialPersonId, string registeredCapital, string phoneNumber, string certPhotoPath, string idPhotoPath1, string idPhotoPath2, CertificateStatus certificateStatus, string certificateTxId, string confirmCertificateTxId, string commitUserName, long? establishedTime = null)
         {
             Id = id;
             Check.NotNull(enterpriseName, nameof(enterpriseName));
@@ -66,6 +69,8 @@ namespace Tank.Financing.Enterprises
             Check.NotNull(certPhotoPath, nameof(certPhotoPath));
             Check.NotNull(idPhotoPath1, nameof(idPhotoPath1));
             Check.NotNull(idPhotoPath2, nameof(idPhotoPath2));
+            Check.NotNull(certificateTxId, nameof(certificateTxId));
+            Check.NotNull(commitUserName, nameof(commitUserName));
             EnterpriseName = enterpriseName;
             ArtificialPerson = artificialPerson;
             DueTime = dueTime;
@@ -79,6 +84,7 @@ namespace Tank.Financing.Enterprises
             CertificateStatus = certificateStatus;
             CertificateTxId = certificateTxId;
             ConfirmCertificateTxId = confirmCertificateTxId;
+            CommitUserName = commitUserName;
             EstablishedTime = establishedTime;
         }
     }

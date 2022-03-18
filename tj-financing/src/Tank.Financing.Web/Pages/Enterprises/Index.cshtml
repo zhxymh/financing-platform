@@ -92,6 +92,9 @@
             <abp-column size="_3">
                 <abp-input asp-for="ConfirmCertificateTxIdFilter" label="@L["ConfirmCertificateTxId"].Value" />
             </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="CommitUserNameFilter" label="@L["CommitUserName"].Value" />
+            </abp-column>
         </abp-row>
 
         <abp-table striped-rows="true" id="EnterprisesTable">
@@ -112,6 +115,7 @@
 					<th>@L["CertificateStatus"]</th>
 					<th>@L["CertificateTxId"]</th>
 					<th>@L["ConfirmCertificateTxId"]</th>
+					<th>@L["CommitUserName"]</th>
 
 				</tr>
             </thead>

@@ -33,6 +33,7 @@ namespace Tank.Financing.Web.Pages.Enterprises
         public CertificateStatus? CertificateStatusFilter { get; set; }
         public string CertificateTxIdFilter { get; set; }
         public string ConfirmCertificateTxIdFilter { get; set; }
+        public string CommitUserNameFilter { get; set; }
 
         private readonly IEnterprisesAppService _enterprisesAppService;
 

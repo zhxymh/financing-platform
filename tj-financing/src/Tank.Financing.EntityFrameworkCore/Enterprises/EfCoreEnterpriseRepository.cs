@@ -38,12 +38,13 @@ namespace Tank.Financing.Enterprises
             CertificateStatus? certificateStatus = null,
             string certificateTxId = null,
             string confirmCertificateTxId = null,
+            string commitUserName = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, artificialPerson, establishedTimeMin, establishedTimeMax, dueTimeMin, dueTimeMax, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus, certificateTxId, confirmCertificateTxId);
+            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, artificialPerson, establishedTimeMin, establishedTimeMax, dueTimeMin, dueTimeMax, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus, certificateTxId, confirmCertificateTxId, commitUserName);
             query = query.OrderBy(string.IsNullOrWhiteSpace(sorting) ? EnterpriseConsts.GetDefaultSorting(false) : sorting);
             return await query.PageBy(skipCount, maxResultCount).ToListAsync(cancellationToken);
         }
@@ -66,9 +67,10 @@ namespace Tank.Financing.Enterprises
             CertificateStatus? certificateStatus = null,
             string certificateTxId = null,
             string confirmCertificateTxId = null,
+            string commitUserName = null,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, artificialPerson, establishedTimeMin, establishedTimeMax, dueTimeMin, dueTimeMax, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus, certificateTxId, confirmCertificateTxId);
+            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, artificialPerson, establishedTimeMin, establishedTimeMax, dueTimeMin, dueTimeMax, creditCode, artificialPersonId, registeredCapital, phoneNumber, certPhotoPath, idPhotoPath1, idPhotoPath2, certificateStatus, certificateTxId, confirmCertificateTxId, commitUserName);
             return await query.LongCountAsync(GetCancellationToken(cancellationToken));
         }
 
@@ -90,10 +92,11 @@ namespace Tank.Financing.Enterprises
             string idPhotoPath2 = null,
             CertificateStatus? certificateStatus = null,
             string certificateTxId = null,
-            string confirmCertificateTxId = null)
+            string confirmCertificateTxId = null,
+            string commitUserName = null)
         {
             return query
-                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.ArtificialPerson.Contains(filterText) || e.CreditCode.Contains(filterText) || e.ArtificialPersonId.Contains(filterText) || e.RegisteredCapital.Contains(filterText) || e.PhoneNumber.Contains(filterText) || e.CertPhotoPath.Contains(filterText) || e.IdPhotoPath1.Contains(filterText) || e.IdPhotoPath2.Contains(filterText) || e.CertificateTxId.Contains(filterText) || e.ConfirmCertificateTxId.Contains(filterText))
+                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.ArtificialPerson.Contains(filterText) || e.CreditCode.Contains(filterText) || e.ArtificialPersonId.Contains(filterText) || e.RegisteredCapital.Contains(filterText) || e.PhoneNumber.Contains(filterText) || e.CertPhotoPath.Contains(filterText) || e.IdPhotoPath1.Contains(filterText) || e.IdPhotoPath2.Contains(filterText) || e.CertificateTxId.Contains(filterText) || e.ConfirmCertificateTxId.Contains(filterText) || e.CommitUserName.Contains(filterText))
                     .WhereIf(!string.IsNullOrWhiteSpace(enterpriseName), e => e.EnterpriseName.Contains(enterpriseName))
                     .WhereIf(!string.IsNullOrWhiteSpace(artificialPerson), e => e.ArtificialPerson.Contains(artificialPerson))
                     .WhereIf(establishedTimeMin.HasValue, e => e.EstablishedTime >= establishedTimeMin.Value)
@@ -109,7 +112,8 @@ namespace Tank.Financing.Enterprises
                     .WhereIf(!string.IsNullOrWhiteSpace(idPhotoPath2), e => e.IdPhotoPath2.Contains(idPhotoPath2))
                     .WhereIf(certificateStatus.HasValue, e => e.CertificateStatus == certificateStatus)
                     .WhereIf(!string.IsNullOrWhiteSpace(certificateTxId), e => e.CertificateTxId.Contains(certificateTxId))
-                    .WhereIf(!string.IsNullOrWhiteSpace(confirmCertificateTxId), e => e.ConfirmCertificateTxId.Contains(confirmCertificateTxId));
+                    .WhereIf(!string.IsNullOrWhiteSpace(confirmCertificateTxId), e => e.ConfirmCertificateTxId.Contains(confirmCertificateTxId))
+                    .WhereIf(!string.IsNullOrWhiteSpace(commitUserName), e => e.CommitUserName.Contains(commitUserName));
         }
     }
 }

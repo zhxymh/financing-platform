@@ -19,40 +19,42 @@ namespace Tank.Financing.Enterprises
         {
             await _enterpriseRepository.InsertAsync(new Enterprise
             (
-                id: Guid.Parse("5ec03ba0-82da-4fc7-85c6-67d5955baa61"),
-                enterpriseName: "dd16a023fede4603ac81fe8403ffb431cedf21cd5f80461b81391eeceaa94f8095c02eb0eb0b4ac2994d0558854c67254",
-                artificialPerson: "05f5e68a75384f2790716941b2764048265f62e18ba44565bf7b21f352ec0b",
-                establishedTime: 2043034036,
-                dueTime: 1033484253,
-                creditCode: "382169d190274ff5bd2b5d007c69d42a7127365865a044c2ace",
-                artificialPersonId: "460dad04f40a4b948100a5abb5e69a6fdec64f2bae9d486f9",
-                registeredCapital: "b9724cd61abc4e08a378cb2e12235a4ae571affe0b10463caea11d099ba5f1223518fd4b42c74778bef8eed295",
-                phoneNumber: "64949d27a0ef4207ba4504dca19bfc5b90548bbd69ab441c9a7a3208ef75f9203d22417750fb4561bb0cd5d375a071f4c",
-                certPhotoPath: "3254d19a84f943c3932c2287536f172",
-                idPhotoPath1: "f29190b99c1f4506963f2374f82ba2a1c5eb561e2f6d496189950a8f55719c39c1c",
-                idPhotoPath2: "c344a508c05d46cb839a8676c9e0101b",
+                id: Guid.Parse("de3a0132-54e0-422e-9bab-d7baf1e06286"),
+                enterpriseName: "33ad5045d7b44d3aade0750773fc867e61deb95e90b94127b9abf57d5872ab9b6f794c855565",
+                artificialPerson: "6ed6a145340943d1becdd542470d472fe68959581ee441f5823f0df4e8cea4296b5de8df1ce94ad59f6c50ad9b4f5c",
+                establishedTime: 1858098692,
+                dueTime: 1700143394,
+                creditCode: "48fe29cbe2b0452a84f32d835beaad6f8438593",
+                artificialPersonId: "43b1a8b3e7884e2887e0c293372a892c3b6a4f54074e420b97d5a4b341dab16120",
+                registeredCapital: "6439426220614531bc78bb1fb474b757e99e40cc3b2a489898af15e9a3b7508ca30c0aa27c8e4dce879f5fe2a881962b9",
+                phoneNumber: "eca80a32313d445fb49c802271213a5e61c329fc05be427d8c87ac269f16278e3004a447ad424a69b14f",
+                certPhotoPath: "667c191476c44e0b91e8ceba44b4a8167c3d",
+                idPhotoPath1: "3e4f9d389dc041379b0f276032fa9f0dda30046059174e2c8b85f33d191bc0332d9435aabd3346b3b40c8da90be7",
+                idPhotoPath2: "787d5b1",
                 certificateStatus: default,
-                certificateTxId: "e9524043cc944435956d94ab4ee0b0b5266f8547e29e4e9dae5",
-                confirmCertificateTxId: "8c181d5b3ccc4674b2a"
+                certificateTxId: "65cab9b278b141c0b7f909725cc44dbab3133a51e3114",
+                confirmCertificateTxId: "78f4a6fd3b5d4af98c7fde92c6fa616e7307be9f35bd4a",
+                commitUserName: "cdfd41b7f8db4638ab41c994db367d32d531f1cac0e848a9aba5c2a95f40c75da48876ef79fa4830b5a0099c2a9645aea28"
             ));
 
             await _enterpriseRepository.InsertAsync(new Enterprise
             (
-                id: Guid.Parse("401bb822-9cef-4c0c-b676-5f55cdf4ac97"),
-                enterpriseName: "1ba59f68db364e3b991",
-                artificialPerson: "78ab55ee33894e54aae0580d207d3d2e097c0b00c876446cb1d0ee9f0208bdafbb2",
-                establishedTime: 1375055754,
-                dueTime: 846643164,
-                creditCode: "696d53b7c5ff489598f2dc798",
-                artificialPersonId: "1481074f8995429bb0851bd2f002",
-                registeredCapital: "0599ace38d814faaa66a9ab06257b6328358bcbd3ed0",
-                phoneNumber: "cd80b86a69a54a9bb451320671c1146c0e2f4653c",
-                certPhotoPath: "4df8549922544afc9d0a772a966ba1d5a1f5f09fa9cc4762bbf1a7950b242f9cc8b1b133f1c544a1908b",
-                idPhotoPath1: "1724fa406fac4b0aa705c8c6dd846a0d993b8e6a2421411282b7e81e77a9876b238932877f6f4364a7ce1b",
-                idPhotoPath2: "f6dcad4f27a84355bceec8fb63f021b",
+                id: Guid.Parse("e208ab7d-1e29-4bac-882d-2b685e99cb63"),
+                enterpriseName: "5cd8bcdd7fb742b1aff7919c2bcf3c72485917a132fa45c8bb7fb3948f8893",
+                artificialPerson: "d44dd7c5c7874206a4ff343a8354ca396b0d4f584b4f4b7cafd6501182ffbf0e227672238fda4dc1b598157",
+                establishedTime: 1263364721,
+                dueTime: 2036401714,
+                creditCode: "8dbaa03fd6e942b7ad1a9d1",
+                artificialPersonId: "b0c17863ad1444f6b1d306c2752d19d1bcb87a51862842baa7f10e275807d4b4eee34d71b77c4515bd04a28b050eace31",
+                registeredCapital: "eb9d74cdd3e94447a461658877349fa962bd5f7655574472b6e175123ec72a9b9e059f99e6d849d29b67ac7",
+                phoneNumber: "a904fb280d9b44f5af4920251941f1c423277e8442584270ae93b070a189986a791fb57",
+                certPhotoPath: "30a915be86984281814a5e2fbe96100",
+                idPhotoPath1: "885b5558deb8469b88a7295eb0ce45498e414f8d9bc74e0c86287fa5ae1e8f4cb3",
+                idPhotoPath2: "d6aebfdba55c45a3aadb6772d6c6d2a79257284df6ee4acdb89640af87f06653b025ec25bab84",
                 certificateStatus: default,
-                certificateTxId: "50ed0fb2cefd47e497ad3bd6461af8ccb14ab1ea1016404eb628",
-                confirmCertificateTxId: "8a046dddc"
+                certificateTxId: "b0fae6fa1efb4c12a49de5667073136149396fdc51fa43949ee75b99f58aad8707dd4871b502424eb480",
+                confirmCertificateTxId: "bfdc4234c99c4c08ab372f79a76439c1a290c80f8f214488b63d55aa6b4ffbbd3fc6bf5cb76144cb98299",
+                commitUserName: "0c8b88d051ec4cf8b23ae76a28bb605c5a0c6f52c74a4e5eb25ba1be05a69fe9b9b5e4"
             ));
         }
     }

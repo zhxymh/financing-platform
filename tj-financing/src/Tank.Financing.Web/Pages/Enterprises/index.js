@@ -34,7 +34,8 @@ $(function () {
 			idPhotoPath2: $("#IdPhotoPath2Filter").val(),
 			certificateStatus: $("#CertificateStatusFilter").val(),
 			certificateTxId: $("#CertificateTxIdFilter").val(),
-			confirmCertificateTxId: $("#ConfirmCertificateTxIdFilter").val()
+			confirmCertificateTxId: $("#ConfirmCertificateTxIdFilter").val(),
+			commitUserName: $("#CommitUserNameFilter").val()
         };
     };
 
@@ -110,7 +111,8 @@ $(function () {
                 }
             },
 			{ data: "certificateTxId" },
-			{ data: "confirmCertificateTxId" }
+			{ data: "confirmCertificateTxId" },
+			{ data: "commitUserName" }
         ]
     }));
 

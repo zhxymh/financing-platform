@@ -122,6 +122,7 @@
     "ApproveAllowanceTxId": "Approve Allowance Tx Id",
     "SetAllowanceTxId": "Set Allowance Tx Id",
     "CompleteTxId": "Complete Tx Id",
-    "AddFinancingProductTxId": "Add Financing Product Tx Id"
+    "AddFinancingProductTxId": "Add Financing Product Tx Id",
+    "CommitUserName": "Commit User Name"
   }
 }

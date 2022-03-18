@@ -30,17 +30,8 @@ namespace Tank.Financing.Enterprises
 
         public virtual async Task<PagedResultDto<EnterpriseDto>> GetListAsync(GetEnterprisesInput input)
         {
-            var totalCount = await _enterpriseRepository.GetCountAsync(input.FilterText, input.EnterpriseName,
-                input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin,
-                input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital,
-                input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus,
-                input.CertificateTxId, input.ConfirmCertificateTxId);
-            var items = await _enterpriseRepository.GetListAsync(input.FilterText, input.EnterpriseName,
-                input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin,
-                input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital,
-                input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus,
-                input.CertificateTxId, input.ConfirmCertificateTxId, input.Sorting, input.MaxResultCount,
-                input.SkipCount);
+            var totalCount = await _enterpriseRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin, input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital, input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus, input.CertificateTxId, input.ConfirmCertificateTxId, input.CommitUserName);
+            var items = await _enterpriseRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.ArtificialPerson, input.EstablishedTimeMin, input.EstablishedTimeMax, input.DueTimeMin, input.DueTimeMax, input.CreditCode, input.ArtificialPersonId, input.RegisteredCapital, input.PhoneNumber, input.CertPhotoPath, input.IdPhotoPath1, input.IdPhotoPath2, input.CertificateStatus, input.CertificateTxId, input.ConfirmCertificateTxId, input.CommitUserName, input.Sorting, input.MaxResultCount, input.SkipCount);
 
             return new PagedResultDto<EnterpriseDto>
             {

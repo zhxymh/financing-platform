@@ -269,6 +269,24 @@
       "EmailValidation": false,
       "EnumValues": null,
       "IsSelected": true
+    },
+    {
+      "Id": "b4eb0d38-1d31-468a-ad05-9ab341651511",
+      "Name": "CommitUserName",
+      "Type": "string",
+      "EnumType": "",
+      "EnumNamespace": "",
+      "EnumAngularImport": "shared/enums",
+      "IsNullable": false,
+      "IsRequired": true,
+      "MinLength": null,
+      "MaxLength": null,
+      "SortOrder": 0,
+      "SortType": 0,
+      "Regex": "",
+      "EmailValidation": false,
+      "EnumValues": null,
+      "IsSelected": true
     }
   ],
   "NavigationProperties": [],

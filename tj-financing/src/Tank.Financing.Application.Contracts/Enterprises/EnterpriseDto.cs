@@ -20,5 +20,6 @@ namespace Tank.Financing.Enterprises
         public CertificateStatus CertificateStatus { get; set; }
         public string CertificateTxId { get; set; }
         public string ConfirmCertificateTxId { get; set; }
+        public string CommitUserName { get; set; }
     }
 }

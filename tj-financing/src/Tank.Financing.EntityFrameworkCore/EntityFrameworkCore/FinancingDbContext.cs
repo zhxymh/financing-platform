@@ -128,25 +128,6 @@ public class FinancingDbContext :
         }
         if (builder.IsHostDatabase())
         {
-            builder.Entity<Enterprise>(b =>
-{
-    b.ToTable(FinancingConsts.DbTablePrefix + "Enterprises", FinancingConsts.DbSchema);
-    b.ConfigureByConvention();
-    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Enterprise.EnterpriseName)).IsRequired();
-    b.Property(x => x.ArtificialPerson).HasColumnName(nameof(Enterprise.ArtificialPerson)).IsRequired();
-    b.Property(x => x.EstablishedTime).HasColumnName(nameof(Enterprise.EstablishedTime));
-    b.Property(x => x.DueTime).HasColumnName(nameof(Enterprise.DueTime));
-    b.Property(x => x.CreditCode).HasColumnName(nameof(Enterprise.CreditCode)).IsRequired();
-    b.Property(x => x.ArtificialPersonId).HasColumnName(nameof(Enterprise.ArtificialPersonId)).IsRequired();
-    b.Property(x => x.RegisteredCapital).HasColumnName(nameof(Enterprise.RegisteredCapital)).IsRequired();
-    b.Property(x => x.PhoneNumber).HasColumnName(nameof(Enterprise.PhoneNumber)).IsRequired();
-    b.Property(x => x.CertPhotoPath).HasColumnName(nameof(Enterprise.CertPhotoPath)).IsRequired();
-    b.Property(x => x.IdPhotoPath1).HasColumnName(nameof(Enterprise.IdPhotoPath1)).IsRequired();
-    b.Property(x => x.IdPhotoPath2).HasColumnName(nameof(Enterprise.IdPhotoPath2)).IsRequired();
-    b.Property(x => x.CertificateStatus).HasColumnName(nameof(Enterprise.CertificateStatus)).IsRequired();
-    b.Property(x => x.CertificateTxId).HasColumnName(nameof(Enterprise.CertificateTxId)).IsRequired();
-    b.Property(x => x.ConfirmCertificateTxId).HasColumnName(nameof(Enterprise.ConfirmCertificateTxId));
-});
 
         }
         if (builder.IsHostDatabase())
@@ -209,6 +190,30 @@ public class FinancingDbContext :
     b.Property(x => x.Rating).HasColumnName(nameof(FinancialProduct.Rating));
     b.Property(x => x.CreditCeiling).HasColumnName(nameof(FinancialProduct.CreditCeiling));
     b.Property(x => x.AddFinancingProductTxId).HasColumnName(nameof(FinancialProduct.AddFinancingProductTxId)).IsRequired();
+});
+
+        }
+        if (builder.IsHostDatabase())
+        {
+            builder.Entity<Enterprise>(b =>
+{
+    b.ToTable(FinancingConsts.DbTablePrefix + "Enterprises", FinancingConsts.DbSchema);
+    b.ConfigureByConvention();
+    b.Property(x => x.EnterpriseName).HasColumnName(nameof(Enterprise.EnterpriseName)).IsRequired();
+    b.Property(x => x.ArtificialPerson).HasColumnName(nameof(Enterprise.ArtificialPerson)).IsRequired();
+    b.Property(x => x.EstablishedTime).HasColumnName(nameof(Enterprise.EstablishedTime));
+    b.Property(x => x.DueTime).HasColumnName(nameof(Enterprise.DueTime));
+    b.Property(x => x.CreditCode).HasColumnName(nameof(Enterprise.CreditCode)).IsRequired();
+    b.Property(x => x.ArtificialPersonId).HasColumnName(nameof(Enterprise.ArtificialPersonId)).IsRequired();
+    b.Property(x => x.RegisteredCapital).HasColumnName(nameof(Enterprise.RegisteredCapital)).IsRequired();
+    b.Property(x => x.PhoneNumber).HasColumnName(nameof(Enterprise.PhoneNumber)).IsRequired();
+    b.Property(x => x.CertPhotoPath).HasColumnName(nameof(Enterprise.CertPhotoPath)).IsRequired();
+    b.Property(x => x.IdPhotoPath1).HasColumnName(nameof(Enterprise.IdPhotoPath1)).IsRequired();
+    b.Property(x => x.IdPhotoPath2).HasColumnName(nameof(Enterprise.IdPhotoPath2)).IsRequired();
+    b.Property(x => x.CertificateStatus).HasColumnName(nameof(Enterprise.CertificateStatus)).IsRequired();
+    b.Property(x => x.CertificateTxId).HasColumnName(nameof(Enterprise.CertificateTxId)).IsRequired();
+    b.Property(x => x.ConfirmCertificateTxId).HasColumnName(nameof(Enterprise.ConfirmCertificateTxId));
+    b.Property(x => x.CommitUserName).HasColumnName(nameof(Enterprise.CommitUserName)).IsRequired();
 });
 
         }
