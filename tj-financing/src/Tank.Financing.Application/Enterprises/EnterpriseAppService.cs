@@ -63,8 +63,17 @@ namespace Tank.Financing.Enterprises
         [Authorize(FinancingPermissions.Enterprises.Create)]
         public virtual async Task<EnterpriseDto> CreateAsync(EnterpriseCreateDto input)
         {
-            var txId = _blockchainAppService.Certificate(input);
+            // Enterprise cannot dup.
+            var maybeSameEnterpriseNameList = await GetListAsync(new GetEnterprisesInput
+            {
+                EnterpriseName = input.EnterpriseName
+            });
+            if (maybeSameEnterpriseNameList.TotalCount > 0)
+            {
+                throw new UserFriendlyException("企业名称已经存在");
+            }
             input.ArtificialPersonId = HashHelper.ComputeFrom(input.ArtificialPersonId).ToHex();
+            var txId = _blockchainAppService.Certificate(input);
             input.CertificateTxId = txId;
             var enterprise = ObjectMapper.Map<EnterpriseCreateDto, Enterprise>(input);
             enterprise = await _enterpriseRepository.InsertAsync(enterprise, autoSave: true);
@@ -78,6 +87,26 @@ namespace Tank.Financing.Enterprises
             {
                 var txId = _blockchainAppService.ConfirmCertificate(input);
                 input.ConfirmCertificateTxId = txId;
+            }
+            else
+            {
+                input.ArtificialPersonId = HashHelper.ComputeFrom(input.ArtificialPersonId).ToHex();
+                var txId = _blockchainAppService.Certificate(new EnterpriseCreateDto
+                {
+                    ArtificialPerson = input.ArtificialPerson,
+                    ArtificialPersonId = input.ArtificialPersonId,
+                    CertificateStatus = input.CertificateStatus,
+                    CertPhotoPath = input.CertPhotoPath,
+                    CreditCode = input.CreditCode,
+                    DueTime = input.DueTime,
+                    EnterpriseName = input.EnterpriseName,
+                    IdPhotoPath1 = input.IdPhotoPath1,
+                    IdPhotoPath2 = input.IdPhotoPath2,
+                    PhoneNumber = input.PhoneNumber,
+                    RegisteredCapital = input.RegisteredCapital,
+                    EstablishedTime = input.EstablishedTime
+                });
+                input.CertificateTxId = txId;
             }
 
             var enterprise = await _enterpriseRepository.GetAsync(id);

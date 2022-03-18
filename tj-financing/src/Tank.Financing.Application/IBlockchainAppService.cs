@@ -228,7 +228,7 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
         Logger.LogInformation($"[Forward]{methodName}: {txId}");
         if (result.Status != "MINED")
         {
-            throw new TransactionFailedException($"Transaction execution failed: {result.Error}");
+            throw new TransactionFailedException($"转发的 {methodName} 交易执行失败: {result.Error}");
         }
 
         return result.TransactionId;
