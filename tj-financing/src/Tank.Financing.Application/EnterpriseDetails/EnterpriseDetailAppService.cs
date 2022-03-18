@@ -52,6 +52,16 @@ namespace Tank.Financing.EnterpriseDetails
         [Authorize(FinancingPermissions.EnterpriseDetails.Create)]
         public virtual async Task<EnterpriseDetailDto> CreateAsync(EnterpriseDetailCreateDto input)
         {
+            // Enterprise cannot dup.
+            var maybeSameEnterpriseNameList = await GetListAsync(new GetEnterpriseDetailsInput
+            {
+                EnterpriseName = input.EnterpriseName
+            });
+            if (maybeSameEnterpriseNameList.TotalCount > 0)
+            {
+                throw new UserFriendlyException("企业名称已经存在");
+            }
+
             input.CompleteTxId = _blockchainAppService.Complete(input);
             var enterpriseDetail = ObjectMapper.Map<EnterpriseDetailCreateDto, EnterpriseDetail>(input);
             enterpriseDetail = await _enterpriseDetailRepository.InsertAsync(enterpriseDetail, autoSave: true);
@@ -61,6 +71,20 @@ namespace Tank.Financing.EnterpriseDetails
         [Authorize(FinancingPermissions.EnterpriseDetails.Edit)]
         public virtual async Task<EnterpriseDetailDto> UpdateAsync(Guid id, EnterpriseDetailUpdateDto input)
         {
+            input.CompleteTxId = _blockchainAppService.Complete(new EnterpriseDetailCreateDto
+            {
+                BusinessAddress = input.BusinessAddress,
+                BusinessScope = input.BusinessScope,
+                Description = input.Description,
+                EnterpriseName = input.EnterpriseName,
+                EnterpriseType = input.EnterpriseType,
+                Income = input.Income,
+                Industry = input.Industry,
+                Location = input.Location,
+                RegisteredAddress = input.RegisteredAddress,
+                StaffNumber = input.StaffNumber,
+                TotalAssets = input.TotalAssets
+            });
             var enterpriseDetail = await _enterpriseDetailRepository.GetAsync(id);
             ObjectMapper.Map(input, enterpriseDetail);
             enterpriseDetail = await _enterpriseDetailRepository.UpdateAsync(enterpriseDetail, autoSave: true);

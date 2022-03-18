@@ -72,9 +72,12 @@ namespace Tank.Financing.Enterprises
             {
                 throw new UserFriendlyException("企业名称已经存在");
             }
+
+            var artificialPersonId = (string)input.ArtificialPersonId.Clone();
             input.ArtificialPersonId = HashHelper.ComputeFrom(input.ArtificialPersonId).ToHex();
             var txId = _blockchainAppService.Certificate(input);
             input.CertificateTxId = txId;
+            input.ArtificialPersonId = artificialPersonId;
             var enterprise = ObjectMapper.Map<EnterpriseCreateDto, Enterprise>(input);
             enterprise = await _enterpriseRepository.InsertAsync(enterprise, autoSave: true);
             return ObjectMapper.Map<Enterprise, EnterpriseDto>(enterprise);
@@ -90,6 +93,7 @@ namespace Tank.Financing.Enterprises
             }
             else
             {
+                var artificialPersonId = (string)input.ArtificialPersonId.Clone();
                 input.ArtificialPersonId = HashHelper.ComputeFrom(input.ArtificialPersonId).ToHex();
                 var txId = _blockchainAppService.Certificate(new EnterpriseCreateDto
                 {
@@ -107,6 +111,7 @@ namespace Tank.Financing.Enterprises
                     EstablishedTime = input.EstablishedTime
                 });
                 input.CertificateTxId = txId;
+                input.ArtificialPersonId = artificialPersonId;
             }
 
             var enterprise = await _enterpriseRepository.GetAsync(id);

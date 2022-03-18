@@ -45,13 +45,14 @@ namespace Tank.Contracts.Financing
             var enterpriseInfo = State.EnterpriseInfoMap[Context.Sender];
             if (enterpriseInfo?.BasicInfo == null)
             {
-                throw new AssertionException("Enterprise information not found.");
+                throw new AssertionException($"Enterprise information of {input.EnterpriseName} not found.");
             }
 
             Assert(enterpriseInfo.CertificateStatus == CertificateStatus.Confirmed,
                 "Enterprise certificate not confirmed.");
 
             var productHash = CalculateProductHash(input.Organization, input.ProductName);
+            Assert(State.FinancingProductMap[productHash] != null, $"Product {input.ProductName} not found.");
             State.ApplyRecordMap[Context.Sender][productHash] = new ApplyRecord
             {
                 EnterpriseName = input.EnterpriseName,
