@@ -14,9 +14,6 @@ public class FinancingPermissionDefinitionProvider : PermissionDefinitionProvide
         myGroup.AddPermission(FinancingPermissions.Dashboard.Host, L("Permission:Dashboard"), MultiTenancySides.Host);
         myGroup.AddPermission(FinancingPermissions.Dashboard.Tenant, L("Permission:Dashboard"), MultiTenancySides.Tenant);
 
-        //Define your own permissions here. Example:
-        //myGroup.AddPermission(FinancingPermissions.MyPermission1, L("Permission:MyPermission1"));
-
         var enterprisePermission = myGroup.AddPermission(FinancingPermissions.Enterprises.Default, L("Permission:Enterprises"));
         enterprisePermission.AddChild(FinancingPermissions.Enterprises.Create, L("Permission:Create"));
         enterprisePermission.AddChild(FinancingPermissions.Enterprises.Edit, L("Permission:Edit"));
