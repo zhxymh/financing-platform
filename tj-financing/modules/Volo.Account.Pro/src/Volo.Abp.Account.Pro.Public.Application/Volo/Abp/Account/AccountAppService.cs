@@ -89,7 +89,7 @@ public class AccountAppService : ApplicationService, IAccountAppService
 
         if (!user.EmailConfirmed)
         {
-            await SendEmailConfirmationTokenAsync(user, input.AppName, input.ReturnUrl, input.ReturnUrlHash);
+            //await SendEmailConfirmationTokenAsync(user, input.AppName, input.ReturnUrl, input.ReturnUrlHash);
         }
 
         return ObjectMapper.Map<IdentityUser, IdentityUserDto>(user);
