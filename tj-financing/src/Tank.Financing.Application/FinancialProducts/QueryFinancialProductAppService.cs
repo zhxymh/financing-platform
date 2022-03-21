@@ -20,11 +20,13 @@ public class QueryFinancialProductAppService : ApplicationService, IQueryFinanci
         var totalCount = await _financialProductRepository.GetCountAsync(input.FilterText, input.ProductName,
             input.Organization, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.AppliedNumberMin,
             input.AppliedNumberMax, input.APR, input.Rating, input.CreditCeilingMin, input.CreditCeilingMax,
-            input.AddFinancingProductTxId);
+            input.AddFinancingProductTxId, input.url_logo1, input.url_logo2, input.url_logo3, input.url_logo4,
+            input.url_logo5, input.features);
         var items = await _financialProductRepository.GetListAsync(input.FilterText, input.ProductName,
             input.Organization, input.PeriodMin, input.PeriodMax, input.GuaranteeMethod, input.AppliedNumberMin,
             input.AppliedNumberMax, input.APR, input.Rating, input.CreditCeilingMin, input.CreditCeilingMax,
-            input.AddFinancingProductTxId, input.Sorting, input.MaxResultCount, input.SkipCount);
+            input.AddFinancingProductTxId, input.url_logo1, input.url_logo2, input.url_logo3, input.url_logo4,
+            input.url_logo5, input.features, input.Sorting, input.MaxResultCount, input.SkipCount);
 
         return new PagedResultDto<FinancialProductDto>
         {

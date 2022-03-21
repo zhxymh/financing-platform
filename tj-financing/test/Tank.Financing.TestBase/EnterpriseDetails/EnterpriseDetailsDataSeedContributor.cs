@@ -19,36 +19,38 @@ namespace Tank.Financing.EnterpriseDetails
         {
             await _enterpriseDetailRepository.InsertAsync(new EnterpriseDetail
             (
-                id: Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5"),
-                enterpriseName: "a7055909f2a24964b9f11208a8919702b3260e800f24446298e1739",
-                totalAssets: "8b2959f90a174a73b5672e",
-                income: "eeb66bad0b8747f59f034734",
-                enterpriseType: "154f3538bbfd4652b30658a8329f7db74340729f4dab4d1eb39980f5c7b",
-                staffNumber: 1213250423,
-                industry: "48da34ac520844e5b9250677962cb081184da77f12ea42cd8989c4f3f4f46904a77c9de551cd4410912973",
-                location: "a2f74d1ac2db429c8cc309d834",
-                registeredAddress: "98857246e",
-                businessAddress: "dc74f0578afe47df8a6e78a57",
-                businessScope: "ce194e5e89fe423abdd5f7d48b3a74ec497d9014caf84a9e",
-                description: "a9f5f371cfef4d2cb2381dbfacf28ea",
-                completeTxId: "e5fa190f8bb54447af72f2dd4fa1"
+                id: Guid.Parse("089227f9-ded5-4ee3-8baf-f4973e762b10"),
+                enterpriseName: "bad183beadbc4baba8aaee5e9701da7ea237a2053",
+                totalAssets: "f32a56f9a1f04405b231c2691b6db3d2770245c68f4f46aa945df4968deb4c06bb4fd40fdeeb425",
+                income: "5e43bf0d973c494caec75d352fa822ceff34d93fde264ed593c22ccbdc0250cb173137206",
+                enterpriseType: "79b862490e2a",
+                staffNumber: 930155782,
+                industry: "f8e16a2f02654148b12a6d7ef01433fcf8a7ef682ed44f499cc04ad88952d4a86351d997627e42a691b7c8e62c",
+                location: "0bd8dfa8eb68448baef34b0624d8cfb81ec3acc397d4458296f58790f87da972eb85150666014ba0b6866f89689",
+                registeredAddress: "1216ddf63f6f404d9fec18f5a03c06556b14b28be373426289db673fc71cc5da4713721a79cb45c79",
+                businessAddress: "eac56166b738494c8841",
+                businessScope: "692a6d35b35e494a978f268805751b0d2e8f5dd37bd64dd19ea928a12060e8630bbadae3d28c427",
+                description: "901ad67f18a648fd8209",
+                completeTxId: "8ee78e5f470f49b086be2b2b841732d82c05f840354d453b95a28f7ef549117a953b013505474e81bed",
+                commitUserName: "5be6bb6f2b3b4ea78a5feee4c96ef2459359da7bec8e4b898146"
             ));
 
             await _enterpriseDetailRepository.InsertAsync(new EnterpriseDetail
             (
-                id: Guid.Parse("2ae7b95d-97bc-4035-9a51-59863a3f9ba6"),
-                enterpriseName: "dd77714f6dd345438ed6d7438e959f277f2",
-                totalAssets: "c6562a5100eb44a79b548cd0f11f931ee1de63d9bf3a40e0a718e6711ef2a34b60eb5b7dafee4339baf",
-                income: "484e5aac07a74e9f8416b49818b5fae3b15742869eb345ebaf76824a8673ccd14d9dda78e8524232b6",
-                enterpriseType: "7cf229551",
-                staffNumber: 1279504265,
-                industry: "f3467be0d99b466890c2fd256d98f9f990cf25a9afc04230a22addbf9c1b2b947237e60331004b8d95",
-                location: "19b8fefa594e4150914e18b564d0f9a76ee8bf165e834fd1a129d2733de2a69e0f56f72f8",
-                registeredAddress: "22eb4e1b918649fcbb5e79f250b627165308d944bb2d4967bb1f1ba49d4122a2290e2777694249db9",
-                businessAddress: "e4de7b65513e494dbf16680166948",
-                businessScope: "f9829aca3f9047389ace85fce10c9109ef24058f4a26429ca19b03e97c899eba4f1ec51920e74c1fa7d3670587ef",
-                description: "955b5edf1ddb4f749dd6a78ce65db5721a17e288ba8f49338917f8a3be40f6ac4e2d63837eea497c8dfb73504",
-                completeTxId: "ea5f8c896b0d4973854d58044f100c"
+                id: Guid.Parse("668c6902-6dc3-4ce1-afeb-654e5608f972"),
+                enterpriseName: "eca86aea2a6b4756a0a073fe2e5d9f2bda6f86547a494ff189c5564086eab7f55aaff986e6ae46069039c1401b139ced57",
+                totalAssets: "7fe304daf9da40f68dcc376a7d16d8f975dc",
+                income: "41e164fa0b1b49",
+                enterpriseType: "e38ad7e4d3f542c88db9704db49530758bc6b2345e044c86a9149345d2c48c4423398ca1fb15480",
+                staffNumber: 2045824425,
+                industry: "78e753b74c78459eab6be79540c9",
+                location: "1c594f5155a34cc19181156fb85201fbc5439f227f184f878ba731a42bdef7db228decc295934002",
+                registeredAddress: "48620833574f45a1a7eb3e68ee33598e515a83c93b2e43509cc52a1fe96c4873816f5d4206f04aefa54ac5",
+                businessAddress: "a998af",
+                businessScope: "8bd16a187528470f9d571b34c83589ad63a77a0bbb5f4183b5e52cead5a190fb880e01e575a44546927384777e235f",
+                description: "a88b50bc4e2949178dc5f8270e249949a86",
+                completeTxId: "43a02c18cb124ebf89871cd633494bc02e2f5d189a47482299eb45dfe9530fc39930375f6edd485",
+                commitUserName: "d24d775dac704e2bbec89312eeb9cb6798dde8bbf34a4f15b1939b454d4a6dc413223c7d625241beb61d59e4fedd24ffff"
             ));
         }
     }

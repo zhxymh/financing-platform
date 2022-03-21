@@ -83,6 +83,9 @@
             <abp-column size="_3">
                 <abp-input asp-for="CompleteTxIdFilter" label="@L["CompleteTxId"].Value" />
             </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="CommitUserNameFilter" label="@L["CommitUserName"].Value" />
+            </abp-column>
         </abp-row>
 
         <abp-table striped-rows="true" id="EnterpriseDetailsTable">
@@ -101,6 +104,7 @@
 					<th>@L["BusinessScope"]</th>
 					<th>@L["Description"]</th>
 					<th>@L["CompleteTxId"]</th>
+					<th>@L["CommitUserName"]</th>
 
 				</tr>
             </thead>

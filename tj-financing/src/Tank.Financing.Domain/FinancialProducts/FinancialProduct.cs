@@ -30,19 +30,38 @@ namespace Tank.Financing.FinancialProducts
 
         public virtual long CreditCeiling { get; set; }
 
-        [CanBeNull]
+        [NotNull]
         public virtual string AddFinancingProductTxId { get; set; }
+
+        [CanBeNull]
+        public virtual string url_logo1 { get; set; }
+
+        [CanBeNull]
+        public virtual string url_logo2 { get; set; }
+
+        [CanBeNull]
+        public virtual string url_logo3 { get; set; }
+
+        [CanBeNull]
+        public virtual string url_logo4 { get; set; }
+
+        [CanBeNull]
+        public virtual string url_logo5 { get; set; }
+
+        [CanBeNull]
+        public virtual string features { get; set; }
 
         public FinancialProduct()
         {
 
         }
 
-        public FinancialProduct(Guid id, string productName, string organization, GuaranteeMethod guaranteeMethod, int appliedNumber, string aPR, string rating, long creditCeiling, string addFinancingProductTxId, int? period = null)
+        public FinancialProduct(Guid id, string productName, string organization, GuaranteeMethod guaranteeMethod, int appliedNumber, string aPR, string rating, long creditCeiling, string addFinancingProductTxId, string url_logo1, string url_logo2, string url_logo3, string url_logo4, string url_logo5, string features, int? period = null)
         {
             Id = id;
             Check.NotNull(productName, nameof(productName));
             Check.NotNull(organization, nameof(organization));
+            Check.NotNull(addFinancingProductTxId, nameof(addFinancingProductTxId));
             ProductName = productName;
             Organization = organization;
             GuaranteeMethod = guaranteeMethod;
@@ -51,6 +70,12 @@ namespace Tank.Financing.FinancialProducts
             Rating = rating;
             CreditCeiling = creditCeiling;
             AddFinancingProductTxId = addFinancingProductTxId;
+            url_logo1 = url_logo1;
+            url_logo2 = url_logo2;
+            url_logo3 = url_logo3;
+            url_logo4 = url_logo4;
+            url_logo5 = url_logo5;
+            features = features;
             Period = period;
         }
     }

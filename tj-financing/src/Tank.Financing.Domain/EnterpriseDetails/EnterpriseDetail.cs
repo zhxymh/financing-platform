@@ -41,15 +41,18 @@ namespace Tank.Financing.EnterpriseDetails
         [NotNull]
         public virtual string Description { get; set; }
 
-        [CanBeNull]
+        [NotNull]
         public virtual string CompleteTxId { get; set; }
+
+        [CanBeNull]
+        public virtual string CommitUserName { get; set; }
 
         public EnterpriseDetail()
         {
 
         }
 
-        public EnterpriseDetail(Guid id, string enterpriseName, string totalAssets, string income, string enterpriseType, int staffNumber, string industry, string location, string registeredAddress, string businessAddress, string businessScope, string description, string completeTxId)
+        public EnterpriseDetail(Guid id, string enterpriseName, string totalAssets, string income, string enterpriseType, int staffNumber, string industry, string location, string registeredAddress, string businessAddress, string businessScope, string description, string completeTxId, string commitUserName)
         {
             Id = id;
             Check.NotNull(enterpriseName, nameof(enterpriseName));
@@ -62,6 +65,7 @@ namespace Tank.Financing.EnterpriseDetails
             Check.NotNull(businessAddress, nameof(businessAddress));
             Check.NotNull(businessScope, nameof(businessScope));
             Check.NotNull(description, nameof(description));
+            Check.NotNull(completeTxId, nameof(completeTxId));
             EnterpriseName = enterpriseName;
             TotalAssets = totalAssets;
             Income = income;
@@ -74,6 +78,7 @@ namespace Tank.Financing.EnterpriseDetails
             BusinessScope = businessScope;
             Description = description;
             CompleteTxId = completeTxId;
+            CommitUserName = commitUserName;
         }
     }
 }

@@ -34,12 +34,13 @@ namespace Tank.Financing.EnterpriseDetails
             string businessScope = null,
             string description = null,
             string completeTxId = null,
+            string commitUserName = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, totalAssets, income, enterpriseType, staffNumberMin, staffNumberMax, industry, location, registeredAddress, businessAddress, businessScope, description, completeTxId);
+            var query = ApplyFilter((await GetQueryableAsync()), filterText, enterpriseName, totalAssets, income, enterpriseType, staffNumberMin, staffNumberMax, industry, location, registeredAddress, businessAddress, businessScope, description, completeTxId, commitUserName);
             query = query.OrderBy(string.IsNullOrWhiteSpace(sorting) ? EnterpriseDetailConsts.GetDefaultSorting(false) : sorting);
             return await query.PageBy(skipCount, maxResultCount).ToListAsync(cancellationToken);
         }
@@ -59,9 +60,10 @@ namespace Tank.Financing.EnterpriseDetails
             string businessScope = null,
             string description = null,
             string completeTxId = null,
+            string commitUserName = null,
             CancellationToken cancellationToken = default)
         {
-            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, totalAssets, income, enterpriseType, staffNumberMin, staffNumberMax, industry, location, registeredAddress, businessAddress, businessScope, description, completeTxId);
+            var query = ApplyFilter((await GetDbSetAsync()), filterText, enterpriseName, totalAssets, income, enterpriseType, staffNumberMin, staffNumberMax, industry, location, registeredAddress, businessAddress, businessScope, description, completeTxId, commitUserName);
             return await query.LongCountAsync(GetCancellationToken(cancellationToken));
         }
 
@@ -80,10 +82,11 @@ namespace Tank.Financing.EnterpriseDetails
             string businessAddress = null,
             string businessScope = null,
             string description = null,
-            string completeTxId = null)
+            string completeTxId = null,
+            string commitUserName = null)
         {
             return query
-                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.TotalAssets.Contains(filterText) || e.Income.Contains(filterText) || e.EnterpriseType.Contains(filterText) || e.Industry.Contains(filterText) || e.Location.Contains(filterText) || e.RegisteredAddress.Contains(filterText) || e.BusinessAddress.Contains(filterText) || e.BusinessScope.Contains(filterText) || e.Description.Contains(filterText) || e.CompleteTxId.Contains(filterText))
+                    .WhereIf(!string.IsNullOrWhiteSpace(filterText), e => e.EnterpriseName.Contains(filterText) || e.TotalAssets.Contains(filterText) || e.Income.Contains(filterText) || e.EnterpriseType.Contains(filterText) || e.Industry.Contains(filterText) || e.Location.Contains(filterText) || e.RegisteredAddress.Contains(filterText) || e.BusinessAddress.Contains(filterText) || e.BusinessScope.Contains(filterText) || e.Description.Contains(filterText) || e.CompleteTxId.Contains(filterText) || e.CommitUserName.Contains(filterText))
                     .WhereIf(!string.IsNullOrWhiteSpace(enterpriseName), e => e.EnterpriseName.Contains(enterpriseName))
                     .WhereIf(!string.IsNullOrWhiteSpace(totalAssets), e => e.TotalAssets.Contains(totalAssets))
                     .WhereIf(!string.IsNullOrWhiteSpace(income), e => e.Income.Contains(income))
@@ -96,7 +99,8 @@ namespace Tank.Financing.EnterpriseDetails
                     .WhereIf(!string.IsNullOrWhiteSpace(businessAddress), e => e.BusinessAddress.Contains(businessAddress))
                     .WhereIf(!string.IsNullOrWhiteSpace(businessScope), e => e.BusinessScope.Contains(businessScope))
                     .WhereIf(!string.IsNullOrWhiteSpace(description), e => e.Description.Contains(description))
-                    .WhereIf(!string.IsNullOrWhiteSpace(completeTxId), e => e.CompleteTxId.Contains(completeTxId));
+                    .WhereIf(!string.IsNullOrWhiteSpace(completeTxId), e => e.CompleteTxId.Contains(completeTxId))
+                    .WhereIf(!string.IsNullOrWhiteSpace(commitUserName), e => e.CommitUserName.Contains(commitUserName));
         }
     }
 }

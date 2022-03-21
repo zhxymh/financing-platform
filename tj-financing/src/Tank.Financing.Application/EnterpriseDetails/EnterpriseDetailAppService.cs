@@ -28,8 +28,15 @@ namespace Tank.Financing.EnterpriseDetails
 
         public virtual async Task<PagedResultDto<EnterpriseDetailDto>> GetListAsync(GetEnterpriseDetailsInput input)
         {
-            var totalCount = await _enterpriseDetailRepository.GetCountAsync(input.FilterText, input.EnterpriseName, input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax, input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope, input.Description, input.CompleteTxId);
-            var items = await _enterpriseDetailRepository.GetListAsync(input.FilterText, input.EnterpriseName, input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax, input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope, input.Description, input.CompleteTxId, input.Sorting, input.MaxResultCount, input.SkipCount);
+            var totalCount = await _enterpriseDetailRepository.GetCountAsync(input.FilterText, input.EnterpriseName,
+                input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax,
+                input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope,
+                input.Description, input.CompleteTxId, input.CommitUserName);
+            var items = await _enterpriseDetailRepository.GetListAsync(input.FilterText, input.EnterpriseName,
+                input.TotalAssets, input.Income, input.EnterpriseType, input.StaffNumberMin, input.StaffNumberMax,
+                input.Industry, input.Location, input.RegisteredAddress, input.BusinessAddress, input.BusinessScope,
+                input.Description, input.CompleteTxId, input.CommitUserName, input.Sorting, input.MaxResultCount,
+                input.SkipCount);
 
             return new PagedResultDto<EnterpriseDetailDto>
             {
@@ -83,7 +90,8 @@ namespace Tank.Financing.EnterpriseDetails
                 Location = input.Location,
                 RegisteredAddress = input.RegisteredAddress,
                 StaffNumber = input.StaffNumber,
-                TotalAssets = input.TotalAssets
+                TotalAssets = input.TotalAssets,
+                CommitUserName = input.CommitUserName
             });
             var enterpriseDetail = await _enterpriseDetailRepository.GetAsync(id);
             ObjectMapper.Map(input, enterpriseDetail);

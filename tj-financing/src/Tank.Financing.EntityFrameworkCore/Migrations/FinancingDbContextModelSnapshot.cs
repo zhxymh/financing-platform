@@ -151,6 +151,10 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("BusinessScope");
 
+                    b.Property<string>("CommitUserName")
+                        .HasColumnType("longtext")
+                        .HasColumnName("CommitUserName");
+
                     b.Property<string>("CompleteTxId")
                         .IsRequired()
                         .HasColumnType("longtext")
@@ -449,6 +453,30 @@ namespace Tank.Financing.Migrations
                     b.Property<string>("Rating")
                         .HasColumnType("longtext")
                         .HasColumnName("Rating");
+
+                    b.Property<string>("features")
+                        .HasColumnType("longtext")
+                        .HasColumnName("features");
+
+                    b.Property<string>("url_logo1")
+                        .HasColumnType("longtext")
+                        .HasColumnName("url_logo1");
+
+                    b.Property<string>("url_logo2")
+                        .HasColumnType("longtext")
+                        .HasColumnName("url_logo2");
+
+                    b.Property<string>("url_logo3")
+                        .HasColumnType("longtext")
+                        .HasColumnName("url_logo3");
+
+                    b.Property<string>("url_logo4")
+                        .HasColumnType("longtext")
+                        .HasColumnName("url_logo4");
+
+                    b.Property<string>("url_logo5")
+                        .HasColumnType("longtext")
+                        .HasColumnName("url_logo5");
 
                     b.HasKey("Id");
 

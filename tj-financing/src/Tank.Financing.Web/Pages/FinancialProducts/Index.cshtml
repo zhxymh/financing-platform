@@ -80,6 +80,24 @@
             <abp-column size="_3">
                 <abp-input asp-for="AddFinancingProductTxIdFilter" label="@L["AddFinancingProductTxId"].Value" />
             </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="url_logo1Filter" label="@L["url_logo1"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="url_logo2Filter" label="@L["url_logo2"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="url_logo3Filter" label="@L["url_logo3"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="url_logo4Filter" label="@L["url_logo4"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="url_logo5Filter" label="@L["url_logo5"].Value" />
+            </abp-column>
+            <abp-column size="_3">
+                <abp-input asp-for="featuresFilter" label="@L["features"].Value" />
+            </abp-column>
         </abp-row>
 
         <abp-table striped-rows="true" id="FinancialProductsTable">
@@ -95,6 +113,12 @@
 					<th>@L["Rating"]</th>
 					<th>@L["CreditCeiling"]</th>
 					<th>@L["AddFinancingProductTxId"]</th>
+					<th>@L["url_logo1"]</th>
+					<th>@L["url_logo2"]</th>
+					<th>@L["url_logo3"]</th>
+					<th>@L["url_logo4"]</th>
+					<th>@L["url_logo5"]</th>
+					<th>@L["features"]</th>
 
 				</tr>
             </thead>

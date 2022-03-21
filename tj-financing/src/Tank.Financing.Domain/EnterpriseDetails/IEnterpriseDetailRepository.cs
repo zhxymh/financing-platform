@@ -23,6 +23,7 @@ namespace Tank.Financing.EnterpriseDetails
             string businessScope = null,
             string description = null,
             string completeTxId = null,
+            string commitUserName = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -44,6 +45,7 @@ namespace Tank.Financing.EnterpriseDetails
             string businessScope = null,
             string description = null,
             string completeTxId = null,
+            string commitUserName = null,
             CancellationToken cancellationToken = default);
     }
 }

@@ -27,19 +27,19 @@ namespace Tank.Financing.EnterpriseDetails
             // Assert
             result.TotalCount.ShouldBe(2);
             result.Items.Count.ShouldBe(2);
-            result.Items.Any(x => x.Id == Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5")).ShouldBe(true);
-            result.Items.Any(x => x.Id == Guid.Parse("2ae7b95d-97bc-4035-9a51-59863a3f9ba6")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("089227f9-ded5-4ee3-8baf-f4973e762b10")).ShouldBe(true);
+            result.Items.Any(x => x.Id == Guid.Parse("668c6902-6dc3-4ce1-afeb-654e5608f972")).ShouldBe(true);
         }
 
         [Fact]
         public async Task GetAsync()
         {
             // Act
-            var result = await _enterpriseDetailsAppService.GetAsync(Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5"));
+            var result = await _enterpriseDetailsAppService.GetAsync(Guid.Parse("089227f9-ded5-4ee3-8baf-f4973e762b10"));
 
             // Assert
             result.ShouldNotBeNull();
-            result.Id.ShouldBe(Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5"));
+            result.Id.ShouldBe(Guid.Parse("089227f9-ded5-4ee3-8baf-f4973e762b10"));
         }
 
         [Fact]
@@ -48,18 +48,19 @@ namespace Tank.Financing.EnterpriseDetails
             // Arrange
             var input = new EnterpriseDetailCreateDto
             {
-                EnterpriseName = "ef316dec5ac34a729173b7d62489e",
-                TotalAssets = "8c8683d398584dc2af3875a8",
-                Income = "2e5adb3507354eeba71b609873b38e721e8b1bce767d40328b97e5",
-                EnterpriseType = "214143416f90450eabcc6fb11318b43b2",
-                StaffNumber = 1307243550,
-                Industry = "dccb9ef5cf6b4c978dd53d3be1353be31eb43390e98b4e349a0f8f5a89e4db6302a0",
-                Location = "8734010164634",
-                RegisteredAddress = "17d78a1cf304463ab42fd466cbb9",
-                BusinessAddress = "aa85a0e3f79e49",
-                BusinessScope = "09b53ff1e2164328b66b592b5bb8da5aece8eaa28886415782ea45",
-                Description = "6673072b801f401382af9e8945d42efb60d02aa9",
-                CompleteTxId = "dfd452e5293f435386f9242577"
+                EnterpriseName = "838f8398db6e485e98f77445137e28cb1c55ed04c3e042d9bde412736c9a3660",
+                TotalAssets = "c05a6ae454044661b461ec1669de93cd7754f1c",
+                Income = "cd1dcfe0de1b4364b25bdb362f90673cde99884cb3544370bf36806636d72e83bb6f6f5a35e44d92995e4d2",
+                EnterpriseType = "3b1ea0b584d14",
+                StaffNumber = 287093359,
+                Industry = "18849b81f44b4acb9805ed76700799f6452a9cf5c77d4bbabfa86391c9d340fd45875912b29045ad9da4c",
+                Location = "b22143fe562c",
+                RegisteredAddress = "807e043194124d788795b81b9240b0a5a8cf02ee385445ca813ff3f6eeae4990031be8c5ae424",
+                BusinessAddress = "b267c530bee04550b71b12ddb67431f81f36273b",
+                BusinessScope = "bdf2341a4cb44c",
+                Description = "7dccf94c9f024e14aff658ab4cc174b525417a25e9f34ffeb4c0106afd1a1b4f2d97d7cce",
+                CompleteTxId = "30994ffc397544e39caf35c8c5cb12914af4c7",
+                CommitUserName = "ed43ae271dd34ec7828afa0740a75f1c5f8e578dea8944cb955519f955f76f63dc8019c1f735406aa0a3d145"
             };
 
             // Act
@@ -69,18 +70,19 @@ namespace Tank.Financing.EnterpriseDetails
             var result = await _enterpriseDetailRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.EnterpriseName.ShouldBe("ef316dec5ac34a729173b7d62489e");
-            result.TotalAssets.ShouldBe("8c8683d398584dc2af3875a8");
-            result.Income.ShouldBe("2e5adb3507354eeba71b609873b38e721e8b1bce767d40328b97e5");
-            result.EnterpriseType.ShouldBe("214143416f90450eabcc6fb11318b43b2");
-            result.StaffNumber.ShouldBe(1307243550);
-            result.Industry.ShouldBe("dccb9ef5cf6b4c978dd53d3be1353be31eb43390e98b4e349a0f8f5a89e4db6302a0");
-            result.Location.ShouldBe("8734010164634");
-            result.RegisteredAddress.ShouldBe("17d78a1cf304463ab42fd466cbb9");
-            result.BusinessAddress.ShouldBe("aa85a0e3f79e49");
-            result.BusinessScope.ShouldBe("09b53ff1e2164328b66b592b5bb8da5aece8eaa28886415782ea45");
-            result.Description.ShouldBe("6673072b801f401382af9e8945d42efb60d02aa9");
-            result.CompleteTxId.ShouldBe("dfd452e5293f435386f9242577");
+            result.EnterpriseName.ShouldBe("838f8398db6e485e98f77445137e28cb1c55ed04c3e042d9bde412736c9a3660");
+            result.TotalAssets.ShouldBe("c05a6ae454044661b461ec1669de93cd7754f1c");
+            result.Income.ShouldBe("cd1dcfe0de1b4364b25bdb362f90673cde99884cb3544370bf36806636d72e83bb6f6f5a35e44d92995e4d2");
+            result.EnterpriseType.ShouldBe("3b1ea0b584d14");
+            result.StaffNumber.ShouldBe(287093359);
+            result.Industry.ShouldBe("18849b81f44b4acb9805ed76700799f6452a9cf5c77d4bbabfa86391c9d340fd45875912b29045ad9da4c");
+            result.Location.ShouldBe("b22143fe562c");
+            result.RegisteredAddress.ShouldBe("807e043194124d788795b81b9240b0a5a8cf02ee385445ca813ff3f6eeae4990031be8c5ae424");
+            result.BusinessAddress.ShouldBe("b267c530bee04550b71b12ddb67431f81f36273b");
+            result.BusinessScope.ShouldBe("bdf2341a4cb44c");
+            result.Description.ShouldBe("7dccf94c9f024e14aff658ab4cc174b525417a25e9f34ffeb4c0106afd1a1b4f2d97d7cce");
+            result.CompleteTxId.ShouldBe("30994ffc397544e39caf35c8c5cb12914af4c7");
+            result.CommitUserName.ShouldBe("ed43ae271dd34ec7828afa0740a75f1c5f8e578dea8944cb955519f955f76f63dc8019c1f735406aa0a3d145");
         }
 
         [Fact]
@@ -89,49 +91,51 @@ namespace Tank.Financing.EnterpriseDetails
             // Arrange
             var input = new EnterpriseDetailUpdateDto()
             {
-                EnterpriseName = "21bd39245667410b96",
-                TotalAssets = "b5af37126f8a405cb7c8b56de724dbe61c18ffc0fa4a4412977046d9e76",
-                Income = "43dbcca5efb046c8a9421344a1ab457ef85c55ca7ad1491d940372ec0c65472bdb7",
-                EnterpriseType = "1741190684b348c4b53d41938e3bd8be5f3bb59f00a14668ba0d554edc73869b3bf7c3fa5e23407897b424cc2f239a88",
-                StaffNumber = 226818290,
-                Industry = "77af099439024645bb45b01b832f",
-                Location = "3bd93e28038445e197",
-                RegisteredAddress = "cb08ee00dbd349e4923a4d10794b09573b667a00f55d4fa4b4",
-                BusinessAddress = "e33424c5c0624c08809543",
-                BusinessScope = "8a401f08187c44718d38179719107179f86a5cb1922a4531b6fddd98524ac",
-                Description = "9413abdc25",
-                CompleteTxId = "36df0a97473c48428247d63"
+                EnterpriseName = "e54627c919cf41b983e29f2fcd4ba5884919fa0070564c2994c354c02c2df131f",
+                TotalAssets = "9510eb72e28141fc8b9408c4affc4b82fd841b39aad641599db56b547",
+                Income = "337d832db53e4a28b64de81ab503e5637f811966dec24ded9fd493e615d639f4692a50b61af0483f950c",
+                EnterpriseType = "3e10d1f1c9ba4a7094b0b932364e081e850c6d34833c4dd594ba7bbf47af645e4ef7",
+                StaffNumber = 1610138079,
+                Industry = "69afa57d422f4bd9b803d4",
+                Location = "03439b70365e44328651f3e45cfe8defed6e192a8d124180b49bd8",
+                RegisteredAddress = "c42f0f6bd432400687cdde23709e0293424be8d50caa4",
+                BusinessAddress = "e27a9b4e02c748098998d1001f7d8d71b1d04963c8ad4ac2a65506ae7e7",
+                BusinessScope = "9914c9d879704d3bb33abe4c8a64be19937ae687b4b74daf81b37a5199fbf7014e6795b4ce35488dbb24fcde3947696",
+                Description = "b534f837bd6142d58869b0cd44dc63ab584824de9bb648cba2dee4b49c6a30a0f7434aa44a114c48",
+                CompleteTxId = "0ded53c284b84a1e8d3fef70ae870e701bb0666d065a43d3862127d551e0b6f3",
+                CommitUserName = "376952bf59f84ab5bd2556ba7ad12b758aea34111a2b4182b1e61620001e404515e5a67c"
             };
 
             // Act
-            var serviceResult = await _enterpriseDetailsAppService.UpdateAsync(Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5"), input);
+            var serviceResult = await _enterpriseDetailsAppService.UpdateAsync(Guid.Parse("089227f9-ded5-4ee3-8baf-f4973e762b10"), input);
 
             // Assert
             var result = await _enterpriseDetailRepository.FindAsync(c => c.Id == serviceResult.Id);
 
             result.ShouldNotBe(null);
-            result.EnterpriseName.ShouldBe("21bd39245667410b96");
-            result.TotalAssets.ShouldBe("b5af37126f8a405cb7c8b56de724dbe61c18ffc0fa4a4412977046d9e76");
-            result.Income.ShouldBe("43dbcca5efb046c8a9421344a1ab457ef85c55ca7ad1491d940372ec0c65472bdb7");
-            result.EnterpriseType.ShouldBe("1741190684b348c4b53d41938e3bd8be5f3bb59f00a14668ba0d554edc73869b3bf7c3fa5e23407897b424cc2f239a88");
-            result.StaffNumber.ShouldBe(226818290);
-            result.Industry.ShouldBe("77af099439024645bb45b01b832f");
-            result.Location.ShouldBe("3bd93e28038445e197");
-            result.RegisteredAddress.ShouldBe("cb08ee00dbd349e4923a4d10794b09573b667a00f55d4fa4b4");
-            result.BusinessAddress.ShouldBe("e33424c5c0624c08809543");
-            result.BusinessScope.ShouldBe("8a401f08187c44718d38179719107179f86a5cb1922a4531b6fddd98524ac");
-            result.Description.ShouldBe("9413abdc25");
-            result.CompleteTxId.ShouldBe("36df0a97473c48428247d63");
+            result.EnterpriseName.ShouldBe("e54627c919cf41b983e29f2fcd4ba5884919fa0070564c2994c354c02c2df131f");
+            result.TotalAssets.ShouldBe("9510eb72e28141fc8b9408c4affc4b82fd841b39aad641599db56b547");
+            result.Income.ShouldBe("337d832db53e4a28b64de81ab503e5637f811966dec24ded9fd493e615d639f4692a50b61af0483f950c");
+            result.EnterpriseType.ShouldBe("3e10d1f1c9ba4a7094b0b932364e081e850c6d34833c4dd594ba7bbf47af645e4ef7");
+            result.StaffNumber.ShouldBe(1610138079);
+            result.Industry.ShouldBe("69afa57d422f4bd9b803d4");
+            result.Location.ShouldBe("03439b70365e44328651f3e45cfe8defed6e192a8d124180b49bd8");
+            result.RegisteredAddress.ShouldBe("c42f0f6bd432400687cdde23709e0293424be8d50caa4");
+            result.BusinessAddress.ShouldBe("e27a9b4e02c748098998d1001f7d8d71b1d04963c8ad4ac2a65506ae7e7");
+            result.BusinessScope.ShouldBe("9914c9d879704d3bb33abe4c8a64be19937ae687b4b74daf81b37a5199fbf7014e6795b4ce35488dbb24fcde3947696");
+            result.Description.ShouldBe("b534f837bd6142d58869b0cd44dc63ab584824de9bb648cba2dee4b49c6a30a0f7434aa44a114c48");
+            result.CompleteTxId.ShouldBe("0ded53c284b84a1e8d3fef70ae870e701bb0666d065a43d3862127d551e0b6f3");
+            result.CommitUserName.ShouldBe("376952bf59f84ab5bd2556ba7ad12b758aea34111a2b4182b1e61620001e404515e5a67c");
         }
 
         [Fact]
         public async Task DeleteAsync()
         {
             // Act
-            await _enterpriseDetailsAppService.DeleteAsync(Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5"));
+            await _enterpriseDetailsAppService.DeleteAsync(Guid.Parse("089227f9-ded5-4ee3-8baf-f4973e762b10"));
 
             // Assert
-            var result = await _enterpriseDetailRepository.FindAsync(c => c.Id == Guid.Parse("8de2be16-5016-449b-bab0-34d82b0ad7d5"));
+            var result = await _enterpriseDetailRepository.FindAsync(c => c.Id == Guid.Parse("089227f9-ded5-4ee3-8baf-f4973e762b10"));
 
             result.ShouldBeNull();
         }

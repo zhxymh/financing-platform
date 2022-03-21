@@ -30,7 +30,13 @@ $(function () {
 			rating: $("#RatingFilter").val(),
 			creditCeilingMin: $("#CreditCeilingFilterMin").val(),
 			creditCeilingMax: $("#CreditCeilingFilterMax").val(),
-			addFinancingProductTxId: $("#AddFinancingProductTxIdFilter").val()
+			addFinancingProductTxId: $("#AddFinancingProductTxIdFilter").val(),
+			url_logo1: $("#url_logo1Filter").val(),
+			url_logo2: $("#url_logo2Filter").val(),
+			url_logo3: $("#url_logo3Filter").val(),
+			url_logo4: $("#url_logo4Filter").val(),
+			url_logo5: $("#url_logo5Filter").val(),
+			features: $("#featuresFilter").val()
         };
     };
 
@@ -101,7 +107,13 @@ $(function () {
 			{ data: "apr" },
 			{ data: "rating" },
 			{ data: "creditCeiling" },
-			{ data: "addFinancingProductTxId" }
+			{ data: "addFinancingProductTxId" },
+			{ data: "url_logo1" },
+			{ data: "url_logo2" },
+			{ data: "url_logo3" },
+			{ data: "url_logo4" },
+			{ data: "url_logo5" },
+			{ data: "features" }
         ]
     }));
 

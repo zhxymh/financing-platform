@@ -31,7 +31,8 @@ $(function () {
 			businessAddress: $("#BusinessAddressFilter").val(),
 			businessScope: $("#BusinessScopeFilter").val(),
 			description: $("#DescriptionFilter").val(),
-			completeTxId: $("#CompleteTxIdFilter").val()
+			completeTxId: $("#CompleteTxIdFilter").val(),
+			commitUserName: $("#CommitUserNameFilter").val()
         };
     };
 
@@ -87,7 +88,8 @@ $(function () {
 			{ data: "businessAddress" },
 			{ data: "businessScope" },
 			{ data: "description" },
-			{ data: "completeTxId" }
+			{ data: "completeTxId" },
+			{ data: "commitUserName" }
         ]
     }));
 

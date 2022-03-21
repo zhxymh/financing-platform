@@ -15,5 +15,11 @@ namespace Tank.Financing.FinancialProducts
         public string Rating { get; set; }
         public long CreditCeiling { get; set; }
         public string AddFinancingProductTxId { get; set; }
+        public string url_logo1 { get; set; }
+        public string url_logo2 { get; set; }
+        public string url_logo3 { get; set; }
+        public string url_logo4 { get; set; }
+        public string url_logo5 { get; set; }
+        public string features { get; set; }
     }
 }

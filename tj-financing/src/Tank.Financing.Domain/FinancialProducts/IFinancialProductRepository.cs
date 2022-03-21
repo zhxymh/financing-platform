@@ -23,6 +23,12 @@ namespace Tank.Financing.FinancialProducts
             long? creditCeilingMin = null,
             long? creditCeilingMax = null,
             string addFinancingProductTxId = null,
+            string url_logo1 = null,
+            string url_logo2 = null,
+            string url_logo3 = null,
+            string url_logo4 = null,
+            string url_logo5 = null,
+            string features = null,
             string sorting = null,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
@@ -43,6 +49,12 @@ namespace Tank.Financing.FinancialProducts
             long? creditCeilingMin = null,
             long? creditCeilingMax = null,
             string addFinancingProductTxId = null,
+            string url_logo1 = null,
+            string url_logo2 = null,
+            string url_logo3 = null,
+            string url_logo4 = null,
+            string url_logo5 = null,
+            string features = null,
             CancellationToken cancellationToken = default);
     }
 }
