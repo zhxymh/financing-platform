@@ -237,6 +237,7 @@ public class FinancingDbContext :
     b.Property(x => x.Description).HasColumnName(nameof(EnterpriseDetail.Description)).IsRequired();
     b.Property(x => x.CompleteTxId).HasColumnName(nameof(EnterpriseDetail.CompleteTxId)).IsRequired();
     b.Property(x => x.CommitUserName).HasColumnName(nameof(EnterpriseDetail.CommitUserName));
+    b.Property(x => x.ExtraInfoHash).HasColumnName(nameof(EnterpriseDetail.ExtraInfoHash));
 });
 
         }

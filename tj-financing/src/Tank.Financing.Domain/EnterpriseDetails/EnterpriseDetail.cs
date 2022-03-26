@@ -46,6 +46,9 @@ namespace Tank.Financing.EnterpriseDetails
 
         [CanBeNull]
         public virtual string CommitUserName { get; set; }
+        
+        [CanBeNull]
+        public virtual string ExtraInfoHash { get; set; }
 
         public EnterpriseDetail()
         {
