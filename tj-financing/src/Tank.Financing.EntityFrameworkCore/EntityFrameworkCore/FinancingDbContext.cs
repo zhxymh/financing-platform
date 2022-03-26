@@ -221,24 +221,48 @@ public class FinancingDbContext :
         if (builder.IsHostDatabase())
         {
             builder.Entity<EnterpriseDetail>(b =>
-{
-    b.ToTable(FinancingConsts.DbTablePrefix + "EnterpriseDetails", FinancingConsts.DbSchema);
-    b.ConfigureByConvention();
-    b.Property(x => x.EnterpriseName).HasColumnName(nameof(EnterpriseDetail.EnterpriseName)).IsRequired();
-    b.Property(x => x.TotalAssets).HasColumnName(nameof(EnterpriseDetail.TotalAssets)).IsRequired();
-    b.Property(x => x.Income).HasColumnName(nameof(EnterpriseDetail.Income)).IsRequired();
-    b.Property(x => x.EnterpriseType).HasColumnName(nameof(EnterpriseDetail.EnterpriseType)).IsRequired();
-    b.Property(x => x.StaffNumber).HasColumnName(nameof(EnterpriseDetail.StaffNumber));
-    b.Property(x => x.Industry).HasColumnName(nameof(EnterpriseDetail.Industry)).IsRequired();
-    b.Property(x => x.Location).HasColumnName(nameof(EnterpriseDetail.Location)).IsRequired();
-    b.Property(x => x.RegisteredAddress).HasColumnName(nameof(EnterpriseDetail.RegisteredAddress)).IsRequired();
-    b.Property(x => x.BusinessAddress).HasColumnName(nameof(EnterpriseDetail.BusinessAddress)).IsRequired();
-    b.Property(x => x.BusinessScope).HasColumnName(nameof(EnterpriseDetail.BusinessScope)).IsRequired();
-    b.Property(x => x.Description).HasColumnName(nameof(EnterpriseDetail.Description)).IsRequired();
-    b.Property(x => x.CompleteTxId).HasColumnName(nameof(EnterpriseDetail.CompleteTxId)).IsRequired();
-    b.Property(x => x.CommitUserName).HasColumnName(nameof(EnterpriseDetail.CommitUserName));
-});
-
+            {
+                b.ToTable(FinancingConsts.DbTablePrefix + "EnterpriseDetails", FinancingConsts.DbSchema);
+                b.ConfigureByConvention();
+                b.Property(x => x.EnterpriseName).HasColumnName(nameof(EnterpriseDetail.EnterpriseName)).IsRequired();
+                b.Property(x => x.TotalAssets).HasColumnName(nameof(EnterpriseDetail.TotalAssets));//.IsRequired();
+                b.Property(x => x.Income).HasColumnName(nameof(EnterpriseDetail.Income));//.IsRequired();
+                //b.Property(x => x.EnterpriseType).HasColumnName(nameof(EnterpriseDetail.EnterpriseType));//.IsRequired();
+                //b.Property(x => x.StaffNumber).HasColumnName(nameof(EnterpriseDetail.StaffNumber));
+                b.Property(x => x.Industry).HasColumnName(nameof(EnterpriseDetail.Industry));//.IsRequired();
+                //b.Property(x => x.Location).HasColumnName(nameof(EnterpriseDetail.Location));//.IsRequired();
+                b.Property(x => x.RegisteredAddress).HasColumnName(nameof(EnterpriseDetail.RegisteredAddress));//.IsRequired();
+                b.Property(x => x.BusinessAddress).HasColumnName(nameof(EnterpriseDetail.BusinessAddress));//.IsRequired();
+                //b.Property(x => x.BusinessScope).HasColumnName(nameof(EnterpriseDetail.BusinessScope));//.IsRequired();
+                b.Property(x => x.Description).HasColumnName(nameof(EnterpriseDetail.Description));//.IsRequired();
+                b.Property(x => x.CompleteTxId).HasColumnName(nameof(EnterpriseDetail.CompleteTxId));//.IsRequired();
+                b.Property(x => x.CommitUserName).HasColumnName(nameof(EnterpriseDetail.CommitUserName));
+                
+                
+                b.Property(x => x.EnterpriseType).HasColumnName(nameof(EnterpriseDetail.EnterpriseType)).IsRequired();
+                b.Property(x => x.StaffNumber).HasColumnName(nameof(EnterpriseDetail.StaffNumber)).IsRequired();
+                b.Property(x => x.Location).HasColumnName(nameof(EnterpriseDetail.Location)).IsRequired();
+                b.Property(x => x.BusinessScope).HasColumnName(nameof(EnterpriseDetail.BusinessScope)).IsRequired();
+                b.Property(x => x.RegisteredAssets).HasColumnName(nameof(EnterpriseDetail.RegisteredAssets)).IsRequired();
+                b.Property(x => x.PaidAssets).HasColumnName(nameof(EnterpriseDetail.PaidAssets)).IsRequired();
+                b.Property(x => x.IncomePreYear).HasColumnName(nameof(EnterpriseDetail.IncomePreYear)).IsRequired();
+                b.Property(x => x.ProfitPreYear).HasColumnName(nameof(EnterpriseDetail.ProfitPreYear)).IsRequired();
+                b.Property(x => x.NetprofitPreYear).HasColumnName(nameof(EnterpriseDetail.NetprofitPreYear)).IsRequired();
+                b.Property(x => x.TaxPreYear).HasColumnName(nameof(EnterpriseDetail.TaxPreYear)).IsRequired();
+                b.Property(x => x.LiabilityPreYear).HasColumnName(nameof(EnterpriseDetail.LiabilityPreYear)).IsRequired();
+                b.Property(x => x.HasExGuarant).HasColumnName(nameof(EnterpriseDetail.HasExGuarant)).IsRequired();
+                b.Property(x => x.VatShouldpayPreYear).HasColumnName(nameof(EnterpriseDetail.VatShouldpayPreYear)).IsRequired();
+                b.Property(x => x.VatPaidPerYear).HasColumnName(nameof(EnterpriseDetail.VatPaidPerYear)).IsRequired();
+                b.Property(x => x.IncomeTaxPreYear).HasColumnName(nameof(EnterpriseDetail.IncomeTaxPreYear)).IsRequired();
+                b.Property(x => x.IncomePaidTaxPreYear).HasColumnName(nameof(EnterpriseDetail.IncomePaidTaxPreYear)).IsRequired();
+                b.Property(x => x.SocailsecurityNumber).HasColumnName(nameof(EnterpriseDetail.SocailsecurityNumber)).IsRequired();
+                b.Property(x => x.HousefundPaidPreYear).HasColumnName(nameof(EnterpriseDetail.HousefundPaidPreYear)).IsRequired();
+                b.Property(x => x.EnvCreditLevel).HasColumnName(nameof(EnterpriseDetail.EnvCreditLevel)).IsRequired();
+                b.Property(x => x.EnvCreditScore).HasColumnName(nameof(EnterpriseDetail.EnvCreditScore)).IsRequired();
+                b.Property(x => x.PatentNumber).HasColumnName(nameof(EnterpriseDetail.PatentNumber)).IsRequired();
+                b.Property(x => x.SoftbindNumber).HasColumnName(nameof(EnterpriseDetail.SoftbindNumber)).IsRequired();
+            });
         }
+        
     }
 }

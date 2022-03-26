@@ -69,8 +69,10 @@ namespace Tank.Financing.EnterpriseDetails
                 throw new UserFriendlyException("企业名称已经存在");
             }
 
-            input.CompleteTxId = _blockchainAppService.Complete(input);
+            //input.CompleteTxId = _blockchainAppService.Complete(input);
             var enterpriseDetail = ObjectMapper.Map<EnterpriseDetailCreateDto, EnterpriseDetail>(input);
+        
+           
             enterpriseDetail = await _enterpriseDetailRepository.InsertAsync(enterpriseDetail, autoSave: true);
             return ObjectMapper.Map<EnterpriseDetail, EnterpriseDetailDto>(enterpriseDetail);
         }
@@ -80,6 +82,7 @@ namespace Tank.Financing.EnterpriseDetails
         {
             input.CompleteTxId = _blockchainAppService.Complete(new EnterpriseDetailCreateDto
             {
+                /*
                 BusinessAddress = input.BusinessAddress,
                 BusinessScope = input.BusinessScope,
                 Description = input.Description,
@@ -92,6 +95,7 @@ namespace Tank.Financing.EnterpriseDetails
                 StaffNumber = input.StaffNumber,
                 TotalAssets = input.TotalAssets,
                 CommitUserName = input.CommitUserName
+                */
             });
             var enterpriseDetail = await _enterpriseDetailRepository.GetAsync(id);
             ObjectMapper.Map(input, enterpriseDetail);

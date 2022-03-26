@@ -116,6 +116,7 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
 
     public string Complete(EnterpriseDetailCreateDto input)
     {
+        /*
         return ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, "Complete",
             new EnterpriseFurtherInfo
             {
@@ -130,6 +131,8 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
                 RegisteredAddress = input.RegisteredAddress,
                 TotalAssets = input.TotalAssets
             });
+            */
+        return null;
     }
 
     public string Apply(ApplyCreateDto input)
