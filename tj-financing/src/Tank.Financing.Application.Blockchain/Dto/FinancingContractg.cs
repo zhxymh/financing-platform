@@ -79,69 +79,84 @@ namespace Tank.Contracts.Financing {
             "ZV90aW1lGAQgASgDEhMKC2NyZWRpdF9jb2RlGAUgASgJEigKFGFydGlmaWNp",
             "YWxfcGVyc29uX2lkGAYgASgLMgouYWVsZi5IYXNoEhoKEnJlZ2lzdGVyZWRf",
             "Y2FwaXRhbBgHIAEoCRIgCgxwaG9uZV9udW1iZXIYCCABKAsyCi5hZWxmLkhh",
-            "c2gSIAoMcGhvdG9faGFzaGVzGAkgAygLMgouYWVsZi5IYXNoIoECChVFbnRl",
-            "cnByaXNlRnVydGhlckluZm8SDAoEbmFtZRgBIAEoCRIUCgx0b3RhbF9hc3Nl",
-            "dHMYAiABKAkSDgoGaW5jb21lGAMgASgJEhcKD2VudGVycHJpc2VfdHlwZRgE",
-            "IAEoCRIUCgxzdGFmZl9udW1iZXIYBSABKAUSEAoIaW5kdXN0cnkYBiABKAkS",
-            "EAoIbG9jYXRpb24YByABKAkSGgoScmVnaXN0ZXJlZF9hZGRyZXNzGAggASgJ",
-            "EhgKEGJ1c2luZXNzX2FkZHJlc3MYCSABKAkSFgoOYnVzaW5lc3Nfc2NvcGUY",
-            "CiABKAkSEwoLZGVzY3JpcHRpb24YCyABKAkiSwoQRmluYW5jaW5nUHJvZHVj",
-            "dBIUCgxvcmdhbml6YXRpb24YASABKAkSFAoMcHJvZHVjdF9uYW1lGAIgASgJ",
-            "EgsKA3VybBgDIAEoCSI4ChRGaW5hbmNpbmdQcm9kdWN0TGlzdBIgCgV2YWx1",
-            "ZRgBIAMoCzIRLkZpbmFuY2luZ1Byb2R1Y3QioQIKC0FwcGx5UmVjb3JkEhcK",
-            "D2VudGVycHJpc2VfbmFtZRgBIAEoCRIUCgxvcmdhbml6YXRpb24YAiABKAkS",
-            "FAoMcHJvZHVjdF9uYW1lGAMgASgJEhEKCWFsbG93YW5jZRgEIAEoCRILCgNh",
-            "cHIYBSABKAkSDgoGcGVyaW9kGAYgASgJEiIKDGFwcGx5X3N0YXR1cxgHIAEo",
-            "DjIMLkFwcGx5U3RhdHVzEhgKEGd1YXJhbnRlZV9tZXRob2QYCCABKAkSLgoK",
-            "YXBwbHlfdGltZRgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAS",
-            "LwoLcGFzc2VkX3RpbWUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wIi4KD0FwcGx5UmVjb3JkTGlzdBIbCgV2YWx1ZRgBIAMoCzIMLkFwcGx5",
-            "UmVjb3JkIqcCCgtBcHBseVBhc3NlZBIXCg9lbnRlcnByaXNlX25hbWUYASAB",
-            "KAkSFAoMb3JnYW5pemF0aW9uGAIgASgJEhQKDHByb2R1Y3RfbmFtZRgDIAEo",
-            "CRIRCglhbGxvd2FuY2UYBCABKAkSCwoDYXByGAUgASgJEg4KBnBlcmlvZBgG",
-            "IAEoCRIiCgxhcHBseV9zdGF0dXMYByABKA4yDC5BcHBseVN0YXR1cxIYChBn",
-            "dWFyYW50ZWVfbWV0aG9kGAggASgJEi4KCmFwcGx5X3RpbWUYCSABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wEi8KC3Bhc3NlZF90aW1lGAogASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcDoEoLsYASpQChFDZXJ0aWZp",
-            "Y2F0ZVN0YXR1cxIRCg1OT1RfQ09NTUlUVEVEEAASCwoHV0FJVElORxABEg0K",
-            "CUNPTkZJUk1FRBACEgwKCFJFSkVDVEVEEAMqXgoLQXBwbHlTdGF0dXMSDwoL",
-            "Tk9UX0FQUExJRUQQABILCgdQRU5ESU5HEAESEQoNT05MSU5FX1BBU1NFRBAC",
-            "EhIKDk9GRkxJTkVfUEFTU0VEEAMSCgoGUEFTU0VEEAQy7gsKEUZpbmFuY2lu",
-            "Z0NvbnRyYWN0EjgKCkluaXRpYWxpemUSEC5Jbml0aWFsaXplSW5wdXQaFi5n",
-            "b29nbGUucHJvdG9idWYuRW1wdHkiABJACg5SZXNldERlbGVnYXRvchIULlJl",
-            "c2V0RGVsZWdhdG9ySW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI2",
-            "CgtDaGFuZ2VPd25lchINLmFlbGYuQWRkcmVzcxoWLmdvb2dsZS5wcm90b2J1",
-            "Zi5FbXB0eSIAEj0KC0NlcnRpZmljYXRlEhQuRW50ZXJwcmlzZUJhc2ljSW5m",
-            "bxoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjwKCENvbXBsZXRlEhYuRW50",
-            "ZXJwcmlzZUZ1cnRoZXJJbmZvGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgAS",
-            "LgoFQXBwbHkSCy5BcHBseUlucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
-            "IgASMAoGQ2FuY2VsEgwuQ2FuY2VsSW5wdXQaFi5nb29nbGUucHJvdG9idWYu",
-            "RW1wdHkiABJKChNBZGRGaW5hbmNpbmdQcm9kdWN0EhkuQWRkRmluYW5jaW5n",
-            "UHJvZHVjdElucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASUAoWUmVt",
-            "b3ZlRmluYW5jaW5nUHJvZHVjdBIcLlJlbW92ZUZpbmFuY2luZ1Byb2R1Y3RJ",
-            "bnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjwKDFNldEFsbG93YW5j",
-            "ZRISLlNldEFsbG93YW5jZUlucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
-            "IgASOAoNT25saW5lQXBwcm92ZRINLkFwcHJvdmVJbnB1dBoWLmdvb2dsZS5w",
-            "cm90b2J1Zi5FbXB0eSIAEjkKDk9mZmxpbmVBcHByb3ZlEg0uQXBwcm92ZUlu",
-            "cHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASRAoQQXBwcm92ZUFsbG93",
-            "YW5jZRIWLkFwcHJvdmVBbGxvd2FuY2VJbnB1dBoWLmdvb2dsZS5wcm90b2J1",
-            "Zi5FbXB0eSIAEkgKEkNvbmZpcm1DZXJ0aWZpY2F0ZRIYLkNvbmZpcm1DZXJ0",
-            "aWZpY2F0ZUlucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASTgoUUmVt",
-            "b3ZlRW50ZXJwcmlzZUluZm8SHC5nb29nbGUucHJvdG9idWYuU3RyaW5nVmFs",
-            "dWUaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJCChNHZXRBZG1pbkFkZHJl",
-            "c3NMaXN0EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GgwuQWRkcmVzc0xpc3Qi",
-            "BYiJ9wEBEkcKGEdldEVudGVycHJpc2VBZGRyZXNzTGlzdBIWLmdvb2dsZS5w",
-            "cm90b2J1Zi5FbXB0eRoMLkFkZHJlc3NMaXN0IgWIifcBARJJChpHZXRPcmdh",
-            "bml6YXRpb25BZGRyZXNzTGlzdBIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoM",
-            "LkFkZHJlc3NMaXN0IgWIifcBARJPChdHZXRGaW5hbmNpbmdQcm9kdWN0TGlz",
-            "dBIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoVLkZpbmFuY2luZ1Byb2R1Y3RM",
-            "aXN0IgWIifcBARJJChFHZXRFbnRlcnByaXNlSW5mbxIcLmdvb2dsZS5wcm90",
-            "b2J1Zi5TdHJpbmdWYWx1ZRoPLkVudGVycHJpc2VJbmZvIgWIifcBARI7Cg5H",
-            "ZXRBcHBseVJlY29yZBIULkdldEFwcGx5UmVjb3JkSW5wdXQaDC5BcHBseVJl",
-            "Y29yZCIFiIn3AQESRwoSR2V0QXBwbHlSZWNvcmRMaXN0EhguR2V0QXBwbHlS",
-            "ZWNvcmRMaXN0SW5wdXQaEC5BcHBseVJlY29yZExpc3QiBYiJ9wEBGhuyzPYB",
-            "FkZpbmFuY2luZ0NvbnRyYWN0U3RhdGVCG6oCGFRhbmsuQ29udHJhY3RzLkZp",
-            "bmFuY2luZ2IGcHJvdG8z"));
+            "c2gSIAoMcGhvdG9faGFzaGVzGAkgAygLMgouYWVsZi5IYXNoIrQHChVFbnRl",
+            "cnByaXNlRnVydGhlckluZm8SFwoPZW50ZXJwcmlzZV9uYW1lGAEgASgJEhQK",
+            "DHRvdGFsX2Fzc2V0cxgCIAEoCRIOCgZpbmNvbWUYAyABKAkSEAoIaW5kdXN0",
+            "cnkYBCABKAkSGgoScmVnaXN0ZXJlZF9hZGRyZXNzGAUgASgJEhgKEGJ1c2lu",
+            "ZXNzX2FkZHJlc3MYBiABKAkSEwoLZGVzY3JpcHRpb24YByABKAkSFwoPZW50",
+            "ZXJwcmlzZV90eXBlGAggASgJEhQKDHN0YWZmX251bWJlchgJIAEoBRIQCghs",
+            "b2NhdGlvbhgKIAEoCRIWCg5idXNpbmVzc19zY29wZRgLIAEoCRIZChFyZWdp",
+            "c3RlcmVkX2Fzc2V0cxgMIAEoCRITCgtwYWlkX2Fzc2V0cxgNIAEoCRIXCg9p",
+            "bmNvbWVfcHJlX3llYXIYDiABKAkSFwoPcHJvZml0X3ByZV95ZWFyGA8gASgJ",
+            "EhsKE25ldF9wcm9maXRfcHJlX3llYXIYECABKAkSFAoMdGF4X3ByZV95ZWFy",
+            "GBEgASgJEhoKEmxpYWJpbGl0eV9wcmVfeWVhchgSIAEoCRIWCg5oYXNfZXhf",
+            "Z3VhcmFudBgTIAEoBRIfChd2YXRfc2hvdWxkX3BheV9wcmVfeWVhchgUIAEo",
+            "CRIZChF2YXRfcGFpZF9wZXJfeWVhchgVIAEoCRIbChNpbmNvbWVfdGF4X3By",
+            "ZV95ZWFyGBYgASgJEiAKGGluY29tZV9wYWlkX3RheF9wcmVfeWVhchgXIAEo",
+            "CRIeChZzb2NpYWxfc2VjdXJpdHlfbnVtYmVyGBggASgFEiAKGGhvdXNlX2Z1",
+            "bmRfcGFpZF9wcmVfeWVhchgZIAEoCRIYChBlbnZfY3JlZGl0X2xldmVsGBog",
+            "ASgFEhgKEGVudl9jcmVkaXRfc2NvcmUYGyABKAkSFQoNcGF0ZW50X251bWJl",
+            "chgcIAEoBRIYChBzb2Z0X2JpbmRfbnVtYmVyGB0gASgFEh4KCmV4dHJhX2lu",
+            "Zm8YHiABKAsyCi5hZWxmLkhhc2gSFAoMbWFya2V0X3Njb3JlGB8gASgJEhQK",
+            "DG1hbmFnZV9zY29yZRggIAEoCRIUCgxwcm9maXRfc2NvcmUYISABKAkSFQoN",
+            "ZmluYW5jZV9zY29yZRgiIAEoCRIWCg5pbm5vdmF0ZV9zY29yZRgjIAEoCRIU",
+            "CgxjcmVkaXRfc2NvcmUYJCABKAkSFAoMY29tcHJlX3Njb3JlGCUgASgJIksK",
+            "EEZpbmFuY2luZ1Byb2R1Y3QSFAoMb3JnYW5pemF0aW9uGAEgASgJEhQKDHBy",
+            "b2R1Y3RfbmFtZRgCIAEoCRILCgN1cmwYAyABKAkiOAoURmluYW5jaW5nUHJv",
+            "ZHVjdExpc3QSIAoFdmFsdWUYASADKAsyES5GaW5hbmNpbmdQcm9kdWN0IqEC",
+            "CgtBcHBseVJlY29yZBIXCg9lbnRlcnByaXNlX25hbWUYASABKAkSFAoMb3Jn",
+            "YW5pemF0aW9uGAIgASgJEhQKDHByb2R1Y3RfbmFtZRgDIAEoCRIRCglhbGxv",
+            "d2FuY2UYBCABKAkSCwoDYXByGAUgASgJEg4KBnBlcmlvZBgGIAEoCRIiCgxh",
+            "cHBseV9zdGF0dXMYByABKA4yDC5BcHBseVN0YXR1cxIYChBndWFyYW50ZWVf",
+            "bWV0aG9kGAggASgJEi4KCmFwcGx5X3RpbWUYCSABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuVGltZXN0YW1wEi8KC3Bhc3NlZF90aW1lGAogASgLMhouZ29vZ2xl",
+            "LnByb3RvYnVmLlRpbWVzdGFtcCIuCg9BcHBseVJlY29yZExpc3QSGwoFdmFs",
+            "dWUYASADKAsyDC5BcHBseVJlY29yZCKnAgoLQXBwbHlQYXNzZWQSFwoPZW50",
+            "ZXJwcmlzZV9uYW1lGAEgASgJEhQKDG9yZ2FuaXphdGlvbhgCIAEoCRIUCgxw",
+            "cm9kdWN0X25hbWUYAyABKAkSEQoJYWxsb3dhbmNlGAQgASgJEgsKA2FwchgF",
+            "IAEoCRIOCgZwZXJpb2QYBiABKAkSIgoMYXBwbHlfc3RhdHVzGAcgASgOMgwu",
+            "QXBwbHlTdGF0dXMSGAoQZ3VhcmFudGVlX21ldGhvZBgIIAEoCRIuCgphcHBs",
+            "eV90aW1lGAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgtw",
+            "YXNzZWRfdGltZRgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXA6",
+            "BKC7GAEqUAoRQ2VydGlmaWNhdGVTdGF0dXMSEQoNTk9UX0NPTU1JVFRFRBAA",
+            "EgsKB1dBSVRJTkcQARINCglDT05GSVJNRUQQAhIMCghSRUpFQ1RFRBADKl4K",
+            "C0FwcGx5U3RhdHVzEg8KC05PVF9BUFBMSUVEEAASCwoHUEVORElORxABEhEK",
+            "DU9OTElORV9QQVNTRUQQAhISCg5PRkZMSU5FX1BBU1NFRBADEgoKBlBBU1NF",
+            "RBAEMu4LChFGaW5hbmNpbmdDb250cmFjdBI4CgpJbml0aWFsaXplEhAuSW5p",
+            "dGlhbGl6ZUlucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASQAoOUmVz",
+            "ZXREZWxlZ2F0b3ISFC5SZXNldERlbGVnYXRvcklucHV0GhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5IgASNgoLQ2hhbmdlT3duZXISDS5hZWxmLkFkZHJlc3Ma",
+            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI9CgtDZXJ0aWZpY2F0ZRIULkVu",
+            "dGVycHJpc2VCYXNpY0luZm8aFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI8",
+            "CghDb21wbGV0ZRIWLkVudGVycHJpc2VGdXJ0aGVySW5mbxoWLmdvb2dsZS5w",
+            "cm90b2J1Zi5FbXB0eSIAEi4KBUFwcGx5EgsuQXBwbHlJbnB1dBoWLmdvb2ds",
+            "ZS5wcm90b2J1Zi5FbXB0eSIAEjAKBkNhbmNlbBIMLkNhbmNlbElucHV0GhYu",
+            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5IgASSgoTQWRkRmluYW5jaW5nUHJvZHVj",
+            "dBIZLkFkZEZpbmFuY2luZ1Byb2R1Y3RJbnB1dBoWLmdvb2dsZS5wcm90b2J1",
+            "Zi5FbXB0eSIAElAKFlJlbW92ZUZpbmFuY2luZ1Byb2R1Y3QSHC5SZW1vdmVG",
+            "aW5hbmNpbmdQcm9kdWN0SW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHki",
+            "ABI8CgxTZXRBbGxvd2FuY2USEi5TZXRBbGxvd2FuY2VJbnB1dBoWLmdvb2ds",
+            "ZS5wcm90b2J1Zi5FbXB0eSIAEjgKDU9ubGluZUFwcHJvdmUSDS5BcHByb3Zl",
+            "SW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI5Cg5PZmZsaW5lQXBw",
+            "cm92ZRINLkFwcHJvdmVJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIA",
+            "EkQKEEFwcHJvdmVBbGxvd2FuY2USFi5BcHByb3ZlQWxsb3dhbmNlSW5wdXQa",
+            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJIChJDb25maXJtQ2VydGlmaWNh",
+            "dGUSGC5Db25maXJtQ2VydGlmaWNhdGVJbnB1dBoWLmdvb2dsZS5wcm90b2J1",
+            "Zi5FbXB0eSIAEk4KFFJlbW92ZUVudGVycHJpc2VJbmZvEhwuZ29vZ2xlLnBy",
+            "b3RvYnVmLlN0cmluZ1ZhbHVlGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgAS",
+            "QgoTR2V0QWRtaW5BZGRyZXNzTGlzdBIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
+            "eRoMLkFkZHJlc3NMaXN0IgWIifcBARJHChhHZXRFbnRlcnByaXNlQWRkcmVz",
+            "c0xpc3QSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDC5BZGRyZXNzTGlzdCIF",
+            "iIn3AQESSQoaR2V0T3JnYW5pemF0aW9uQWRkcmVzc0xpc3QSFi5nb29nbGUu",
+            "cHJvdG9idWYuRW1wdHkaDC5BZGRyZXNzTGlzdCIFiIn3AQESTwoXR2V0Rmlu",
+            "YW5jaW5nUHJvZHVjdExpc3QSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaFS5G",
+            "aW5hbmNpbmdQcm9kdWN0TGlzdCIFiIn3AQESSQoRR2V0RW50ZXJwcmlzZUlu",
+            "Zm8SHC5nb29nbGUucHJvdG9idWYuU3RyaW5nVmFsdWUaDy5FbnRlcnByaXNl",
+            "SW5mbyIFiIn3AQESOwoOR2V0QXBwbHlSZWNvcmQSFC5HZXRBcHBseVJlY29y",
+            "ZElucHV0GgwuQXBwbHlSZWNvcmQiBYiJ9wEBEkcKEkdldEFwcGx5UmVjb3Jk",
+            "TGlzdBIYLkdldEFwcGx5UmVjb3JkTGlzdElucHV0GhAuQXBwbHlSZWNvcmRM",
+            "aXN0IgWIifcBARobssz2ARZGaW5hbmNpbmdDb250cmFjdFN0YXRlQhuqAhhU",
+            "YW5rLkNvbnRyYWN0cy5GaW5hbmNpbmdiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Tank.Contracts.Financing.CertificateStatus), typeof(global::Tank.Contracts.Financing.ApplyStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -162,7 +177,7 @@ namespace Tank.Contracts.Financing {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.HashList), global::Tank.Contracts.Financing.HashList.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.EnterpriseInfo), global::Tank.Contracts.Financing.EnterpriseInfo.Parser, new[]{ "BasicInfo", "FurtherInfo", "CertificateStatus", "EnterpriseVirtualAddress" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.EnterpriseBasicInfo), global::Tank.Contracts.Financing.EnterpriseBasicInfo.Parser, new[]{ "Name", "ArtificialPerson", "EstablishedTime", "DueTime", "CreditCode", "ArtificialPersonId", "RegisteredCapital", "PhoneNumber", "PhotoHashes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.EnterpriseFurtherInfo), global::Tank.Contracts.Financing.EnterpriseFurtherInfo.Parser, new[]{ "Name", "TotalAssets", "Income", "EnterpriseType", "StaffNumber", "Industry", "Location", "RegisteredAddress", "BusinessAddress", "BusinessScope", "Description" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.EnterpriseFurtherInfo), global::Tank.Contracts.Financing.EnterpriseFurtherInfo.Parser, new[]{ "EnterpriseName", "TotalAssets", "Income", "Industry", "RegisteredAddress", "BusinessAddress", "Description", "EnterpriseType", "StaffNumber", "Location", "BusinessScope", "RegisteredAssets", "PaidAssets", "IncomePreYear", "ProfitPreYear", "NetProfitPreYear", "TaxPreYear", "LiabilityPreYear", "HasExGuarant", "VatShouldPayPreYear", "VatPaidPerYear", "IncomeTaxPreYear", "IncomePaidTaxPreYear", "SocialSecurityNumber", "HouseFundPaidPreYear", "EnvCreditLevel", "EnvCreditScore", "PatentNumber", "SoftBindNumber", "ExtraInfo", "MarketScore", "ManageScore", "ProfitScore", "FinanceScore", "InnovateScore", "CreditScore", "CompreScore" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.FinancingProduct), global::Tank.Contracts.Financing.FinancingProduct.Parser, new[]{ "Organization", "ProductName", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.FinancingProductList), global::Tank.Contracts.Financing.FinancingProductList.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tank.Contracts.Financing.ApplyRecord), global::Tank.Contracts.Financing.ApplyRecord.Parser, new[]{ "EnterpriseName", "Organization", "ProductName", "Allowance", "Apr", "Period", "ApplyStatus", "GuaranteeMethod", "ApplyTime", "PassedTime" }, null, null, null, null),
@@ -200,23 +215,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<InitializeInput> _parser = new pb::MessageParser<InitializeInput>(() => new InitializeInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<InitializeInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InitializeInput() {
       OnConstruction();
     }
@@ -224,7 +235,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InitializeInput(InitializeInput other) : this() {
       delegatorContractAddress_ = other.delegatorContractAddress_ != null ? other.delegatorContractAddress_.Clone() : null;
       financingOrganizations_ = other.financingOrganizations_.Clone();
@@ -235,7 +245,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InitializeInput Clone() {
       return new InitializeInput(this);
     }
@@ -244,7 +253,6 @@ namespace Tank.Contracts.Financing {
     public const int DelegatorContractAddressFieldNumber = 1;
     private global::AElf.Types.Address delegatorContractAddress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Address DelegatorContractAddress {
       get { return delegatorContractAddress_; }
       set {
@@ -258,7 +266,6 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(18, global::AElf.Types.Address.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Address> financingOrganizations_ = new pbc::RepeatedField<global::AElf.Types.Address>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Address> FinancingOrganizations {
       get { return financingOrganizations_; }
     }
@@ -269,7 +276,6 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(26, global::AElf.Types.Address.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Address> enterprises_ = new pbc::RepeatedField<global::AElf.Types.Address>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Address> Enterprises {
       get { return enterprises_; }
     }
@@ -280,7 +286,6 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(34, global::AElf.Types.Address.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Address> admins_ = new pbc::RepeatedField<global::AElf.Types.Address>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Address> Admins {
       get { return admins_; }
     }
@@ -289,7 +294,6 @@ namespace Tank.Contracts.Financing {
     public const int OwnerFieldNumber = 5;
     private global::AElf.Types.Address owner_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Address Owner {
       get { return owner_; }
       set {
@@ -298,13 +302,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as InitializeInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(InitializeInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -321,7 +323,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (delegatorContractAddress_ != null) hash ^= DelegatorContractAddress.GetHashCode();
@@ -336,13 +337,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -366,7 +365,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (delegatorContractAddress_ != null) {
         output.WriteRawTag(10);
@@ -386,7 +384,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (delegatorContractAddress_ != null) {
@@ -405,7 +402,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(InitializeInput other) {
       if (other == null) {
         return;
@@ -429,7 +425,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -473,7 +468,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -522,23 +516,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ResetDelegatorInput> _parser = new pb::MessageParser<ResetDelegatorInput>(() => new ResetDelegatorInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ResetDelegatorInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResetDelegatorInput() {
       OnConstruction();
     }
@@ -546,7 +536,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResetDelegatorInput(ResetDelegatorInput other) : this() {
       delegatorContractAddress_ = other.delegatorContractAddress_ != null ? other.delegatorContractAddress_.Clone() : null;
       financingOrganizations_ = other.financingOrganizations_.Clone();
@@ -556,7 +545,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResetDelegatorInput Clone() {
       return new ResetDelegatorInput(this);
     }
@@ -565,7 +553,6 @@ namespace Tank.Contracts.Financing {
     public const int DelegatorContractAddressFieldNumber = 1;
     private global::AElf.Types.Address delegatorContractAddress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Address DelegatorContractAddress {
       get { return delegatorContractAddress_; }
       set {
@@ -579,7 +566,6 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(18, global::AElf.Types.Address.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Address> financingOrganizations_ = new pbc::RepeatedField<global::AElf.Types.Address>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Address> FinancingOrganizations {
       get { return financingOrganizations_; }
     }
@@ -590,7 +576,6 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(26, global::AElf.Types.Address.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Address> enterprises_ = new pbc::RepeatedField<global::AElf.Types.Address>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Address> Enterprises {
       get { return enterprises_; }
     }
@@ -601,19 +586,16 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(34, global::AElf.Types.Address.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Address> admins_ = new pbc::RepeatedField<global::AElf.Types.Address>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Address> Admins {
       get { return admins_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ResetDelegatorInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ResetDelegatorInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -629,7 +611,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (delegatorContractAddress_ != null) hash ^= DelegatorContractAddress.GetHashCode();
@@ -643,13 +624,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -669,7 +648,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (delegatorContractAddress_ != null) {
         output.WriteRawTag(10);
@@ -685,7 +663,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (delegatorContractAddress_ != null) {
@@ -701,7 +678,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ResetDelegatorInput other) {
       if (other == null) {
         return;
@@ -719,7 +695,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -756,7 +731,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -798,23 +772,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<AddFinancingProductInput> _parser = new pb::MessageParser<AddFinancingProductInput>(() => new AddFinancingProductInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AddFinancingProductInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddFinancingProductInput() {
       OnConstruction();
     }
@@ -822,7 +792,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddFinancingProductInput(AddFinancingProductInput other) : this() {
       organization_ = other.organization_;
       productName_ = other.productName_;
@@ -831,7 +800,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddFinancingProductInput Clone() {
       return new AddFinancingProductInput(this);
     }
@@ -840,7 +808,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 1;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -852,7 +819,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 2;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -864,7 +830,6 @@ namespace Tank.Contracts.Financing {
     public const int UrlFieldNumber = 3;
     private string url_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Url {
       get { return url_; }
       set {
@@ -873,13 +838,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AddFinancingProductInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AddFinancingProductInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -894,7 +857,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Organization.Length != 0) hash ^= Organization.GetHashCode();
@@ -907,13 +869,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -938,7 +898,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Organization.Length != 0) {
         output.WriteRawTag(10);
@@ -959,7 +918,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Organization.Length != 0) {
@@ -978,7 +936,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AddFinancingProductInput other) {
       if (other == null) {
         return;
@@ -996,7 +953,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1026,7 +982,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1061,23 +1016,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<RemoveFinancingProductInput> _parser = new pb::MessageParser<RemoveFinancingProductInput>(() => new RemoveFinancingProductInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<RemoveFinancingProductInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RemoveFinancingProductInput() {
       OnConstruction();
     }
@@ -1085,7 +1036,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RemoveFinancingProductInput(RemoveFinancingProductInput other) : this() {
       organization_ = other.organization_;
       productName_ = other.productName_;
@@ -1093,7 +1043,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RemoveFinancingProductInput Clone() {
       return new RemoveFinancingProductInput(this);
     }
@@ -1102,7 +1051,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 1;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -1114,7 +1062,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 2;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -1123,13 +1070,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as RemoveFinancingProductInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(RemoveFinancingProductInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1143,7 +1088,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Organization.Length != 0) hash ^= Organization.GetHashCode();
@@ -1155,13 +1099,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1182,7 +1124,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Organization.Length != 0) {
         output.WriteRawTag(10);
@@ -1199,7 +1140,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Organization.Length != 0) {
@@ -1215,7 +1155,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(RemoveFinancingProductInput other) {
       if (other == null) {
         return;
@@ -1230,7 +1169,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1256,7 +1194,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1287,23 +1224,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<CompleteInput> _parser = new pb::MessageParser<CompleteInput>(() => new CompleteInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CompleteInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CompleteInput() {
       OnConstruction();
     }
@@ -1311,7 +1244,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CompleteInput(CompleteInput other) : this() {
       name_ = other.name_;
       totalAsserts_ = other.totalAsserts_;
@@ -1328,7 +1260,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CompleteInput Clone() {
       return new CompleteInput(this);
     }
@@ -1337,7 +1268,6 @@ namespace Tank.Contracts.Financing {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -1349,7 +1279,6 @@ namespace Tank.Contracts.Financing {
     public const int TotalAssertsFieldNumber = 2;
     private string totalAsserts_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TotalAsserts {
       get { return totalAsserts_; }
       set {
@@ -1361,7 +1290,6 @@ namespace Tank.Contracts.Financing {
     public const int IncomeFieldNumber = 3;
     private string income_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Income {
       get { return income_; }
       set {
@@ -1373,7 +1301,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseTypeFieldNumber = 4;
     private int enterpriseType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int EnterpriseType {
       get { return enterpriseType_; }
       set {
@@ -1385,7 +1312,6 @@ namespace Tank.Contracts.Financing {
     public const int StaffNumberFieldNumber = 5;
     private int staffNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int StaffNumber {
       get { return staffNumber_; }
       set {
@@ -1397,7 +1323,6 @@ namespace Tank.Contracts.Financing {
     public const int IndustryFieldNumber = 6;
     private int industry_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Industry {
       get { return industry_; }
       set {
@@ -1409,7 +1334,6 @@ namespace Tank.Contracts.Financing {
     public const int LocationFieldNumber = 7;
     private string location_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Location {
       get { return location_; }
       set {
@@ -1421,7 +1345,6 @@ namespace Tank.Contracts.Financing {
     public const int RegisteredAddressFieldNumber = 8;
     private string registeredAddress_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RegisteredAddress {
       get { return registeredAddress_; }
       set {
@@ -1433,7 +1356,6 @@ namespace Tank.Contracts.Financing {
     public const int BusinessAddressFieldNumber = 9;
     private string businessAddress_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string BusinessAddress {
       get { return businessAddress_; }
       set {
@@ -1445,7 +1367,6 @@ namespace Tank.Contracts.Financing {
     public const int BusinessScopeFieldNumber = 10;
     private string businessScope_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string BusinessScope {
       get { return businessScope_; }
       set {
@@ -1457,7 +1378,6 @@ namespace Tank.Contracts.Financing {
     public const int DescriptionFieldNumber = 11;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -1466,13 +1386,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CompleteInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CompleteInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1495,7 +1413,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -1516,13 +1433,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1579,7 +1494,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -1632,7 +1546,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -1675,7 +1588,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CompleteInput other) {
       if (other == null) {
         return;
@@ -1717,7 +1629,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1779,7 +1690,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1846,23 +1756,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ApplyInput> _parser = new pb::MessageParser<ApplyInput>(() => new ApplyInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ApplyInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyInput() {
       OnConstruction();
     }
@@ -1870,7 +1776,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyInput(ApplyInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -1879,7 +1784,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyInput Clone() {
       return new ApplyInput(this);
     }
@@ -1888,7 +1792,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -1900,7 +1803,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -1912,7 +1814,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -1921,13 +1822,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ApplyInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ApplyInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1942,7 +1841,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -1955,13 +1853,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1986,7 +1882,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -2007,7 +1902,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -2026,7 +1920,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ApplyInput other) {
       if (other == null) {
         return;
@@ -2044,7 +1937,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2074,7 +1966,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2109,23 +2000,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<CancelInput> _parser = new pb::MessageParser<CancelInput>(() => new CancelInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CancelInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CancelInput() {
       OnConstruction();
     }
@@ -2133,7 +2020,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CancelInput(CancelInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -2142,7 +2028,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CancelInput Clone() {
       return new CancelInput(this);
     }
@@ -2151,7 +2036,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -2163,7 +2047,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -2175,7 +2058,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -2184,13 +2066,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CancelInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CancelInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2205,7 +2085,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -2218,13 +2097,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2249,7 +2126,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -2270,7 +2146,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -2289,7 +2164,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CancelInput other) {
       if (other == null) {
         return;
@@ -2307,7 +2181,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2337,7 +2210,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2372,23 +2244,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ConfirmCertificateInput> _parser = new pb::MessageParser<ConfirmCertificateInput>(() => new ConfirmCertificateInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ConfirmCertificateInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConfirmCertificateInput() {
       OnConstruction();
     }
@@ -2396,7 +2264,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConfirmCertificateInput(ConfirmCertificateInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       isConfirm_ = other.isConfirm_;
@@ -2404,7 +2271,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConfirmCertificateInput Clone() {
       return new ConfirmCertificateInput(this);
     }
@@ -2413,7 +2279,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -2425,7 +2290,6 @@ namespace Tank.Contracts.Financing {
     public const int IsConfirmFieldNumber = 2;
     private bool isConfirm_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool IsConfirm {
       get { return isConfirm_; }
       set {
@@ -2434,13 +2298,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ConfirmCertificateInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ConfirmCertificateInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2454,7 +2316,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -2466,13 +2327,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2493,7 +2352,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -2510,7 +2368,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -2526,7 +2383,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ConfirmCertificateInput other) {
       if (other == null) {
         return;
@@ -2541,7 +2397,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2567,7 +2422,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2598,23 +2452,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<SetAllowanceInput> _parser = new pb::MessageParser<SetAllowanceInput>(() => new SetAllowanceInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SetAllowanceInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetAllowanceInput() {
       OnConstruction();
     }
@@ -2622,7 +2472,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetAllowanceInput(SetAllowanceInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -2635,7 +2484,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetAllowanceInput Clone() {
       return new SetAllowanceInput(this);
     }
@@ -2644,7 +2492,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -2656,7 +2503,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -2668,7 +2514,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -2680,7 +2525,6 @@ namespace Tank.Contracts.Financing {
     public const int AllowanceFieldNumber = 4;
     private string allowance_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Allowance {
       get { return allowance_; }
       set {
@@ -2692,7 +2536,6 @@ namespace Tank.Contracts.Financing {
     public const int AprFieldNumber = 5;
     private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Apr {
       get { return apr_; }
       set {
@@ -2704,7 +2547,6 @@ namespace Tank.Contracts.Financing {
     public const int PeriodFieldNumber = 6;
     private string period_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Period {
       get { return period_; }
       set {
@@ -2716,7 +2558,6 @@ namespace Tank.Contracts.Financing {
     public const int GuaranteeMethodFieldNumber = 7;
     private string guaranteeMethod_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GuaranteeMethod {
       get { return guaranteeMethod_; }
       set {
@@ -2725,13 +2566,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SetAllowanceInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SetAllowanceInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2750,7 +2589,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -2767,13 +2605,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2814,7 +2650,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -2851,7 +2686,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -2882,7 +2716,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SetAllowanceInput other) {
       if (other == null) {
         return;
@@ -2912,7 +2745,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2958,7 +2790,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3009,23 +2840,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ApproveInput> _parser = new pb::MessageParser<ApproveInput>(() => new ApproveInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ApproveInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApproveInput() {
       OnConstruction();
     }
@@ -3033,7 +2860,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApproveInput(ApproveInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -3042,7 +2868,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApproveInput Clone() {
       return new ApproveInput(this);
     }
@@ -3051,7 +2876,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -3063,7 +2887,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -3075,7 +2898,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -3084,13 +2906,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ApproveInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ApproveInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3105,7 +2925,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -3118,13 +2937,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3149,7 +2966,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -3170,7 +2986,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -3189,7 +3004,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ApproveInput other) {
       if (other == null) {
         return;
@@ -3207,7 +3021,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3237,7 +3050,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3272,23 +3084,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<GetApplyRecordInput> _parser = new pb::MessageParser<GetApplyRecordInput>(() => new GetApplyRecordInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GetApplyRecordInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetApplyRecordInput() {
       OnConstruction();
     }
@@ -3296,7 +3104,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetApplyRecordInput(GetApplyRecordInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -3305,7 +3112,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetApplyRecordInput Clone() {
       return new GetApplyRecordInput(this);
     }
@@ -3314,7 +3120,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -3326,7 +3131,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -3338,7 +3142,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -3347,13 +3150,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GetApplyRecordInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GetApplyRecordInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3368,7 +3169,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -3381,13 +3181,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3412,7 +3210,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -3433,7 +3230,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -3452,7 +3248,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GetApplyRecordInput other) {
       if (other == null) {
         return;
@@ -3470,7 +3265,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3500,7 +3294,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3535,23 +3328,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<GetApplyRecordListInput> _parser = new pb::MessageParser<GetApplyRecordListInput>(() => new GetApplyRecordListInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GetApplyRecordListInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetApplyRecordListInput() {
       OnConstruction();
     }
@@ -3559,7 +3348,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetApplyRecordListInput(GetApplyRecordListInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -3571,7 +3359,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetApplyRecordListInput Clone() {
       return new GetApplyRecordListInput(this);
     }
@@ -3580,7 +3367,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -3592,7 +3378,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -3604,7 +3389,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -3616,7 +3400,6 @@ namespace Tank.Contracts.Financing {
     public const int ApplyStatusFieldNumber = 4;
     private global::Tank.Contracts.Financing.ApplyStatus applyStatus_ = global::Tank.Contracts.Financing.ApplyStatus.NotApplied;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Tank.Contracts.Financing.ApplyStatus ApplyStatus {
       get { return applyStatus_; }
       set {
@@ -3628,7 +3411,6 @@ namespace Tank.Contracts.Financing {
     public const int StartTimeFieldNumber = 5;
     private global::Google.Protobuf.WellKnownTypes.Timestamp startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp StartTime {
       get { return startTime_; }
       set {
@@ -3640,7 +3422,6 @@ namespace Tank.Contracts.Financing {
     public const int EndTimeFieldNumber = 6;
     private global::Google.Protobuf.WellKnownTypes.Timestamp endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp EndTime {
       get { return endTime_; }
       set {
@@ -3649,13 +3430,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GetApplyRecordListInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GetApplyRecordListInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3673,7 +3452,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -3689,13 +3467,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3732,7 +3508,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -3765,7 +3540,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -3793,7 +3567,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GetApplyRecordListInput other) {
       if (other == null) {
         return;
@@ -3826,7 +3599,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3874,7 +3646,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3927,23 +3698,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ApproveAllowanceInput> _parser = new pb::MessageParser<ApproveAllowanceInput>(() => new ApproveAllowanceInput());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ApproveAllowanceInput> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApproveAllowanceInput() {
       OnConstruction();
     }
@@ -3951,7 +3718,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApproveAllowanceInput(ApproveAllowanceInput other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -3964,7 +3730,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApproveAllowanceInput Clone() {
       return new ApproveAllowanceInput(this);
     }
@@ -3973,7 +3738,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -3985,7 +3749,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -3997,7 +3760,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -4009,7 +3771,6 @@ namespace Tank.Contracts.Financing {
     public const int AllowanceFieldNumber = 4;
     private string allowance_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Allowance {
       get { return allowance_; }
       set {
@@ -4021,7 +3782,6 @@ namespace Tank.Contracts.Financing {
     public const int AprFieldNumber = 5;
     private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Apr {
       get { return apr_; }
       set {
@@ -4033,7 +3793,6 @@ namespace Tank.Contracts.Financing {
     public const int PeriodFieldNumber = 6;
     private string period_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Period {
       get { return period_; }
       set {
@@ -4045,7 +3804,6 @@ namespace Tank.Contracts.Financing {
     public const int GuaranteeMethodFieldNumber = 7;
     private string guaranteeMethod_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GuaranteeMethod {
       get { return guaranteeMethod_; }
       set {
@@ -4054,13 +3812,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ApproveAllowanceInput);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ApproveAllowanceInput other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4079,7 +3835,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -4096,13 +3851,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4143,7 +3896,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -4180,7 +3932,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -4211,7 +3962,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ApproveAllowanceInput other) {
       if (other == null) {
         return;
@@ -4241,7 +3991,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4287,7 +4036,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4338,23 +4086,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<AddressList> _parser = new pb::MessageParser<AddressList>(() => new AddressList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AddressList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddressList() {
       OnConstruction();
     }
@@ -4362,14 +4106,12 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddressList(AddressList other) : this() {
       value_ = other.value_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddressList Clone() {
       return new AddressList(this);
     }
@@ -4380,19 +4122,16 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(10, global::AElf.Types.Address.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Address> value_ = new pbc::RepeatedField<global::AElf.Types.Address>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Address> Value {
       get { return value_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AddressList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AddressList other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4405,7 +4144,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= value_.GetHashCode();
@@ -4416,13 +4154,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4436,7 +4172,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       value_.WriteTo(ref output, _repeated_value_codec);
       if (_unknownFields != null) {
@@ -4446,7 +4181,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += value_.CalculateSize(_repeated_value_codec);
@@ -4457,7 +4191,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AddressList other) {
       if (other == null) {
         return;
@@ -4467,7 +4200,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4489,7 +4221,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4516,23 +4247,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<HashList> _parser = new pb::MessageParser<HashList>(() => new HashList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<HashList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HashList() {
       OnConstruction();
     }
@@ -4540,14 +4267,12 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HashList(HashList other) : this() {
       value_ = other.value_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HashList Clone() {
       return new HashList(this);
     }
@@ -4558,19 +4283,16 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(10, global::AElf.Types.Hash.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Hash> value_ = new pbc::RepeatedField<global::AElf.Types.Hash>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Hash> Value {
       get { return value_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as HashList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(HashList other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4583,7 +4305,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= value_.GetHashCode();
@@ -4594,13 +4315,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4614,7 +4333,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       value_.WriteTo(ref output, _repeated_value_codec);
       if (_unknownFields != null) {
@@ -4624,7 +4342,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += value_.CalculateSize(_repeated_value_codec);
@@ -4635,7 +4352,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(HashList other) {
       if (other == null) {
         return;
@@ -4645,7 +4361,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4667,7 +4382,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4694,23 +4408,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<EnterpriseInfo> _parser = new pb::MessageParser<EnterpriseInfo>(() => new EnterpriseInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<EnterpriseInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseInfo() {
       OnConstruction();
     }
@@ -4718,7 +4428,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseInfo(EnterpriseInfo other) : this() {
       basicInfo_ = other.basicInfo_ != null ? other.basicInfo_.Clone() : null;
       furtherInfo_ = other.furtherInfo_ != null ? other.furtherInfo_.Clone() : null;
@@ -4728,7 +4437,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseInfo Clone() {
       return new EnterpriseInfo(this);
     }
@@ -4737,7 +4445,6 @@ namespace Tank.Contracts.Financing {
     public const int BasicInfoFieldNumber = 1;
     private global::Tank.Contracts.Financing.EnterpriseBasicInfo basicInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Tank.Contracts.Financing.EnterpriseBasicInfo BasicInfo {
       get { return basicInfo_; }
       set {
@@ -4749,7 +4456,6 @@ namespace Tank.Contracts.Financing {
     public const int FurtherInfoFieldNumber = 2;
     private global::Tank.Contracts.Financing.EnterpriseFurtherInfo furtherInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Tank.Contracts.Financing.EnterpriseFurtherInfo FurtherInfo {
       get { return furtherInfo_; }
       set {
@@ -4761,7 +4467,6 @@ namespace Tank.Contracts.Financing {
     public const int CertificateStatusFieldNumber = 3;
     private global::Tank.Contracts.Financing.CertificateStatus certificateStatus_ = global::Tank.Contracts.Financing.CertificateStatus.NotCommitted;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Tank.Contracts.Financing.CertificateStatus CertificateStatus {
       get { return certificateStatus_; }
       set {
@@ -4773,7 +4478,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseVirtualAddressFieldNumber = 4;
     private global::AElf.Types.Address enterpriseVirtualAddress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Address EnterpriseVirtualAddress {
       get { return enterpriseVirtualAddress_; }
       set {
@@ -4782,13 +4486,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as EnterpriseInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(EnterpriseInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4804,7 +4506,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (basicInfo_ != null) hash ^= BasicInfo.GetHashCode();
@@ -4818,13 +4519,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4853,7 +4552,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (basicInfo_ != null) {
         output.WriteRawTag(10);
@@ -4878,7 +4576,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (basicInfo_ != null) {
@@ -4900,7 +4597,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(EnterpriseInfo other) {
       if (other == null) {
         return;
@@ -4930,7 +4626,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4973,7 +4668,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5021,23 +4715,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<EnterpriseBasicInfo> _parser = new pb::MessageParser<EnterpriseBasicInfo>(() => new EnterpriseBasicInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<EnterpriseBasicInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseBasicInfo() {
       OnConstruction();
     }
@@ -5045,7 +4735,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseBasicInfo(EnterpriseBasicInfo other) : this() {
       name_ = other.name_;
       artificialPerson_ = other.artificialPerson_;
@@ -5060,7 +4749,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseBasicInfo Clone() {
       return new EnterpriseBasicInfo(this);
     }
@@ -5069,7 +4757,6 @@ namespace Tank.Contracts.Financing {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -5081,7 +4768,6 @@ namespace Tank.Contracts.Financing {
     public const int ArtificialPersonFieldNumber = 2;
     private string artificialPerson_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ArtificialPerson {
       get { return artificialPerson_; }
       set {
@@ -5093,7 +4779,6 @@ namespace Tank.Contracts.Financing {
     public const int EstablishedTimeFieldNumber = 3;
     private long establishedTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long EstablishedTime {
       get { return establishedTime_; }
       set {
@@ -5105,7 +4790,6 @@ namespace Tank.Contracts.Financing {
     public const int DueTimeFieldNumber = 4;
     private long dueTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long DueTime {
       get { return dueTime_; }
       set {
@@ -5117,7 +4801,6 @@ namespace Tank.Contracts.Financing {
     public const int CreditCodeFieldNumber = 5;
     private string creditCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CreditCode {
       get { return creditCode_; }
       set {
@@ -5129,7 +4812,6 @@ namespace Tank.Contracts.Financing {
     public const int ArtificialPersonIdFieldNumber = 6;
     private global::AElf.Types.Hash artificialPersonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Hash ArtificialPersonId {
       get { return artificialPersonId_; }
       set {
@@ -5141,7 +4823,6 @@ namespace Tank.Contracts.Financing {
     public const int RegisteredCapitalFieldNumber = 7;
     private string registeredCapital_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RegisteredCapital {
       get { return registeredCapital_; }
       set {
@@ -5153,7 +4834,6 @@ namespace Tank.Contracts.Financing {
     public const int PhoneNumberFieldNumber = 8;
     private global::AElf.Types.Hash phoneNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::AElf.Types.Hash PhoneNumber {
       get { return phoneNumber_; }
       set {
@@ -5167,19 +4847,16 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(74, global::AElf.Types.Hash.Parser);
     private readonly pbc::RepeatedField<global::AElf.Types.Hash> photoHashes_ = new pbc::RepeatedField<global::AElf.Types.Hash>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::AElf.Types.Hash> PhotoHashes {
       get { return photoHashes_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as EnterpriseBasicInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(EnterpriseBasicInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5200,7 +4877,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -5219,13 +4895,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -5271,7 +4945,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -5313,7 +4986,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -5348,7 +5020,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(EnterpriseBasicInfo other) {
       if (other == null) {
         return;
@@ -5388,7 +5059,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5448,7 +5118,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5513,23 +5182,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<EnterpriseFurtherInfo> _parser = new pb::MessageParser<EnterpriseFurtherInfo>(() => new EnterpriseFurtherInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<EnterpriseFurtherInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseFurtherInfo() {
       OnConstruction();
     }
@@ -5537,37 +5202,60 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseFurtherInfo(EnterpriseFurtherInfo other) : this() {
-      name_ = other.name_;
+      enterpriseName_ = other.enterpriseName_;
       totalAssets_ = other.totalAssets_;
       income_ = other.income_;
-      enterpriseType_ = other.enterpriseType_;
-      staffNumber_ = other.staffNumber_;
       industry_ = other.industry_;
-      location_ = other.location_;
       registeredAddress_ = other.registeredAddress_;
       businessAddress_ = other.businessAddress_;
-      businessScope_ = other.businessScope_;
       description_ = other.description_;
+      enterpriseType_ = other.enterpriseType_;
+      staffNumber_ = other.staffNumber_;
+      location_ = other.location_;
+      businessScope_ = other.businessScope_;
+      registeredAssets_ = other.registeredAssets_;
+      paidAssets_ = other.paidAssets_;
+      incomePreYear_ = other.incomePreYear_;
+      profitPreYear_ = other.profitPreYear_;
+      netProfitPreYear_ = other.netProfitPreYear_;
+      taxPreYear_ = other.taxPreYear_;
+      liabilityPreYear_ = other.liabilityPreYear_;
+      hasExGuarant_ = other.hasExGuarant_;
+      vatShouldPayPreYear_ = other.vatShouldPayPreYear_;
+      vatPaidPerYear_ = other.vatPaidPerYear_;
+      incomeTaxPreYear_ = other.incomeTaxPreYear_;
+      incomePaidTaxPreYear_ = other.incomePaidTaxPreYear_;
+      socialSecurityNumber_ = other.socialSecurityNumber_;
+      houseFundPaidPreYear_ = other.houseFundPaidPreYear_;
+      envCreditLevel_ = other.envCreditLevel_;
+      envCreditScore_ = other.envCreditScore_;
+      patentNumber_ = other.patentNumber_;
+      softBindNumber_ = other.softBindNumber_;
+      extraInfo_ = other.extraInfo_ != null ? other.extraInfo_.Clone() : null;
+      marketScore_ = other.marketScore_;
+      manageScore_ = other.manageScore_;
+      profitScore_ = other.profitScore_;
+      financeScore_ = other.financeScore_;
+      innovateScore_ = other.innovateScore_;
+      creditScore_ = other.creditScore_;
+      compreScore_ = other.compreScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterpriseFurtherInfo Clone() {
       return new EnterpriseFurtherInfo(this);
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
+    /// <summary>Field number for the "enterprise_name" field.</summary>
+    public const int EnterpriseNameFieldNumber = 1;
+    private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Name {
-      get { return name_; }
+    public string EnterpriseName {
+      get { return enterpriseName_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        enterpriseName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -5575,7 +5263,6 @@ namespace Tank.Contracts.Financing {
     public const int TotalAssetsFieldNumber = 2;
     private string totalAssets_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TotalAssets {
       get { return totalAssets_; }
       set {
@@ -5587,7 +5274,6 @@ namespace Tank.Contracts.Financing {
     public const int IncomeFieldNumber = 3;
     private string income_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Income {
       get { return income_; }
       set {
@@ -5595,35 +5281,10 @@ namespace Tank.Contracts.Financing {
       }
     }
 
-    /// <summary>Field number for the "enterprise_type" field.</summary>
-    public const int EnterpriseTypeFieldNumber = 4;
-    private string enterpriseType_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string EnterpriseType {
-      get { return enterpriseType_; }
-      set {
-        enterpriseType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "staff_number" field.</summary>
-    public const int StaffNumberFieldNumber = 5;
-    private int staffNumber_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int StaffNumber {
-      get { return staffNumber_; }
-      set {
-        staffNumber_ = value;
-      }
-    }
-
     /// <summary>Field number for the "industry" field.</summary>
-    public const int IndustryFieldNumber = 6;
+    public const int IndustryFieldNumber = 4;
     private string industry_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Industry {
       get { return industry_; }
       set {
@@ -5631,23 +5292,10 @@ namespace Tank.Contracts.Financing {
       }
     }
 
-    /// <summary>Field number for the "location" field.</summary>
-    public const int LocationFieldNumber = 7;
-    private string location_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Location {
-      get { return location_; }
-      set {
-        location_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "registered_address" field.</summary>
-    public const int RegisteredAddressFieldNumber = 8;
+    public const int RegisteredAddressFieldNumber = 5;
     private string registeredAddress_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RegisteredAddress {
       get { return registeredAddress_; }
       set {
@@ -5656,10 +5304,9 @@ namespace Tank.Contracts.Financing {
     }
 
     /// <summary>Field number for the "business_address" field.</summary>
-    public const int BusinessAddressFieldNumber = 9;
+    public const int BusinessAddressFieldNumber = 6;
     private string businessAddress_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string BusinessAddress {
       get { return businessAddress_; }
       set {
@@ -5667,23 +5314,10 @@ namespace Tank.Contracts.Financing {
       }
     }
 
-    /// <summary>Field number for the "business_scope" field.</summary>
-    public const int BusinessScopeFieldNumber = 10;
-    private string businessScope_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string BusinessScope {
-      get { return businessScope_; }
-      set {
-        businessScope_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 11;
+    public const int DescriptionFieldNumber = 7;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -5691,14 +5325,342 @@ namespace Tank.Contracts.Financing {
       }
     }
 
+    /// <summary>Field number for the "enterprise_type" field.</summary>
+    public const int EnterpriseTypeFieldNumber = 8;
+    private string enterpriseType_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string EnterpriseType {
+      get { return enterpriseType_; }
+      set {
+        enterpriseType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "staff_number" field.</summary>
+    public const int StaffNumberFieldNumber = 9;
+    private int staffNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int StaffNumber {
+      get { return staffNumber_; }
+      set {
+        staffNumber_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "location" field.</summary>
+    public const int LocationFieldNumber = 10;
+    private string location_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Location {
+      get { return location_; }
+      set {
+        location_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "business_scope" field.</summary>
+    public const int BusinessScopeFieldNumber = 11;
+    private string businessScope_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string BusinessScope {
+      get { return businessScope_; }
+      set {
+        businessScope_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "registered_assets" field.</summary>
+    public const int RegisteredAssetsFieldNumber = 12;
+    private string registeredAssets_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string RegisteredAssets {
+      get { return registeredAssets_; }
+      set {
+        registeredAssets_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "paid_assets" field.</summary>
+    public const int PaidAssetsFieldNumber = 13;
+    private string paidAssets_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PaidAssets {
+      get { return paidAssets_; }
+      set {
+        paidAssets_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "income_pre_year" field.</summary>
+    public const int IncomePreYearFieldNumber = 14;
+    private string incomePreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IncomePreYear {
+      get { return incomePreYear_; }
+      set {
+        incomePreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "profit_pre_year" field.</summary>
+    public const int ProfitPreYearFieldNumber = 15;
+    private string profitPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ProfitPreYear {
+      get { return profitPreYear_; }
+      set {
+        profitPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "net_profit_pre_year" field.</summary>
+    public const int NetProfitPreYearFieldNumber = 16;
+    private string netProfitPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NetProfitPreYear {
+      get { return netProfitPreYear_; }
+      set {
+        netProfitPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tax_pre_year" field.</summary>
+    public const int TaxPreYearFieldNumber = 17;
+    private string taxPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TaxPreYear {
+      get { return taxPreYear_; }
+      set {
+        taxPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "liability_pre_year" field.</summary>
+    public const int LiabilityPreYearFieldNumber = 18;
+    private string liabilityPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string LiabilityPreYear {
+      get { return liabilityPreYear_; }
+      set {
+        liabilityPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "has_ex_guarant" field.</summary>
+    public const int HasExGuarantFieldNumber = 19;
+    private int hasExGuarant_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HasExGuarant {
+      get { return hasExGuarant_; }
+      set {
+        hasExGuarant_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "vat_should_pay_pre_year" field.</summary>
+    public const int VatShouldPayPreYearFieldNumber = 20;
+    private string vatShouldPayPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string VatShouldPayPreYear {
+      get { return vatShouldPayPreYear_; }
+      set {
+        vatShouldPayPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "vat_paid_per_year" field.</summary>
+    public const int VatPaidPerYearFieldNumber = 21;
+    private string vatPaidPerYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string VatPaidPerYear {
+      get { return vatPaidPerYear_; }
+      set {
+        vatPaidPerYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "income_tax_pre_year" field.</summary>
+    public const int IncomeTaxPreYearFieldNumber = 22;
+    private string incomeTaxPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IncomeTaxPreYear {
+      get { return incomeTaxPreYear_; }
+      set {
+        incomeTaxPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "income_paid_tax_pre_year" field.</summary>
+    public const int IncomePaidTaxPreYearFieldNumber = 23;
+    private string incomePaidTaxPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IncomePaidTaxPreYear {
+      get { return incomePaidTaxPreYear_; }
+      set {
+        incomePaidTaxPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "social_security_number" field.</summary>
+    public const int SocialSecurityNumberFieldNumber = 24;
+    private int socialSecurityNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SocialSecurityNumber {
+      get { return socialSecurityNumber_; }
+      set {
+        socialSecurityNumber_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "house_fund_paid_pre_year" field.</summary>
+    public const int HouseFundPaidPreYearFieldNumber = 25;
+    private string houseFundPaidPreYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string HouseFundPaidPreYear {
+      get { return houseFundPaidPreYear_; }
+      set {
+        houseFundPaidPreYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "env_credit_level" field.</summary>
+    public const int EnvCreditLevelFieldNumber = 26;
+    private int envCreditLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EnvCreditLevel {
+      get { return envCreditLevel_; }
+      set {
+        envCreditLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "env_credit_score" field.</summary>
+    public const int EnvCreditScoreFieldNumber = 27;
+    private string envCreditScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string EnvCreditScore {
+      get { return envCreditScore_; }
+      set {
+        envCreditScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "patent_number" field.</summary>
+    public const int PatentNumberFieldNumber = 28;
+    private int patentNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PatentNumber {
+      get { return patentNumber_; }
+      set {
+        patentNumber_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "soft_bind_number" field.</summary>
+    public const int SoftBindNumberFieldNumber = 29;
+    private int softBindNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SoftBindNumber {
+      get { return softBindNumber_; }
+      set {
+        softBindNumber_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "extra_info" field.</summary>
+    public const int ExtraInfoFieldNumber = 30;
+    private global::AElf.Types.Hash extraInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::AElf.Types.Hash ExtraInfo {
+      get { return extraInfo_; }
+      set {
+        extraInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "market_score" field.</summary>
+    public const int MarketScoreFieldNumber = 31;
+    private string marketScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MarketScore {
+      get { return marketScore_; }
+      set {
+        marketScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "manage_score" field.</summary>
+    public const int ManageScoreFieldNumber = 32;
+    private string manageScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ManageScore {
+      get { return manageScore_; }
+      set {
+        manageScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "profit_score" field.</summary>
+    public const int ProfitScoreFieldNumber = 33;
+    private string profitScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ProfitScore {
+      get { return profitScore_; }
+      set {
+        profitScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "finance_score" field.</summary>
+    public const int FinanceScoreFieldNumber = 34;
+    private string financeScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FinanceScore {
+      get { return financeScore_; }
+      set {
+        financeScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "innovate_score" field.</summary>
+    public const int InnovateScoreFieldNumber = 35;
+    private string innovateScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string InnovateScore {
+      get { return innovateScore_; }
+      set {
+        innovateScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "credit_score" field.</summary>
+    public const int CreditScoreFieldNumber = 36;
+    private string creditScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string CreditScore {
+      get { return creditScore_; }
+      set {
+        creditScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "compre_score" field.</summary>
+    public const int CompreScoreFieldNumber = 37;
+    private string compreScore_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string CompreScore {
+      get { return compreScore_; }
+      set {
+        compreScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EnterpriseFurtherInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(EnterpriseFurtherInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5706,35 +5668,86 @@ namespace Tank.Contracts.Financing {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Name != other.Name) return false;
+      if (EnterpriseName != other.EnterpriseName) return false;
       if (TotalAssets != other.TotalAssets) return false;
       if (Income != other.Income) return false;
-      if (EnterpriseType != other.EnterpriseType) return false;
-      if (StaffNumber != other.StaffNumber) return false;
       if (Industry != other.Industry) return false;
-      if (Location != other.Location) return false;
       if (RegisteredAddress != other.RegisteredAddress) return false;
       if (BusinessAddress != other.BusinessAddress) return false;
-      if (BusinessScope != other.BusinessScope) return false;
       if (Description != other.Description) return false;
+      if (EnterpriseType != other.EnterpriseType) return false;
+      if (StaffNumber != other.StaffNumber) return false;
+      if (Location != other.Location) return false;
+      if (BusinessScope != other.BusinessScope) return false;
+      if (RegisteredAssets != other.RegisteredAssets) return false;
+      if (PaidAssets != other.PaidAssets) return false;
+      if (IncomePreYear != other.IncomePreYear) return false;
+      if (ProfitPreYear != other.ProfitPreYear) return false;
+      if (NetProfitPreYear != other.NetProfitPreYear) return false;
+      if (TaxPreYear != other.TaxPreYear) return false;
+      if (LiabilityPreYear != other.LiabilityPreYear) return false;
+      if (HasExGuarant != other.HasExGuarant) return false;
+      if (VatShouldPayPreYear != other.VatShouldPayPreYear) return false;
+      if (VatPaidPerYear != other.VatPaidPerYear) return false;
+      if (IncomeTaxPreYear != other.IncomeTaxPreYear) return false;
+      if (IncomePaidTaxPreYear != other.IncomePaidTaxPreYear) return false;
+      if (SocialSecurityNumber != other.SocialSecurityNumber) return false;
+      if (HouseFundPaidPreYear != other.HouseFundPaidPreYear) return false;
+      if (EnvCreditLevel != other.EnvCreditLevel) return false;
+      if (EnvCreditScore != other.EnvCreditScore) return false;
+      if (PatentNumber != other.PatentNumber) return false;
+      if (SoftBindNumber != other.SoftBindNumber) return false;
+      if (!object.Equals(ExtraInfo, other.ExtraInfo)) return false;
+      if (MarketScore != other.MarketScore) return false;
+      if (ManageScore != other.ManageScore) return false;
+      if (ProfitScore != other.ProfitScore) return false;
+      if (FinanceScore != other.FinanceScore) return false;
+      if (InnovateScore != other.InnovateScore) return false;
+      if (CreditScore != other.CreditScore) return false;
+      if (CompreScore != other.CompreScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
       if (TotalAssets.Length != 0) hash ^= TotalAssets.GetHashCode();
       if (Income.Length != 0) hash ^= Income.GetHashCode();
-      if (EnterpriseType.Length != 0) hash ^= EnterpriseType.GetHashCode();
-      if (StaffNumber != 0) hash ^= StaffNumber.GetHashCode();
       if (Industry.Length != 0) hash ^= Industry.GetHashCode();
-      if (Location.Length != 0) hash ^= Location.GetHashCode();
       if (RegisteredAddress.Length != 0) hash ^= RegisteredAddress.GetHashCode();
       if (BusinessAddress.Length != 0) hash ^= BusinessAddress.GetHashCode();
-      if (BusinessScope.Length != 0) hash ^= BusinessScope.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (EnterpriseType.Length != 0) hash ^= EnterpriseType.GetHashCode();
+      if (StaffNumber != 0) hash ^= StaffNumber.GetHashCode();
+      if (Location.Length != 0) hash ^= Location.GetHashCode();
+      if (BusinessScope.Length != 0) hash ^= BusinessScope.GetHashCode();
+      if (RegisteredAssets.Length != 0) hash ^= RegisteredAssets.GetHashCode();
+      if (PaidAssets.Length != 0) hash ^= PaidAssets.GetHashCode();
+      if (IncomePreYear.Length != 0) hash ^= IncomePreYear.GetHashCode();
+      if (ProfitPreYear.Length != 0) hash ^= ProfitPreYear.GetHashCode();
+      if (NetProfitPreYear.Length != 0) hash ^= NetProfitPreYear.GetHashCode();
+      if (TaxPreYear.Length != 0) hash ^= TaxPreYear.GetHashCode();
+      if (LiabilityPreYear.Length != 0) hash ^= LiabilityPreYear.GetHashCode();
+      if (HasExGuarant != 0) hash ^= HasExGuarant.GetHashCode();
+      if (VatShouldPayPreYear.Length != 0) hash ^= VatShouldPayPreYear.GetHashCode();
+      if (VatPaidPerYear.Length != 0) hash ^= VatPaidPerYear.GetHashCode();
+      if (IncomeTaxPreYear.Length != 0) hash ^= IncomeTaxPreYear.GetHashCode();
+      if (IncomePaidTaxPreYear.Length != 0) hash ^= IncomePaidTaxPreYear.GetHashCode();
+      if (SocialSecurityNumber != 0) hash ^= SocialSecurityNumber.GetHashCode();
+      if (HouseFundPaidPreYear.Length != 0) hash ^= HouseFundPaidPreYear.GetHashCode();
+      if (EnvCreditLevel != 0) hash ^= EnvCreditLevel.GetHashCode();
+      if (EnvCreditScore.Length != 0) hash ^= EnvCreditScore.GetHashCode();
+      if (PatentNumber != 0) hash ^= PatentNumber.GetHashCode();
+      if (SoftBindNumber != 0) hash ^= SoftBindNumber.GetHashCode();
+      if (extraInfo_ != null) hash ^= ExtraInfo.GetHashCode();
+      if (MarketScore.Length != 0) hash ^= MarketScore.GetHashCode();
+      if (ManageScore.Length != 0) hash ^= ManageScore.GetHashCode();
+      if (ProfitScore.Length != 0) hash ^= ProfitScore.GetHashCode();
+      if (FinanceScore.Length != 0) hash ^= FinanceScore.GetHashCode();
+      if (InnovateScore.Length != 0) hash ^= InnovateScore.GetHashCode();
+      if (CreditScore.Length != 0) hash ^= CreditScore.GetHashCode();
+      if (CompreScore.Length != 0) hash ^= CompreScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5742,20 +5755,18 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Name.Length != 0) {
+      if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteString(EnterpriseName);
       }
       if (TotalAssets.Length != 0) {
         output.WriteRawTag(18);
@@ -5765,37 +5776,141 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(26);
         output.WriteString(Income);
       }
-      if (EnterpriseType.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(EnterpriseType);
-      }
-      if (StaffNumber != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(StaffNumber);
-      }
       if (Industry.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(34);
         output.WriteString(Industry);
       }
-      if (Location.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Location);
-      }
       if (RegisteredAddress.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(42);
         output.WriteString(RegisteredAddress);
       }
       if (BusinessAddress.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(50);
         output.WriteString(BusinessAddress);
       }
-      if (BusinessScope.Length != 0) {
+      if (Description.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Description);
+      }
+      if (EnterpriseType.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(EnterpriseType);
+      }
+      if (StaffNumber != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(StaffNumber);
+      }
+      if (Location.Length != 0) {
         output.WriteRawTag(82);
+        output.WriteString(Location);
+      }
+      if (BusinessScope.Length != 0) {
+        output.WriteRawTag(90);
         output.WriteString(BusinessScope);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(Description);
+      if (RegisteredAssets.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(RegisteredAssets);
+      }
+      if (PaidAssets.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(PaidAssets);
+      }
+      if (IncomePreYear.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(IncomePreYear);
+      }
+      if (ProfitPreYear.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(ProfitPreYear);
+      }
+      if (NetProfitPreYear.Length != 0) {
+        output.WriteRawTag(130, 1);
+        output.WriteString(NetProfitPreYear);
+      }
+      if (TaxPreYear.Length != 0) {
+        output.WriteRawTag(138, 1);
+        output.WriteString(TaxPreYear);
+      }
+      if (LiabilityPreYear.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(LiabilityPreYear);
+      }
+      if (HasExGuarant != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(HasExGuarant);
+      }
+      if (VatShouldPayPreYear.Length != 0) {
+        output.WriteRawTag(162, 1);
+        output.WriteString(VatShouldPayPreYear);
+      }
+      if (VatPaidPerYear.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(VatPaidPerYear);
+      }
+      if (IncomeTaxPreYear.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(IncomeTaxPreYear);
+      }
+      if (IncomePaidTaxPreYear.Length != 0) {
+        output.WriteRawTag(186, 1);
+        output.WriteString(IncomePaidTaxPreYear);
+      }
+      if (SocialSecurityNumber != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(SocialSecurityNumber);
+      }
+      if (HouseFundPaidPreYear.Length != 0) {
+        output.WriteRawTag(202, 1);
+        output.WriteString(HouseFundPaidPreYear);
+      }
+      if (EnvCreditLevel != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(EnvCreditLevel);
+      }
+      if (EnvCreditScore.Length != 0) {
+        output.WriteRawTag(218, 1);
+        output.WriteString(EnvCreditScore);
+      }
+      if (PatentNumber != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteInt32(PatentNumber);
+      }
+      if (SoftBindNumber != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(SoftBindNumber);
+      }
+      if (extraInfo_ != null) {
+        output.WriteRawTag(242, 1);
+        output.WriteMessage(ExtraInfo);
+      }
+      if (MarketScore.Length != 0) {
+        output.WriteRawTag(250, 1);
+        output.WriteString(MarketScore);
+      }
+      if (ManageScore.Length != 0) {
+        output.WriteRawTag(130, 2);
+        output.WriteString(ManageScore);
+      }
+      if (ProfitScore.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(ProfitScore);
+      }
+      if (FinanceScore.Length != 0) {
+        output.WriteRawTag(146, 2);
+        output.WriteString(FinanceScore);
+      }
+      if (InnovateScore.Length != 0) {
+        output.WriteRawTag(154, 2);
+        output.WriteString(InnovateScore);
+      }
+      if (CreditScore.Length != 0) {
+        output.WriteRawTag(162, 2);
+        output.WriteString(CreditScore);
+      }
+      if (CompreScore.Length != 0) {
+        output.WriteRawTag(170, 2);
+        output.WriteString(CompreScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -5805,11 +5920,10 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Name.Length != 0) {
+      if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteString(EnterpriseName);
       }
       if (TotalAssets.Length != 0) {
         output.WriteRawTag(18);
@@ -5819,37 +5933,141 @@ namespace Tank.Contracts.Financing {
         output.WriteRawTag(26);
         output.WriteString(Income);
       }
-      if (EnterpriseType.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(EnterpriseType);
-      }
-      if (StaffNumber != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(StaffNumber);
-      }
       if (Industry.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(34);
         output.WriteString(Industry);
       }
-      if (Location.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Location);
-      }
       if (RegisteredAddress.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(42);
         output.WriteString(RegisteredAddress);
       }
       if (BusinessAddress.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(50);
         output.WriteString(BusinessAddress);
       }
-      if (BusinessScope.Length != 0) {
+      if (Description.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Description);
+      }
+      if (EnterpriseType.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(EnterpriseType);
+      }
+      if (StaffNumber != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(StaffNumber);
+      }
+      if (Location.Length != 0) {
         output.WriteRawTag(82);
+        output.WriteString(Location);
+      }
+      if (BusinessScope.Length != 0) {
+        output.WriteRawTag(90);
         output.WriteString(BusinessScope);
       }
-      if (Description.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(Description);
+      if (RegisteredAssets.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(RegisteredAssets);
+      }
+      if (PaidAssets.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(PaidAssets);
+      }
+      if (IncomePreYear.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(IncomePreYear);
+      }
+      if (ProfitPreYear.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(ProfitPreYear);
+      }
+      if (NetProfitPreYear.Length != 0) {
+        output.WriteRawTag(130, 1);
+        output.WriteString(NetProfitPreYear);
+      }
+      if (TaxPreYear.Length != 0) {
+        output.WriteRawTag(138, 1);
+        output.WriteString(TaxPreYear);
+      }
+      if (LiabilityPreYear.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(LiabilityPreYear);
+      }
+      if (HasExGuarant != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(HasExGuarant);
+      }
+      if (VatShouldPayPreYear.Length != 0) {
+        output.WriteRawTag(162, 1);
+        output.WriteString(VatShouldPayPreYear);
+      }
+      if (VatPaidPerYear.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(VatPaidPerYear);
+      }
+      if (IncomeTaxPreYear.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(IncomeTaxPreYear);
+      }
+      if (IncomePaidTaxPreYear.Length != 0) {
+        output.WriteRawTag(186, 1);
+        output.WriteString(IncomePaidTaxPreYear);
+      }
+      if (SocialSecurityNumber != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(SocialSecurityNumber);
+      }
+      if (HouseFundPaidPreYear.Length != 0) {
+        output.WriteRawTag(202, 1);
+        output.WriteString(HouseFundPaidPreYear);
+      }
+      if (EnvCreditLevel != 0) {
+        output.WriteRawTag(208, 1);
+        output.WriteInt32(EnvCreditLevel);
+      }
+      if (EnvCreditScore.Length != 0) {
+        output.WriteRawTag(218, 1);
+        output.WriteString(EnvCreditScore);
+      }
+      if (PatentNumber != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteInt32(PatentNumber);
+      }
+      if (SoftBindNumber != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteInt32(SoftBindNumber);
+      }
+      if (extraInfo_ != null) {
+        output.WriteRawTag(242, 1);
+        output.WriteMessage(ExtraInfo);
+      }
+      if (MarketScore.Length != 0) {
+        output.WriteRawTag(250, 1);
+        output.WriteString(MarketScore);
+      }
+      if (ManageScore.Length != 0) {
+        output.WriteRawTag(130, 2);
+        output.WriteString(ManageScore);
+      }
+      if (ProfitScore.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(ProfitScore);
+      }
+      if (FinanceScore.Length != 0) {
+        output.WriteRawTag(146, 2);
+        output.WriteString(FinanceScore);
+      }
+      if (InnovateScore.Length != 0) {
+        output.WriteRawTag(154, 2);
+        output.WriteString(InnovateScore);
+      }
+      if (CreditScore.Length != 0) {
+        output.WriteRawTag(162, 2);
+        output.WriteString(CreditScore);
+      }
+      if (CompreScore.Length != 0) {
+        output.WriteRawTag(170, 2);
+        output.WriteString(CompreScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -5858,11 +6076,10 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (EnterpriseName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EnterpriseName);
       }
       if (TotalAssets.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TotalAssets);
@@ -5870,17 +6087,8 @@ namespace Tank.Contracts.Financing {
       if (Income.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Income);
       }
-      if (EnterpriseType.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EnterpriseType);
-      }
-      if (StaffNumber != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StaffNumber);
-      }
       if (Industry.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Industry);
-      }
-      if (Location.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Location);
       }
       if (RegisteredAddress.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RegisteredAddress);
@@ -5888,11 +6096,98 @@ namespace Tank.Contracts.Financing {
       if (BusinessAddress.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(BusinessAddress);
       }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (EnterpriseType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EnterpriseType);
+      }
+      if (StaffNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StaffNumber);
+      }
+      if (Location.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Location);
+      }
       if (BusinessScope.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(BusinessScope);
       }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      if (RegisteredAssets.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RegisteredAssets);
+      }
+      if (PaidAssets.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PaidAssets);
+      }
+      if (IncomePreYear.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IncomePreYear);
+      }
+      if (ProfitPreYear.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProfitPreYear);
+      }
+      if (NetProfitPreYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(NetProfitPreYear);
+      }
+      if (TaxPreYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(TaxPreYear);
+      }
+      if (LiabilityPreYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(LiabilityPreYear);
+      }
+      if (HasExGuarant != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HasExGuarant);
+      }
+      if (VatShouldPayPreYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(VatShouldPayPreYear);
+      }
+      if (VatPaidPerYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(VatPaidPerYear);
+      }
+      if (IncomeTaxPreYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(IncomeTaxPreYear);
+      }
+      if (IncomePaidTaxPreYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(IncomePaidTaxPreYear);
+      }
+      if (SocialSecurityNumber != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(SocialSecurityNumber);
+      }
+      if (HouseFundPaidPreYear.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(HouseFundPaidPreYear);
+      }
+      if (EnvCreditLevel != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(EnvCreditLevel);
+      }
+      if (EnvCreditScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(EnvCreditScore);
+      }
+      if (PatentNumber != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(PatentNumber);
+      }
+      if (SoftBindNumber != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(SoftBindNumber);
+      }
+      if (extraInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ExtraInfo);
+      }
+      if (MarketScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(MarketScore);
+      }
+      if (ManageScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ManageScore);
+      }
+      if (ProfitScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ProfitScore);
+      }
+      if (FinanceScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(FinanceScore);
+      }
+      if (InnovateScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(InnovateScore);
+      }
+      if (CreditScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(CreditScore);
+      }
+      if (CompreScore.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(CompreScore);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5901,13 +6196,12 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(EnterpriseFurtherInfo other) {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.EnterpriseName.Length != 0) {
+        EnterpriseName = other.EnterpriseName;
       }
       if (other.TotalAssets.Length != 0) {
         TotalAssets = other.TotalAssets;
@@ -5915,17 +6209,8 @@ namespace Tank.Contracts.Financing {
       if (other.Income.Length != 0) {
         Income = other.Income;
       }
-      if (other.EnterpriseType.Length != 0) {
-        EnterpriseType = other.EnterpriseType;
-      }
-      if (other.StaffNumber != 0) {
-        StaffNumber = other.StaffNumber;
-      }
       if (other.Industry.Length != 0) {
         Industry = other.Industry;
-      }
-      if (other.Location.Length != 0) {
-        Location = other.Location;
       }
       if (other.RegisteredAddress.Length != 0) {
         RegisteredAddress = other.RegisteredAddress;
@@ -5933,17 +6218,106 @@ namespace Tank.Contracts.Financing {
       if (other.BusinessAddress.Length != 0) {
         BusinessAddress = other.BusinessAddress;
       }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      if (other.EnterpriseType.Length != 0) {
+        EnterpriseType = other.EnterpriseType;
+      }
+      if (other.StaffNumber != 0) {
+        StaffNumber = other.StaffNumber;
+      }
+      if (other.Location.Length != 0) {
+        Location = other.Location;
+      }
       if (other.BusinessScope.Length != 0) {
         BusinessScope = other.BusinessScope;
       }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
+      if (other.RegisteredAssets.Length != 0) {
+        RegisteredAssets = other.RegisteredAssets;
+      }
+      if (other.PaidAssets.Length != 0) {
+        PaidAssets = other.PaidAssets;
+      }
+      if (other.IncomePreYear.Length != 0) {
+        IncomePreYear = other.IncomePreYear;
+      }
+      if (other.ProfitPreYear.Length != 0) {
+        ProfitPreYear = other.ProfitPreYear;
+      }
+      if (other.NetProfitPreYear.Length != 0) {
+        NetProfitPreYear = other.NetProfitPreYear;
+      }
+      if (other.TaxPreYear.Length != 0) {
+        TaxPreYear = other.TaxPreYear;
+      }
+      if (other.LiabilityPreYear.Length != 0) {
+        LiabilityPreYear = other.LiabilityPreYear;
+      }
+      if (other.HasExGuarant != 0) {
+        HasExGuarant = other.HasExGuarant;
+      }
+      if (other.VatShouldPayPreYear.Length != 0) {
+        VatShouldPayPreYear = other.VatShouldPayPreYear;
+      }
+      if (other.VatPaidPerYear.Length != 0) {
+        VatPaidPerYear = other.VatPaidPerYear;
+      }
+      if (other.IncomeTaxPreYear.Length != 0) {
+        IncomeTaxPreYear = other.IncomeTaxPreYear;
+      }
+      if (other.IncomePaidTaxPreYear.Length != 0) {
+        IncomePaidTaxPreYear = other.IncomePaidTaxPreYear;
+      }
+      if (other.SocialSecurityNumber != 0) {
+        SocialSecurityNumber = other.SocialSecurityNumber;
+      }
+      if (other.HouseFundPaidPreYear.Length != 0) {
+        HouseFundPaidPreYear = other.HouseFundPaidPreYear;
+      }
+      if (other.EnvCreditLevel != 0) {
+        EnvCreditLevel = other.EnvCreditLevel;
+      }
+      if (other.EnvCreditScore.Length != 0) {
+        EnvCreditScore = other.EnvCreditScore;
+      }
+      if (other.PatentNumber != 0) {
+        PatentNumber = other.PatentNumber;
+      }
+      if (other.SoftBindNumber != 0) {
+        SoftBindNumber = other.SoftBindNumber;
+      }
+      if (other.extraInfo_ != null) {
+        if (extraInfo_ == null) {
+          ExtraInfo = new global::AElf.Types.Hash();
+        }
+        ExtraInfo.MergeFrom(other.ExtraInfo);
+      }
+      if (other.MarketScore.Length != 0) {
+        MarketScore = other.MarketScore;
+      }
+      if (other.ManageScore.Length != 0) {
+        ManageScore = other.ManageScore;
+      }
+      if (other.ProfitScore.Length != 0) {
+        ProfitScore = other.ProfitScore;
+      }
+      if (other.FinanceScore.Length != 0) {
+        FinanceScore = other.FinanceScore;
+      }
+      if (other.InnovateScore.Length != 0) {
+        InnovateScore = other.InnovateScore;
+      }
+      if (other.CreditScore.Length != 0) {
+        CreditScore = other.CreditScore;
+      }
+      if (other.CompreScore.Length != 0) {
+        CompreScore = other.CompreScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5955,7 +6329,7 @@ namespace Tank.Contracts.Financing {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Name = input.ReadString();
+            EnterpriseName = input.ReadString();
             break;
           }
           case 18: {
@@ -5967,35 +6341,142 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 34: {
-            EnterpriseType = input.ReadString();
-            break;
-          }
-          case 40: {
-            StaffNumber = input.ReadInt32();
-            break;
-          }
-          case 50: {
             Industry = input.ReadString();
             break;
           }
-          case 58: {
-            Location = input.ReadString();
-            break;
-          }
-          case 66: {
+          case 42: {
             RegisteredAddress = input.ReadString();
             break;
           }
-          case 74: {
+          case 50: {
             BusinessAddress = input.ReadString();
             break;
           }
+          case 58: {
+            Description = input.ReadString();
+            break;
+          }
+          case 66: {
+            EnterpriseType = input.ReadString();
+            break;
+          }
+          case 72: {
+            StaffNumber = input.ReadInt32();
+            break;
+          }
           case 82: {
-            BusinessScope = input.ReadString();
+            Location = input.ReadString();
             break;
           }
           case 90: {
-            Description = input.ReadString();
+            BusinessScope = input.ReadString();
+            break;
+          }
+          case 98: {
+            RegisteredAssets = input.ReadString();
+            break;
+          }
+          case 106: {
+            PaidAssets = input.ReadString();
+            break;
+          }
+          case 114: {
+            IncomePreYear = input.ReadString();
+            break;
+          }
+          case 122: {
+            ProfitPreYear = input.ReadString();
+            break;
+          }
+          case 130: {
+            NetProfitPreYear = input.ReadString();
+            break;
+          }
+          case 138: {
+            TaxPreYear = input.ReadString();
+            break;
+          }
+          case 146: {
+            LiabilityPreYear = input.ReadString();
+            break;
+          }
+          case 152: {
+            HasExGuarant = input.ReadInt32();
+            break;
+          }
+          case 162: {
+            VatShouldPayPreYear = input.ReadString();
+            break;
+          }
+          case 170: {
+            VatPaidPerYear = input.ReadString();
+            break;
+          }
+          case 178: {
+            IncomeTaxPreYear = input.ReadString();
+            break;
+          }
+          case 186: {
+            IncomePaidTaxPreYear = input.ReadString();
+            break;
+          }
+          case 192: {
+            SocialSecurityNumber = input.ReadInt32();
+            break;
+          }
+          case 202: {
+            HouseFundPaidPreYear = input.ReadString();
+            break;
+          }
+          case 208: {
+            EnvCreditLevel = input.ReadInt32();
+            break;
+          }
+          case 218: {
+            EnvCreditScore = input.ReadString();
+            break;
+          }
+          case 224: {
+            PatentNumber = input.ReadInt32();
+            break;
+          }
+          case 232: {
+            SoftBindNumber = input.ReadInt32();
+            break;
+          }
+          case 242: {
+            if (extraInfo_ == null) {
+              ExtraInfo = new global::AElf.Types.Hash();
+            }
+            input.ReadMessage(ExtraInfo);
+            break;
+          }
+          case 250: {
+            MarketScore = input.ReadString();
+            break;
+          }
+          case 258: {
+            ManageScore = input.ReadString();
+            break;
+          }
+          case 266: {
+            ProfitScore = input.ReadString();
+            break;
+          }
+          case 274: {
+            FinanceScore = input.ReadString();
+            break;
+          }
+          case 282: {
+            InnovateScore = input.ReadString();
+            break;
+          }
+          case 290: {
+            CreditScore = input.ReadString();
+            break;
+          }
+          case 298: {
+            CompreScore = input.ReadString();
             break;
           }
         }
@@ -6005,7 +6486,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6014,7 +6494,7 @@ namespace Tank.Contracts.Financing {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Name = input.ReadString();
+            EnterpriseName = input.ReadString();
             break;
           }
           case 18: {
@@ -6026,35 +6506,142 @@ namespace Tank.Contracts.Financing {
             break;
           }
           case 34: {
-            EnterpriseType = input.ReadString();
-            break;
-          }
-          case 40: {
-            StaffNumber = input.ReadInt32();
-            break;
-          }
-          case 50: {
             Industry = input.ReadString();
             break;
           }
-          case 58: {
-            Location = input.ReadString();
-            break;
-          }
-          case 66: {
+          case 42: {
             RegisteredAddress = input.ReadString();
             break;
           }
-          case 74: {
+          case 50: {
             BusinessAddress = input.ReadString();
             break;
           }
+          case 58: {
+            Description = input.ReadString();
+            break;
+          }
+          case 66: {
+            EnterpriseType = input.ReadString();
+            break;
+          }
+          case 72: {
+            StaffNumber = input.ReadInt32();
+            break;
+          }
           case 82: {
-            BusinessScope = input.ReadString();
+            Location = input.ReadString();
             break;
           }
           case 90: {
-            Description = input.ReadString();
+            BusinessScope = input.ReadString();
+            break;
+          }
+          case 98: {
+            RegisteredAssets = input.ReadString();
+            break;
+          }
+          case 106: {
+            PaidAssets = input.ReadString();
+            break;
+          }
+          case 114: {
+            IncomePreYear = input.ReadString();
+            break;
+          }
+          case 122: {
+            ProfitPreYear = input.ReadString();
+            break;
+          }
+          case 130: {
+            NetProfitPreYear = input.ReadString();
+            break;
+          }
+          case 138: {
+            TaxPreYear = input.ReadString();
+            break;
+          }
+          case 146: {
+            LiabilityPreYear = input.ReadString();
+            break;
+          }
+          case 152: {
+            HasExGuarant = input.ReadInt32();
+            break;
+          }
+          case 162: {
+            VatShouldPayPreYear = input.ReadString();
+            break;
+          }
+          case 170: {
+            VatPaidPerYear = input.ReadString();
+            break;
+          }
+          case 178: {
+            IncomeTaxPreYear = input.ReadString();
+            break;
+          }
+          case 186: {
+            IncomePaidTaxPreYear = input.ReadString();
+            break;
+          }
+          case 192: {
+            SocialSecurityNumber = input.ReadInt32();
+            break;
+          }
+          case 202: {
+            HouseFundPaidPreYear = input.ReadString();
+            break;
+          }
+          case 208: {
+            EnvCreditLevel = input.ReadInt32();
+            break;
+          }
+          case 218: {
+            EnvCreditScore = input.ReadString();
+            break;
+          }
+          case 224: {
+            PatentNumber = input.ReadInt32();
+            break;
+          }
+          case 232: {
+            SoftBindNumber = input.ReadInt32();
+            break;
+          }
+          case 242: {
+            if (extraInfo_ == null) {
+              ExtraInfo = new global::AElf.Types.Hash();
+            }
+            input.ReadMessage(ExtraInfo);
+            break;
+          }
+          case 250: {
+            MarketScore = input.ReadString();
+            break;
+          }
+          case 258: {
+            ManageScore = input.ReadString();
+            break;
+          }
+          case 266: {
+            ProfitScore = input.ReadString();
+            break;
+          }
+          case 274: {
+            FinanceScore = input.ReadString();
+            break;
+          }
+          case 282: {
+            InnovateScore = input.ReadString();
+            break;
+          }
+          case 290: {
+            CreditScore = input.ReadString();
+            break;
+          }
+          case 298: {
+            CompreScore = input.ReadString();
             break;
           }
         }
@@ -6072,23 +6659,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<FinancingProduct> _parser = new pb::MessageParser<FinancingProduct>(() => new FinancingProduct());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FinancingProduct> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinancingProduct() {
       OnConstruction();
     }
@@ -6096,7 +6679,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinancingProduct(FinancingProduct other) : this() {
       organization_ = other.organization_;
       productName_ = other.productName_;
@@ -6105,7 +6687,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinancingProduct Clone() {
       return new FinancingProduct(this);
     }
@@ -6114,7 +6695,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 1;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -6126,7 +6706,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 2;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -6138,7 +6717,6 @@ namespace Tank.Contracts.Financing {
     public const int UrlFieldNumber = 3;
     private string url_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Url {
       get { return url_; }
       set {
@@ -6147,13 +6725,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FinancingProduct);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FinancingProduct other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6168,7 +6744,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Organization.Length != 0) hash ^= Organization.GetHashCode();
@@ -6181,13 +6756,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -6212,7 +6785,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Organization.Length != 0) {
         output.WriteRawTag(10);
@@ -6233,7 +6805,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Organization.Length != 0) {
@@ -6252,7 +6823,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FinancingProduct other) {
       if (other == null) {
         return;
@@ -6270,7 +6840,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -6300,7 +6869,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6335,23 +6903,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<FinancingProductList> _parser = new pb::MessageParser<FinancingProductList>(() => new FinancingProductList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FinancingProductList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinancingProductList() {
       OnConstruction();
     }
@@ -6359,14 +6923,12 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinancingProductList(FinancingProductList other) : this() {
       value_ = other.value_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinancingProductList Clone() {
       return new FinancingProductList(this);
     }
@@ -6377,19 +6939,16 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(10, global::Tank.Contracts.Financing.FinancingProduct.Parser);
     private readonly pbc::RepeatedField<global::Tank.Contracts.Financing.FinancingProduct> value_ = new pbc::RepeatedField<global::Tank.Contracts.Financing.FinancingProduct>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Tank.Contracts.Financing.FinancingProduct> Value {
       get { return value_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FinancingProductList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FinancingProductList other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6402,7 +6961,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= value_.GetHashCode();
@@ -6413,13 +6971,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -6433,7 +6989,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       value_.WriteTo(ref output, _repeated_value_codec);
       if (_unknownFields != null) {
@@ -6443,7 +6998,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += value_.CalculateSize(_repeated_value_codec);
@@ -6454,7 +7008,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FinancingProductList other) {
       if (other == null) {
         return;
@@ -6464,7 +7017,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -6486,7 +7038,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6513,23 +7064,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ApplyRecord> _parser = new pb::MessageParser<ApplyRecord>(() => new ApplyRecord());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ApplyRecord> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyRecord() {
       OnConstruction();
     }
@@ -6537,7 +7084,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyRecord(ApplyRecord other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -6553,7 +7099,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyRecord Clone() {
       return new ApplyRecord(this);
     }
@@ -6562,7 +7107,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -6574,7 +7118,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -6586,7 +7129,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -6598,7 +7140,6 @@ namespace Tank.Contracts.Financing {
     public const int AllowanceFieldNumber = 4;
     private string allowance_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Allowance {
       get { return allowance_; }
       set {
@@ -6610,7 +7151,6 @@ namespace Tank.Contracts.Financing {
     public const int AprFieldNumber = 5;
     private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Apr {
       get { return apr_; }
       set {
@@ -6622,7 +7162,6 @@ namespace Tank.Contracts.Financing {
     public const int PeriodFieldNumber = 6;
     private string period_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Period {
       get { return period_; }
       set {
@@ -6634,7 +7173,6 @@ namespace Tank.Contracts.Financing {
     public const int ApplyStatusFieldNumber = 7;
     private global::Tank.Contracts.Financing.ApplyStatus applyStatus_ = global::Tank.Contracts.Financing.ApplyStatus.NotApplied;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Tank.Contracts.Financing.ApplyStatus ApplyStatus {
       get { return applyStatus_; }
       set {
@@ -6646,7 +7184,6 @@ namespace Tank.Contracts.Financing {
     public const int GuaranteeMethodFieldNumber = 8;
     private string guaranteeMethod_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GuaranteeMethod {
       get { return guaranteeMethod_; }
       set {
@@ -6658,7 +7195,6 @@ namespace Tank.Contracts.Financing {
     public const int ApplyTimeFieldNumber = 9;
     private global::Google.Protobuf.WellKnownTypes.Timestamp applyTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp ApplyTime {
       get { return applyTime_; }
       set {
@@ -6670,7 +7206,6 @@ namespace Tank.Contracts.Financing {
     public const int PassedTimeFieldNumber = 10;
     private global::Google.Protobuf.WellKnownTypes.Timestamp passedTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp PassedTime {
       get { return passedTime_; }
       set {
@@ -6679,13 +7214,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ApplyRecord);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ApplyRecord other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6707,7 +7240,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -6727,13 +7259,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -6786,7 +7316,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -6835,7 +7364,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -6875,7 +7403,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ApplyRecord other) {
       if (other == null) {
         return;
@@ -6920,7 +7447,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -6984,7 +7510,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7053,23 +7578,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ApplyRecordList> _parser = new pb::MessageParser<ApplyRecordList>(() => new ApplyRecordList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ApplyRecordList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyRecordList() {
       OnConstruction();
     }
@@ -7077,14 +7598,12 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyRecordList(ApplyRecordList other) : this() {
       value_ = other.value_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyRecordList Clone() {
       return new ApplyRecordList(this);
     }
@@ -7095,19 +7614,16 @@ namespace Tank.Contracts.Financing {
         = pb::FieldCodec.ForMessage(10, global::Tank.Contracts.Financing.ApplyRecord.Parser);
     private readonly pbc::RepeatedField<global::Tank.Contracts.Financing.ApplyRecord> value_ = new pbc::RepeatedField<global::Tank.Contracts.Financing.ApplyRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Tank.Contracts.Financing.ApplyRecord> Value {
       get { return value_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ApplyRecordList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ApplyRecordList other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7120,7 +7636,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= value_.GetHashCode();
@@ -7131,13 +7646,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7151,7 +7664,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       value_.WriteTo(ref output, _repeated_value_codec);
       if (_unknownFields != null) {
@@ -7161,7 +7673,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += value_.CalculateSize(_repeated_value_codec);
@@ -7172,7 +7683,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ApplyRecordList other) {
       if (other == null) {
         return;
@@ -7182,7 +7692,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7204,7 +7713,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7231,23 +7739,19 @@ namespace Tank.Contracts.Financing {
     private static readonly pb::MessageParser<ApplyPassed> _parser = new pb::MessageParser<ApplyPassed>(() => new ApplyPassed());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ApplyPassed> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Tank.Contracts.Financing.FinancingContractReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyPassed() {
       OnConstruction();
     }
@@ -7255,7 +7759,6 @@ namespace Tank.Contracts.Financing {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyPassed(ApplyPassed other) : this() {
       enterpriseName_ = other.enterpriseName_;
       organization_ = other.organization_;
@@ -7271,7 +7774,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyPassed Clone() {
       return new ApplyPassed(this);
     }
@@ -7280,7 +7782,6 @@ namespace Tank.Contracts.Financing {
     public const int EnterpriseNameFieldNumber = 1;
     private string enterpriseName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnterpriseName {
       get { return enterpriseName_; }
       set {
@@ -7292,7 +7793,6 @@ namespace Tank.Contracts.Financing {
     public const int OrganizationFieldNumber = 2;
     private string organization_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Organization {
       get { return organization_; }
       set {
@@ -7304,7 +7804,6 @@ namespace Tank.Contracts.Financing {
     public const int ProductNameFieldNumber = 3;
     private string productName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProductName {
       get { return productName_; }
       set {
@@ -7316,7 +7815,6 @@ namespace Tank.Contracts.Financing {
     public const int AllowanceFieldNumber = 4;
     private string allowance_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Allowance {
       get { return allowance_; }
       set {
@@ -7328,7 +7826,6 @@ namespace Tank.Contracts.Financing {
     public const int AprFieldNumber = 5;
     private string apr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Apr {
       get { return apr_; }
       set {
@@ -7340,7 +7837,6 @@ namespace Tank.Contracts.Financing {
     public const int PeriodFieldNumber = 6;
     private string period_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Period {
       get { return period_; }
       set {
@@ -7352,7 +7848,6 @@ namespace Tank.Contracts.Financing {
     public const int ApplyStatusFieldNumber = 7;
     private global::Tank.Contracts.Financing.ApplyStatus applyStatus_ = global::Tank.Contracts.Financing.ApplyStatus.NotApplied;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Tank.Contracts.Financing.ApplyStatus ApplyStatus {
       get { return applyStatus_; }
       set {
@@ -7364,7 +7859,6 @@ namespace Tank.Contracts.Financing {
     public const int GuaranteeMethodFieldNumber = 8;
     private string guaranteeMethod_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GuaranteeMethod {
       get { return guaranteeMethod_; }
       set {
@@ -7376,7 +7870,6 @@ namespace Tank.Contracts.Financing {
     public const int ApplyTimeFieldNumber = 9;
     private global::Google.Protobuf.WellKnownTypes.Timestamp applyTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp ApplyTime {
       get { return applyTime_; }
       set {
@@ -7388,7 +7881,6 @@ namespace Tank.Contracts.Financing {
     public const int PassedTimeFieldNumber = 10;
     private global::Google.Protobuf.WellKnownTypes.Timestamp passedTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp PassedTime {
       get { return passedTime_; }
       set {
@@ -7397,13 +7889,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ApplyPassed);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ApplyPassed other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7425,7 +7915,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnterpriseName.Length != 0) hash ^= EnterpriseName.GetHashCode();
@@ -7445,13 +7934,11 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7504,7 +7991,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnterpriseName.Length != 0) {
         output.WriteRawTag(10);
@@ -7553,7 +8039,6 @@ namespace Tank.Contracts.Financing {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnterpriseName.Length != 0) {
@@ -7593,7 +8078,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ApplyPassed other) {
       if (other == null) {
         return;
@@ -7638,7 +8122,6 @@ namespace Tank.Contracts.Financing {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7702,7 +8185,6 @@ namespace Tank.Contracts.Financing {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using AElf;
 using AElf.EventHandler;
 using AElf.Types;
@@ -8,11 +9,13 @@ using Volo.Abp.DependencyInjection;
 using AElf.Contracts.Delegator;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using Newtonsoft.Json;
 using Tank.Contracts.Financing;
 using Tank.Financing.Applies;
 using Tank.Financing.EnterpriseDetails;
 using Tank.Financing.Enterprises;
 using Tank.Financing.FinancialProducts;
+using Volo.Abp.ObjectMapping;
 
 namespace Tank.Financing;
 
@@ -21,7 +24,7 @@ public interface IBlockchainAppService
     string AddFinancingProduct(FinancialProductCreateDto input);
     string Certificate(EnterpriseCreateDto input);
     string ConfirmCertificate(EnterpriseUpdateDto input);
-    string Complete(EnterpriseDetailCreateDto input);
+    string Complete(EnterpriseDetail detail, Dictionary<string,string> extraInfo);
     string Apply(ApplyCreateDto input);
     string AdvanceSetAllowance(ApplyCreateDto input);
     string SetAllowance(ApplyUpdateDto input);
@@ -34,12 +37,15 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
 {
     private readonly NodeManager _nodeManager;
 
+    private readonly IObjectMapper _objectMapper;
+
     public BlockchainOptions Options { get; }
 
     public ILogger<BlockchainAppService> Logger { get; set; }
 
-    public BlockchainAppService(IOptionsSnapshot<BlockchainOptions> options)
+    public BlockchainAppService(IOptionsSnapshot<BlockchainOptions> options, IObjectMapper objectMapper)
     {
+        _objectMapper = objectMapper;
         Logger = NullLogger<BlockchainAppService>.Instance;
         Options = options.Value;
         try
@@ -114,25 +120,13 @@ public class BlockchainAppService : IBlockchainAppService, ITransientDependency
             });
     }
 
-    public string Complete(EnterpriseDetailCreateDto input)
+    public string Complete(EnterpriseDetail detail, Dictionary<string, string> extraInfo)
     {
-        /*
-        return ForwardContract(input.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, "Complete",
-            new EnterpriseFurtherInfo
-            {
-                Name = input.EnterpriseName,
-                BusinessAddress = input.BusinessAddress,
-                BusinessScope = input.BusinessScope,
-                Description = input.Description,
-                StaffNumber = input.StaffNumber,
-                EnterpriseType = input.EnterpriseType,
-                Income = input.Income,
-                Industry = input.Industry,
-                RegisteredAddress = input.RegisteredAddress,
-                TotalAssets = input.TotalAssets
-            });
-            */
-        return null;
+        var enterpriseFurtherInfo = _objectMapper.Map<EnterpriseDetail, EnterpriseFurtherInfo>(detail);
+        enterpriseFurtherInfo.ExtraInfo =
+            extraInfo != null ? HashHelper.ComputeFrom(JsonConvert.SerializeObject(extraInfo)) : null;
+        return ForwardContract(detail.EnterpriseName, FinancingConsts.ScopeIdForEnterprise, "Complete",
+            enterpriseFurtherInfo);
     }
 
     public string Apply(ApplyCreateDto input)

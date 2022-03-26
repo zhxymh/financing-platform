@@ -6,6 +6,7 @@ using Tank.Financing.Shared;
 using Volo.Abp.AutoMapper;
 using Tank.Financing.Enterprises;
 using AutoMapper;
+using Tank.Contracts.Financing;
 
 namespace Tank.Financing;
 
@@ -32,5 +33,6 @@ public class FinancingApplicationAutoMapperProfile : Profile
         CreateMap<EnterpriseDetailCreateDto, EnterpriseDetail>().IgnoreFullAuditedObjectProperties().Ignore(x => x.ExtraProperties).Ignore(x => x.ConcurrencyStamp).Ignore(x => x.Id);
         CreateMap<EnterpriseDetailUpdateDto, EnterpriseDetail>().IgnoreFullAuditedObjectProperties().Ignore(x => x.ExtraProperties).Ignore(x => x.ConcurrencyStamp).Ignore(x => x.Id);
         CreateMap<EnterpriseDetail, EnterpriseDetailDto>();
+        CreateMap<EnterpriseDetail, EnterpriseFurtherInfo>();
     }
 }

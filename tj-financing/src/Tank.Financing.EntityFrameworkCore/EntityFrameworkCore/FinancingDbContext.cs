@@ -279,9 +279,6 @@ public class FinancingDbContext :
                 b.Property(x => x.CompreDes).HasColumnName(nameof(EnterpriseDetail.CompreDes));
                 b.Property(x => x.HasEvaluate).HasColumnName(nameof(EnterpriseDetail.HasEvaluate));
                 #endregion
-                
-                
-                b.Property(x => x.ExtraInfoHash).HasColumnName(nameof(EnterpriseDetail.ExtraInfoHash));
             });
         }
         

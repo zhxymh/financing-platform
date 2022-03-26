@@ -182,17 +182,43 @@ message EnterpriseBasicInfo {
 }
 
 message EnterpriseFurtherInfo {
-    string name = 1;
+    string enterprise_name = 1;
     string total_assets = 2;
     string income = 3;
-    string enterprise_type = 4;
-    int32 staff_number = 5;
-    string industry = 6;
-    string location = 7;
-    string registered_address = 8;
-    string business_address = 9;
-    string business_scope = 10;
-    string description = 11;
+    string industry = 4;
+    string registered_address = 5;
+    string business_address = 6;
+    string description = 7;
+    string enterprise_type = 8;
+    int32 staff_number = 9;
+    string location = 10;
+    string business_scope = 11;
+    string registered_assets = 12;
+    string paid_assets = 13;
+    string income_pre_year = 14;
+    string profit_pre_year = 15;
+    string net_profit_pre_year = 16;
+    string tax_pre_year = 17;
+    string liability_pre_year = 18;
+    int32 has_ex_guarant = 19;
+    string vat_should_pay_pre_year = 20;
+    string vat_paid_per_year = 21;
+    string income_tax_pre_year = 22;
+    string income_paid_tax_pre_year = 23;
+    int32 social_security_number = 24;
+    string house_fund_paid_pre_year = 25;
+    int32 env_credit_level = 26;
+    string env_credit_score = 27;
+    int32 patent_number = 28;
+    int32 soft_bind_number = 29;
+    aelf.Hash extra_info = 30;
+    string market_score = 31;
+    string manage_score = 32;
+    string profit_score = 33;
+    string finance_score = 34;
+    string innovate_score = 35;
+    string credit_score = 36;
+    string compre_score = 37;
 }
 
 message FinancingProduct {
