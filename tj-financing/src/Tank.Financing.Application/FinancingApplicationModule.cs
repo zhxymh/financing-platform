@@ -1,5 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Tank.Financing.EnterpriseDetails;
+using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.AutoMapper;
@@ -44,5 +46,11 @@ namespace Tank.Financing;
 
         Configure<SmsOptions>(context.Services.GetConfiguration().GetSection("Sms"));
         Configure<BlockchainOptions>(context.Services.GetConfiguration().GetSection("Blockchain"));
+        Configure<EnterpriseDetailExtraInfoOptions>(context.Services.GetConfiguration().GetSection("EnterpriseDetailExtraInfo"));
+    }
+
+    public override void OnApplicationInitialization(ApplicationInitializationContext context)
+    {
+        System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
     }
 }

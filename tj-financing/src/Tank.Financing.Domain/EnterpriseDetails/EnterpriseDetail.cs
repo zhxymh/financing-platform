@@ -43,7 +43,8 @@ namespace Tank.Financing.EnterpriseDetails
 
         [CanBeNull]
         public virtual string CommitUserName { get; set; }
-        
+        [CanBeNull]
+        public virtual string ExtraInfoHash { get; set; }
         
         public virtual string EnterpriseType { get; set; }
         public virtual int StaffNumber { get; set; }
@@ -61,7 +62,7 @@ namespace Tank.Financing.EnterpriseDetails
         public virtual string VatPaidPerYear { get; set; }
         public virtual string IncomeTaxPreYear { get; set; }
         public virtual string IncomePaidTaxPreYear { get; set; }
-        public virtual int SocailsecurityNumber { get; set; }
+        public virtual int SocialsecurityNumber { get; set; }
         public virtual string HousefundPaidPreYear { get; set; }
         public virtual int EnvCreditLevel { get; set; }
         public virtual string EnvCreditScore { get; set; }
@@ -107,7 +108,7 @@ namespace Tank.Financing.EnterpriseDetails
             string VatPaidPerYear, 
             string IncomeTaxPreYear, 
             string IncomePaidTaxPreYear, 
-            int SocailsecurityNumber, 
+            int SocialsecurityNumber, 
             string HousefundPaidPreYear, 
             int EnvCreditLevel, 
             string EnvCreditScore, 
@@ -174,7 +175,7 @@ namespace Tank.Financing.EnterpriseDetails
             this.VatPaidPerYear = VatPaidPerYear;
             this.IncomeTaxPreYear = IncomeTaxPreYear;
             this.IncomePaidTaxPreYear = IncomePaidTaxPreYear;
-            this.SocailsecurityNumber = SocailsecurityNumber;
+            this.SocialsecurityNumber = SocialsecurityNumber;
             this.HousefundPaidPreYear = HousefundPaidPreYear;
             this.EnvCreditLevel = EnvCreditLevel;
             this.EnvCreditScore = EnvCreditScore;

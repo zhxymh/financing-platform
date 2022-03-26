@@ -16,5 +16,6 @@ namespace Tank.Financing.EnterpriseDetails
         Task<EnterpriseDetailDto> CreateAsync(EnterpriseDetailCreateDto input);
 
         Task<EnterpriseDetailDto> UpdateAsync(Guid id, EnterpriseDetailUpdateDto input);
+        Task<EnterpriseDetailEvaluateDto> Evaluate(GetEnterpriseDetailsInput input);
     }
 }

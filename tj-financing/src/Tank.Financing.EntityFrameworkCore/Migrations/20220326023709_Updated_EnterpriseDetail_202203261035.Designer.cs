@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tank.Financing.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -11,9 +12,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Tank.Financing.Migrations
 {
     [DbContext(typeof(FinancingDbContext))]
-    partial class FinancingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220326023709_Updated_EnterpriseDetail_202203261035")]
+    partial class Updated_EnterpriseDetail_202203261035
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -142,6 +144,7 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<string>("BusinessAddress")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("BusinessAddress");
 
@@ -155,16 +158,9 @@ namespace Tank.Financing.Migrations
                         .HasColumnName("CommitUserName");
 
                     b.Property<string>("CompleteTxId")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("CompleteTxId");
-
-                    b.Property<string>("CompreDes")
-                        .HasColumnType("longtext")
-                        .HasColumnName("CompreDes");
-
-                    b.Property<string>("CompreScore")
-                        .HasColumnType("longtext")
-                        .HasColumnName("CompreScore");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -180,14 +176,6 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("CreatorId");
 
-                    b.Property<string>("CreditDes")
-                        .HasColumnType("longtext")
-                        .HasColumnName("CreditDes");
-
-                    b.Property<string>("CreditScore")
-                        .HasColumnType("longtext")
-                        .HasColumnName("CreditScore");
-
                     b.Property<Guid?>("DeleterId")
                         .HasColumnType("char(36)")
                         .HasColumnName("DeleterId");
@@ -197,6 +185,7 @@ namespace Tank.Financing.Migrations
                         .HasColumnName("DeletionTime");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("Description");
 
@@ -210,15 +199,6 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("EnterpriseType");
 
-                    b.Property<int>("EnvCreditLevel")
-                        .HasColumnType("int")
-                        .HasColumnName("EnvCreditLevel");
-
-                    b.Property<string>("EnvCreditScore")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("EnvCreditScore");
-
                     b.Property<string>("ExtraInfoHash")
                         .HasColumnType("longtext")
                         .HasColumnName("ExtraInfoHash");
@@ -227,57 +207,15 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<string>("FinanceDes")
-                        .HasColumnType("longtext")
-                        .HasColumnName("FinanceDes");
-
-                    b.Property<string>("FinanceScore")
-                        .HasColumnType("longtext")
-                        .HasColumnName("FinanceScore");
-
-                    b.Property<string>("HasEvaluate")
-                        .HasColumnType("longtext")
-                        .HasColumnName("HasEvaluate");
-
-                    b.Property<int>("HasExGuarant")
-                        .HasColumnType("int")
-                        .HasColumnName("HasExGuarant");
-
-                    b.Property<string>("HousefundPaidPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("HousefundPaidPreYear");
-
                     b.Property<string>("Income")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("Income");
 
-                    b.Property<string>("IncomePaidTaxPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("IncomePaidTaxPreYear");
-
-                    b.Property<string>("IncomePreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("IncomePreYear");
-
-                    b.Property<string>("IncomeTaxPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("IncomeTaxPreYear");
-
                     b.Property<string>("Industry")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("Industry");
-
-                    b.Property<string>("InnovateDes")
-                        .HasColumnType("longtext")
-                        .HasColumnName("InnovateDes");
-
-                    b.Property<string>("InnovateScore")
-                        .HasColumnType("longtext")
-                        .HasColumnName("InnovateScore");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -293,98 +231,24 @@ namespace Tank.Financing.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<string>("LiabilityPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("LiabilityPreYear");
-
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("Location");
 
-                    b.Property<string>("ManageDes")
-                        .HasColumnType("longtext")
-                        .HasColumnName("ManageDes");
-
-                    b.Property<string>("ManageScore")
-                        .HasColumnType("longtext")
-                        .HasColumnName("ManageScore");
-
-                    b.Property<string>("MarketDes")
-                        .HasColumnType("longtext")
-                        .HasColumnName("MarketDes");
-
-                    b.Property<string>("MarketScore")
-                        .HasColumnType("longtext")
-                        .HasColumnName("MarketScore");
-
-                    b.Property<string>("NetprofitPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("NetprofitPreYear");
-
-                    b.Property<string>("PaidAssets")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("PaidAssets");
-
-                    b.Property<int>("PatentNumber")
-                        .HasColumnType("int")
-                        .HasColumnName("PatentNumber");
-
-                    b.Property<string>("ProfitDes")
-                        .HasColumnType("longtext")
-                        .HasColumnName("ProfitDes");
-
-                    b.Property<string>("ProfitPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("ProfitPreYear");
-
-                    b.Property<string>("ProfitScore")
-                        .HasColumnType("longtext")
-                        .HasColumnName("ProfitScore");
-
                     b.Property<string>("RegisteredAddress")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("RegisteredAddress");
-
-                    b.Property<string>("RegisteredAssets")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("RegisteredAssets");
-
-                    b.Property<int>("SocialsecurityNumber")
-                        .HasColumnType("int")
-                        .HasColumnName("SocialsecurityNumber");
-
-                    b.Property<int>("SoftbindNumber")
-                        .HasColumnType("int")
-                        .HasColumnName("SoftbindNumber");
 
                     b.Property<int>("StaffNumber")
                         .HasColumnType("int")
                         .HasColumnName("StaffNumber");
 
-                    b.Property<string>("TaxPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("TaxPreYear");
-
                     b.Property<string>("TotalAssets")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("TotalAssets");
-
-                    b.Property<string>("VatPaidPerYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("VatPaidPerYear");
-
-                    b.Property<string>("VatShouldpayPreYear")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("VatShouldpayPreYear");
 
                     b.HasKey("Id");
 

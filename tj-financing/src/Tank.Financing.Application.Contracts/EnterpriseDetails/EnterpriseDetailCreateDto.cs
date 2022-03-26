@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace Tank.Financing.EnterpriseDetails
 {
@@ -29,7 +30,6 @@ namespace Tank.Financing.EnterpriseDetails
         public string Description { get; set; }
         public string CompleteTxId { get; set; }
         public string CommitUserName { get; set; }
-
         
         
         [Required]
@@ -65,7 +65,7 @@ namespace Tank.Financing.EnterpriseDetails
         [Required]
         public string IncomePaidTaxPreYear { get; set; }
         [Required]
-        public int SocailsecurityNumber { get; set; }
+        public int SocialsecurityNumber { get; set; }
         [Required]
         public string HousefundPaidPreYear { get; set; }
         [Required]
@@ -76,9 +76,9 @@ namespace Tank.Financing.EnterpriseDetails
         public int PatentNumber { get; set; }
         [Required]
         public int SoftbindNumber { get; set; }
-        public byte[] file { get; set; }
         
-        
+        public IFormFile ExtraInfoFile { get; set; }
+
         
     }
 }

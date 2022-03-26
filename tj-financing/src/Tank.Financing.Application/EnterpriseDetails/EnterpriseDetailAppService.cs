@@ -1,29 +1,36 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
-using System.Linq.Dynamic.Core;
+using AElf;
+using AutoMapper;
+using ExcelDataReader;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
-using Volo.Abp.Domain.Repositories;
 using Tank.Financing.Permissions;
-using Tank.Financing.EnterpriseDetails;
+using Volo.Abp.Data;
 
 namespace Tank.Financing.EnterpriseDetails
 {
 
-    [Authorize(FinancingPermissions.EnterpriseDetails.Default)]
+    //[Authorize(FinancingPermissions.EnterpriseDetails.Default)]
     public class EnterpriseDetailsAppService : ApplicationService, IEnterpriseDetailsAppService
     {
         private readonly IEnterpriseDetailRepository _enterpriseDetailRepository;
         private readonly IBlockchainAppService _blockchainAppService;
+        private readonly EnterpriseDetailExtraInfoOptions _enterpriseDetailExtraInfoOptions;
 
-        public EnterpriseDetailsAppService(IEnterpriseDetailRepository enterpriseDetailRepository, IBlockchainAppService blockchainAppService)
+        public EnterpriseDetailsAppService(IEnterpriseDetailRepository enterpriseDetailRepository, IBlockchainAppService blockchainAppService,IOptionsSnapshot<EnterpriseDetailExtraInfoOptions> enterpriseDetailExtraInfoOptions)
         {
             _enterpriseDetailRepository = enterpriseDetailRepository;
             _blockchainAppService = blockchainAppService;
+            _enterpriseDetailExtraInfoOptions = enterpriseDetailExtraInfoOptions.Value;
         }
 
         public virtual async Task<PagedResultDto<EnterpriseDetailDto>> GetListAsync(GetEnterpriseDetailsInput input)
@@ -69,10 +76,17 @@ namespace Tank.Financing.EnterpriseDetails
                 throw new UserFriendlyException("企业名称已经存在");
             }
 
-            //input.CompleteTxId = _blockchainAppService.Complete(input);
+            input.CompleteTxId = "123456";//_blockchainAppService.Complete(input);
             var enterpriseDetail = ObjectMapper.Map<EnterpriseDetailCreateDto, EnterpriseDetail>(input);
-        
-           
+            var extraInfo = new Dictionary<string, string>();
+            if (input.ExtraInfoFile != null)
+            {
+                extraInfo = GetEnterpriseDetailExtraInfo(input.ExtraInfoFile.OpenReadStream());
+                enterpriseDetail.SetProperty("EnterpriseDetailExtraInfo", extraInfo);
+                enterpriseDetail.ExtraInfoHash = HashHelper.ComputeFrom(JsonConvert.SerializeObject(extraInfo)).ToHex();
+            }
+
+            enterpriseDetail = doEvaluate(enterpriseDetail, extraInfo);
             enterpriseDetail = await _enterpriseDetailRepository.InsertAsync(enterpriseDetail, autoSave: true);
             return ObjectMapper.Map<EnterpriseDetail, EnterpriseDetailDto>(enterpriseDetail);
         }
@@ -82,7 +96,6 @@ namespace Tank.Financing.EnterpriseDetails
         {
             input.CompleteTxId = _blockchainAppService.Complete(new EnterpriseDetailCreateDto
             {
-                /*
                 BusinessAddress = input.BusinessAddress,
                 BusinessScope = input.BusinessScope,
                 Description = input.Description,
@@ -95,12 +108,119 @@ namespace Tank.Financing.EnterpriseDetails
                 StaffNumber = input.StaffNumber,
                 TotalAssets = input.TotalAssets,
                 CommitUserName = input.CommitUserName
-                */
             });
             var enterpriseDetail = await _enterpriseDetailRepository.GetAsync(id);
             ObjectMapper.Map(input, enterpriseDetail);
+            var extraInfo = new Dictionary<string, string>();
+            if (input.ExtraInfoFile != null)
+            {
+                extraInfo = GetEnterpriseDetailExtraInfo(input.ExtraInfoFile.OpenReadStream());
+                enterpriseDetail.SetProperty("EnterpriseDetailExtraInfo", extraInfo);
+                enterpriseDetail.ExtraInfoHash = HashHelper.ComputeFrom(JsonConvert.SerializeObject(extraInfo)).ToHex();
+            }
+            enterpriseDetail = doEvaluate(enterpriseDetail, extraInfo);
             enterpriseDetail = await _enterpriseDetailRepository.UpdateAsync(enterpriseDetail, autoSave: true);
             return ObjectMapper.Map<EnterpriseDetail, EnterpriseDetailDto>(enterpriseDetail);
+        }
+
+        public virtual async Task<EnterpriseDetailEvaluateDto> Evaluate(GetEnterpriseDetailsInput input)
+        {
+            var items = await _enterpriseDetailRepository.GetListAsync(null, input.EnterpriseName);
+            if (items != null && items.Count > 0)
+            {
+                return ObjectMapper.Map<EnterpriseDetail, EnterpriseDetailEvaluateDto>(items[0]);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private EnterpriseDetail doEvaluate(EnterpriseDetail enterpriseDetail, Dictionary<string, string> extrainfo)
+        {
+            var marketScore = 0;
+            var manageScore = 0;
+            var profitScore = 0;
+            var financeScore = 0;
+            var innovateScore = 0;
+            var creditScore = 0;
+            if (extrainfo.Count > 0)
+            {
+                foreach (var item in extrainfo)
+                {
+                    var prefix = item.Key.Split('-')[0].ToLower();
+                    switch (prefix)
+                    {
+                        case "market":
+                            marketScore += 2;
+                            break;
+                        case "manage":
+                            manageScore += 2;
+                            break;
+                        case "profit":
+                            profitScore += 2;
+                            break;
+                        case "finance":
+                            financeScore += 2;
+                            break;
+                        case "innovate":
+                            innovateScore += 2;
+                            break;
+                        case "credit":
+                            creditScore += 2;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+    
+            financeScore = financeScore / 120;
+            profitScore = profitScore / 189;
+            creditScore = creditScore / 118;
+            manageScore = manageScore / 188;
+            innovateScore = innovateScore / 84;
+            marketScore = marketScore / 68;
+            
+            enterpriseDetail.FinanceScore = financeScore.ToString();
+            enterpriseDetail.ProfitScore = profitScore.ToString();
+            enterpriseDetail.CreditScore = creditScore.ToString();
+            enterpriseDetail.ManageScore = manageScore.ToString();
+            enterpriseDetail.InnovateScore = innovateScore.ToString();
+            enterpriseDetail.MarketScore = marketScore.ToString();
+            
+            
+            
+            return enterpriseDetail;
+        }
+        private Dictionary<string, string> GetEnterpriseDetailExtraInfo(Stream stream)
+        {
+            var extraInfo = new Dictionary<string, string>();
+            using (var reader = ExcelReaderFactory.CreateReader(stream))
+            {
+                do
+                {
+                    while (reader.Read())
+                    {
+                        var key =  $"{reader.GetString(0)}-{reader.GetString(1)}";
+                        if (_enterpriseDetailExtraInfoOptions.EnterpriseDetail.TryGetValue(key,
+                                out var enterpriseDetailInfoKey)
+                            && !string.IsNullOrWhiteSpace(enterpriseDetailInfoKey))
+                        {
+                            //if(reader.GetFieldType(3) == typeof(string))
+                            var value = reader.GetValue(3);
+                            extraInfo[enterpriseDetailInfoKey] = value==null?"":value.ToString();
+                        }
+                    }
+                } while (reader.NextResult());
+            }
+
+            return extraInfo;
+        }
+
+        public FileResult GetEnterpriseInformationTemplate()
+        {
+            return new VirtualFileResult("download/企业信息模板.xlsx","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         }
     }
 }

@@ -255,12 +255,33 @@ public class FinancingDbContext :
                 b.Property(x => x.VatPaidPerYear).HasColumnName(nameof(EnterpriseDetail.VatPaidPerYear)).IsRequired();
                 b.Property(x => x.IncomeTaxPreYear).HasColumnName(nameof(EnterpriseDetail.IncomeTaxPreYear)).IsRequired();
                 b.Property(x => x.IncomePaidTaxPreYear).HasColumnName(nameof(EnterpriseDetail.IncomePaidTaxPreYear)).IsRequired();
-                b.Property(x => x.SocailsecurityNumber).HasColumnName(nameof(EnterpriseDetail.SocailsecurityNumber)).IsRequired();
+                b.Property(x => x.SocialsecurityNumber).HasColumnName(nameof(EnterpriseDetail.SocialsecurityNumber)).IsRequired();
                 b.Property(x => x.HousefundPaidPreYear).HasColumnName(nameof(EnterpriseDetail.HousefundPaidPreYear)).IsRequired();
                 b.Property(x => x.EnvCreditLevel).HasColumnName(nameof(EnterpriseDetail.EnvCreditLevel)).IsRequired();
                 b.Property(x => x.EnvCreditScore).HasColumnName(nameof(EnterpriseDetail.EnvCreditScore)).IsRequired();
                 b.Property(x => x.PatentNumber).HasColumnName(nameof(EnterpriseDetail.PatentNumber)).IsRequired();
                 b.Property(x => x.SoftbindNumber).HasColumnName(nameof(EnterpriseDetail.SoftbindNumber)).IsRequired();
+                
+                #region evaluate
+                b.Property(x => x.MarketScore).HasColumnName(nameof(EnterpriseDetail.MarketScore));
+                b.Property(x => x.MarketDes).HasColumnName(nameof(EnterpriseDetail.MarketDes));
+                b.Property(x => x.ManageScore).HasColumnName(nameof(EnterpriseDetail.ManageScore));
+                b.Property(x => x.ManageDes).HasColumnName(nameof(EnterpriseDetail.ManageDes));
+                b.Property(x => x.ProfitScore).HasColumnName(nameof(EnterpriseDetail.ProfitScore));
+                b.Property(x => x.ProfitDes).HasColumnName(nameof(EnterpriseDetail.ProfitDes));
+                b.Property(x => x.FinanceScore).HasColumnName(nameof(EnterpriseDetail.FinanceScore));
+                b.Property(x => x.FinanceDes).HasColumnName(nameof(EnterpriseDetail.FinanceDes));
+                b.Property(x => x.InnovateScore).HasColumnName(nameof(EnterpriseDetail.InnovateScore));
+                b.Property(x => x.InnovateDes).HasColumnName(nameof(EnterpriseDetail.InnovateDes));
+                b.Property(x => x.CreditScore).HasColumnName(nameof(EnterpriseDetail.CreditScore));
+                b.Property(x => x.CreditDes).HasColumnName(nameof(EnterpriseDetail.CreditDes));
+                b.Property(x => x.CompreScore).HasColumnName(nameof(EnterpriseDetail.CompreScore));
+                b.Property(x => x.CompreDes).HasColumnName(nameof(EnterpriseDetail.CompreDes));
+                b.Property(x => x.HasEvaluate).HasColumnName(nameof(EnterpriseDetail.HasEvaluate));
+                #endregion
+                
+                
+                b.Property(x => x.ExtraInfoHash).HasColumnName(nameof(EnterpriseDetail.ExtraInfoHash));
             });
         }
         
