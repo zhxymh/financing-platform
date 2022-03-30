@@ -36,8 +36,18 @@ namespace AElf.Contracts.UserManagement
         {
             AssertSenderIsOwner();
 
+            if (State.AdminDelegators.Value != null)
+            {
+                State.DelegatorContract.RegisterSenders.Send(new RegisterSendersInput
+                {
+                    ScopeId = ScopeIdForAdmin,
+                    AddressList = new AElf.Contracts.Delegator.AddressList { Value = { State.AdminDelegators.Value.Value } },
+                    IsRemove = true
+                });
+            }
+
             State.AdminDelegators.Value = input;
-            
+
             State.DelegatorContract.RegisterSenders.Send(new RegisterSendersInput
             {
                 ScopeId = ScopeIdForAdmin,
@@ -62,6 +72,16 @@ namespace AElf.Contracts.UserManagement
         public override Empty SetUserDelegators(AddressList input)
         {
             AssertSenderIsOwner();
+            
+            if (State.UserDelegators.Value != null)
+            {
+                State.DelegatorContract.RegisterSenders.Send(new RegisterSendersInput
+                {
+                    ScopeId = ScopeIdForUser,
+                    AddressList = new AElf.Contracts.Delegator.AddressList { Value = { State.UserDelegators.Value.Value } },
+                    IsRemove = true
+                });
+            }
 
             State.UserDelegators.Value = input;
             

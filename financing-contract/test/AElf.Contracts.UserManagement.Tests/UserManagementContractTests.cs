@@ -224,5 +224,78 @@ namespace AElf.Contracts.UserManagement
                 executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
             }
         }
+
+        [Fact]
+        public async Task SetDelegatorTest()
+        {
+            var ownerAccount = SampleAccount.Accounts.First();
+            var adminAccount = SampleAccount.Accounts.Skip(1).First();
+            var userAccount = SampleAccount.Accounts.Skip(2).First();
+
+            var userManagementStub = GetUserManagementContractStub(ownerAccount.KeyPair);
+
+            var adminDelegatorStub = GetDelegatorContractStub(adminAccount.KeyPair);
+            var userDelegatorStub = GetDelegatorContractStub(userAccount.KeyPair);
+            
+            await userManagementStub.Initialize.SendAsync(new InitializeInput
+            {
+                Owner = ownerAccount.Address
+            });
+            await userManagementStub.SetDelegatorContract.SendAsync(DelegatorContractAddress);
+            
+            await userManagementStub.SetAdminDelegators.SendAsync(new AddressList {Value = {adminAccount.Address}});
+
+            var result = await adminDelegatorStub.IsPermittedAddress.CallAsync(new IsPermittedAddressInput
+            {
+                Address = adminAccount.Address,
+                ScopeId = "Admin",
+                ToAddress = DAppContractAddress
+            });
+            result.Value.ShouldBeTrue();
+            
+            await userManagementStub.SetAdminDelegators.SendAsync(new AddressList {Value = {adminAccount.Address, ownerAccount.Address}});
+            result = await adminDelegatorStub.IsPermittedAddress.CallAsync(new IsPermittedAddressInput
+            {
+                Address = adminAccount.Address,
+                ScopeId = "Admin",
+                ToAddress = DAppContractAddress
+            });
+            result.Value.ShouldBeTrue();
+            
+            result = await adminDelegatorStub.IsPermittedAddress.CallAsync(new IsPermittedAddressInput
+            {
+                Address = ownerAccount.Address,
+                ScopeId = "Admin",
+                ToAddress = DAppContractAddress
+            });
+            result.Value.ShouldBeTrue();
+            
+            await userManagementStub.SetUserDelegators.SendAsync(new AddressList {Value = {userAccount.Address}});
+            
+            result = await adminDelegatorStub.IsPermittedAddress.CallAsync(new IsPermittedAddressInput
+            {
+                Address = userAccount.Address,
+                ScopeId = "User",
+                ToAddress = DAppContractAddress
+            });
+            result.Value.ShouldBeTrue();
+            
+            await userManagementStub.SetUserDelegators.SendAsync(new AddressList {Value = {userAccount.Address, ownerAccount.Address}});
+            result = await adminDelegatorStub.IsPermittedAddress.CallAsync(new IsPermittedAddressInput
+            {
+                Address = userAccount.Address,
+                ScopeId = "User",
+                ToAddress = DAppContractAddress
+            });
+            result.Value.ShouldBeTrue();
+            
+            result = await adminDelegatorStub.IsPermittedAddress.CallAsync(new IsPermittedAddressInput
+            {
+                Address = ownerAccount.Address,
+                ScopeId = "User",
+                ToAddress = DAppContractAddress
+            });
+            result.Value.ShouldBeTrue();
+        }
     }
 }

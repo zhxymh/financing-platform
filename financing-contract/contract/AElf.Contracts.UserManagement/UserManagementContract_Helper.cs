@@ -12,7 +12,7 @@ namespace AElf.Contracts.UserManagement
 
         private void AssertSenderIsOwner()
         {
-            Assert(Context.Sender == State.Owner.Value, "No permission.");
+            Assert(Context.Sender == State.Owner.Value && State.Initialized.Value, "No permission.");
         }
     }
 }
