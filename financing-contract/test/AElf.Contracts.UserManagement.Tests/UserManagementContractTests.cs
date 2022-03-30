@@ -33,23 +33,6 @@ namespace AElf.Contracts.UserManagement
             await userManagementStub.SetDelegatorContract.SendAsync(DelegatorContractAddress);
             await userManagementStub.SetAdminDelegators.SendAsync(new AddressList {Value = {adminAccount.Address}});
             await userManagementStub.SetUserDelegators.SendAsync(new AddressList {Value = {userAccount.Address}});
-            
-            {
-                var executiveResult = await userManagementStub.Approve.SendWithExceptionAsync(Hash.Empty);
-                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
-            }
-            {
-                var executiveResult = await userManagementStub.Reject.SendWithExceptionAsync(Hash.Empty);
-                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
-            }
-            {
-                var executiveResult = await userManagementStub.Register.SendWithExceptionAsync(new UserInfo());
-                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
-            }
-            {
-                var executiveResult = await userManagementStub.ChangeUserInfo.SendWithExceptionAsync(new UserInfo());
-                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
-            }
 
             var user = new UserInfo
             {
@@ -174,6 +157,72 @@ namespace AElf.Contracts.UserManagement
             });
             approvalList = await userManagementStub.GetApprovalList.CallAsync(new Empty());
             approvalList.Value.Count.ShouldBe(0);
+        }
+
+        [Fact]
+        public async Task DirectCallTest()
+        {
+            var ownerAccount = SampleAccount.Accounts.First();
+            var adminAccount = SampleAccount.Accounts.Skip(1).First();
+            var userAccount = SampleAccount.Accounts.Skip(2).First();
+
+            var userManagementStub = GetUserManagementContractStub(ownerAccount.KeyPair);
+
+            var adminDelegatorStub = GetDelegatorContractStub(adminAccount.KeyPair);
+            var userDelegatorStub = GetDelegatorContractStub(userAccount.KeyPair);
+
+            await userManagementStub.Initialize.SendAsync(new InitializeInput
+            {
+                Owner = ownerAccount.Address
+            });
+            await userManagementStub.SetDelegatorContract.SendAsync(DelegatorContractAddress);
+            await userManagementStub.SetAdminDelegators.SendAsync(new AddressList {Value = {adminAccount.Address}});
+            await userManagementStub.SetUserDelegators.SendAsync(new AddressList {Value = {userAccount.Address}});
+            
+            var user = new UserInfo
+            {
+                UserName = "user-name",
+                Name = "name",
+                Email = "email@com"
+            };
+
+            {
+                var executiveResult = await userManagementStub.Register.SendWithExceptionAsync(user);
+                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
+            }
+            
+            await userDelegatorStub.Forward.SendAsync(new ForwardInput
+            {
+                FromId = Guid.NewGuid().ToString(),
+                MethodName = "Register",
+                ScopeId = "User",
+                ToAddress = DAppContractAddress,
+                Parameter = user.ToByteString()
+            });
+            var approvalList = await userManagementStub.GetApprovalList.CallAsync(new Empty());
+
+            {
+                var executiveResult = await userManagementStub.Approve.SendWithExceptionAsync(approvalList.Value[0].Id);
+                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
+            }
+            {
+                var executiveResult = await userManagementStub.Reject.SendWithExceptionAsync(approvalList.Value[0].Id);
+                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
+            }
+            
+            await adminDelegatorStub.Forward.SendAsync(new ForwardInput
+            {
+                FromId = Guid.NewGuid().ToString(),
+                MethodName = "Approve",
+                ScopeId = "Admin",
+                ToAddress = DAppContractAddress,
+                Parameter = approvalList.Value[0].Id.ToByteString()
+            });
+            {
+                user.Name = "NewName";
+                var executiveResult = await userManagementStub.ChangeUserInfo.SendWithExceptionAsync(user);
+                executiveResult.TransactionResult.Error.ShouldContain("Forward check failed");
+            }
         }
     }
 }

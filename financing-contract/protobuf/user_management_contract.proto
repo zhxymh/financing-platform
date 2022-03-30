@@ -13,6 +13,7 @@ service UserManagementContract {
 
   // owner
   rpc Initialize (InitializeInput) returns (google.protobuf.Empty) { }
+  rpc SetOwner(aelf.Address) returns (google.protobuf.Empty) { }
   rpc SetDelegatorContract (aelf.Address) returns (google.protobuf.Empty) { }
   rpc SetAdminDelegators (AddressList) returns (google.protobuf.Empty) { }
   rpc SetUserDelegators (AddressList) returns (google.protobuf.Empty) { }

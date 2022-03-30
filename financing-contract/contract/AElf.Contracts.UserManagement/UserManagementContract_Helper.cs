@@ -7,7 +7,7 @@ namespace AElf.Contracts.UserManagement
         
         private void AssertSenderIsDelegatorContract()
         {
-            State.DelegatorContract.ForwardCheck.Call(Context.OriginTransactionId);
+            State.DelegatorContract.ForwardCheck.Send(Context.OriginTransactionId);
         }
 
         private void AssertSenderIsOwner()

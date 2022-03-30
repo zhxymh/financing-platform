@@ -16,6 +16,14 @@ namespace AElf.Contracts.UserManagement
             return new Empty();
         }
 
+        public override Empty SetOwner(Address input)
+        {
+            AssertSenderIsOwner();
+
+            State.Owner.Value = input;
+            return new Empty();
+        }
+
         public override Empty SetDelegatorContract(Address input)
         {
             AssertSenderIsOwner();
